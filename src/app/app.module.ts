@@ -16,6 +16,7 @@ import { SliderComponent } from './slider/slider.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import {MatButtonModule} from '@angular/material/button';
     GalleryComponent,
     ContactComponent,
     LoginComponent,
-    SliderComponent
+    SliderComponent,
+    PagenotfoundComponent
   ],
   imports: [
     BrowserModule,
