@@ -2,6 +2,20 @@
     flex: 1 1 auto;
 }
 mat-toolbar{
-    color: ffffff;
+    color: white;
     background-color: #FE8E0B;
+}
+mat-toolbar img{
+    width: 50px;
+    height: 55px;
+}
+.sname{
+    position: relative;
+    left: 10px;
+    font-family: Inknut Antiqua;
+    font-weight: bold;
+    font-size: 25px;
+}
+.btn{
+    color: white;
 }
