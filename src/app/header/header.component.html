@@ -1,8 +1,8 @@
 <mat-toolbar>
-    <img src="/assets/logo.png" alt="">
-    <span class="sname">UNIQUE SCHOOL</span>
-    <span class="example-spacer"></span>
-    <div class="text">
+  <img src="/assets/logo.png" alt="">
+  <span class="sname">UNIQUE SCHOOL</span>
+  <span class="example-spacer"></span>
+  <div class="text">
     <button mat-button routerLink="/home">
       <span>Home</span>
     </button>
@@ -17,15 +17,14 @@
     <button mat-button routerLink="/contact">
       <span>Contact</span>
     </button>
-    <button mat-button [matMenuTriggerFor]="menu" >Login</button>
-    <mat-menu  #menu="matMenu">
+    <button mat-button [matMenuTriggerFor]="menu">Login</button>
+    <mat-menu #menu="matMenu">
       <div class="menu">
-      <button class="btn" mat-menu-item routerLink="/login">Admin</button>
-      <button mat-menu-item>Teacher</button>
-      <button mat-menu-item>student</button>
-      <button mat-menu-item>Librarian</button>
-    </div>
+        <button class="btn" mat-menu-item routerLink="/login">Admin</button>
+        <button mat-menu-item>Teacher</button>
+        <button mat-menu-item>student</button>
+        <button mat-menu-item>Librarian</button>
+      </div>
     </mat-menu>
-
-
-  
+  </div>
+</mat-toolbar>

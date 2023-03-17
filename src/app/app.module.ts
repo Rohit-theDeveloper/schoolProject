@@ -17,6 +17,10 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
+import { StudentComponent } from './login/student/student.component';
+import { TeacherComponent } from './login/teacher/teacher.component';
+import { AdminComponent } from './login/admin/admin.component';
+import { LibrarianComponent } from './login/librarian/librarian.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,11 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
     ContactComponent,
     LoginComponent,
     SliderComponent,
-    PagenotfoundComponent
+    PagenotfoundComponent,
+    StudentComponent,
+    TeacherComponent,
+    AdminComponent,
+    LibrarianComponent
   ],
   imports: [
     BrowserModule,
