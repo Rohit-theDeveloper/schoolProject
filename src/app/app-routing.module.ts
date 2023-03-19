@@ -10,9 +10,9 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 const routes: Routes = [
   {path:'',redirectTo:'home',pathMatch:'full'},
   {path:'home', component:HomeComponent},
-  {path:'about', component:AboutComponent},
-  {path:'gallery', component:GalleryComponent},
-  {path:'contact', component:ContactComponent},
+  // {path:'about', component:AboutComponent},
+  // {path:'gallery', component:GalleryComponent},
+  // {path:'contact', component:ContactComponent},
   {path:'admin', component:LoginComponent},
   {path:'**',component:PagenotfoundComponent}
 ];
