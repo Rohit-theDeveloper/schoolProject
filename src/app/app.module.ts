@@ -17,10 +17,15 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
-import { StudentComponent } from './login/student/student.component';
-import { TeacherComponent } from './login/teacher/teacher.component';
-import { AdminComponent } from './login/admin/admin.component';
-import { LibrarianComponent } from './login/librarian/librarian.component';
+import { ForgotpasswordComponent } from './login/forgotpassword/forgotpassword.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { AdminComponent } from './dashboard/admin/admin.component';
+import { StudentComponent } from './dashboard/student/student.component';
+import { TeacherComponent } from './dashboard/teacher/teacher.component';
+import { LibrarianComponent } from './dashboard/librarian/librarian.component';
+import {MatIconModule} from '@angular/material/icon';
+import {MatSidenavModule} from '@angular/material/sidenav';
+
 
 @NgModule({
   declarations: [
@@ -35,10 +40,13 @@ import { LibrarianComponent } from './login/librarian/librarian.component';
     LoginComponent,
     SliderComponent,
     PagenotfoundComponent,
+    ForgotpasswordComponent,
+    DashboardComponent,
+    AdminComponent,
     StudentComponent,
     TeacherComponent,
-    AdminComponent,
-    LibrarianComponent
+    LibrarianComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -47,7 +55,9 @@ import { LibrarianComponent } from './login/librarian/librarian.component';
     BrowserAnimationsModule,
     MatToolbarModule,
     MatMenuModule,
-    MatButtonModule
+    MatButtonModule,
+    MatIconModule,
+    MatSidenavModule
   ],
   providers: [],
   bootstrap: [AppComponent]

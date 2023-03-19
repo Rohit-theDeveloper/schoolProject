@@ -17,14 +17,9 @@
     <button mat-button routerLink="/contact">
       <span>Contact</span>
     </button>
-    <button mat-button [matMenuTriggerFor]="menu">Login</button>
-    <mat-menu #menu="matMenu">
-      <div class="menu">
-        <button class="btn" mat-menu-item routerLink="/login">Admin</button>
-        <button mat-menu-item>Teacher</button>
-        <button mat-menu-item>student</button>
-        <button mat-menu-item>Librarian</button>
-      </div>
-    </mat-menu>
+    <button mat-button routerLink="/login">
+      <span>Login</span>
+    </button>
+    
   </div>
 </mat-toolbar>
