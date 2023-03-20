@@ -1,1 +1,35 @@
-<p>admin works!</p>
+<mat-toolbar>
+    <button mat-icon-button (click)="drawer.toggle()" class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <img src="/assets/logo.png" alt="">
+  <span class="sname">UNIQUE SCHOOL</span>
+    <span class="example-spacer"></span>
+    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+      <mat-icon>favorite</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+      <mat-icon>share</mat-icon>
+    </button>
+  </mat-toolbar>
+  <mat-drawer-container class="example-container" autosize >
+    <mat-drawer #drawer class="example-sidenav" mode="side"opened>
+        <ul>
+            <li><mat-icon>dashboard</mat-icon>Dashboard</li>
+            <li><mat-icon>group</mat-icon>Parents</li>
+            <li><mat-icon>groups</mat-icon>Student</li>
+            <li><mat-icon>man</mat-icon>Teacher</li>
+            <li><mat-icon>group</mat-icon>Librarian</li>
+            <li><mat-icon>groups</mat-icon>Staff</li>
+            <li><mat-icon>class</mat-icon>Class</li>
+            <li><mat-icon>subject</mat-icon>Subjects</li>
+            <li><mat-icon>money</mat-icon>Fee</li>
+            <li><mat-icon>money</mat-icon>Salary</li>
+            <li><mat-icon>notifications</mat-icon>Notification</li>
+            <li><mat-icon>notebooks</mat-icon>Application</li>
+            <li><mat-icon>logout</mat-icon>Logout</li>
+            
+        </ul>
+    </mat-drawer>
+  </mat-drawer-container>
+  <div id="footer">Unique school@2023</div>

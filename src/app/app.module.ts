@@ -25,6 +25,15 @@ import { TeacherComponent } from './dashboard/teacher/teacher.component';
 import { LibrarianComponent } from './dashboard/librarian/librarian.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
+import { ParentComponent } from './dashboard/admin/parent/parent.component';
+import { StaffComponent } from './dashboard/admin/staff/staff.component';
+import { AdminDashboardComponent } from './dashboard/admin/admin-dashboard/admin-dashboard.component';
+import { ClassComponent } from './dashboard/admin/class/class.component';
+import { SubjectComponent } from './dashboard/admin/subject/subject.component';
+import { FeeComponent } from './dashboard/admin/fee/fee.component';
+import { SalaryComponent } from './dashboard/admin/salary/salary.component';
+import { NotificationComponent } from './dashboard/admin/notification/notification.component';
+import { LogoutComponent } from './dashboard/admin/logout/logout.component';
 
 
 @NgModule({
@@ -46,6 +55,15 @@ import {MatSidenavModule} from '@angular/material/sidenav';
     StudentComponent,
     TeacherComponent,
     LibrarianComponent,
+    ParentComponent,
+    StaffComponent,
+    AdminDashboardComponent,
+    ClassComponent,
+    SubjectComponent,
+    FeeComponent,
+    SalaryComponent,
+    NotificationComponent,
+    LogoutComponent,
     
   ],
   imports: [
