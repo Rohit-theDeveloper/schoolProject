@@ -1,0 +1,23 @@
+/* for contact heading */
+#contact-heading{
+    width: calc(100% - 60px);
+    height: 50px;
+    margin: 10px 30px 0px 30px;
+    font-size: 30px;
+    font-weight: bold;
+    text-align: center;
+    background-color:#FE8E0b ;
+    padding-top: 10px;
+    color: white;
+    }
+/* for contact form */
+.contact{
+    background-color: #b9eae7 ;
+    color: black;
+    width: calc(100% - 60px);
+    margin: 10px 30px 0px 30px;
+    font-size: 15px;
+}
+form{
+    padding: 20px 0 20px 2% ;
+}
