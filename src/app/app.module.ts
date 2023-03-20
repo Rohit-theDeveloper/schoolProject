@@ -34,6 +34,8 @@ import { FeeComponent } from './dashboard/admin/fee/fee.component';
 import { SalaryComponent } from './dashboard/admin/salary/salary.component';
 import { NotificationComponent } from './dashboard/admin/notification/notification.component';
 import { LogoutComponent } from './dashboard/admin/logout/logout.component';
+import { ApplicationComponent } from './dashboard/admin/application/application.component';
+
 
 
 @NgModule({
@@ -64,6 +66,8 @@ import { LogoutComponent } from './dashboard/admin/logout/logout.component';
     SalaryComponent,
     NotificationComponent,
     LogoutComponent,
+    ApplicationComponent,
+ 
     
   ],
   imports: [
