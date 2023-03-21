@@ -18,7 +18,6 @@ import {MatMenuModule} from '@angular/material/menu';
 import {MatButtonModule} from '@angular/material/button';
 import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ForgotpasswordComponent } from './login/forgotpassword/forgotpassword.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminComponent } from './dashboard/admin/admin.component';
 import { StudentComponent } from './dashboard/student/student.component';
 import { TeacherComponent } from './dashboard/teacher/teacher.component';
@@ -35,6 +34,9 @@ import { SalaryComponent } from './dashboard/admin/salary/salary.component';
 import { NotificationComponent } from './dashboard/admin/notification/notification.component';
 import { LogoutComponent } from './dashboard/admin/logout/logout.component';
 import { ApplicationComponent } from './dashboard/admin/application/application.component';
+import { AdminStudentComponent } from './dashboard/admin/admin-student/admin-student.component';
+import { AdminTeacherComponent } from './dashboard/admin/admin-teacher/admin-teacher.component';
+import { AdminLibrarianComponent } from './dashboard/admin/admin-librarian/admin-librarian.component';
 
 
 
@@ -52,7 +54,6 @@ import { ApplicationComponent } from './dashboard/admin/application/application.
     SliderComponent,
     PagenotfoundComponent,
     ForgotpasswordComponent,
-    DashboardComponent,
     AdminComponent,
     StudentComponent,
     TeacherComponent,
@@ -67,6 +68,9 @@ import { ApplicationComponent } from './dashboard/admin/application/application.
     NotificationComponent,
     LogoutComponent,
     ApplicationComponent,
+    AdminStudentComponent,
+    AdminTeacherComponent,
+    AdminLibrarianComponent,
  
     
   ],

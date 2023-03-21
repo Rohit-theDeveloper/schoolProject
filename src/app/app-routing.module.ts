@@ -12,7 +12,6 @@ import { ParentComponent } from './dashboard/admin/parent/parent.component';
 import { SalaryComponent } from './dashboard/admin/salary/salary.component';
 import { StaffComponent } from './dashboard/admin/staff/staff.component';
 import { SubjectComponent } from './dashboard/admin/subject/subject.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
 import { LibrarianComponent } from './dashboard/librarian/librarian.component';
 import { StudentComponent } from './dashboard/student/student.component';
 import { TeacherComponent } from './dashboard/teacher/teacher.component';
@@ -29,6 +28,7 @@ const routes: Routes = [
   {path:'forgotpassword', component:ForgotpasswordComponent},
   {path:'admin',component:AdminComponent,
     children:[
+      {path:'',redirectTo:'admin-dashboard',pathMatch:'full'},
       {path:'admin-dashboard',component:AdminDashboardComponent},
       {path:'parent',component:ParentComponent},
       {path:'student',component:StudentComponent},
