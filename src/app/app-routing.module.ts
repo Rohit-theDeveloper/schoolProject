@@ -15,7 +15,19 @@ import { ParentComponent } from './dashboard/admin/parent/parent.component';
 import { SalaryComponent } from './dashboard/admin/salary/salary.component';
 import { StaffComponent } from './dashboard/admin/staff/staff.component';
 import { SubjectComponent } from './dashboard/admin/subject/subject.component';
+import { LibrApplicationComponent } from './dashboard/librarian/libr-application/libr-application.component';
+import { LibrBooksComponent } from './dashboard/librarian/libr-books/libr-books.component';
+import { LibrDashboardComponent } from './dashboard/librarian/libr-dashboard/libr-dashboard.component';
+import { LibrLibrarydetailsComponent } from './dashboard/librarian/libr-librarydetails/libr-librarydetails.component';
+import { LibrNotificationComponent } from './dashboard/librarian/libr-notification/libr-notification.component';
+import { LibrSalarydetailsComponent } from './dashboard/librarian/libr-salarydetails/libr-salarydetails.component';
 import { LibrarianComponent } from './dashboard/librarian/librarian.component';
+import { StdApplicationComponent } from './dashboard/student/std-application/std-application.component';
+import { StdDashboardComponent } from './dashboard/student/std-dashboard/std-dashboard.component';
+import { StdExamComponent } from './dashboard/student/std-exam/std-exam.component';
+import { StdFeedetailsComponent } from './dashboard/student/std-feedetails/std-feedetails.component';
+import { StdLibrarydetailsComponent } from './dashboard/student/std-librarydetails/std-librarydetails.component';
+import { StdNotificationComponent } from './dashboard/student/std-notification/std-notification.component';
 import { StudentComponent } from './dashboard/student/student.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { HomeComponent } from './home/home.component';
@@ -46,8 +58,32 @@ const routes: Routes = [
       {path:'logout',component:AdminDashboardComponent},
     ]
   },
-  {path:"librarian",component:LibrarianComponent},
-  {path:"student",component:StudentComponent},
+  {path:"librarian",component:LibrarianComponent,
+    children:[
+      {path:'',redirectTo:'libr-dashboard',pathMatch:'full'},
+      {path:'libr-dashboard',component:LibrDashboardComponent},
+      {path:'libr-salarydetails',component:LibrSalarydetailsComponent},
+      {path:'libr-library-details',component:LibrLibrarydetailsComponent},
+      {path:'libr-books',component:LibrBooksComponent},
+      {path:'libr-application',component:LibrApplicationComponent},
+      {path:'libr-notification',component:LibrNotificationComponent},
+
+
+    ]
+    
+},
+  {path:"student",component:StudentComponent,
+    children:[
+      {path:'',redirectTo:'std-dashboard',pathMatch:'full'},
+      {path:'std-dashboard',component:StdDashboardComponent},
+      {path:'std-feedetails',component:StdFeedetailsComponent},
+      {path:'std-librarydetails',component:StdLibrarydetailsComponent},
+      {path:'std-application',component:StdApplicationComponent},
+      {path:'std-notification',component:StdNotificationComponent},
+      {path:'std-exam',component:StdExamComponent},
+    ]
+},
+
   {path:'**',component:PagenotfoundComponent},
  
 ];
