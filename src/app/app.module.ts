@@ -51,6 +51,7 @@ import { StdLibrarydetailsComponent } from './dashboard/student/std-librarydetai
 import { StdApplicationComponent } from './dashboard/student/std-application/std-application.component';
 import { StdExamComponent } from './dashboard/student/std-exam/std-exam.component';
 import { StdNotificationComponent } from './dashboard/student/std-notification/std-notification.component';
+import { TeacherComponent } from './dashboard/teacher/teacher.component';
 
 
 
@@ -96,6 +97,7 @@ import { StdNotificationComponent } from './dashboard/student/std-notification/s
     StdApplicationComponent,
     StdExamComponent,
     StdNotificationComponent,
+    TeacherComponent,
  
     
   ],

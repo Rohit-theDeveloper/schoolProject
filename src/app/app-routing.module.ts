@@ -29,6 +29,7 @@ import { StdFeedetailsComponent } from './dashboard/student/std-feedetails/std-f
 import { StdLibrarydetailsComponent } from './dashboard/student/std-librarydetails/std-librarydetails.component';
 import { StdNotificationComponent } from './dashboard/student/std-notification/std-notification.component';
 import { StudentComponent } from './dashboard/student/student.component';
+import { TeacherComponent } from './dashboard/teacher/teacher.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { HomeComponent } from './home/home.component';
 import { ForgotpasswordComponent } from './login/forgotpassword/forgotpassword.component';
@@ -83,7 +84,7 @@ const routes: Routes = [
       {path:'std-exam',component:StdExamComponent},
     ]
 },
-
+  {path:'techer',component:TeacherComponent},
   {path:'**',component:PagenotfoundComponent},
  
 ];
