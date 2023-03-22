@@ -1,58 +1,80 @@
-.wrapper h1{
-    text-align: center;
-    font-size: 40px;
-    font-family:'Times New Roman', Times, serif;
-
-}
-.contents{
+#about-heading{
     width: calc(100% - 60px);
-    height: auto;
-    margin : 30px;
-    padding: 15px;
-    background-color: #fffcfc;
-    font-family:  'Times New Roman';
-    font-size: 20px;
-    text-align: justify;
-    font-weight:lighter;
-    letter-spacing: 1px;
-    line-height: 25px;
-    border-radius: 5px;
-    /* box-shadow: 20px; */
-
-}
-.main-about{
-    width: calc(100% - 60px);
-    height: auto;
-    margin :30px;
-}
-.facility{
-    width:100%;
+    margin: 10px 30px;
+    top: 0;
     height: 50px;
-    padding: 10px;
-    margin-bottom: 30px;
-    background-color:#FE8E0B;
-    color: #ffffff;
     text-align: center;
+    font-family: Cambria;
     font-size: 30px;
-    font-family:'Times New Roman', Times, serif;
-    margin-bottom: 0px;
-    margin-top: -10px;
+    color: white;
+    background-color: #FE8E0b;
+    padding: 10px;
 
 }
-.facility-desc-img{
-    width: 100%;
-    height: calc(260px - 10px); 
-    margin-top: 15px;
-    /* background-color: blue; */
+#whygs{
+    width:calc(100% - 60px);
+    margin: 10px 30px; 
+    height: 300px;
 }
-.facility-img{
+/*why gs child div for image*/
+#whygsimg{
+    width: 40%;
     height: 100%;
+    background-color:#F5F5F5;
     float: left;
-    margin-right: 11px;
 }
-.facility-img-txt{
-    background-color: #FE8E0B;
-    color: white;
-    text-align: center;
-    height: 30px;
+/* why gs child div for text */
+#whygstext{
+    width: calc(60% - 5px);
+    height: 100%;
+    background-color: #F5F5F5;
+    float: right;
+    margin-left: 5px;
 }
+
+#whygsimg #gsimg{
+    height: 100%;
+    width: 100%;
+}
+
+#whygstext >p{
+    font-family: Cambria;
+    font-size: 20px;
+    padding: 0px 20px;
+    line-height: 32px;
+    text-align: justify;
+    word-spacing: 5px;
+    letter-spacing: 0.5px;
+}
+@media(max-width:800px){
+    #whygs{
+        height: 800px;
+    }
+    #whygsimg{
+        width:100%;
+        height: calc(800px/2);
+        margin-bottom: 5px; 
+    }    
+    #whygstext{
+        width:100%; 
+        height: calc(800px/2);
+        margin-bottom: 5px;
+    } 
+}
+@media(max-width:1200px) and (min-width:945px){
+    #whygs{
+        height: 400px;
+    }
+}
+@media(max-width:945px) and (min-width:799px){
+    #whygs{
+        height: 460px;
+    }
+}
+  
+@media(max-width:560px){
+    #whygstext p{
+        line-height: 22px;
+        font-size: 20px;
+    }
+} 
