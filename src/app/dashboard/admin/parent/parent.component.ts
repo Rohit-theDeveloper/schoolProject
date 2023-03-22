@@ -6,5 +6,14 @@ import { Component } from '@angular/core';
   styleUrls: ['./parent.component.css']
 })
 export class ParentComponent {
-
+  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol','action'];
 }
+export interface PeriodicElement {
+  name: string;
+  position: number;
+  weight: number;
+  symbol: string;
+  action:string;
+}
+
+
