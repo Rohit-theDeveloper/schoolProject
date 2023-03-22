@@ -1,12 +1,12 @@
-<mat-toolbar >
+<mat-toolbar class="desktop_menu">
   <img src="/assets/logo.png" alt="" routerLink="/home">
   <span class="sname">UNIQUE SCHOOL</span>
   <span class="example-spacer"></span>
-  <div class="text">
+  <div class="text ">
     <button mat-button routerLink="/home" routerLinkActive="active">
       <span>Home</span>
     </button>
-    <button mat-button  routerLink="/about" routerLinkActive="active">
+    <button mat-button routerLink="/about" routerLinkActive="active">
       <span>
         About
       </span>
@@ -20,6 +20,33 @@
     <button mat-button routerLink="/login" routerLinkActive="active">
       <span>Login</span>
     </button>
-    
+
+  </div>
+</mat-toolbar>
+<mat-toolbar class="mobile_menu">
+  <img src="/assets/logo.png" alt="" routerLink="/home">
+  <span class="sname">UNIQUE SCHOOL</span>
+  <span class="example-spacer"></span>
+  <div class="text ">
+
+    <button mat-button [matMenuTriggerFor]="menu"><mat-icon>menu</mat-icon></button>
+    <mat-menu #menu="matMenu">
+      <button mat-menu-item routerLink="/home" routerLinkActive="active">
+        <span>Home</span>
+      </button>
+      <button mat-menu-item routerLink="/about" routerLinkActive="active">
+        <span>About</span>
+      </button>
+      <button mat-menu-item routerLink="/gallery" routerLinkActive="active">
+        <span>Gallery</span>
+      </button>
+      <button mat-menu-item routerLink="/contact" routerLinkActive="active">
+        <span>Contact</span>
+      </button>
+      <button mat-menu-item routerLink="/login" routerLinkActive="active">
+        <span>Login</span>
+      </button>
+
+    </mat-menu>
   </div>
 </mat-toolbar>
