@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { AdminDashboardComponent } from './dashboard/admin/admin-dashboard/admin-dashboard.component';
+import { AdminLibrarianComponent } from './dashboard/admin/admin-librarian/admin-librarian.component';
 import { AdminComponent } from './dashboard/admin/admin.component';
 import { ApplicationComponent } from './dashboard/admin/application/application.component';
 import { ClassComponent } from './dashboard/admin/class/class.component';
@@ -33,7 +34,7 @@ const routes: Routes = [
       {path:'parent',component:ParentComponent},
       {path:'student',component:StudentComponent},
       {path:'teacher',component:TeacherComponent},
-      {path:'librarian',component:LibrarianComponent},
+      {path:'admin-librarian',component:AdminLibrarianComponent},
       {path:'staff',component:StaffComponent},
       {path:'class',component:ClassComponent},
       {path:'subject',component:SubjectComponent},
@@ -44,6 +45,7 @@ const routes: Routes = [
       {path:'logout',component:AdminDashboardComponent},
     ]
   },
+  {path:"librarian",component:LibrarianComponent},
   {path:'**',component:PagenotfoundComponent},
  
 ];
