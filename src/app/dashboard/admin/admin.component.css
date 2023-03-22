@@ -17,9 +17,15 @@
 }
 mat-icon{
     color: white;
+    position: relative ;
+    top: 5px;
 }
   mat-toolbar{
     background-color: #fe8e0b;
+  }
+  mat-toolbar button mat-icon{
+    top: 0px;
+
   }
   #footer{
     width: 100%;
@@ -71,9 +77,6 @@ mat-icon{
   ul li:hover{
     background-color: #d06901;
     cursor: pointer;
-    border-bottom: 1px solid white;
-    /* margin-bottom: 2px; */
-    /* transition: all 1s; */
   }
   
 
