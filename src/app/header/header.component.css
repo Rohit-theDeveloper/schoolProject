@@ -26,3 +26,13 @@ mat-toolbar img{
 .btn{
     color: white;
 }
+@media (min-width:701px){
+    .mobile_menu{
+        display: none;
+    }
+}
+@media (max-width:700px){
+    .desktop_menu{
+        display: none;
+    }
+}
