@@ -4,6 +4,8 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { AdminDashboardComponent } from './dashboard/admin/admin-dashboard/admin-dashboard.component';
 import { AdminLibrarianComponent } from './dashboard/admin/admin-librarian/admin-librarian.component';
+import { AdminStudentComponent } from './dashboard/admin/admin-student/admin-student.component';
+import { AdminTeacherComponent } from './dashboard/admin/admin-teacher/admin-teacher.component';
 import { AdminComponent } from './dashboard/admin/admin.component';
 import { ApplicationComponent } from './dashboard/admin/application/application.component';
 import { ClassComponent } from './dashboard/admin/class/class.component';
@@ -32,8 +34,8 @@ const routes: Routes = [
       {path:'',redirectTo:'admin-dashboard',pathMatch:'full'},
       {path:'admin-dashboard',component:AdminDashboardComponent},
       {path:'parent',component:ParentComponent},
-      {path:'student',component:StudentComponent},
-      {path:'teacher',component:TeacherComponent},
+      {path:'admin-student',component:AdminStudentComponent},
+      {path:'admin-teacher',component:AdminTeacherComponent},
       {path:'admin-librarian',component:AdminLibrarianComponent},
       {path:'staff',component:StaffComponent},
       {path:'class',component:ClassComponent},
@@ -46,6 +48,8 @@ const routes: Routes = [
     ]
   },
   {path:"librarian",component:LibrarianComponent},
+  {path:"student",component:StudentComponent},
+  {path:"teacher",component:TeacherComponent},
   {path:'**',component:PagenotfoundComponent},
  
 ];
