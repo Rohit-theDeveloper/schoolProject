@@ -3,9 +3,6 @@ app-footer{
     bottom: 0px;
     width: 100%;
 }
-/* body{
-    background-color: #fe8e0b;
-} */
 #container{
     background-color: #e17b07;
     width: 100%;
@@ -17,10 +14,8 @@ app-footer{
     position: relative;
     top: 80px;
     left: 40%;
-    /* border: 5px solid black; */
     border-radius: 10px ;
     background-color: #b9eae7;
-    /* padding: 5px; */
 }
 h1{
     text-align: center;
@@ -38,7 +33,6 @@ form{
 }
 label{
     font-size: 18px;
-    /* color: #ffffff; */
 }
 input{
     width: 100%;
