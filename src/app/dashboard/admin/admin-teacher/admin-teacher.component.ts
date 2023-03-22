@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatIconButton } from '@angular/material/button';
+import { MatIcon } from '@angular/material/icon';
 
 @Component({
   selector: 'app-admin-teacher',
@@ -25,7 +27,7 @@ export interface PeriodicElement {
 
 const ELEMENT_DATA: PeriodicElement[] = [
  
-  {position: 1, name: 'Rohit',  t_id:101, class:"four",  joindate:"23/march/2023", salary:20000, address:"hjp", mobile:12345, email:"rks@gmail.com", action:"act"},
+  {position: 1, name: 'Rohit',  t_id:101, class:"four",  joindate:"23/march/2023", salary:20000, address:"hjp", mobile:12345, email:"rks@gmail.com", action:"pen"},
   {position: 2, name: 'Adrash', t_id:102, class:"four",  joindate:"23/march/2023", salary:20000, address:"hjp", mobile:12345, email:"rks@gmail.com", action:"act"},
   {position: 3, name: 'Raj',    t_id:103, class:"four",  joindate:"23/march/2023", salary:20000, address:"hjp", mobile:12345, email:"rks@gmail.com", action:"act"},
   {position: 4, name: 'Alok',   t_id:104, class:"four",  joindate:"23/march/2023", salary:20000, address:"hjp", mobile:12345, email:"rks@gmail.com", action:"act"},
