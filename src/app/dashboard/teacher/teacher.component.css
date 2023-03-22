@@ -1,0 +1,22 @@
+h2{
+    color: #FE8E0B;
+}
+.add{
+    color: #FE8E0B;
+    float: right;
+    position: relative;
+    top:-50px;
+    margin: 5px;
+}
+.icon{
+    color: white;
+    float: right;
+    position: relative;
+    top:-50px;
+    border-radius: 100px;
+    background: #000;
+    margin-top: 5px;
+}
+table {
+    width: 100%;
+  }
