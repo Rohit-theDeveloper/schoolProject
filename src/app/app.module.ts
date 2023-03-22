@@ -39,6 +39,7 @@ import { AdminTeacherComponent } from './dashboard/admin/admin-teacher/admin-tea
 import { AdminLibrarianComponent } from './dashboard/admin/admin-librarian/admin-librarian.component';
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
+import {MatInputModule} from '@angular/material/input';
 
 
 
@@ -87,6 +88,7 @@ import {MatPaginator} from '@angular/material/paginator';
     MatIconModule,
     MatSidenavModule,
     MatTableModule,
+    MatInputModule,
    
    
   ],
