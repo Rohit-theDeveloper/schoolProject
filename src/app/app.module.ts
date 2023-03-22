@@ -38,7 +38,7 @@ import { AdminStudentComponent } from './dashboard/admin/admin-student/admin-stu
 import { AdminTeacherComponent } from './dashboard/admin/admin-teacher/admin-teacher.component';
 import { AdminLibrarianComponent } from './dashboard/admin/admin-librarian/admin-librarian.component';
 import {MatTableModule} from '@angular/material/table';
-import {MatPaginator} from '@angular/material/paginator';
+
 
 
 
@@ -87,7 +87,7 @@ import {MatPaginator} from '@angular/material/paginator';
     MatIconModule,
     MatSidenavModule,
     MatTableModule,
-   
+  
    
   ],
   providers: [],
