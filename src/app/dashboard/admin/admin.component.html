@@ -1,3 +1,4 @@
+<div id="wrapper">
 <mat-toolbar>
     <button mat-icon-button (click)="drawer.toggle()" class="example-icon" aria-label="Example icon-button with menu icon">
       <mat-icon>menu</mat-icon>
@@ -15,15 +16,15 @@
   <mat-drawer-container class="example-container" autosize >
     <mat-drawer #drawer class="example-sidenav" mode="side"opened>
         <ul>
-            <li routerLink="./admin-dashboard"><mat-icon>dashboard</mat-icon>Dashboard</li>
-            <li routerLink="./parent"><mat-icon>group</mat-icon>Parents</li>
-            <li routerLink="./student"><mat-icon>groups</mat-icon>Student</li>
-            <li routerLink="./teacher"><mat-icon>man</mat-icon>Teacher</li>
-            <li routerLink="./librarian"><mat-icon>group</mat-icon>Librarian</li>
-            <li routerLink="./staff"><mat-icon>groups</mat-icon>Staff</li>
-            <li routerLink="./class"><mat-icon>class</mat-icon>Class</li>
-            <li routerLink="./subject"><mat-icon>subject</mat-icon>Subjects</li>
-            <li routerLink="./fee"><mat-icon>money</mat-icon>Fee</li>
+            <li routerLink="./admin-dashboard" routerLinkActive="active"><mat-icon>dashboard</mat-icon>Dashboard</li>
+            <li routerLink="./parent" routerLinkActive="active"><mat-icon>group</mat-icon>Parents</li>
+            <li routerLink="./student" routerLinkActive="active"><mat-icon>groups</mat-icon>Student</li>
+            <li routerLink="./teacher" routerLinkActive="active"><mat-icon>man</mat-icon>Teacher</li>
+            <li routerLink="./librarian" routerLinkActive="active"><mat-icon>group</mat-icon>Librarian</li>
+            <li routerLink="./staff" routerLinkActive="active"><mat-icon>groups</mat-icon>Staff</li>
+            <li routerLink="./class" routerLinkActive="active"><mat-icon>class</mat-icon>Class</li>
+            <li routerLink="./subject" routerLinkActive="active"><mat-icon>subject</mat-icon>Subjects</li>
+            <li routerLink="./fee" routerLinkActive="active"><mat-icon>money</mat-icon>Fee</li>
             <li routerLink="./salary"><mat-icon>money</mat-icon>Salary</li>
             <li routerLink="./notification"><mat-icon>notifications</mat-icon>Notification</li>
             <li routerLink="./application"><mat-icon>notebooks</mat-icon>Application</li>
@@ -34,3 +35,4 @@
     <router-outlet></router-outlet>
   </mat-drawer-container>
   <div id="footer">Unique school@2023</div>
+</div>

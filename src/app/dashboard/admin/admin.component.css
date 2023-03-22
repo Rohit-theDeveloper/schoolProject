@@ -6,6 +6,7 @@
     width: 40px;
     height: 45px;
 }
+
 .sname{
     position: relative;
     left: 10px;
@@ -48,6 +49,10 @@ mat-icon{
   mat-drawer{
     background-color: #fe8e0b;
   }
+  .active{
+    background-color: #a95d07;
+    border-bottom: 1px solid white;
+  }
   ul{
     margin: 0px;
     padding: 0px;
@@ -64,11 +69,11 @@ mat-icon{
 
   }
   ul li:hover{
-    background-color: #a95d07;
+    background-color: #d06901;
     cursor: pointer;
     border-bottom: 1px solid white;
-    margin-bottom: 2px;
-    transition: all 1s;
+    /* margin-bottom: 2px; */
+    /* transition: all 1s; */
   }
   
 
