@@ -16,16 +16,17 @@
         <span>Adarsh singh</span><br><hr>
       </div>
         <ul>
-            <li><mat-icon>dashboard</mat-icon>Dashboard</li>
-            <li><mat-icon>paid</mat-icon>Salary Details</li>
-            <li><mat-icon>article</mat-icon>Library Details</li>
-            <li><mat-icon>book</mat-icon>Books</li>
-            <li><mat-icon>note</mat-icon>Application</li>
-            <li><mat-icon>notifications</mat-icon>Notification</li>
-            <li><mat-icon>logout</mat-icon>Logout</li>
-            <li><mat-icon>settings</mat-icon>Setting</li>
+            <li routerLinkActive="active"><mat-icon>dashboard</mat-icon>Dashboard</li>
+            <li routerLinkActive="active"><mat-icon>paid</mat-icon>Salary Details</li>
+            <li routerLinkActive="active"><mat-icon>article</mat-icon>Library Details</li>
+            <li routerLinkActive="active"><mat-icon>book</mat-icon>Books</li>
+            <li routerLinkActive="active"><mat-icon>note</mat-icon>Application</li>
+            <li routerLinkActive="active"><mat-icon>notifications</mat-icon>Notification</li>
+            <li routerLinkActive="active"><mat-icon>logout</mat-icon>Logout</li>
+            <li routerLinkActive="active"><mat-icon>settings</mat-icon>Setting</li>
         </ul>
     </mat-drawer>
-    <router-outlet></router-outlet>
+    <!-- <router-outlet></router-outlet> -->
+    <app-viewport></app-viewport>
   </mat-drawer-container>
   <div id="footer">Unique school@2023</div>
