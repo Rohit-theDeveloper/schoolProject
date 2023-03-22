@@ -14,7 +14,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;background-c
     flex: 1 1 auto;
   }
 .mat-drawer-content {
-    background-color:whitesmoke;
+    background-color: #a95d07;
   }
   mat-toolbar img{
     width: 40px;
