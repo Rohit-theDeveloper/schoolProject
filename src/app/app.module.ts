@@ -37,6 +37,7 @@ import { ApplicationComponent } from './dashboard/admin/application/application.
 import { AdminStudentComponent } from './dashboard/admin/admin-student/admin-student.component';
 import { AdminTeacherComponent } from './dashboard/admin/admin-teacher/admin-teacher.component';
 import { AdminLibrarianComponent } from './dashboard/admin/admin-librarian/admin-librarian.component';
+import {MatTableModule} from '@angular/material/table';
 
 
 
@@ -83,7 +84,8 @@ import { AdminLibrarianComponent } from './dashboard/admin/admin-librarian/admin
     MatMenuModule,
     MatButtonModule,
     MatIconModule,
-    MatSidenavModule
+    MatSidenavModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
