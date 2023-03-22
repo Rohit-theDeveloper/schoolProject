@@ -17,7 +17,6 @@ import { StaffComponent } from './dashboard/admin/staff/staff.component';
 import { SubjectComponent } from './dashboard/admin/subject/subject.component';
 import { LibrarianComponent } from './dashboard/librarian/librarian.component';
 import { StudentComponent } from './dashboard/student/student.component';
-import { TeacherComponent } from './dashboard/teacher/teacher.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { HomeComponent } from './home/home.component';
 import { ForgotpasswordComponent } from './login/forgotpassword/forgotpassword.component';
@@ -49,7 +48,6 @@ const routes: Routes = [
   },
   {path:"librarian",component:LibrarianComponent},
   {path:"student",component:StudentComponent},
-  {path:"teacher",component:TeacherComponent},
   {path:'**',component:PagenotfoundComponent},
  
 ];

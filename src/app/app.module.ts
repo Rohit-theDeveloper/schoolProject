@@ -20,7 +20,6 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ForgotpasswordComponent } from './login/forgotpassword/forgotpassword.component';
 import { AdminComponent } from './dashboard/admin/admin.component';
 import { StudentComponent } from './dashboard/student/student.component';
-// import { TeacherComponent } from './dashboard/teacher/teacher.component';
 import { LibrarianComponent } from './dashboard/librarian/librarian.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -59,7 +58,6 @@ import {MatInputModule} from '@angular/material/input';
     ForgotpasswordComponent,
     AdminComponent,
     StudentComponent,
-    // TeacherComponent,
     LibrarianComponent,
     ParentComponent,
     StaffComponent,
