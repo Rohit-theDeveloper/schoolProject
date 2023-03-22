@@ -39,6 +39,18 @@ import { AdminLibrarianComponent } from './dashboard/admin/admin-librarian/admin
 import {MatTableModule} from '@angular/material/table';
 import {MatPaginator} from '@angular/material/paginator';
 import {MatInputModule} from '@angular/material/input';
+import { LibrDashboardComponent } from './dashboard/librarian/libr-dashboard/libr-dashboard.component';
+import { LibrSalarydetailsComponent } from './dashboard/librarian/libr-salarydetails/libr-salarydetails.component';
+import { LibrLibrarydetailsComponent } from './dashboard/librarian/libr-librarydetails/libr-librarydetails.component';
+import { LibrBooksComponent } from './dashboard/librarian/libr-books/libr-books.component';
+import { LibrApplicationComponent } from './dashboard/librarian/libr-application/libr-application.component';
+import { LibrNotificationComponent } from './dashboard/librarian/libr-notification/libr-notification.component';
+import { StdDashboardComponent } from './dashboard/student/std-dashboard/std-dashboard.component';
+import { StdFeedetailsComponent } from './dashboard/student/std-feedetails/std-feedetails.component';
+import { StdLibrarydetailsComponent } from './dashboard/student/std-librarydetails/std-librarydetails.component';
+import { StdApplicationComponent } from './dashboard/student/std-application/std-application.component';
+import { StdExamComponent } from './dashboard/student/std-exam/std-exam.component';
+import { StdNotificationComponent } from './dashboard/student/std-notification/std-notification.component';
 
 
 
@@ -72,6 +84,18 @@ import {MatInputModule} from '@angular/material/input';
     AdminStudentComponent,
     AdminTeacherComponent,
     AdminLibrarianComponent,
+    LibrDashboardComponent,
+    LibrSalarydetailsComponent,
+    LibrLibrarydetailsComponent,
+    LibrBooksComponent,
+    LibrApplicationComponent,
+    LibrNotificationComponent,
+    StdDashboardComponent,
+    StdFeedetailsComponent,
+    StdLibrarydetailsComponent,
+    StdApplicationComponent,
+    StdExamComponent,
+    StdNotificationComponent,
  
     
   ],
