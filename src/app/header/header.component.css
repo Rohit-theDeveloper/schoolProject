@@ -1,6 +1,4 @@
-.example-spacer {
-    flex: 1 1 auto;
-}
+
 .active{
     background-color: rgb(203, 135, 24);
 }
@@ -16,13 +14,7 @@ mat-toolbar img{
     height: 55px;
     cursor: pointer;
 }
-.sname{
-    position: relative;
-    left: 10px;
-    font-family: Inknut Antiqua;
-    font-weight: bold;
-    font-size: 25px;
-}
+
 .btn{
     color: white;
 }

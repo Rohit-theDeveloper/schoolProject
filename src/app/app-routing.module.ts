@@ -3,6 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { AdminDashboardComponent } from './dashboard/admin/admin-dashboard/admin-dashboard.component';
+import { AdminLibrarianComponent } from './dashboard/admin/admin-librarian/admin-librarian.component';
+import { AdminStudentComponent } from './dashboard/admin/admin-student/admin-student.component';
+import { AdminTeacherComponent } from './dashboard/admin/admin-teacher/admin-teacher.component';
 import { AdminComponent } from './dashboard/admin/admin.component';
 import { ApplicationComponent } from './dashboard/admin/application/application.component';
 import { ClassComponent } from './dashboard/admin/class/class.component';
@@ -14,7 +17,6 @@ import { StaffComponent } from './dashboard/admin/staff/staff.component';
 import { SubjectComponent } from './dashboard/admin/subject/subject.component';
 import { LibrarianComponent } from './dashboard/librarian/librarian.component';
 import { StudentComponent } from './dashboard/student/student.component';
-import { TeacherComponent } from './dashboard/teacher/teacher.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { HomeComponent } from './home/home.component';
 import { ForgotpasswordComponent } from './login/forgotpassword/forgotpassword.component';
@@ -31,9 +33,9 @@ const routes: Routes = [
       {path:'',redirectTo:'admin-dashboard',pathMatch:'full'},
       {path:'admin-dashboard',component:AdminDashboardComponent},
       {path:'parent',component:ParentComponent},
-      {path:'student',component:StudentComponent},
-      {path:'teacher',component:TeacherComponent},
-      {path:'librarian',component:LibrarianComponent},
+      {path:'admin-student',component:AdminStudentComponent},
+      {path:'admin-teacher',component:AdminTeacherComponent},
+      {path:'admin-librarian',component:AdminLibrarianComponent},
       {path:'staff',component:StaffComponent},
       {path:'class',component:ClassComponent},
       {path:'subject',component:SubjectComponent},
@@ -44,6 +46,8 @@ const routes: Routes = [
       {path:'logout',component:AdminDashboardComponent},
     ]
   },
+  {path:"librarian",component:LibrarianComponent},
+  {path:"student",component:StudentComponent},
   {path:'**',component:PagenotfoundComponent},
  
 ];

@@ -6,21 +6,17 @@
     <img src="/assets/logo.png" alt="">
   <span class="sname">UNIQUE SCHOOL</span>
     <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
-      <mat-icon>favorite</mat-icon>
-    </button>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
-      <mat-icon>share</mat-icon>
-    </button>
+    <span style="font-family: Inria Serif;">Adarsh Singh<mat-icon >arrow_drop_down</mat-icon></span>
+        <div id="usericon"></div>
   </mat-toolbar>
   <mat-drawer-container class="example-container" autosize >
     <mat-drawer #drawer class="example-sidenav" mode="side"opened>
         <ul>
             <li routerLink="./admin-dashboard" routerLinkActive="active"><mat-icon>dashboard</mat-icon>Dashboard</li>
             <li routerLink="./parent" routerLinkActive="active"><mat-icon>group</mat-icon>Parents</li>
-            <li routerLink="./student" routerLinkActive="active"><mat-icon>groups</mat-icon>Student</li>
-            <li routerLink="./teacher" routerLinkActive="active"><mat-icon>man</mat-icon>Teacher</li>
-            <li routerLink="./librarian" routerLinkActive="active"><mat-icon>group</mat-icon>Librarian</li>
+            <li routerLink="./admin-student" routerLinkActive="active"><mat-icon>groups</mat-icon>Student</li>
+            <li routerLink="./admin-teacher" routerLinkActive="active"><mat-icon>man</mat-icon>Teacher</li>
+            <li routerLink="./admin-librarian" routerLinkActive="active"><mat-icon>group</mat-icon>Librarian</li>
             <li routerLink="./staff" routerLinkActive="active"><mat-icon>groups</mat-icon>Staff</li>
             <li routerLink="./class" routerLinkActive="active"><mat-icon>class</mat-icon>Class</li>
             <li routerLink="./subject" routerLinkActive="active"><mat-icon>subject</mat-icon>Subjects</li>
@@ -31,8 +27,8 @@
             
         </ul>
     </mat-drawer>
-    <!-- <app-viewport></app-viewport> -->
-    <router-outlet></router-outlet>
+    <app-viewport></app-viewport>
+    <!-- <router-outlet></router-outlet> -->
   </mat-drawer-container>
   <div id="footer">Unique school@2023</div>
 </div>

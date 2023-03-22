@@ -20,7 +20,6 @@ import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 import { ForgotpasswordComponent } from './login/forgotpassword/forgotpassword.component';
 import { AdminComponent } from './dashboard/admin/admin.component';
 import { StudentComponent } from './dashboard/student/student.component';
-import { TeacherComponent } from './dashboard/teacher/teacher.component';
 import { LibrarianComponent } from './dashboard/librarian/librarian.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
@@ -37,6 +36,9 @@ import { ApplicationComponent } from './dashboard/admin/application/application.
 import { AdminStudentComponent } from './dashboard/admin/admin-student/admin-student.component';
 import { AdminTeacherComponent } from './dashboard/admin/admin-teacher/admin-teacher.component';
 import { AdminLibrarianComponent } from './dashboard/admin/admin-librarian/admin-librarian.component';
+import {MatTableModule} from '@angular/material/table';
+import {MatPaginator} from '@angular/material/paginator';
+import {MatInputModule} from '@angular/material/input';
 
 
 
@@ -56,7 +58,6 @@ import { AdminLibrarianComponent } from './dashboard/admin/admin-librarian/admin
     ForgotpasswordComponent,
     AdminComponent,
     StudentComponent,
-    TeacherComponent,
     LibrarianComponent,
     ParentComponent,
     StaffComponent,
@@ -83,6 +84,9 @@ import { AdminLibrarianComponent } from './dashboard/admin/admin-librarian/admin
     MatMenuModule,
     MatButtonModule,
     MatIconModule,
+    MatSidenavModule,
+    MatTableModule,
+    MatInputModule,
     MatSidenavModule
   ],
   providers: [],
