@@ -11,6 +11,7 @@ import { ApplicationComponent } from './dashboard/admin/application/application.
 import { ClassComponent } from './dashboard/admin/class/class.component';
 import { FeeComponent } from './dashboard/admin/fee/fee.component';
 import { NotificationComponent } from './dashboard/admin/notification/notification.component';
+import { AddParentComponent } from './dashboard/admin/parent/add-parent/add-parent.component';
 import { ParentComponent } from './dashboard/admin/parent/parent.component';
 import { SalaryComponent } from './dashboard/admin/salary/salary.component';
 import { StaffComponent } from './dashboard/admin/staff/staff.component';
@@ -57,8 +58,10 @@ const routes: Routes = [
       {path:'notification',component:NotificationComponent},
       {path:'application',component:ApplicationComponent},
       {path:'logout',component:AdminDashboardComponent},
+      {path:"add-parent",component:AddParentComponent},
     ]
   },
+  
   {path:"librarian",component:LibrarianComponent,
     children:[
       {path:'',redirectTo:'libr-dashboard',pathMatch:'full'},

@@ -52,6 +52,7 @@ import { StdApplicationComponent } from './dashboard/student/std-application/std
 import { StdExamComponent } from './dashboard/student/std-exam/std-exam.component';
 import { StdNotificationComponent } from './dashboard/student/std-notification/std-notification.component';
 import { TeacherComponent } from './dashboard/teacher/teacher.component';
+import { AddParentComponent } from './dashboard/admin/parent/add-parent/add-parent.component';
 
 
 
@@ -98,6 +99,7 @@ import { TeacherComponent } from './dashboard/teacher/teacher.component';
     StdExamComponent,
     StdNotificationComponent,
     TeacherComponent,
+    AddParentComponent,
  
     
   ],
