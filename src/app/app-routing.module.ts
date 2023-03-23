@@ -4,17 +4,27 @@ import { AboutComponent } from './about/about.component';
 import { ContactComponent } from './contact/contact.component';
 import { AdminDashboardComponent } from './dashboard/admin/admin-dashboard/admin-dashboard.component';
 import { AdminLibrarianComponent } from './dashboard/admin/admin-librarian/admin-librarian.component';
+import { ManageLibrarianComponent } from './dashboard/admin/admin-librarian/manage-librarian/manage-librarian.component';
 import { AdminStudentComponent } from './dashboard/admin/admin-student/admin-student.component';
+import { ManageStudentComponent } from './dashboard/admin/admin-student/manage-student/manage-student.component';
 import { AdminTeacherComponent } from './dashboard/admin/admin-teacher/admin-teacher.component';
+import { ManageTeacherComponent } from './dashboard/admin/admin-teacher/manage-teacher/manage-teacher.component';
 import { AdminComponent } from './dashboard/admin/admin.component';
 import { ApplicationComponent } from './dashboard/admin/application/application.component';
+import { ManageApplicationComponent } from './dashboard/admin/application/manage-application/manage-application.component';
 import { ClassComponent } from './dashboard/admin/class/class.component';
+import { ManageClassComponent } from './dashboard/admin/class/manage-class/manage-class.component';
 import { FeeComponent } from './dashboard/admin/fee/fee.component';
+import { ManageFeeComponent } from './dashboard/admin/fee/manage-fee/manage-fee.component';
+import { ManageNotificationComponent } from './dashboard/admin/notification/manage-notification/manage-notification.component';
 import { NotificationComponent } from './dashboard/admin/notification/notification.component';
 import { AddParentComponent } from './dashboard/admin/parent/add-parent/add-parent.component';
 import { ParentComponent } from './dashboard/admin/parent/parent.component';
+import { ManageSalaryComponent } from './dashboard/admin/salary/manage-salary/manage-salary.component';
 import { SalaryComponent } from './dashboard/admin/salary/salary.component';
+import { ManageStaffComponent } from './dashboard/admin/staff/manage-staff/manage-staff.component';
 import { StaffComponent } from './dashboard/admin/staff/staff.component';
+import { ManageSubjectComponent } from './dashboard/admin/subject/manage-subject/manage-subject.component';
 import { SubjectComponent } from './dashboard/admin/subject/subject.component';
 import { LibrApplicationComponent } from './dashboard/librarian/libr-application/libr-application.component';
 import { LibrBooksComponent } from './dashboard/librarian/libr-books/libr-books.component';
@@ -58,7 +68,18 @@ const routes: Routes = [
       {path:'notification',component:NotificationComponent},
       {path:'application',component:ApplicationComponent},
       {path:'logout',component:AdminDashboardComponent},
+      // forms
       {path:"add-parent",component:AddParentComponent},
+      {path:"manage-librarian",component:ManageLibrarianComponent},
+      {path:"manage-student",component:ManageStudentComponent},
+      {path:"manage-teacher",component:ManageTeacherComponent},
+      {path:"manage-application",component:ManageApplicationComponent},
+      {path:"manage-class",component:ManageClassComponent},
+      {path:"manage-fee",component:ManageFeeComponent},
+      {path:"manage-notification",component:ManageNotificationComponent},
+      {path:"manage-salary",component:ManageSalaryComponent},
+      {path:"manage-staff",component:ManageStaffComponent},
+      {path:"manage-subject",component:ManageSubjectComponent},
     ]
   },
   
