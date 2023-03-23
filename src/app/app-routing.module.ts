@@ -22,6 +22,7 @@ import { AddParentComponent } from './dashboard/admin/parent/add-parent/add-pare
 import { ParentComponent } from './dashboard/admin/parent/parent.component';
 import { ManageSalaryComponent } from './dashboard/admin/salary/manage-salary/manage-salary.component';
 import { SalaryComponent } from './dashboard/admin/salary/salary.component';
+import { SettingComponent } from './dashboard/admin/setting/setting.component';
 import { ManageStaffComponent } from './dashboard/admin/staff/manage-staff/manage-staff.component';
 import { StaffComponent } from './dashboard/admin/staff/staff.component';
 import { ManageSubjectComponent } from './dashboard/admin/subject/manage-subject/manage-subject.component';
@@ -67,6 +68,7 @@ const routes: Routes = [
       {path:'salary',component:SalaryComponent},
       {path:'notification',component:NotificationComponent},
       {path:'application',component:ApplicationComponent},
+      {path:'setting',component:SettingComponent},
       {path:'logout',component:AdminDashboardComponent},
       // forms
       {path:"add-parent",component:AddParentComponent},
