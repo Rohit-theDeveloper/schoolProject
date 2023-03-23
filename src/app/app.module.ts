@@ -64,6 +64,7 @@ import { ManageTeacherComponent } from './dashboard/admin/admin-teacher/manage-t
 import { ManageApplicationComponent } from './dashboard/admin/application/manage-application/manage-application.component';
 import { ManageClassComponent } from './dashboard/admin/class/manage-class/manage-class.component';
 import { ManageFeeComponent } from './dashboard/admin/fee/manage-fee/manage-fee.component';
+import { SettingComponent } from './dashboard/admin/setting/setting.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -119,6 +120,7 @@ import { ManageFeeComponent } from './dashboard/admin/fee/manage-fee/manage-fee.
     ManageApplicationComponent,
     ManageClassComponent,
     ManageFeeComponent,
+    SettingComponent,
   ],
   imports: [
     BrowserModule,
@@ -132,7 +134,8 @@ import { ManageFeeComponent } from './dashboard/admin/fee/manage-fee/manage-fee.
     MatSidenavModule,
     MatTableModule,
     MatInputModule,
-    MatSidenavModule
+    MatSidenavModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
