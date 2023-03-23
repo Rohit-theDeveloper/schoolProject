@@ -84,7 +84,7 @@ const routes: Routes = [
       {path:'std-exam',component:StdExamComponent},
     ]
 },
-  {path:'techer',component:TeacherComponent},
+  {path:'teacher',component:TeacherComponent},
   {path:'**',component:PagenotfoundComponent},
  
 ];
