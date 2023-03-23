@@ -6,25 +6,21 @@ import { Component } from '@angular/core';
   styleUrls: ['./th-application.component.css']
 })
 export class ThApplicationComponent {
-  displayedColumns: string[] = ['position', 'id', 'fname', 'mname','email','address','mobile','proffession', 'action'];
-dataSource = ELEMENT_DATA;
+  displayedColumns: string[] = ['app_position', 'app_sender_name', 'app_date', 'status','app_action'];
+  dataSource = ELEMENT_DATA;
 }
 export interface PeriodicElement {
-fname: string;
-position: number;
-id: number;
-mname: string;
-action:string;
-email:string;
-address:string;
-mobile:number;
-proffession:string;
+  app_position: number;
+  app_date:string;
+  app_sender_name:string;
+  app_action:string;
+  status:string;
 }
 const ELEMENT_DATA: PeriodicElement[] = [
-{position: 1, id:101, fname: 'Nakul Singh', mname: 'Rani Kumari',email: 'alokdhhjfi@gmail.com', address:'hajipur', mobile:98012554512, proffession:'farmer', action:'none' },
-{position: 2, id:101, fname: 'Nakul Singh', mname: 'Rani Kumari',email: 'alokdhhjfi@gmail.com', address:'hajipur', mobile:98012554512, proffession:'farmer', action:'none' },
-{position: 3, id:101, fname: 'Nakul Singh', mname: 'Rani Kumari',email: 'alokdhhjfi@gmail.com', address:'hajipur', mobile:98012554512, proffession:'farmer', action:'none' },
-{position: 4, id:101, fname: 'Nakul Singh', mname: 'Rani Kumari',email: 'alokdhhjfi@gmail.com', address:'hajipur', mobile:98012554512, proffession:'farmer', action:'none' },
-{position: 5, id:101, fname: 'Nakul Singh', mname: 'Rani Kumari',email: 'alokdhhjfi@gmail.com', address:'hajipur', mobile:98012554512, proffession:'farmer', action:'none' },
-
+  {app_position: 1,  app_sender_name: 'Nakul Singh', app_date: '12 May 2022', status:'accept', app_action:'none' },
+  {app_position: 1,  app_sender_name: 'Nakul Singh', app_date: '12 May 2022', status:'accept', app_action:'none' },
+  {app_position: 1,  app_sender_name: 'Nakul Singh', app_date: '12 May 2022', status:'accept', app_action:'none' },
+  {app_position: 1,  app_sender_name: 'Nakul Singh', app_date: '12 May 2022', status:'accept', app_action:'none' },
+  {app_position: 1,  app_sender_name: 'Nakul Singh', app_date: '12 May 20222', status:'accept', app_action:'none' },
+  
 ];

@@ -22,3 +22,9 @@ table {
     background-color: #FE8E0B;
     color: white;
 }
+table .mat-icon{
+  float: none;
+  }
+  .mat-icon {
+    color: #FE8E0B;
+  }
