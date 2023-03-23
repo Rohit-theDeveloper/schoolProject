@@ -6,25 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./subject.component.css']
 })
 export class SubjectComponent {
-  displayedColumns: string[] = ['position', 'id', 'fname', 'mname','email','address','mobile','proffession', 'action'];
+  displayedColumns: string[] = ['sub_position', 'sub_id', 'sub_name',  'sub_action'];
   dataSource = ELEMENT_DATA;
 }
 export interface PeriodicElement {
-  fname: string;
-  position: number;
-  id: number;
-  mname: string;
-  action:string;
-  email:string;
-  address:string;
-  mobile:number;
-  proffession:string;
+  sub_name: string;
+  sub_position: number;
+  sub_id: number;
+  sub_action:string;
 }
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, id:101, fname: 'Nakul Singh', mname: 'Rani Kumari',email: 'alokdhhjfi@gmail.com', address:'hajipur', mobile:98012554512, proffession:'farmer', action:'none' },
-  {position: 1, id:101, fname: 'Nakul Singh', mname: 'Rani Kumari',email: 'alokdhhjfi@gmail.com', address:'hajipur', mobile:98012554512, proffession:'farmer', action:'none' },
-  {position: 1, id:101, fname: 'Nakul Singh', mname: 'Rani Kumari',email: 'alokdhhjfi@gmail.com', address:'hajipur', mobile:98012554512, proffession:'farmer', action:'none' },
-  {position: 1, id:101, fname: 'Nakul Singh', mname: 'Rani Kumari',email: 'alokdhhjfi@gmail.com', address:'hajipur', mobile:98012554512, proffession:'farmer', action:'none' },
-  {position: 1, id:101, fname: 'Nakul Singh', mname: 'Rani Kumari',email: 'alokdhhjfi@gmail.com', address:'hajipur', mobile:98012554512, proffession:'farmer', action:'none' },
+  {sub_position: 1, sub_id:101, sub_name: 'english', sub_action:'none' },
+  {sub_position: 2, sub_id:102, sub_name: 'english', sub_action:'none' },
+  {sub_position: 3, sub_id:103, sub_name: 'english', sub_action:'none' },
+  {sub_position: 4, sub_id:104, sub_name: 'english', sub_action:'none' },
+  {sub_position: 5, sub_id:105, sub_name: 'english', sub_action:'none' },
   
 ];

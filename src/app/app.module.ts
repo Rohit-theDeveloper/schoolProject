@@ -52,12 +52,21 @@ import { StdApplicationComponent } from './dashboard/student/std-application/std
 import { StdExamComponent } from './dashboard/student/std-exam/std-exam.component';
 import { StdNotificationComponent } from './dashboard/student/std-notification/std-notification.component';
 import { TeacherComponent } from './dashboard/teacher/teacher.component';
+<<<<<<< HEAD
 import { ThDashboardComponent } from './dashboard/teacher/th-dashboard/th-dashboard.component';
 import { ThSalaryComponent } from './dashboard/teacher/th-salary/th-salary.component';
 import { ThLibrarydetailsComponent } from './dashboard/teacher/th-librarydetails/th-librarydetails.component';
 import { ThExamComponent } from './dashboard/teacher/th-exam/th-exam.component';
 import { ThApplicationComponent } from './dashboard/teacher/th-application/th-application.component';
 import { ThNotificationComponent } from './dashboard/teacher/th-notification/th-notification.component';
+=======
+import { AddParentComponent } from './dashboard/admin/parent/add-parent/add-parent.component';
+import { ManageStudentComponent } from './dashboard/admin/admin-student/manage-student/manage-student.component';
+import { ManageTeacherComponent } from './dashboard/admin/admin-teacher/manage-teacher/manage-teacher.component';
+import { ManageApplicationComponent } from './dashboard/admin/application/manage-application/manage-application.component';
+import { ManageClassComponent } from './dashboard/admin/class/manage-class/manage-class.component';
+import { ManageFeeComponent } from './dashboard/admin/fee/manage-fee/manage-fee.component';
+>>>>>>> 445eb6fd96d0b9415d890a139c33badbf7dbcd69
 
 
 
@@ -104,6 +113,7 @@ import { ThNotificationComponent } from './dashboard/teacher/th-notification/th-
     StdExamComponent,
     StdNotificationComponent,
     TeacherComponent,
+<<<<<<< HEAD
     ThDashboardComponent,
     ThSalaryComponent,
     ThLibrarydetailsComponent,
@@ -112,6 +122,14 @@ import { ThNotificationComponent } from './dashboard/teacher/th-notification/th-
     ThNotificationComponent,
  
     
+=======
+    AddParentComponent,
+    ManageStudentComponent,
+    ManageTeacherComponent,
+    ManageApplicationComponent,
+    ManageClassComponent,
+    ManageFeeComponent,
+>>>>>>> 445eb6fd96d0b9415d890a139c33badbf7dbcd69
   ],
   imports: [
     BrowserModule,

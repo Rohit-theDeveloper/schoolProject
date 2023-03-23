@@ -1,6 +1,6 @@
 <div>
   <mat-toolbar>
-     <span>Library</span>
+     <span>Librararian</span>
      <span class="example-spacer"></span>
      <form class="example-form">
       <mat-form-field class="example-half-width">
@@ -10,7 +10,7 @@
         <mat-icon matSuffix>search</mat-icon>
       </mat-form-field>
     </form>
-    <mat-icon>add_circle</mat-icon>
+    <mat-icon routerLink="../manage-librarian">add_circle</mat-icon>
     </mat-toolbar>
 </div>
 
@@ -20,55 +20,61 @@
           The actual rendered columns are set as a property on the row definition" -->
   
     <!-- Position Column -->
-    <ng-container matColumnDef="position">
+    <ng-container matColumnDef="lib_position">
       <th mat-header-cell *matHeaderCellDef> S.No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.lib_position}} </td>
     </ng-container>
   
     <!-- id Column -->
-    <ng-container matColumnDef="id">
+    <ng-container matColumnDef="lib_id">
       <th mat-header-cell *matHeaderCellDef> ID </th>
-      <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.lib_id}} </td>
     </ng-container>
   
-    <!-- father's Name Column -->
-    <ng-container matColumnDef="fname">
-      <th mat-header-cell *matHeaderCellDef> Father's name </th>
-      <td mat-cell *matCellDef="let element"> {{element.fname}} </td>
+    <!--  Name Column -->
+    <ng-container matColumnDef="lib_name">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.lib_name}} </td>
     </ng-container>
   
-    <!-- mother's name Column -->
-    <ng-container matColumnDef="mname">
-      <th mat-header-cell *matHeaderCellDef> Mother's name </th>
-      <td mat-cell *matCellDef="let element"> {{element.mname}} </td>
+    <!-- joindateC olumn -->
+    <ng-container matColumnDef="lib_joindate">
+      <th mat-header-cell *matHeaderCellDef> Joindate</th>
+      <td mat-cell *matCellDef="let element"> {{element.lib_joindate}} </td>
+    </ng-container>
+    
+    <!-- salaryColumn -->
+    <ng-container matColumnDef="lib_salary">
+      <th mat-header-cell *matHeaderCellDef> Salary</th>
+      <td mat-cell *matCellDef="let element"> {{element.lib_salary}} </td>
     </ng-container>
 
     <!-- address Column -->
-    <ng-container matColumnDef="address">
+    <ng-container matColumnDef="lib_address">
       <th mat-header-cell *matHeaderCellDef> Address </th>
-      <td mat-cell *matCellDef="let element"> {{element.address}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.lib_address}} </td>
     </ng-container>
 
-    <!-- emiasl Column -->
-    <ng-container matColumnDef="email">
+    <!-- emial Column -->
+    <ng-container matColumnDef="lib_email">
       <th mat-header-cell *matHeaderCellDef> Email </th>
-      <td mat-cell *matCellDef="let element"> {{element.email}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.lib_email}} </td>
     </ng-container>
 
-    <!-- mother's name Column -->
-    <ng-container matColumnDef="mobile">
+    <!-- mobile Column -->
+    <ng-container matColumnDef="lib_mobile">
       <th mat-header-cell *matHeaderCellDef> Mobile </th>
-      <td mat-cell *matCellDef="let element"> {{element.mobile}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.lib_mobile}} </td>
     </ng-container>
 
-    <!-- mother's name Column -->
-    <ng-container matColumnDef="proffession">
-      <th mat-header-cell *matHeaderCellDef> Proffession </th>
-      <td mat-cell *matCellDef="let element"> {{element.proffession}} </td>
+    <!-- proffession -->
+    <ng-container matColumnDef="lib_adhar">
+      <th mat-header-cell *matHeaderCellDef> Adhar </th>
+      <td mat-cell *matCellDef="let element"> {{element.lib_adhar}} </td>
     </ng-container>
 
-    <!-- mother's name Column -->
-    <ng-container matColumnDef="action">
+    <!-- action Column -->
+    <ng-container matColumnDef="lib_action">
         <th mat-header-cell *matHeaderCellDef> Action </th>
         <td mat-cell *matCellDef="let element"><mat-icon>delete</mat-icon> <mat-icon>edit</mat-icon><mat-icon>visibility</mat-icon> </td>
       </ng-container>

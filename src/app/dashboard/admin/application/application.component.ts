@@ -6,25 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./application.component.css']
 })
 export class ApplicationComponent {
-  displayedColumns: string[] = ['position', 'id', 'fname', 'mname','email','address','mobile','proffession', 'action'];
+  displayedColumns: string[] = ['app_position', 'app_sender_name', 'app_date', 'app_action'];
   dataSource = ELEMENT_DATA;
 }
 export interface PeriodicElement {
-  fname: string;
-  position: number;
-  id: number;
-  mname: string;
-  action:string;
-  email:string;
-  address:string;
-  mobile:number;
-  proffession:string;
+  app_position: number;
+  app_date:string;
+  app_sender_name:string;
+  app_action:string;
 }
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, id:101, fname: 'Nakul Singh', mname: 'Rani Kumari',email: 'alokdhhjfi@gmail.com', address:'hajipur', mobile:98012554512, proffession:'farmer', action:'none' },
-  {position: 1, id:101, fname: 'Nakul Singh', mname: 'Rani Kumari',email: 'alokdhhjfi@gmail.com', address:'hajipur', mobile:98012554512, proffession:'farmer', action:'none' },
-  {position: 1, id:101, fname: 'Nakul Singh', mname: 'Rani Kumari',email: 'alokdhhjfi@gmail.com', address:'hajipur', mobile:98012554512, proffession:'farmer', action:'none' },
-  {position: 1, id:101, fname: 'Nakul Singh', mname: 'Rani Kumari',email: 'alokdhhjfi@gmail.com', address:'hajipur', mobile:98012554512, proffession:'farmer', action:'none' },
-  {position: 1, id:101, fname: 'Nakul Singh', mname: 'Rani Kumari',email: 'alokdhhjfi@gmail.com', address:'hajipur', mobile:98012554512, proffession:'farmer', action:'none' },
+  {app_position: 1,  app_sender_name: 'Nakul Singh', app_date: '12/may/2022',  app_action:'none' },
+  {app_position: 1,  app_sender_name: 'Nakul Singh', app_date: '12/may/2022',  app_action:'none' },
+  {app_position: 1,  app_sender_name: 'Nakul Singh', app_date: '12/may/2022',  app_action:'none' },
+  {app_position: 1,  app_sender_name: 'Nakul Singh', app_date: '12/may/2022',  app_action:'none' },
+  {app_position: 1,  app_sender_name: 'Nakul Singh', app_date: '12/may/2022',  app_action:'none' },
   
 ];

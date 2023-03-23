@@ -24,7 +24,18 @@ mat-toolbar{
 table {
     width: 100%;
   }
-   table th{
+table th{
     background-color: #FE8E0B;
     color: white;
+    text-align: center;
 }
+table td{
+  text-align: center;
+}
+
+table button{
+  margin: 2px;
+}
+table .mat-icon{
+  float: none;
+ }
