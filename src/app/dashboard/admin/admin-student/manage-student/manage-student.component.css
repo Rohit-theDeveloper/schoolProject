@@ -1,3 +1,4 @@
+/* head of form */
 mat-toolbar{
     background-color:white;
     color: #FE8E0B;
@@ -9,3 +10,7 @@ mat-toolbar{
     height: 35px;
     float: right;
 }
+/* forms */
+.example-form-field {
+    width: 300px;
+  }

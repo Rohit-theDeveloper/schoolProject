@@ -52,6 +52,12 @@ import { StdApplicationComponent } from './dashboard/student/std-application/std
 import { StdExamComponent } from './dashboard/student/std-exam/std-exam.component';
 import { StdNotificationComponent } from './dashboard/student/std-notification/std-notification.component';
 import { TeacherComponent } from './dashboard/teacher/teacher.component';
+import { ThDashboardComponent } from './dashboard/teacher/th-dashboard/th-dashboard.component';
+import { ThSalaryComponent } from './dashboard/teacher/th-salary/th-salary.component';
+import { ThLibrarydetailsComponent } from './dashboard/teacher/th-librarydetails/th-librarydetails.component';
+import { ThExamComponent } from './dashboard/teacher/th-exam/th-exam.component';
+import { ThApplicationComponent } from './dashboard/teacher/th-application/th-application.component';
+import { ThNotificationComponent } from './dashboard/teacher/th-notification/th-notification.component';
 import { AddParentComponent } from './dashboard/admin/parent/add-parent/add-parent.component';
 import { ManageStudentComponent } from './dashboard/admin/admin-student/manage-student/manage-student.component';
 import { ManageTeacherComponent } from './dashboard/admin/admin-teacher/manage-teacher/manage-teacher.component';
@@ -59,9 +65,6 @@ import { ManageApplicationComponent } from './dashboard/admin/application/manage
 import { ManageClassComponent } from './dashboard/admin/class/manage-class/manage-class.component';
 import { ManageFeeComponent } from './dashboard/admin/fee/manage-fee/manage-fee.component';
 import { SettingComponent } from './dashboard/admin/setting/setting.component';
-
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -105,6 +108,12 @@ import { SettingComponent } from './dashboard/admin/setting/setting.component';
     StdExamComponent,
     StdNotificationComponent,
     TeacherComponent,
+    ThDashboardComponent,
+    ThSalaryComponent,
+    ThLibrarydetailsComponent,
+    ThExamComponent,
+    ThApplicationComponent,
+    ThNotificationComponent,
     AddParentComponent,
     ManageStudentComponent,
     ManageTeacherComponent,

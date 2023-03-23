@@ -42,6 +42,12 @@ import { StdLibrarydetailsComponent } from './dashboard/student/std-librarydetai
 import { StdNotificationComponent } from './dashboard/student/std-notification/std-notification.component';
 import { StudentComponent } from './dashboard/student/student.component';
 import { TeacherComponent } from './dashboard/teacher/teacher.component';
+import { ThApplicationComponent } from './dashboard/teacher/th-application/th-application.component';
+import { ThDashboardComponent } from './dashboard/teacher/th-dashboard/th-dashboard.component';
+import { ThExamComponent } from './dashboard/teacher/th-exam/th-exam.component';
+import { ThLibrarydetailsComponent } from './dashboard/teacher/th-librarydetails/th-librarydetails.component';
+import { ThNotificationComponent } from './dashboard/teacher/th-notification/th-notification.component';
+import { ThSalaryComponent } from './dashboard/teacher/th-salary/th-salary.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { HomeComponent } from './home/home.component';
 import { ForgotpasswordComponent } from './login/forgotpassword/forgotpassword.component';
@@ -110,7 +116,17 @@ const routes: Routes = [
       {path:'std-exam',component:StdExamComponent},
     ]
 },
-  {path:'teacher',component:TeacherComponent},
+  {path:'teacher',component:TeacherComponent,
+    children:[
+      {path:'',redirectTo:'th-dashboard',pathMatch:'full'},
+      {path:'th-dashboard',component:ThDashboardComponent},
+      {path:'th-salary',component:ThSalaryComponent},
+      {path:'th-application',component:ThApplicationComponent},
+      {path:'th-notification',component:ThNotificationComponent},
+      {path:'th-exam',component:ThExamComponent},
+      {path:'th-librarydetails',component:ThLibrarydetailsComponent},
+    ]
+},
   {path:'**',component:PagenotfoundComponent},
  
 ];
