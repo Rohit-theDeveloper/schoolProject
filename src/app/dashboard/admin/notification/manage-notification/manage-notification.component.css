@@ -1,0 +1,20 @@
+.notify{
+    width: 200px;
+    height: 30px;
+    /* background-color: aqua; */
+    padding: 15px;
+    margin: 2px;
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 500;
+}
+.txtbox{
+    height: 400px;
+    width: calc(100% - 60px);
+    background-color: rgb(200, 203, 203);
+    margin: 30px;
+    padding: 40px;
+}
+buttom{
+    padding: 20px;
+}
