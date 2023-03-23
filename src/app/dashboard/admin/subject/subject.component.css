@@ -8,6 +8,7 @@ mat-toolbar{
     width: 35px;
     height: 35px;
     float: right;
+    align-items: center;
 }
 .example-form {
     min-width: 150px;
@@ -27,4 +28,11 @@ table {
    table th{
     background-color: #FE8E0B;
     color: white;
+    text-align: center;
+}
+table td{
+  text-align:center;
+}
+ table .mat-icon{
+ float: none;
 }
