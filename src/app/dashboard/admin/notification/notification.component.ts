@@ -6,25 +6,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./notification.component.css']
 })
 export class NotificationComponent {
-  displayedColumns: string[] = ['position', 'id', 'fname', 'mname','email','address','mobile','proffession', 'action'];
+  displayedColumns: string[] = ['noti_position', 'noti_type', 'noti_date', 'noti_action'];
   dataSource = ELEMENT_DATA;
 }
 export interface PeriodicElement {
-  fname: string;
-  position: number;
-  id: number;
-  mname: string;
-  action:string;
-  email:string;
-  address:string;
-  mobile:number;
-  proffession:string;
+  noti_type: string;
+  noti_position: number;
+  noti_date:string;
+  noti_action:string;
 }
 const ELEMENT_DATA: PeriodicElement[] = [
-  {position: 1, id:101, fname: 'Nakul Singh', mname: 'Rani Kumari',email: 'alokdhhjfi@gmail.com', address:'hajipur', mobile:98012554512, proffession:'farmer', action:'none' },
-  {position: 1, id:101, fname: 'Nakul Singh', mname: 'Rani Kumari',email: 'alokdhhjfi@gmail.com', address:'hajipur', mobile:98012554512, proffession:'farmer', action:'none' },
-  {position: 1, id:101, fname: 'Nakul Singh', mname: 'Rani Kumari',email: 'alokdhhjfi@gmail.com', address:'hajipur', mobile:98012554512, proffession:'farmer', action:'none' },
-  {position: 1, id:101, fname: 'Nakul Singh', mname: 'Rani Kumari',email: 'alokdhhjfi@gmail.com', address:'hajipur', mobile:98012554512, proffession:'farmer', action:'none' },
-  {position: 1, id:101, fname: 'Nakul Singh', mname: 'Rani Kumari',email: 'alokdhhjfi@gmail.com', address:'hajipur', mobile:98012554512, proffession:'farmer', action:'none' },
+  {noti_position: 1, noti_type: 'leave notify', noti_date: '12/march/2020', noti_action:'none' },
+  {noti_position: 1, noti_type: 'leave notify', noti_date: '12/march/2020', noti_action:'none' },
+  {noti_position: 1, noti_type: 'leave notify', noti_date: '12/march/2020', noti_action:'none' },
+  {noti_position: 1, noti_type: 'leave notify', noti_date: '12/march/2020', noti_action:'none' },
+  {noti_position: 1, noti_type: 'leave notify', noti_date: '12/march/2020', noti_action:'none' },
   
 ];

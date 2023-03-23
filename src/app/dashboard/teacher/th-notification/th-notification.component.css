@@ -1,7 +1,4 @@
-table {
-    width: 100%;
-  }
-  mat-toolbar{
+mat-toolbar{
     background-color:white;
     color: #FE8E0B;
 }
@@ -23,14 +20,11 @@ table {
   .example-full-width {
     width: 100%;
   }
-  table th{
+/* table css */
+table {
+    width: 100%;
+  }
+   table th{
     background-color: #FE8E0B;
     color: white;
-    text-align: center;
 }
-table td{
-  text-align: center;
-}
-table .mat-icon{
-  float: none;
- }
