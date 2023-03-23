@@ -51,6 +51,13 @@ import { StdLibrarydetailsComponent } from './dashboard/student/std-librarydetai
 import { StdApplicationComponent } from './dashboard/student/std-application/std-application.component';
 import { StdExamComponent } from './dashboard/student/std-exam/std-exam.component';
 import { StdNotificationComponent } from './dashboard/student/std-notification/std-notification.component';
+import { TeacherComponent } from './dashboard/teacher/teacher.component';
+import { AddParentComponent } from './dashboard/admin/parent/add-parent/add-parent.component';
+import { ManageStudentComponent } from './dashboard/admin/admin-student/manage-student/manage-student.component';
+import { ManageTeacherComponent } from './dashboard/admin/admin-teacher/manage-teacher/manage-teacher.component';
+import { ManageApplicationComponent } from './dashboard/admin/application/manage-application/manage-application.component';
+import { ManageClassComponent } from './dashboard/admin/class/manage-class/manage-class.component';
+import { ManageFeeComponent } from './dashboard/admin/fee/manage-fee/manage-fee.component';
 
 
 
@@ -96,8 +103,13 @@ import { StdNotificationComponent } from './dashboard/student/std-notification/s
     StdApplicationComponent,
     StdExamComponent,
     StdNotificationComponent,
- 
-    
+    TeacherComponent,
+    AddParentComponent,
+    ManageStudentComponent,
+    ManageTeacherComponent,
+    ManageApplicationComponent,
+    ManageClassComponent,
+    ManageFeeComponent,
   ],
   imports: [
     BrowserModule,
