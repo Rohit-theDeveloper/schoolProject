@@ -65,6 +65,11 @@ import { ManageApplicationComponent } from './dashboard/admin/application/manage
 import { ManageClassComponent } from './dashboard/admin/class/manage-class/manage-class.component';
 import { ManageFeeComponent } from './dashboard/admin/fee/manage-fee/manage-fee.component';
 import { SettingComponent } from './dashboard/admin/setting/setting.component';
+import { ManageLibrarianComponent } from './dashboard/admin/admin-librarian/manage-librarian/manage-librarian.component';
+import { ManageStaffComponent } from './dashboard/admin/staff/manage-staff/manage-staff.component';
+import { ManageSubjectComponent } from './dashboard/admin/subject/manage-subject/manage-subject.component';
+import { ManageSalaryComponent } from './dashboard/admin/salary/manage-salary/manage-salary.component';
+import { ManageNotificationComponent } from './dashboard/admin/notification/manage-notification/manage-notification.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -120,6 +125,11 @@ import { SettingComponent } from './dashboard/admin/setting/setting.component';
     ManageApplicationComponent,
     ManageClassComponent,
     ManageFeeComponent,
+    ManageLibrarianComponent,
+    ManageStaffComponent,
+    ManageSubjectComponent,
+    ManageSalaryComponent,
+    ManageNotificationComponent,
     SettingComponent,
   ],
   imports: [
@@ -134,7 +144,8 @@ import { SettingComponent } from './dashboard/admin/setting/setting.component';
     MatSidenavModule,
     MatTableModule,
     MatInputModule,
-    MatSidenavModule
+    MatSidenavModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
