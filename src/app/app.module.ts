@@ -134,7 +134,8 @@ import { SettingComponent } from './dashboard/admin/setting/setting.component';
     MatSidenavModule,
     MatTableModule,
     MatInputModule,
-    MatSidenavModule
+    MatSidenavModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
