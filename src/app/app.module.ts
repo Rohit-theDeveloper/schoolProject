@@ -70,6 +70,11 @@ import { ManageStaffComponent } from './dashboard/admin/staff/manage-staff/manag
 import { ManageSubjectComponent } from './dashboard/admin/subject/manage-subject/manage-subject.component';
 import { ManageSalaryComponent } from './dashboard/admin/salary/manage-salary/manage-salary.component';
 import { ManageNotificationComponent } from './dashboard/admin/notification/manage-notification/manage-notification.component';
+import { ManageLibrarydetailsComponent } from './dashboard/librarian/libr-librarydetails/manage-librarydetails/manage-librarydetails.component';
+import { ManageBooksComponent } from './dashboard/librarian/libr-books/manage-books/manage-books.component';
+import { ManageLibrApplicationComponent } from './dashboard/librarian/libr-application/manage-libr-application/manage-libr-application.component';
+import { ThQuestionsComponent } from './dashboard/teacher/th-questions/th-questions.component';
+import {MatSelectModule} from '@angular/material/select'
 import { AddthApplicationComponent } from './dashboard/teacher/th-application/addth-application/addth-application.component';
 import { AddstdApplicationComponent } from './dashboard/student/std-application/addstd-application/addstd-application.component';
 @NgModule({
@@ -133,6 +138,10 @@ import { AddstdApplicationComponent } from './dashboard/student/std-application/
     ManageSalaryComponent,
     ManageNotificationComponent,
     SettingComponent,
+    ManageLibrarydetailsComponent,
+    ManageBooksComponent,
+    ManageLibrApplicationComponent,
+    ThQuestionsComponent,
     AddthApplicationComponent,
     AddstdApplicationComponent,
 
@@ -150,6 +159,7 @@ import { AddstdApplicationComponent } from './dashboard/student/std-application/
     MatTableModule,
     MatInputModule,
     MatSidenavModule,
+    MatSelectModule
     
   ],
   providers: [],
