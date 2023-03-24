@@ -20,14 +20,24 @@ mat-toolbar{
   .example-full-width {
     width: 100%;
   }
-/* table css */
-table {
-    width: 100%;
-  }
-   table th{
-    background-color: #FE8E0B;
-    color: white;
+/* head of form */
+mat-toolbar{
+  background-color:white;
+  color: #FE8E0B;
 }
 .mat-icon{
-  float: none;
+  color: #FE8E0B;
+  font-size: 35px;
+  width: 35px;
+  height: 35px;
+  float: right;
+}
+/* forms */
+.example-form-field {
+  width: 300px;
+}
+.classform{
+  margin: 5% 0% 0% 35%;
+  background-color: #FE8E0B;
+  border-radius: 10px;
 }
