@@ -45,11 +45,13 @@ import { StdLibrarydetailsComponent } from './dashboard/student/std-librarydetai
 import { StdNotificationComponent } from './dashboard/student/std-notification/std-notification.component';
 import { StudentComponent } from './dashboard/student/student.component';
 import { TeacherComponent } from './dashboard/teacher/teacher.component';
+import { AddthApplicationComponent } from './dashboard/teacher/th-application/addth-application/addth-application.component';
 import { ThApplicationComponent } from './dashboard/teacher/th-application/th-application.component';
 import { ThDashboardComponent } from './dashboard/teacher/th-dashboard/th-dashboard.component';
 import { ThExamComponent } from './dashboard/teacher/th-exam/th-exam.component';
 import { ThLibrarydetailsComponent } from './dashboard/teacher/th-librarydetails/th-librarydetails.component';
 import { ThNotificationComponent } from './dashboard/teacher/th-notification/th-notification.component';
+import { ThQuestionsComponent } from './dashboard/teacher/th-questions/th-questions.component';
 import { ThSalaryComponent } from './dashboard/teacher/th-salary/th-salary.component';
 import { GalleryComponent } from './gallery/gallery.component';
 import { HomeComponent } from './home/home.component';
@@ -91,6 +93,7 @@ const routes: Routes = [
       {path:"manage-salary",component:ManageSalaryComponent},
       {path:"manage-staff",component:ManageStaffComponent},
       {path:"manage-subject",component:ManageSubjectComponent},
+
     ]
   },
   
@@ -129,12 +132,12 @@ const routes: Routes = [
       {path:'th-notification',component:ThNotificationComponent},
       {path:'th-exam',component:ThExamComponent},
       {path:'th-librarydetails',component:ThLibrarydetailsComponent},
+      {path:'th-questions',component:ThQuestionsComponent},
+      {path:'addth-application',component:AddthApplicationComponent}
     ]
 },
   {path:'**',component:PagenotfoundComponent},
- 
 ];
-
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]

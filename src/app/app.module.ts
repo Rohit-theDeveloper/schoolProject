@@ -73,6 +73,9 @@ import { ManageNotificationComponent } from './dashboard/admin/notification/mana
 import { ManageLibrarydetailsComponent } from './dashboard/librarian/libr-librarydetails/manage-librarydetails/manage-librarydetails.component';
 import { ManageBooksComponent } from './dashboard/librarian/libr-books/manage-books/manage-books.component';
 import { ManageLibrApplicationComponent } from './dashboard/librarian/libr-application/manage-libr-application/manage-libr-application.component';
+import { ThQuestionsComponent } from './dashboard/teacher/th-questions/th-questions.component';
+import {MatSelectModule} from '@angular/material/select'
+import { AddthApplicationComponent } from './dashboard/teacher/th-application/addth-application/addth-application.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -137,6 +140,8 @@ import { ManageLibrApplicationComponent } from './dashboard/librarian/libr-appli
     ManageLibrarydetailsComponent,
     ManageBooksComponent,
     ManageLibrApplicationComponent,
+    ThQuestionsComponent,
+    AddthApplicationComponent,
   ],
   imports: [
     BrowserModule,
@@ -151,6 +156,7 @@ import { ManageLibrApplicationComponent } from './dashboard/librarian/libr-appli
     MatTableModule,
     MatInputModule,
     MatSidenavModule,
+    MatSelectModule
     
   ],
   providers: [],

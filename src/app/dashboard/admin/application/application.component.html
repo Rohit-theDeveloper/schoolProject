@@ -39,7 +39,7 @@
     <!-- action Column -->
     <ng-container matColumnDef="app_action">
         <th mat-header-cell *matHeaderCellDef> Action </th>
-        <td mat-cell *matCellDef="let element"><button mat-raised-button class="bg-primary" >view</button><button class="bg-success"  mat-raised-button>Accept</button><button class="bg-danger"  mat-raised-button>Denied</button></td>
+        <td mat-cell *matCellDef="let element"><button mat-raised-button class="bg-primary" routerLink="../manage-application">view</button><button class="bg-success"  mat-raised-button>Accept</button><button class="bg-danger"  mat-raised-button>Denied</button></td>
       </ng-container>
     
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
