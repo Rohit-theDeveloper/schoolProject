@@ -1,16 +1,15 @@
 mat-toolbar{
-  background-color:white;
-  color: #FE8E0B;
+    background-color:white;
+    color: #FE8E0B;
 }
 .mat-icon{
-  color: #FE8E0B;
-  font-size: 35px;
-  width: 35px;
-  height: 35px;
-  float: right;
+    color: #FE8E0B;
+    font-size: 35px;
+    width: 35px;
+    height: 35px;
+    float: right;
 }
 .example-full-width {
-
     width: 100%;
     height: 107%;
   }
@@ -24,6 +23,3 @@ mat-toolbar{
     font-weight: lighter;
     text-align: justify;
   }
-  /* width: 64%; */
-
-
