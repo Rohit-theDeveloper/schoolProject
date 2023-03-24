@@ -1,4 +1,5 @@
-<div>
+<div class="bg-white w-100 h-100 ">
+  <div>
     <mat-toolbar>
        <span class="p-3">Manage Student</span>
        <span class="example-spacer"></span>
@@ -7,21 +8,35 @@
 </div>
 <div class="bg-white border ">
     <form action="">
+      <mat-form-field class="example-form-field p-4">
+        <mat-label class="p-1">Student ID</mat-label>
+        <input matInput type="text" required="" >
+      </mat-form-field>
         <mat-form-field class="example-form-field p-4">
             <mat-label class="p-1">Name</mat-label>
             <input matInput type="text" required="" >
           </mat-form-field>
-          <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">Father's Name</mat-label>
-            <input matInput type="text" required="" >
+          <mat-form-field appearance="fill" class="example-form-field p-4 ">
+            <mat-label>Gender</mat-label>
+            <mat-select required="">
+              <mat-option value="primary">Male</mat-option>
+              <mat-option value="accent">Female</mat-option>
+              <mat-option value="warn">Other</mat-option>
+            </mat-select>
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">Mother's Name</mat-label>
+            <mat-label class="p-1">Parent ID</mat-label>
             <input matInput type="text" required="" >
           </mat-form-field>
-          <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">Class</mat-label>
-            <input matInput type="text" required="" >
+          <mat-form-field appearance="fill" class="example-form-field p-4 ">
+            <mat-label>Class</mat-label>
+            <mat-select required="">
+              <mat-option value="primary">Play</mat-option>
+              <mat-option value="accent">1st</mat-option>
+              <mat-option value="warn">3rd</mat-option>
+              <mat-option value="warn">4th</mat-option>
+              <mat-option value="warn">5th</mat-option>
+            </mat-select>
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Roll.no</mat-label>
@@ -30,19 +45,17 @@
         
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Mob</mat-label>
-            <input matInput type="text" required="" >
-          </mat-form-field>
-          <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">Address</mat-label>
-            <input matInput type="text" required="" >
-          </mat-form-field>
-          <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">Blood Group</mat-label>
             <input matInput type="text">
           </mat-form-field>
-          <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">DOB</mat-label>
-            <input matInput type="text" required="" >
+          <mat-form-field appearance="fill" class="example-form-field p-4 ">
+            <mat-label>Blood Group</mat-label>
+            <mat-select required="">
+              <mat-option value="primary">o+</mat-option>
+              <mat-option value="accent">B+</mat-option>
+              <mat-option value="warn">o-</mat-option>
+              <mat-option value="warn">AB-</mat-option>
+              <mat-option value="warn">AB+</mat-option>
+            </mat-select>
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Aadhar No.</mat-label>
@@ -56,16 +69,12 @@
             <mat-label class="p-1">nationality</mat-label>
             <input matInput type="text" required="" >
           </mat-form-field>
-          <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">Gender</mat-label>
-            <input matInput type="text" required="" >
-          </mat-form-field>
-
           <input class="p-4" type="file">
-
           <button  class="btn text-white btn-danger m-4">&nbsp;&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
           <button  class="btn text-white btn-primary m-4">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
           <button  class="btn text-white btn-success m-4">&nbsp;&nbsp;&nbsp;&nbsp;Submit&nbsp;&nbsp;&nbsp;&nbsp;</button>
     </form>
    
+</div>
+
 </div>

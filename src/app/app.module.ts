@@ -76,6 +76,7 @@ import { ManageLibrApplicationComponent } from './dashboard/librarian/libr-appli
 import { ThQuestionsComponent } from './dashboard/teacher/th-questions/th-questions.component';
 import {MatSelectModule} from '@angular/material/select'
 import { AddthApplicationComponent } from './dashboard/teacher/th-application/addth-application/addth-application.component';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 @NgModule({
   declarations: [
     AppComponent,
@@ -156,7 +157,8 @@ import { AddthApplicationComponent } from './dashboard/teacher/th-application/ad
     MatTableModule,
     MatInputModule,
     MatSidenavModule,
-    MatSelectModule
+    MatSelectModule,
+    MatDatepickerModule
     
   ],
   providers: [],
