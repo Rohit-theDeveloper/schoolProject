@@ -70,6 +70,7 @@ import { ManageStaffComponent } from './dashboard/admin/staff/manage-staff/manag
 import { ManageSubjectComponent } from './dashboard/admin/subject/manage-subject/manage-subject.component';
 import { ManageSalaryComponent } from './dashboard/admin/salary/manage-salary/manage-salary.component';
 import { ManageNotificationComponent } from './dashboard/admin/notification/manage-notification/manage-notification.component';
+import { AddthApplicationComponent } from './dashboard/teacher/th-application/addth-application/addth-application.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -131,6 +132,7 @@ import { ManageNotificationComponent } from './dashboard/admin/notification/mana
     ManageSalaryComponent,
     ManageNotificationComponent,
     SettingComponent,
+    AddthApplicationComponent,
   ],
   imports: [
     BrowserModule,
