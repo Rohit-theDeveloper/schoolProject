@@ -76,7 +76,7 @@
     <!-- action Column -->
     <ng-container matColumnDef="lib_action">
         <th mat-header-cell *matHeaderCellDef> Action </th>
-        <td mat-cell *matCellDef="let element"><mat-icon>delete</mat-icon> <mat-icon>edit</mat-icon><mat-icon>visibility</mat-icon> </td>
+        <td mat-cell *matCellDef="let element"><mat-icon>delete</mat-icon> <mat-icon routerLink="../manage-librarian">edit</mat-icon><mat-icon routerLink="../manage-librarian">visibility</mat-icon> </td>
       </ng-container>
     
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

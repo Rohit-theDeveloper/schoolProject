@@ -71,8 +71,8 @@ import { ManageSubjectComponent } from './dashboard/admin/subject/manage-subject
 import { ManageSalaryComponent } from './dashboard/admin/salary/manage-salary/manage-salary.component';
 import { ManageNotificationComponent } from './dashboard/admin/notification/manage-notification/manage-notification.component';
 import { ThQuestionsComponent } from './dashboard/teacher/th-questions/th-questions.component';
-import {MatSelectModule} from '@angular/material/select';
-
+import {MatSelectModule} from '@angular/material/select'
+import { AddthApplicationComponent } from './dashboard/teacher/th-application/addth-application/addth-application.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -135,7 +135,7 @@ import {MatSelectModule} from '@angular/material/select';
     ManageNotificationComponent,
     SettingComponent,
     ThQuestionsComponent,
-    
+    AddthApplicationComponent,
   ],
   imports: [
     BrowserModule,
