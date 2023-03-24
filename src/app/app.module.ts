@@ -74,9 +74,11 @@ import { ManageLibrarydetailsComponent } from './dashboard/librarian/libr-librar
 import { ManageBooksComponent } from './dashboard/librarian/libr-books/manage-books/manage-books.component';
 import { ManageLibrApplicationComponent } from './dashboard/librarian/libr-application/manage-libr-application/manage-libr-application.component';
 import { ThQuestionsComponent } from './dashboard/teacher/th-questions/th-questions.component';
-import {MatSelectModule} from '@angular/material/select'
+import {MatSelectModule} from '@angular/material/select';
 import { AddthApplicationComponent } from './dashboard/teacher/th-application/addth-application/addth-application.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
+import { AddstdApplicationComponent } from './dashboard/student/std-application/addstd-application/addstd-application.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -143,6 +145,8 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     ManageLibrApplicationComponent,
     ThQuestionsComponent,
     AddthApplicationComponent,
+    AddstdApplicationComponent,
+
   ],
   imports: [
     BrowserModule,

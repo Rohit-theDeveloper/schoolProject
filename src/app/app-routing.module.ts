@@ -37,6 +37,7 @@ import { ManageLibrarydetailsComponent } from './dashboard/librarian/libr-librar
 import { LibrNotificationComponent } from './dashboard/librarian/libr-notification/libr-notification.component';
 import { LibrSalarydetailsComponent } from './dashboard/librarian/libr-salarydetails/libr-salarydetails.component';
 import { LibrarianComponent } from './dashboard/librarian/librarian.component';
+import { AddstdApplicationComponent } from './dashboard/student/std-application/addstd-application/addstd-application.component';
 import { StdApplicationComponent } from './dashboard/student/std-application/std-application.component';
 import { StdDashboardComponent } from './dashboard/student/std-dashboard/std-dashboard.component';
 import { StdExamComponent } from './dashboard/student/std-exam/std-exam.component';
@@ -121,6 +122,7 @@ const routes: Routes = [
       {path:'std-application',component:StdApplicationComponent},
       {path:'std-notification',component:StdNotificationComponent},
       {path:'std-exam',component:StdExamComponent},
+      {path:'addstd-application',component:AddstdApplicationComponent},
     ]
 },
   {path:'teacher',component:TeacherComponent,
