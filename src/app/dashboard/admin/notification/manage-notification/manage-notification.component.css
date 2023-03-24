@@ -1,28 +1,15 @@
-<<<<<<< HEAD
-=======
+
 mat-toolbar{
-    background-color:white;
-    color: #FE8E0B;
+  background-color:white;
+  color: #FE8E0B;
 }
 .mat-icon{
-    color: #FE8E0B;
-    font-size: 35px;
-    width: 35px;
-    height: 35px;
-    float: right;
+  color: #FE8E0B;
+  font-size: 35px;
+  width: 35px;
+  height: 35px;
+  float: right;
 }
 .example-full-width {
-    width: 100%;
-    height: 107%;
-  }
-  .color{
-    background-color:rgb(153, 146, 146);
-    font-size: 18px;
-    line-height: 25px;
-    /* word-spacing: 3px; */
-    padding: 25PX;
-    box-sizing: border-box;
-    font-weight: lighter;
-    text-align: justify;
-  }
->>>>>>> 8914323a04d10c1b211f2b62e542cd1b9371ee9c
+  width: 64%;
+}
