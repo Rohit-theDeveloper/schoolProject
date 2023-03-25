@@ -7,15 +7,19 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;background-c
     background-color:#FE8E0B;
     
 }
-/* .cdk-overlay-pane {
+.cdk-overlay-pane {
     margin-top:18px;
-} */
+}
 .example-spacer {
     flex: 1 1 auto;
   }
 .mat-drawer-content {
     background-color: #a95d07;
   }
+  .mat-mdc-menu-item .mdc-list-item__primary-text {
+    white-space: normal;
+    color: white;
+}
   mat-toolbar img{
     width: 40px;
     height: 45px;
@@ -94,3 +98,5 @@ mat-icon{
     background-color: #d06901;
     cursor: pointer;
   }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

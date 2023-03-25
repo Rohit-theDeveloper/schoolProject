@@ -28,12 +28,16 @@ import { StaffComponent } from './dashboard/admin/staff/staff.component';
 import { ManageSubjectComponent } from './dashboard/admin/subject/manage-subject/manage-subject.component';
 import { SubjectComponent } from './dashboard/admin/subject/subject.component';
 import { LibrApplicationComponent } from './dashboard/librarian/libr-application/libr-application.component';
+import { ManageLibrApplicationComponent } from './dashboard/librarian/libr-application/manage-libr-application/manage-libr-application.component';
 import { LibrBooksComponent } from './dashboard/librarian/libr-books/libr-books.component';
+import { ManageBooksComponent } from './dashboard/librarian/libr-books/manage-books/manage-books.component';
 import { LibrDashboardComponent } from './dashboard/librarian/libr-dashboard/libr-dashboard.component';
 import { LibrLibrarydetailsComponent } from './dashboard/librarian/libr-librarydetails/libr-librarydetails.component';
+import { ManageLibrarydetailsComponent } from './dashboard/librarian/libr-librarydetails/manage-librarydetails/manage-librarydetails.component';
 import { LibrNotificationComponent } from './dashboard/librarian/libr-notification/libr-notification.component';
 import { LibrSalarydetailsComponent } from './dashboard/librarian/libr-salarydetails/libr-salarydetails.component';
 import { LibrarianComponent } from './dashboard/librarian/librarian.component';
+import { AddstdApplicationComponent } from './dashboard/student/std-application/addstd-application/addstd-application.component';
 import { StdApplicationComponent } from './dashboard/student/std-application/std-application.component';
 import { StdDashboardComponent } from './dashboard/student/std-dashboard/std-dashboard.component';
 import { StdExamComponent } from './dashboard/student/std-exam/std-exam.component';
@@ -103,6 +107,9 @@ const routes: Routes = [
       {path:'libr-books',component:LibrBooksComponent},
       {path:'libr-application',component:LibrApplicationComponent},
       {path:'libr-notification',component:LibrNotificationComponent},
+      {path:'manage-libr-application',component:ManageLibrApplicationComponent},
+      {path:'manage-books',component:ManageBooksComponent},
+      {path:'manage-librarydetails',component:ManageLibrarydetailsComponent},
     ]
     
 },
@@ -115,6 +122,7 @@ const routes: Routes = [
       {path:'std-application',component:StdApplicationComponent},
       {path:'std-notification',component:StdNotificationComponent},
       {path:'std-exam',component:StdExamComponent},
+      {path:'addstd-application',component:AddstdApplicationComponent},
     ]
 },
   {path:'teacher',component:TeacherComponent,
