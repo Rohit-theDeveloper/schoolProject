@@ -3,13 +3,14 @@
     <mat-toolbar >
       <span>Add Questions</span>
       <span class="example-spacer"></span>
+      <mat-icon routerLink="../th-dashboard">cancel_circle</mat-icon>
     </mat-toolbar>
   </div>
 
-  <div class=" border w-25 text-center pt-2 classform">
-    <form action="">
-      <span class="h1 text-white ">Details</span>
-      <mat-form-field appearance="fill" class="m-2">
+    <form action="" class="m-3">
+      
+      <!-- for class -->
+      <mat-form-field appearance="fill" class="m-3">
         <mat-label>class</mat-label>
         <mat-select>
           <mat-option *ngFor="let classs of classes" [value]="classs.value">
@@ -17,7 +18,8 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-      <mat-form-field appearance="fill" class="m-2">
+      <!-- for subject -->
+      <mat-form-field appearance="fill" class="m-3 ">
         <mat-label>Subject</mat-label>
         <mat-select>
           <mat-option *ngFor="let subject of subjects" [value]="subject.value">
@@ -25,15 +27,16 @@
           </mat-option>
         </mat-select>
       </mat-form-field>
-      <mat-form-field appearance="fill" class="m-2">
-        <mat-label>No.of Questions</mat-label>
-        <mat-select>
-          <mat-option *ngFor="let question of questions" [value]="question.value">
-            {{question.viewValue}}
-          </mat-option>
-        </mat-select>
+      <!-- for number of question -->
+      <mat-form-field class="example-form-field p-3 ">
+        <mat-label class="p-1">No.of Questions</mat-label>
+        <input matInput type="text" required="" >
       </mat-form-field>
-      <button routerLink="../th-questions"class="btn btn-success w-50  p-2 mb-5">Add</button>
+      <!-- for exam type -->
+      <mat-form-field class="example-form-field p-3 ">
+        <mat-label class="p-1">Exam Type</mat-label>
+        <input matInput type="text" required="" >
+      </mat-form-field><br>
+      <button routerLink="../th-questions" mat-raised-button color="primary" class="p-3  m-3">Add</button>
     </form>
-  </div>
 </div>

@@ -9,6 +9,9 @@ mat-toolbar{
     height: 35px;
     float: right;
 }
+mat-icon:hover{
+  cursor: pointer;
+}
 .example-form {
     min-width: 150px;
     max-width: 275px;
@@ -16,28 +19,13 @@ mat-toolbar{
     position: relative;
     top: 10px;
   }
-  
   .example-full-width {
     width: 100%;
   }
-/* head of form */
-mat-toolbar{
-  background-color:white;
-  color: #FE8E0B;
-}
-.mat-icon{
-  color: #FE8E0B;
-  font-size: 35px;
-  width: 35px;
-  height: 35px;
-  float: right;
-}
 /* forms */
 .example-form-field {
   width: 300px;
 }
-.classform{
-  margin: 5% 0% 0% 35%;
-  background-color: #FE8E0B;
-  border-radius: 10px;
+mat-form-field{
+  width: 255px;
 }
