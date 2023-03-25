@@ -1,21 +1,11 @@
 <div id="question-box" >
 
-    <mat-toolbar>
+    <mat-toolbar class="border-bottom">
        <span>Add Questions</span>
        <span class="example-spacer"></span>
-       <!-- <form class="example-form">
-        <mat-form-field class="example-half-width">
-          <mat-label>Search</mat-label>
-          <span matPrefix></span>
-          <input type="tel" matInput placeholder="search">
-          <mat-icon matSuffix>search</mat-icon>
-        </mat-form-field>
-      </form> -->
-      <mat-icon routerLink="../th-questions">cancel_circle</mat-icon>
-      </mat-toolbar>
-
-
-
+      <mat-icon routerLink="../th-exam">cancel_circle</mat-icon>
+    </mat-toolbar>
+    <div id="question-no" ><h2>Ques.No:1</h2></div>
     <form class="example-form" class="m-4 ">
         <mat-form-field class="example-full-width">
           <mat-label></mat-label>
@@ -40,8 +30,6 @@
             <input matInput type="text" required="" >
           </mat-form-field>
       </form>   
-      
-    
-    
-    
+      <button mat-raised-button color="primary" class="p-4 m-5">Primary</button>
+      <button mat-raised-button class="bg-success p-4">Primary</button>
 </div>

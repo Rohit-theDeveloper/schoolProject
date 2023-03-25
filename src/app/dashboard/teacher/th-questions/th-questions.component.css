@@ -50,4 +50,14 @@ table {
   .options{
     margin-left: 26%;
   }
-  
+  /* for question number */
+  #question-no{
+    width: 150px;
+    height: 50px;
+    background-color: #FE8E0B;
+    color: white;
+    border: 2px solid black;
+    border-radius: 10px;
+    margin:10px  24px;
+    padding: 5px;
+  }

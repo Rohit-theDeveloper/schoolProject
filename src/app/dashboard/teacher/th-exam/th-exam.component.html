@@ -1,52 +1,39 @@
-<div>
-    <mat-toolbar>
-       <span>Exam Details</span>
-       <span class="example-spacer"></span>
-       <form class="example-form">
-        <mat-form-field class="example-half-width">
-          <mat-label>Search</mat-label>
-          <span matPrefix></span>
-          <input type="tel" matInput placeholder="search">
-          <mat-icon matSuffix>search</mat-icon>
-        </mat-form-field>
-      </form>
-      <mat-icon routerLink="../th-questions">add_circle</mat-icon>
-      </mat-toolbar>
+<div id="mainsection" class="w-100 h-100 bg-white">
+  <div class="border-bottom">
+    <mat-toolbar >
+      <span>Add Questions</span>
+      <span class="example-spacer"></span>
+    </mat-toolbar>
   </div>
-  <mat-form-field appearance="fill" class="m-4">
-    <mat-label>Class</mat-label>
-    <mat-select>
-      <mat-option *ngFor="let food of foods" [value]="food.value">
-        {{food.viewValue}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>
-  <div>
-    <mat-toolbar>
-       <span class="p-3">Manage Class</span>
-       <span class="example-spacer"></span>
-      <mat-icon routerLink="../class" class="pb-4">cancel</mat-icon>
-      </mat-toolbar>
-</div>
-<div class=" border w-25 text-center pt-2 classform">
+
+  <div class=" border w-25 text-center pt-2 classform">
     <form action="">
-        <span class="h1 text-white ">Class</span>
-        <mat-form-field class="example-form-field p-4">
-            <mat-label class="p-1">Class</mat-label>
-            <input matInput type="text" required="" >
-          </mat-form-field>
-          <mat-form-field class="example-form-field p-4">
-            <mat-label class="p-1">Fee</mat-label>
-            <input matInput type="text" required="" >
-          </mat-form-field>
-          <button  class="btn btn-success w-75 p-3 mb-5">Add</button>
-
-
+      <span class="h1 text-white ">Details</span>
+      <mat-form-field appearance="fill" class="m-2">
+        <mat-label>class</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let classs of classes" [value]="classs.value">
+            {{classs.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="m-2">
+        <mat-label>Subject</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let subject of subjects" [value]="subject.value">
+            {{subject.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="m-2">
+        <mat-label>No.of Questions</mat-label>
+        <mat-select>
+          <mat-option *ngFor="let question of questions" [value]="question.value">
+            {{question.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button routerLink="../th-questions"class="btn btn-success w-50  p-2 mb-5">Add</button>
     </form>
+  </div>
 </div>
-
-  
-  
-    
-    
-
