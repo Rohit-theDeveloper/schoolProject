@@ -1,3 +1,4 @@
+
 mat-toolbar{
   background-color:white;
   color: #FE8E0B;
@@ -20,7 +21,4 @@ mat-toolbar{
     box-sizing: border-box;
     font-weight: lighter;
     text-align: justify; 
-}
-  
-
-
+} 

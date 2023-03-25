@@ -1,6 +1,9 @@
 import { Component } from '@angular/core';
-
-interface Food {
+interface classs {
+  value: string;
+  viewValue: string;
+}
+interface subject {
   value: string;
   viewValue: string;
 }
@@ -10,10 +13,22 @@ interface Food {
   styleUrls: ['./th-exam.component.css']
 })
 export class ThExamComponent {
-  foods: Food[] = [
-    {value: 'steak-0', viewValue: 'Steak'},
-    {value: 'pizza-1', viewValue: 'Pizza'},
-    {value: 'tacos-2', viewValue: 'Tacos'},
+  classes: classs[] = [
+    {value: 'play-0', viewValue: 'Play'},
+    {value: 'Nurs-1', viewValue: 'Nurs'},
+    {value: 'stdI-2', viewValue: 'stdI'},
+    {value: 'stdII-3', viewValue: 'stdII'},
+    {value: 'stdIII-4', viewValue: 'stdIII'},
+    {value: 'stdIV-4', viewValue: 'stdIV'},
   ];
+  subjects: subject[] = [
+    {value: 'Math-0', viewValue: 'Math'},
+    {value: 'Hindi-1', viewValue: 'Hindi'},
+    {value: 'English-2', viewValue: 'English'},
+    {value: 'EVS-3', viewValue: 'EVS'},
+    {value: 'GK-4', viewValue: 'GK'},
+    {value: 'Computer-5', viewValue: 'Computer'},
+  ];
+  
 }
 
