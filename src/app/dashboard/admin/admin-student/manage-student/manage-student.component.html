@@ -24,10 +24,18 @@
               <mat-option value="warn">Other</mat-option>
             </mat-select>
           </mat-form-field>
-          <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">Parent ID</mat-label>
-            <input matInput type="text" required="" >
+          <mat-form-field appearance="fill" class="example-form-field p-4 ">
+            <mat-label>Parent ID</mat-label>
+            <mat-select required="">
+              <mat-option value="primary">P1234</mat-option>
+              <mat-option value="accent">p1213</mat-option>
+              <mat-option value="warn">P3556</mat-option>
+            </mat-select>
           </mat-form-field>
+          <mat-form-field class="example-form-field p-4 ">
+            <mat-label class="p-1">DOB</mat-label>
+            <input matInput type="date" required="" >
+          </mat-form-field>        
           <mat-form-field appearance="fill" class="example-form-field p-4 ">
             <mat-label>Class</mat-label>
             <mat-select required="">
@@ -42,7 +50,6 @@
             <mat-label class="p-1">Roll.no</mat-label>
             <input matInput type="text" required="" >
           </mat-form-field>
-        
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Mob</mat-label>
             <input matInput type="text">

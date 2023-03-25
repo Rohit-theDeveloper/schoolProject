@@ -8,8 +8,20 @@
 <div class="bg-white border ">
     <form action="">
       <mat-form-field class="example-form-field p-4">
+        <mat-label class="p-1">Teacher ID</mat-label>
+        <input matInput type="text" required="" >
+      </mat-form-field>
+      <mat-form-field class="example-form-field p-4">
         <mat-label class="p-1">Name</mat-label>
         <input matInput type="text" required="" >
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="example-form-field p-4 ">
+        <mat-label>Gender</mat-label>
+        <mat-select required="">
+          <mat-option value="primary">Male</mat-option>
+          <mat-option value="accent">Female</mat-option>
+          <mat-option value="warn">Others</mat-option>
+        </mat-select>
       </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Father's Name</mat-label>
@@ -20,12 +32,18 @@
             <input matInput type="text" required="" >
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">Mob</mat-label>
+            <mat-label class="p-1">Mobile No</mat-label>
             <input matInput type="text" required="" >
           </mat-form-field>
-          <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">Class</mat-label>
-            <input matInput type="text" required="" >
+          <mat-form-field appearance="fill" class="example-form-field p-4 ">
+            <mat-label>Class</mat-label>
+            <mat-select required="">
+              <mat-option value="primary">Play</mat-option>
+              <mat-option value="accent">1st</mat-option>
+              <mat-option value="warn">3rd</mat-option>
+              <mat-option value="warn">4th</mat-option>
+              <mat-option value="warn">5th</mat-option>
+            </mat-select>
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Aadhar No.</mat-label>
@@ -33,27 +51,34 @@
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">DOB</mat-label>
-            <input matInput type="text" required="" >
+            <input matInput type="date" required="" >
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Email</mat-label>
             <input matInput type="text">
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">Gender</mat-label>
-            <input matInput type="text" required="" >
-          </mat-form-field>
-          <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Join Date</mat-label>
-            <input matInput type="text" required="" >
+            <input matInput type="date" required="" >
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Salary</mat-label>
-            <input matInput type="text" required="" >
+            <input matInput type="number" required="" >
           </mat-form-field>
-          <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">Subject</mat-label>
-            <input matInput type="text" required="" >
+          <mat-form-field appearance="fill" class="example-form-field p-4 ">
+            <mat-label>Subject</mat-label>
+            <mat-select required="">
+              <mat-option value="primary">Maths</mat-option>
+              <mat-option value="accent">English</mat-option>
+              <mat-option value="warn">Hindi</mat-option>
+              <mat-option value="warn">Science</mat-option>
+              <mat-option value="warn">Social Science</mat-option>
+              <mat-option value="warn">Grammer</mat-option>
+              <mat-option value="warn">Computers</mat-option>
+              <mat-option value="warn">G.K.</mat-option>
+
+
+            </mat-select>
           </mat-form-field>
           <input class="p-4" type="file">
           <button  class="btn text-white btn-danger m-4">&nbsp;&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>

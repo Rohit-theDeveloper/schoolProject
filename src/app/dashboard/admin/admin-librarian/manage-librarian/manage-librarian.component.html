@@ -1,14 +1,30 @@
 <div>
     <mat-toolbar>
-       <span class="p-3">Manage librariyan</span>
+       <span class="p-3">Manage librarian</span>
        <span class="example-spacer"></span>
       <mat-icon routerLink="../admin-librarian" class="pb-4">cancel</mat-icon>
       </mat-toolbar>
 </div>
 <div class="bg-white border ">
     <form action="">
+      <mat-form-field class="example-form-field p-4">
+        <mat-label class="p-1">Librarian ID</mat-label>
+        <input matInput type="text" required="" disabled="" value="libr1234" >
+      </mat-form-field>
         <mat-form-field class="example-form-field p-4">
             <mat-label class="p-1">Name</mat-label>
+            <input matInput type="text" required="" >
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="example-form-field p-4 ">
+            <mat-label>Gender</mat-label>
+            <mat-select required="">
+              <mat-option value="primary">Male</mat-option>
+              <mat-option value="accent">Female</mat-option>
+              <mat-option value="warn">Other</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="example-form-field p-4 ">
+            <mat-label class="p-1">Father's Name</mat-label>
             <input matInput type="text" required="" >
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
@@ -16,7 +32,7 @@
             <input matInput type="text" required="" >
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">Mob</mat-label>
+            <mat-label class="p-1">Mobile No.</mat-label>
             <input matInput type="text" required="" >
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
@@ -29,19 +45,15 @@
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">DOB</mat-label>
-            <input matInput type="text" required="" >
+            <input matInput type="date" required="" >
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Email</mat-label>
-            <input matInput type="text">
-          </mat-form-field>
-          <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">Gender</mat-label>
-            <input matInput type="text" required="" >
+            <input matInput type="text" required="">
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Join Date</mat-label>
-            <input matInput type="text" required="" >
+            <input matInput type="date" required="" >
           </mat-form-field>
           <input class="p-4" type="file">
           <button  class="btn text-white btn-danger m-4">&nbsp;&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
