@@ -6,30 +6,27 @@ import { Component } from '@angular/core';
   styleUrls: ['./libr-books.component.css']
 })
 export class LibrBooksComponent {
-  displayedColumns: string[] = ['position', 's_id', 'name', 'f_name', 'm_name', 'class', 'address', 'mobile','dob', 'email', 'action'];
+  displayedColumns: string[] = ['book_position', 'book_id', 'book_name', 'book_author', 'book_publi', 'book_edition', 'book_price','book_action'];
   dataSource = ELEMENT_DATA;
 
 }
 
 export interface PeriodicElement {
-  name: string;
-  position: number;
-  s_id: number;
-  class: string;
-  f_name:string;
-  m_name:string;
-  address:string;
-  mobile:number;
-  email:string;
-  dob:string;
-  action:string;
+  book_name: string;
+  book_position: number;
+  book_id: number;
+  book_author: string;
+  book_publi:string;
+  book_edition:string;
+  book_price:number;
+  book_action:string;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
  
-  {position: 1, name: 'Rohit',  s_id:101, class:"four",  dob:'23/march/2023', f_name:'adarsh',m_name:'annu' ,address:"hjp", mobile:12345, email:"rks@gmail.com", action:"act"},
-  {position: 2, name: 'Adrash', s_id:102, class:"four",  dob:"23/march/2023", f_name:'adarsh',m_name:'annu' ,address:"hjp", mobile:12345, email:"rks@gmail.com", action:"act"},
-  {position: 3, name: 'Raj',    s_id:103, class:"four",  dob:"23/march/2023", f_name:'adarsh',m_name:'annu' ,address:"hjp", mobile:12345, email:"rks@gmail.com", action:"act"},
-  {position: 4, name: 'Alok',   s_id:104, class:"four",  dob:"23/march/2023", f_name:'adarsh',m_name:'annu' ,address:"hjp", mobile:12345, email:"rks@gmail.com", action:"act"},
-  {position: 5, name: 'Rahul',  s_id:105, class:"four",  dob:"23/march/2023", f_name:'adarsh',m_name:'annu' ,address:"hjp", mobile:12345, email:"rks@gmail.com", action:"act"},
-]
+  {book_position: 1, book_name: 'science',  book_id:101, book_author:"S.P singh",  book_publi:'Oxford', book_price:500, book_edition:'10th edition', book_action:"act"},
+  {book_position: 2, book_name: 'math', book_id:102, book_author:"M.D chaudhary",  book_publi:"Oxford", book_price:500, book_edition:'10th edition', book_action:"act"},
+  {book_position: 3, book_name: 'English',    book_id:103, book_author:"A singh",  book_publi:"Oxford", book_price:500, book_edition:'10th edition', book_action:"act"},
+  {book_position: 4, book_name: 'S.S.T',   book_id:104, book_author:"A singh",  book_publi:"Oxford", book_price:500, book_edition:'10th edition', book_action:"act"},
+  {book_position: 5, book_name: 'English Grammar',  book_id:105, book_author:"A singh",  book_publi:"Oxford", book_price:500, book_edition:'10th edition', book_action:"act"},
+];

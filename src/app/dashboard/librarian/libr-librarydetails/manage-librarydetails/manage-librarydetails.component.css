@@ -14,3 +14,8 @@ mat-toolbar{
 .example-form-field {
     width: 300px;
   }
+  .classform{
+    margin: 5% 0% 0% 35%;
+    background-color: #FE8E0B;
+    border-radius: 10px;
+  }
