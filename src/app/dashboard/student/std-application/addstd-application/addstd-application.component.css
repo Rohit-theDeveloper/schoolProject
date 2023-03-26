@@ -1,4 +1,4 @@
- mat-toolbar{
+mat-toolbar{
     background-color:white;
     color: #FE8E0B;
 }
@@ -10,5 +10,5 @@
     float: right;
 }
 .example-full-width {
-    width: 800px; 
+    width: 64%;
   }

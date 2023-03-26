@@ -37,6 +37,7 @@ import { ManageLibrarydetailsComponent } from './dashboard/librarian/libr-librar
 import { LibrNotificationComponent } from './dashboard/librarian/libr-notification/libr-notification.component';
 import { LibrSalarydetailsComponent } from './dashboard/librarian/libr-salarydetails/libr-salarydetails.component';
 import { LibrarianComponent } from './dashboard/librarian/librarian.component';
+import { AddstdApplicationComponent } from './dashboard/student/std-application/addstd-application/addstd-application.component';
 import { StdApplicationComponent } from './dashboard/student/std-application/std-application.component';
 import { StdDashboardComponent } from './dashboard/student/std-dashboard/std-dashboard.component';
 import { StdExamComponent } from './dashboard/student/std-exam/std-exam.component';
@@ -50,6 +51,7 @@ import { ThApplicationComponent } from './dashboard/teacher/th-application/th-ap
 import { ThDashboardComponent } from './dashboard/teacher/th-dashboard/th-dashboard.component';
 import { ThExamComponent } from './dashboard/teacher/th-exam/th-exam.component';
 import { ThLibrarydetailsComponent } from './dashboard/teacher/th-librarydetails/th-librarydetails.component';
+import { ThLogoutComponent } from './dashboard/teacher/th-logout/th-logout.component';
 import { ThNotificationComponent } from './dashboard/teacher/th-notification/th-notification.component';
 import { ThQuestionsComponent } from './dashboard/teacher/th-questions/th-questions.component';
 import { ThSalaryComponent } from './dashboard/teacher/th-salary/th-salary.component';
@@ -121,6 +123,7 @@ const routes: Routes = [
       {path:'std-application',component:StdApplicationComponent},
       {path:'std-notification',component:StdNotificationComponent},
       {path:'std-exam',component:StdExamComponent},
+      {path:'addstd-application',component:AddstdApplicationComponent},
     ]
 },
   {path:'teacher',component:TeacherComponent,
@@ -133,7 +136,8 @@ const routes: Routes = [
       {path:'th-exam',component:ThExamComponent},
       {path:'th-librarydetails',component:ThLibrarydetailsComponent},
       {path:'th-questions',component:ThQuestionsComponent},
-      {path:'addth-application',component:AddthApplicationComponent}
+      {path:'addth-application',component:AddthApplicationComponent},
+      {path:'th-logout',component:ThLogoutComponent}
     ]
 },
   {path:'**',component:PagenotfoundComponent},
