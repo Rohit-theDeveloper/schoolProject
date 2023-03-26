@@ -78,6 +78,9 @@ import {MatSelectModule} from '@angular/material/select';
 import { AddthApplicationComponent } from './dashboard/teacher/th-application/addth-application/addth-application.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { AddstdApplicationComponent } from './dashboard/student/std-application/addstd-application/addstd-application.component';
+import { ThLogoutComponent } from './dashboard/teacher/th-logout/th-logout.component';
+import {MatDialogModule} from '@angular/material/dialog';
+
 
 @NgModule({
   declarations: [
@@ -146,6 +149,7 @@ import { AddstdApplicationComponent } from './dashboard/student/std-application/
     ThQuestionsComponent,
     AddthApplicationComponent,
     AddstdApplicationComponent,
+    ThLogoutComponent,
 
   ],
   imports: [
@@ -162,7 +166,8 @@ import { AddstdApplicationComponent } from './dashboard/student/std-application/
     MatInputModule,
     MatSidenavModule,
     MatSelectModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatDialogModule
     
   ],
   providers: [],
