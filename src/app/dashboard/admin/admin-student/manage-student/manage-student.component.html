@@ -1,87 +1,87 @@
 <div class="bg-white w-100 h-100 ">
   <div>
     <mat-toolbar>
-       <span class="p-3">Manage Student</span>
-       <span class="example-spacer"></span>
+      <span class="p-3">{{actionheader}}</span>
+      <span class="example-spacer"></span>
       <mat-icon routerLink="../admin-student" class="pb-4">cancel</mat-icon>
-      </mat-toolbar>
-</div>
-<div class="bg-white border ">
-    <form action="">
+    </mat-toolbar>
+  </div>
+  <div class="bg-white border ">
+    <form [formGroup]="studentform" >
       <mat-form-field class="example-form-field p-4">
         <mat-label class="p-1">Student ID</mat-label>
-        <input matInput type="text" required="" >
+        <input matInput type="text" required="" formControlName="std_id">
       </mat-form-field>
-        <mat-form-field class="example-form-field p-4">
-            <mat-label class="p-1">Name</mat-label>
-            <input matInput type="text" required="" >
-          </mat-form-field>
-          <mat-form-field appearance="fill" class="example-form-field p-4 ">
-            <mat-label>Gender</mat-label>
-            <mat-select required="">
-              <mat-option value="primary">Male</mat-option>
-              <mat-option value="accent">Female</mat-option>
-              <mat-option value="warn">Other</mat-option>
-            </mat-select>
-          </mat-form-field>
-          <mat-form-field appearance="fill" class="example-form-field p-4 ">
-            <mat-label>Parent ID</mat-label>
-            <mat-select required="">
-              <mat-option value="primary">P1234</mat-option>
-              <mat-option value="accent">p1213</mat-option>
-              <mat-option value="warn">P3556</mat-option>
-            </mat-select>
-          </mat-form-field>
-          <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">DOB</mat-label>
-            <input matInput type="date" required="" >
-          </mat-form-field>        
-          <mat-form-field appearance="fill" class="example-form-field p-4 ">
-            <mat-label>Class</mat-label>
-            <mat-select required="">
-              <mat-option value="primary">Play</mat-option>
-              <mat-option value="accent">1st</mat-option>
-              <mat-option value="warn">3rd</mat-option>
-              <mat-option value="warn">4th</mat-option>
-              <mat-option value="warn">5th</mat-option>
-            </mat-select>
-          </mat-form-field>
-          <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">Roll.no</mat-label>
-            <input matInput type="text" required="" >
-          </mat-form-field>
-          <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">Mob</mat-label>
-            <input matInput type="text">
-          </mat-form-field>
-          <mat-form-field appearance="fill" class="example-form-field p-4 ">
-            <mat-label>Blood Group</mat-label>
-            <mat-select required="">
-              <mat-option value="primary">o+</mat-option>
-              <mat-option value="accent">B+</mat-option>
-              <mat-option value="warn">o-</mat-option>
-              <mat-option value="warn">AB-</mat-option>
-              <mat-option value="warn">AB+</mat-option>
-            </mat-select>
-          </mat-form-field>
-          <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">Aadhar No.</mat-label>
-            <input matInput type="text" required="" >
-          </mat-form-field>
-          <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">Identification Mark</mat-label>
-            <input matInput type="text" required="" >
-          </mat-form-field>
-          <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">nationality</mat-label>
-            <input matInput type="text" required="" >
-          </mat-form-field>
-          <input class="p-4" type="file">
-          <button  class="btn text-white btn-danger m-4">&nbsp;&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
-          <button  class="btn text-white btn-primary m-4">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
-          <button  class="btn text-white btn-success m-4">&nbsp;&nbsp;&nbsp;&nbsp;Submit&nbsp;&nbsp;&nbsp;&nbsp;</button>
+      <mat-form-field class="example-form-field p-4">
+        <mat-label class="p-1">Name</mat-label>
+        <input matInput type="text" required="" formControlName="std_name">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="example-form-field p-4 ">
+        <mat-label>Gender</mat-label>
+        <mat-select required="" formControlName="std_gen">
+          <mat-option value="primary">Male</mat-option>
+          <mat-option value="accent">Female</mat-option>
+          <mat-option value="warn">Other</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="example-form-field p-4 ">
+        <mat-label>Parent ID</mat-label>
+        <mat-select required="">
+          <mat-option value="primary">P1234</mat-option>
+          <mat-option value="accent">p1213</mat-option>
+          <mat-option value="warn">P3556</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="example-form-field p-4 ">
+        <mat-label class="p-1">DOB</mat-label>
+        <input matInput type="date" required="" formControlName="std_dob">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="example-form-field p-4 ">
+        <mat-label>Class</mat-label>
+        <mat-select required=""formControlName="std_class">
+          <mat-option value="primary">Play</mat-option>
+          <mat-option value="accent">1st</mat-option>
+          <mat-option value="warn">3rd</mat-option>
+          <mat-option value="warn">4th</mat-option>
+          <mat-option value="warn">5th</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="example-form-field p-4 ">
+        <mat-label class="p-1">Roll.no</mat-label>
+        <input matInput type="text" required="" formControlName="std_roll">
+      </mat-form-field>
+      <mat-form-field class="example-form-field p-4 ">
+        <mat-label class="p-1">Mob</mat-label>
+        <input matInput type="text" formControlName="std_mob">
+      </mat-form-field>
+      <mat-form-field appearance="fill" class="example-form-field p-4 ">
+        <mat-label>Blood Group</mat-label>
+        <mat-select required="" formControlName="std_bg">
+          <mat-option value="primary">o+</mat-option>
+          <mat-option value="accent">B+</mat-option>
+          <mat-option value="warn">o-</mat-option>
+          <mat-option value="warn">AB-</mat-option>
+          <mat-option value="warn">AB+</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field class="example-form-field p-4 ">
+        <mat-label class="p-1">Aadhar No.</mat-label>
+        <input matInput type="text" required="" formControlName="std_adhar">
+      </mat-form-field>
+      <mat-form-field class="example-form-field p-4 ">
+        <mat-label class="p-1">Identification Mark</mat-label>
+        <input matInput type="text" required="" formControlName="std_identi">
+      </mat-form-field>
+      <mat-form-field class="example-form-field p-4 ">
+        <mat-label class="p-1">nationality</mat-label>
+        <input matInput type="text" required="" formControlName="std_nation">
+      </mat-form-field>
+      <input class="p-4" type="file">
+      <button class="btn text-white btn-danger m-4"> &nbsp; &nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
+      <button class="btn text-white btn-primary m-4" (click)="reset_form()">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
+      <button class="btn text-white btn-success m-4">&nbsp;&nbsp;&nbsp;&nbsp;Submit&nbsp;&nbsp;&nbsp;&nbsp;</button>
     </form>
-   
-</div>
+
+  </div>
 
 </div>
