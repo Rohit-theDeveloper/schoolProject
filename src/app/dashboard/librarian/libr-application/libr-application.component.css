@@ -27,4 +27,21 @@ table {
    table th{
     background-color: #FE8E0B;
     color: white;
+    text-align: center;
+}
+table td{
+  text-align: center;
+}
+table .mat-icon{
+  float: none;
+  color: #7d7575;
+  font-size: 30px;
+ }
+ table tr:hover {
+  background-color: #FE8E0B;
+  transition: all 0.5s;
+}
+.mdc-data-table__cell,
+.mdc-data-table__header-cell {
+  padding: 20px;
 }

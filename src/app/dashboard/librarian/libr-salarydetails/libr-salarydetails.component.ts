@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component } from '@angular/core';
 
 @Component({
   selector: 'app-libr-salarydetails',
@@ -6,28 +6,33 @@ import { Component } from '@angular/core';
   styleUrls: ['./libr-salarydetails.component.css']
 })
 export class LibrSalarydetailsComponent {
-  displayedColumns: string[] = ['position', 's_id', 'name', 'f_name', 'm_name', 'class', 'address', 'mobile','dob', 'email'];
+  displayedColumns: string[] = ['lib_position', 'lib_id', 'lib_name', 'lib_joindate','lib_email','lib_address','lib_mobile','lib_salary','lib_adhar', 'lib_action'];
   dataSource = ELEMENT_DATA;
+  
+  // @ViewChild(MatPaginator) paginator: MatPaginator;
 
+  // ngAfterViewInit() {
+  //   this.dataSource.paginator = this.paginator;
+  // }
 }
 export interface PeriodicElement {
-  name: string;
-  position: number;
-  s_id: number;
-  class: string;
-  f_name:string;
-  m_name:string;
-  address:string;
-  mobile:number;
-  email:string;
-  dob:string;
+  lib_name: string;
+  lib_position: number;
+  lib_id: number;
+  lib_salary:number;
+  lib_joindate: string;
+  lib_action:string;
+  lib_email:string;
+  lib_address:string;
+  lib_mobile:number;
+  lib_adhar:number;
 }
 
 const ELEMENT_DATA: PeriodicElement[] = [
- 
-  {position: 1, name: 'Rohit',  s_id:101, class:"four",  dob:'23/march/2023', f_name:'adarsh',m_name:'annu' ,address:"hjp", mobile:12345, email:"rks@gmail.com",},
-  {position: 2, name: 'Adrash', s_id:102, class:"four",  dob:"23/march/2023", f_name:'adarsh',m_name:'annu' ,address:"hjp", mobile:12345, email:"rks@gmail.com",},
-  {position: 3, name: 'Raj',    s_id:103, class:"four",  dob:"23/march/2023", f_name:'adarsh',m_name:'annu' ,address:"hjp", mobile:12345, email:"rks@gmail.com",},
-  {position: 4, name: 'Alok',   s_id:104, class:"four",  dob:"23/march/2023", f_name:'adarsh',m_name:'annu' ,address:"hjp", mobile:12345, email:"rks@gmail.com",},
-  {position: 5, name: 'Rahul',  s_id:105, class:"four",  dob:"23/march/2023", f_name:'adarsh',m_name:'annu' ,address:"hjp", mobile:12345, email:"rks@gmail.com",},
-]
+  {lib_position: 1, lib_id:101, lib_name: 'Nakul Singh', lib_joindate: '12/march/2022', lib_salary:5000,lib_email: 'alokdhhjfi@gmail.com', lib_address:'hajipur', lib_mobile:98012554512, lib_adhar:12737474747, lib_action:'none' },
+  {lib_position: 2, lib_id:101, lib_name: 'Nakul Singh', lib_joindate: '12/march/2022', lib_salary:5000,lib_email: 'alokdhhjfi@gmail.com', lib_address:'hajipur', lib_mobile:98012554512, lib_adhar:12737474747, lib_action:'none' },
+  {lib_position: 3, lib_id:101, lib_name: 'Nakul Singh', lib_joindate: '12/march/2022', lib_salary:5000,lib_email: 'alokdhhjfi@gmail.com', lib_address:'hajipur', lib_mobile:98012554512, lib_adhar:12737474747, lib_action:'none' },
+  {lib_position: 4, lib_id:101, lib_name: 'Nakul Singh', lib_joindate: '12/march/2022', lib_salary:5000,lib_email: 'alokdhhjfi@gmail.com', lib_address:'hajipur', lib_mobile:98012554512, lib_adhar:12737474747, lib_action:'none' },
+  {lib_position: 5, lib_id:101, lib_name: 'Nakul Singh', lib_joindate: '12/march/2022', lib_salary:5000,lib_email: 'alokdhhjfi@gmail.com', lib_address:'hajipur', lib_mobile:98012554512, lib_adhar:12737474747, lib_action:'none' },
+  
+];

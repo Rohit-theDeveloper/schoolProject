@@ -32,4 +32,11 @@
       text-shadow: 1px 1px 1px rgb(112, 110, 110);
       text-align: left;
     }
-    
+    /* .................................media query........................................ */
+    @media (max-width:780px) {
+      .thumbnail{
+        width: calc(100% - 20px);
+        margin: 10px 10px 5px 10px;
+      }
+      
+    }

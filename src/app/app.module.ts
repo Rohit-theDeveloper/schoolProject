@@ -37,7 +37,6 @@ import { AdminStudentComponent } from './dashboard/admin/admin-student/admin-stu
 import { AdminTeacherComponent } from './dashboard/admin/admin-teacher/admin-teacher.component';
 import { AdminLibrarianComponent } from './dashboard/admin/admin-librarian/admin-librarian.component';
 import {MatTableModule} from '@angular/material/table';
-import {MatPaginator} from '@angular/material/paginator';
 import {MatInputModule} from '@angular/material/input';
 import { LibrDashboardComponent } from './dashboard/librarian/libr-dashboard/libr-dashboard.component';
 import { LibrSalarydetailsComponent } from './dashboard/librarian/libr-salarydetails/libr-salarydetails.component';
@@ -78,6 +77,10 @@ import {MatSelectModule} from '@angular/material/select';
 import { AddthApplicationComponent } from './dashboard/teacher/th-application/addth-application/addth-application.component';
 import {MatDatepickerModule} from '@angular/material/datepicker';
 import { AddstdApplicationComponent } from './dashboard/student/std-application/addstd-application/addstd-application.component';
+import { ThLogoutComponent } from './dashboard/teacher/th-logout/th-logout.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import {MatPaginatorModule} from '@angular/material/paginator';
+
 
 @NgModule({
   declarations: [
@@ -146,6 +149,7 @@ import { AddstdApplicationComponent } from './dashboard/student/std-application/
     ThQuestionsComponent,
     AddthApplicationComponent,
     AddstdApplicationComponent,
+    ThLogoutComponent,
 
   ],
   imports: [
@@ -162,7 +166,9 @@ import { AddstdApplicationComponent } from './dashboard/student/std-application/
     MatInputModule,
     MatSidenavModule,
     MatSelectModule,
-    MatDatepickerModule
+    MatDatepickerModule,
+    MatDialogModule,
+    MatPaginatorModule
     
   ],
   providers: [],

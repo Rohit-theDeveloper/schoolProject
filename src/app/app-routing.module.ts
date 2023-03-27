@@ -51,6 +51,7 @@ import { ThApplicationComponent } from './dashboard/teacher/th-application/th-ap
 import { ThDashboardComponent } from './dashboard/teacher/th-dashboard/th-dashboard.component';
 import { ThExamComponent } from './dashboard/teacher/th-exam/th-exam.component';
 import { ThLibrarydetailsComponent } from './dashboard/teacher/th-librarydetails/th-librarydetails.component';
+import { ThLogoutComponent } from './dashboard/teacher/th-logout/th-logout.component';
 import { ThNotificationComponent } from './dashboard/teacher/th-notification/th-notification.component';
 import { ThQuestionsComponent } from './dashboard/teacher/th-questions/th-questions.component';
 import { ThSalaryComponent } from './dashboard/teacher/th-salary/th-salary.component';
@@ -135,7 +136,8 @@ const routes: Routes = [
       {path:'th-exam',component:ThExamComponent},
       {path:'th-librarydetails',component:ThLibrarydetailsComponent},
       {path:'th-questions',component:ThQuestionsComponent},
-      {path:'addth-application',component:AddthApplicationComponent}
+      {path:'addth-application',component:AddthApplicationComponent},
+      {path:'th-logout',component:ThLogoutComponent}
     ]
 },
   {path:'**',component:PagenotfoundComponent},
