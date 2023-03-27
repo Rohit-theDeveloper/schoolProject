@@ -6,9 +6,14 @@
     <img src="/assets/logo.png" alt="">
   <span class="sname">UNIQUE SCHOOL</span>
     <span class="example-spacer"></span>
-    <span style="font-family: Inria Serif;">Adarsh Singh<mat-icon >arrow_drop_down</mat-icon></span>
+    <span [matMenuTriggerFor]="menu"style="font-family: Inria Serif;">Adarsh Singh<mat-icon >arrow_drop_down</mat-icon></span>
         <div id="usericon"></div>
   </mat-toolbar>
+   <!-- menu button  -->
+<mat-menu #menu="matMenu">
+  <button mat-menu-item class="text-white">Logout</button>
+  <button mat-menu-item class="text-white">Setting</button>
+</mat-menu>
   <mat-drawer-container class="example-container" autosize >
     <mat-drawer #drawer class="example-sidenav" mode="side"opened>
         <ul>
