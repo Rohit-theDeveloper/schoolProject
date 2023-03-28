@@ -2,16 +2,6 @@
     <mat-toolbar>
        <span>Notifications</span>
        <span class="example-spacer"></span>
-       <!-- <form class="example-form">
-        <mat-form-field class="example-half-width">
-          <mat-label>Search</mat-label>
-          <span matPrefix></span>
-          <input type="tel" matInput placeholder="search">
-          <mat-icon matSuffix>search</mat-icon>
-        </mat-form-field>
-      </form> -->
-      <mat-icon routerLink="../libr-dashboard">cancel</mat-icon>
-      <!-- <mat-icon>add_circle</mat-icon> -->
       </mat-toolbar>
 </div>
 <table mat-table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
@@ -45,4 +35,5 @@
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
 </table>
-
+<mat-paginator [pageSizeOptions]="[2, 5, 10]" showFirstLastButtons aria-label="Select page of periodic elements">
+</mat-paginator>

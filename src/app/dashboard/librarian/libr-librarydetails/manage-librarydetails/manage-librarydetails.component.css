@@ -10,6 +10,9 @@ mat-toolbar{
     height: 35px;
     float: right;
 }
+.mat-icon:hover{
+  cursor: pointer;
+}
 /* forms */
 .example-form-field {
     width: 300px;

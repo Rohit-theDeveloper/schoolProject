@@ -9,6 +9,9 @@ mat-toolbar {
   height: 35px;
   float: right;
 }
+.mat-icon:hover{
+  cursor: pointer;
+}
 .example-form {
   min-width: 150px;
   max-width: 275px;
@@ -40,8 +43,4 @@ table .mat-icon {
 table tr:hover {
   background-color: #FE8E0B;
   transition: all 0.5s;
-}
-.mdc-data-table__cell,
-.mdc-data-table__header-cell {
-  padding: 20px;
 }
