@@ -32,6 +32,13 @@ table {
 table td{
   text-align: center;
 }
+table tr:hover{
+  background-color: #FE8E0B;
+  transition: all 0.5s;
+}
 table .mat-icon{
   float: none;
+  color: #7d7575;
+  font-size: 30px;
+  cursor: pointer;
  }

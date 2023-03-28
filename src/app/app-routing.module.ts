@@ -18,8 +18,6 @@ import { FeeComponent } from './dashboard/admin/fee/fee.component';
 import { ManageFeeComponent } from './dashboard/admin/fee/manage-fee/manage-fee.component';
 import { ManageNotificationComponent } from './dashboard/admin/notification/manage-notification/manage-notification.component';
 import { NotificationComponent } from './dashboard/admin/notification/notification.component';
-import { AddParentComponent } from './dashboard/admin/parent/add-parent/add-parent.component';
-import { ParentComponent } from './dashboard/admin/parent/parent.component';
 import { ManageSalaryComponent } from './dashboard/admin/salary/manage-salary/manage-salary.component';
 import { SalaryComponent } from './dashboard/admin/salary/salary.component';
 import { SettingComponent } from './dashboard/admin/setting/setting.component';
@@ -70,7 +68,6 @@ const routes: Routes = [
     children:[
       {path:'',redirectTo:'admin-dashboard',pathMatch:'full'},
       {path:'admin-dashboard',component:AdminDashboardComponent},
-      {path:'parent',component:ParentComponent},
       {path:'admin-student',component:AdminStudentComponent},
       {path:'admin-teacher',component:AdminTeacherComponent},
       {path:'admin-librarian',component:AdminLibrarianComponent},
@@ -84,7 +81,6 @@ const routes: Routes = [
       {path:'setting',component:SettingComponent},
       {path:'logout',component:AdminDashboardComponent},
       // forms
-      {path:"add-parent",component:AddParentComponent},
       {path:"manage-librarian",component:ManageLibrarianComponent},
       {path:"manage-student",component:ManageStudentComponent},
       {path:"manage-teacher",component:ManageTeacherComponent},

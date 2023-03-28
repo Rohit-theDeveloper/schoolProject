@@ -23,7 +23,6 @@ import { StudentComponent } from './dashboard/student/student.component';
 import { LibrarianComponent } from './dashboard/librarian/librarian.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
-import { ParentComponent } from './dashboard/admin/parent/parent.component';
 import { StaffComponent } from './dashboard/admin/staff/staff.component';
 import { AdminDashboardComponent } from './dashboard/admin/admin-dashboard/admin-dashboard.component';
 import { ClassComponent } from './dashboard/admin/class/class.component';
@@ -57,7 +56,6 @@ import { ThLibrarydetailsComponent } from './dashboard/teacher/th-librarydetails
 import { ThExamComponent } from './dashboard/teacher/th-exam/th-exam.component';
 import { ThApplicationComponent } from './dashboard/teacher/th-application/th-application.component';
 import { ThNotificationComponent } from './dashboard/teacher/th-notification/th-notification.component';
-import { AddParentComponent } from './dashboard/admin/parent/add-parent/add-parent.component';
 import { ManageStudentComponent } from './dashboard/admin/admin-student/manage-student/manage-student.component';
 import { ManageTeacherComponent } from './dashboard/admin/admin-teacher/manage-teacher/manage-teacher.component';
 import { ManageApplicationComponent } from './dashboard/admin/application/manage-application/manage-application.component';
@@ -101,7 +99,6 @@ import { MatNativeDateModule } from '@angular/material/core';
     AdminComponent,
     StudentComponent,
     LibrarianComponent,
-    ParentComponent,
     StaffComponent,
     AdminDashboardComponent,
     ClassComponent,
@@ -133,7 +130,6 @@ import { MatNativeDateModule } from '@angular/material/core';
     ThExamComponent,
     ThApplicationComponent,
     ThNotificationComponent,
-    AddParentComponent,
     ManageStudentComponent,
     ManageTeacherComponent,
     ManageApplicationComponent,
