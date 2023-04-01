@@ -83,6 +83,7 @@ import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { LibrBookTransactionComponent } from './dashboard/librarian/libr-book-transaction/libr-book-transaction.component';
 import { ManageBookTransactionComponent } from './dashboard/librarian/libr-book-transaction/manage-book-transaction/manage-book-transaction.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -174,7 +175,8 @@ import { ManageBookTransactionComponent } from './dashboard/librarian/libr-book-
     MatPaginatorModule,
     MatFormFieldModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

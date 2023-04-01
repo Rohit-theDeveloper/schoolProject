@@ -16,7 +16,7 @@
 <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
   <ng-container matColumnDef="book_position">
     <th mat-header-cell *matHeaderCellDef> S.No. </th>
-    <td mat-cell *matCellDef="let element"> {{element.book_position}} </td>
+    <td mat-cell *matCellDef="let i = index"> {{i+1}} </td>
   </ng-container>
   <ng-container matColumnDef="book_id">
     <th mat-header-cell *matHeaderCellDef> Book Id </th>
