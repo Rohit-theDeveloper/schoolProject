@@ -27,6 +27,8 @@ import { ManageSubjectComponent } from './dashboard/admin/subject/manage-subject
 import { SubjectComponent } from './dashboard/admin/subject/subject.component';
 import { LibrApplicationComponent } from './dashboard/librarian/libr-application/libr-application.component';
 import { ManageLibrApplicationComponent } from './dashboard/librarian/libr-application/manage-libr-application/manage-libr-application.component';
+import { LibrBookTransactionComponent } from './dashboard/librarian/libr-book-transaction/libr-book-transaction.component';
+import { ManageBookTransactionComponent } from './dashboard/librarian/libr-book-transaction/manage-book-transaction/manage-book-transaction.component';
 import { LibrBooksComponent } from './dashboard/librarian/libr-books/libr-books.component';
 import { ManageBooksComponent } from './dashboard/librarian/libr-books/manage-books/manage-books.component';
 import { LibrDashboardComponent } from './dashboard/librarian/libr-dashboard/libr-dashboard.component';
@@ -102,11 +104,13 @@ const routes: Routes = [
       {path:'libr-salarydetails',component:LibrSalarydetailsComponent},
       {path:'libr-library-details',component:LibrLibrarydetailsComponent},
       {path:'libr-books',component:LibrBooksComponent},
+      {path:'libr-book-transaction',component:LibrBookTransactionComponent},
       {path:'libr-application',component:LibrApplicationComponent},
       {path:'libr-notification',component:LibrNotificationComponent},
       {path:'manage-libr-application',component:ManageLibrApplicationComponent},
       {path:'manage-books',component:ManageBooksComponent},
       {path:'manage-librarydetails',component:ManageLibrarydetailsComponent},
+      {path:'manage-book-transaction',component:ManageBookTransactionComponent},
     ]
     
 },

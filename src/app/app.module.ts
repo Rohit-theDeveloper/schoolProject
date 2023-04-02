@@ -81,6 +81,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
+import { LibrBookTransactionComponent } from './dashboard/librarian/libr-book-transaction/libr-book-transaction.component';
+import { ManageBookTransactionComponent } from './dashboard/librarian/libr-book-transaction/manage-book-transaction/manage-book-transaction.component';
 
 @NgModule({
   declarations: [
@@ -148,6 +150,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     AddthApplicationComponent,
     AddstdApplicationComponent,
     ThLogoutComponent,
+    LibrBookTransactionComponent,
+    ManageBookTransactionComponent,
 
   ],
   imports: [
