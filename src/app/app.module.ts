@@ -77,12 +77,14 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
 import { AddstdApplicationComponent } from './dashboard/student/std-application/addstd-application/addstd-application.component';
 import { ThLogoutComponent } from './dashboard/teacher/th-logout/th-logout.component';
 import {MatDialogModule} from '@angular/material/dialog';
-import {MatPaginatorModule} from '@angular/material/paginator';
 import {MatFormFieldModule} from '@angular/material/form-field';
 import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { MatNativeDateModule } from '@angular/material/core';
 import { LibrBookTransactionComponent } from './dashboard/librarian/libr-book-transaction/libr-book-transaction.component';
 import { ManageBookTransactionComponent } from './dashboard/librarian/libr-book-transaction/manage-book-transaction/manage-book-transaction.component';
+import { HttpClientModule } from '@angular/common/http';
+import { MatSortModule } from '@angular/material/sort';
+import {MatPaginatorModule} from '@angular/material/paginator';
 
 @NgModule({
   declarations: [
@@ -171,10 +173,12 @@ import { ManageBookTransactionComponent } from './dashboard/librarian/libr-book-
     MatDatepickerModule,
     MatNativeDateModule,
     MatDialogModule,
-    MatPaginatorModule,
     MatFormFieldModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatSortModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
