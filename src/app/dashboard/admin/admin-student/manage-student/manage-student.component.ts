@@ -31,18 +31,17 @@ constructor(
     std_address:['',Validators.required],
     std_password:[''],
     class_id:['',Validators.required],
-    std_photo:['']
+    // std_photo:['']
   })
 
       onSave(){
-        // console.log(this.add_std.value);
+        console.log(this.add_std.value);
         this.api.post_std(this.add_std.value).subscribe(
           (res:any)=>{
             this.add_std.reset();
             this.router.navigate(["../admin-student"]);
             console.log(res)
           }
-          
   )
   
  }
