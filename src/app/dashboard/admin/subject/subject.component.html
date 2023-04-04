@@ -19,9 +19,9 @@
           The actual rendered columns are set as a property on the row definition" -->
   
     <!-- Position Column -->
-    <ng-container matColumnDef="sub_position">
+    <ng-container matColumnDef="Sno">
       <th mat-header-cell *matHeaderCellDef> S.No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.sub_position}} </td>
+      <td mat-cell *matCellDef="let i= index"> {{i+1}} </td>
     </ng-container>
   
     <!-- id Column -->
