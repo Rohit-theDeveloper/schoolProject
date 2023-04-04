@@ -61,10 +61,14 @@ export class ApiService {
   get_fee(){
     return this.http.get(this.baseUrl+'fee_recp_view.php');
   }
+
+   // endingg......
+
+  //  notice getting data from database
   get_notice(){
     return this.http.get(this.baseUrl+"notification_view_tbl.php");
   }
-   // endingg......
+  // endingg......
 }
 
 
