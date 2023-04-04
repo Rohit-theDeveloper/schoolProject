@@ -12,6 +12,11 @@ mat-toolbar{
 }
 /* forms */
 .example-form-field {
-    width: 300px;
+    width: 250px;
+
   }
- 
+ .padding{
+      padding-right:10px;
+   
+   
+ }

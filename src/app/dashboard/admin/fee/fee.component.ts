@@ -1,28 +1,44 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-fee',
   templateUrl: './fee.component.html',
   styleUrls: ['./fee.component.css']
 })
-export class FeeComponent {
-  displayedColumns: string[] = ['fee_position', 'fee_id', 'fee_type', 'fee_amount','fee_paid','fee_dues', 'fee_action'];
-  dataSource = ELEMENT_DATA;
+export class FeeComponent implements OnInit, AfterViewInit{
+      displayedColumns: string[] = ['Sn', 'fee_id', 'fee_type', 'fee_amount','fee_paid','fee_due','std_id'];
+      dataSource = new MatTableDataSource();
+      total_count:number = 0;
+      @ViewChild(MatPaginator) paginator!: MatPaginator;
+      @ViewChild(MatSort) sort!: MatSort;
+
+    constructor(
+      private api:ApiService
+    ){}
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
+
+    ngOnInit(): void {
+      this.api.get_fee().subscribe(
+        (res:any)=> {
+          console.log(res.data);
+          this.dataSource.data= res.data;
+          this. total_count = res.data.length;
+        }
+      )
 }
-export interface PeriodicElement {
-  fee_type: string;
-  fee_position: number;
-  fee_id: number;
-  fee_amount: number;
-  fee_paid:number;
-  fee_dues:number;
-  fee_action:string;
+applyFilter(event: Event) {
+  const filterValue = (event.target as HTMLInputElement).value;
+  this.dataSource.filter = filterValue.trim().toLowerCase();
+
+  if (this.dataSource.paginator) {
+    this.dataSource.paginator.firstPage();
+  }
 }
-const ELEMENT_DATA: PeriodicElement[] = [
-  {fee_position: 1, fee_id:101, fee_type: 'class fee', fee_amount: 2000,fee_paid: 1500, fee_dues:500, fee_action:'none' },
-  {fee_position: 1, fee_id:101, fee_type: 'class fee', fee_amount: 2000,fee_paid: 1500, fee_dues:500, fee_action:'none' },
-  {fee_position: 1, fee_id:101, fee_type: 'class fee', fee_amount: 2000,fee_paid: 1500, fee_dues:500, fee_action:'none' },
-  {fee_position: 1, fee_id:101, fee_type: 'class fee', fee_amount: 2000,fee_paid: 1500, fee_dues:500, fee_action:'none' },
-  {fee_position: 1, fee_id:101, fee_type: 'class fee', fee_amount: 2000,fee_paid: 1500, fee_dues:500, fee_action:'none' },
-  
-];
+}
