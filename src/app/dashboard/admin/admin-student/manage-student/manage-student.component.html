@@ -91,7 +91,7 @@
            <!-- class -->
        <mat-form-field appearance="fill" class="example-form-field padding ">
              <mat-label>Class</mat-label>
-            <mat-select required=""formControlName="class_id">
+            <mat-select required="" formControlName="class_id">
               <mat-option value="primary">Play</mat-option>
               <mat-option value="accent">1st</mat-option>
               <mat-option value="warn">3rd</mat-option>
@@ -100,7 +100,7 @@
             </mat-select>
         </mat-form-field>
        <!-- photo -->
-      <input class="p-4" type="file">
+      <!-- <input class="p-4" type="file"> -->
       <button class="btn text-white btn-danger m-3" routerLink="../admin-student"> &nbsp; &nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
       <button class="btn text-white btn-primary m-3" (click)="reset_form()">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
       <button class="btn text-white btn-success m-3" (click)="onSave()" >&nbsp;&nbsp;&nbsp;&nbsp;Submit&nbsp;&nbsp;&nbsp;&nbsp;</button>
