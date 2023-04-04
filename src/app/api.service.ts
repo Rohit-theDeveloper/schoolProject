@@ -51,6 +51,7 @@ export class ApiService {
   get_student() {
     return this.http.get(this.baseUrl + 'std_view.php');
   }
+
   post_std(data: any) {
     return this.http.post(this.baseUrl + 'std_insert.php', data);
   }
@@ -93,7 +94,8 @@ export class ApiService {
   get_salary() {
     return this.http.get(this.baseUrl + 'salary_view.php');
   }
-  // end salary maodule function....
+  // end salary maodule function.
 }
+
 
 
