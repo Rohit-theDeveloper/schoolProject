@@ -73,6 +73,18 @@ export class ApiService {
   get_class(){
     return this.http.get(this.baseUrl+'class_view.php');
   }
+  // end class module function....
+
+  // subject module function......
+  get_subject(){
+    return this.http.get(this.baseUrl+'subject_view.php');
+  }
+  // end subject module function...
+  // slalary module function.....
+  get_salary(){
+    return this.http.get(this.baseUrl+'salary_view.php');
+  }
+  // end salary maodule function....
 }
 
 
