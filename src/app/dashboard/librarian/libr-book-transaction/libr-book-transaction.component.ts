@@ -8,7 +8,7 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./libr-book-transaction.component.css']
 })
 export class LibrBookTransactionComponent implements OnInit {
-  displayedColumns: string[] = ['tran_position', 'tran_id', 'book_id', 'std_id','t_id','librn_id','issue_date','return_date','late_fine', 'tran_action'];
+  displayedColumns: string[] = ['tran_position', 'tran_id', 'book_id', 'reciever_type','reciever_id','issue_date','return_date', 'tran_action'];
   dataSource = new MatTableDataSource();
   total_count: any;
   constructor(private api : ApiService){}

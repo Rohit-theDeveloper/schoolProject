@@ -6,39 +6,36 @@ import { Injectable } from '@angular/core';
 })
 export class ApiService {
 
-  baseurl = 'http://localhost/smsapi/';
+  baseUrl = 'http://localhost/smsapi/';
   constructor(
     private http:HttpClient
   ) { }
 
   get_book(){
-    return this.http.get(this.baseurl+'bookdataget.php');
+    return this.http.get(this.baseUrl+'bookdataget.php');
   }
   post_book(data:any){
-    return this.http.post(this.baseurl + 'booksforminsert.php',data);
+    return this.http.post(this.baseUrl + 'booksforminsert.php',data);
   }
   // library geting data from database
   get_library(){
-    return this.http.get(this.baseurl+'libraryget.php');
+    return this.http.get(this.baseUrl+'libraryget.php');
   }
   post_library(data:any){
-    return this.http.post(this.baseurl + 'libraryinsert.php',data);
+    return this.http.post(this.baseUrl + 'libraryinsert.php',data);
   }
   //book transaction database api
 
   get_book_tran(){
-    return this.http.get(this.baseurl+'booktransactionget.php');
+    return this.http.get(this.baseUrl+'booktransactionget.php');
   }
   post_book_tran(data:any){
-    return this.http.post(this.baseurl + 'booktransactioninsert.php',data);
+    return this.http.post(this.baseUrl + 'booktransactioninsert.php',data);
   }
   //application database api
   get_librnapplication(){
-    return this.http.get(this.baseurl+'view_librnapplication.php');
-baseUrl= 'http://localhost/api/';
-  constructor(
-    private http : HttpClient
-  ) { }
+    return this.http.get(this.baseUrl+'view_librnapplication.php');
+  }
 
   get_student(){
     return this.http.get(this.baseUrl+'std_view.php');
@@ -51,6 +48,7 @@ baseUrl= 'http://localhost/api/';
   }
   get_notice(){
     return this.http.get(this.baseUrl+"notification_view_tbl.php");
->>>>>>> 68e51ba871ac8f014ebe12d7df46d0c1dfd14c67
   }
 }
+
+
