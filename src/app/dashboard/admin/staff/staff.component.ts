@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from 'src/app/api.service';
 
@@ -7,7 +7,7 @@ import { ApiService } from 'src/app/api.service';
   templateUrl: './staff.component.html',
   styleUrls: ['./staff.component.css']
 })
-export class StaffComponent {
+export class StaffComponent implements OnInit{
   displayedColumns: string[] = ['S No', 'staff_id', 'staff_name','role_id','staff_jndate','staff_email','staff_address','staff_mob', 'staff_action'];
   dataSource = new MatTableDataSource();
   constructor( 
@@ -16,7 +16,8 @@ export class StaffComponent {
   ngOnInit():void{
     this.api.get_staff().subscribe(
       (res:any)=>{
-        console.log(res.data);
+        // console.log(res.data);
+        this.dataSource.data= res.data;
       }
     )
 
