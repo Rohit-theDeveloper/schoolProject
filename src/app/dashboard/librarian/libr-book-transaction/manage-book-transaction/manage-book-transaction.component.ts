@@ -20,13 +20,11 @@ export class ManageBookTransactionComponent {
 // ){
   booktranform = this.fb.group({
     tran_id:[''],
-    librn_id:[''],
-    t_id:[''],
-    std_id:[''],
     book_id:[''],
+    reciever_id:[''],
+    reciever_type:[''],
     issue_date:[''],
     return_date:[''],
-    late_fine:[''],
   })
   onsave(){
     console.log(this.booktranform.value);
