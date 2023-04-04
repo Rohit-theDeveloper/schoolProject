@@ -16,4 +16,8 @@ baseUrl= 'http://localhost/api/';
   post_std(data:any){
     return this.http.post(this.baseUrl+'std_add.php',data);
   }
+  get_staff(){
+    return this.http.get(this.baseUrl+'staff_view.php');
+  }
+
 }
