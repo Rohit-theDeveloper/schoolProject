@@ -16,8 +16,8 @@ export class SalaryComponent implements OnInit{
   ngOnInit(): void {
     this.api.get_salary().subscribe(
       (res:any)=>{
-        console.log(res.data);
-        // this.dataSource=res.data;
+        // console.log(res.data);
+        this.dataSource=res.data;
       }
     )
   }
