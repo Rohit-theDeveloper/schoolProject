@@ -49,7 +49,7 @@ export class ApiService {
     return this.http.get(this.baseUrl+'std_view.php');
   }
   post_std(data:any){
-    return this.http.post(this.baseUrl+'std_add.php',data);
+    return this.http.post(this.baseUrl+'std_insert.php',data);
   }
 
   // endingg......
@@ -75,6 +75,9 @@ export class ApiService {
   // class module function........
   get_class(){
     return this.http.get(this.baseUrl+'class_view.php');
+  }
+  post_class(data:any){
+    return this.http.post(this.baseUrl+'class_insert.php',data);
   }
 }
 

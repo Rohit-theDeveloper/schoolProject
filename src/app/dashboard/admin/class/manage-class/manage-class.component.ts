@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-manage-class',
@@ -6,5 +9,25 @@ import { Component } from '@angular/core';
   styleUrls: ['./manage-class.component.css']
 })
 export class ManageClassComponent {
+constructor(
+  private fb : FormBuilder,
+  private api : ApiService,
+  private router  : Router
 
+){}
+
+add_class = this.fb.group({
+  class_name :['',Validators.required],
+  class_fee: ['',Validators.required]
+})
+
+onSave(){
+  console.log(this.add_class.value);
+  this.api.post_class(this.add_class.value).subscribe(
+    (res:any)=>{
+      this.router.navigate(['admin/class']);
+      console.log(res)
+    }
+  )
+}
 }
