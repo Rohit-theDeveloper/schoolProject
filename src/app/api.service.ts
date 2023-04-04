@@ -79,6 +79,9 @@ export class ApiService {
   get_class() {
     return this.http.get(this.baseUrl + 'class_view.php');
   }
+  post_class(data:any){
+    return this.http.post(this.baseUrl+'class_insert.php',data);
+  }
   // end class module function....
 
   // subject module function......
