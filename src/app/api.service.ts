@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class ApiService {
 
-  baseUrl = 'http://localhost/smsapi/';
+  baseUrl = 'http://localhost/api/';
   constructor(
     private http:HttpClient
   ) { }
@@ -36,12 +36,15 @@ export class ApiService {
   get_librnapplication(){
     return this.http.get(this.baseUrl+'view_librnapplication.php');
   }
+  post_librnapplication(data:any){
+    return this.http.post(this.baseUrl + 'insert_librnapplication.php',data);
+  }
 
   get_student(){
     return this.http.get(this.baseUrl+'std_view.php');
   }
   post_std(data:any){
-    return this.http.post(this.baseUrl+'std_add.php',data);
+    return this.http.post(this.baseUrl+'std_insert.php',data);
   }
   get_staff(){
     return this.http.get(this.baseUrl+'staff_view.php');

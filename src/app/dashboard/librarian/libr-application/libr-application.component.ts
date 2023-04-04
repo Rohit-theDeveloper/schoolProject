@@ -8,7 +8,7 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./libr-application.component.css']
 })
 export class LibrApplicationComponent implements OnInit {
-  displayedColumns: string[] = ['appli_position', 'appli_type','sender_type','sender_id','appli_date', 'appli_action'];
+  displayedColumns: string[] = ['appli_position', 'appli_type','sender_type', 'appli_action'];
   dataSource = new MatTableDataSource;
   constructor(
 private api:ApiService
