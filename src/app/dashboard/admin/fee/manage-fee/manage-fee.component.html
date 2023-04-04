@@ -6,46 +6,46 @@
       </mat-toolbar>
 </div>
 <div class="bg-white border ">
-    <form action="">
+    <form [formGroup]="add_fee">
         <mat-form-field class="example-form-field p-4">
             <mat-label class="p-1">Student Id</mat-label>
-            <input matInput type="text" required="" >
+            <input matInput type="text" required="" formControlName="std_id">
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">Student Name</mat-label>
-            <input matInput type="text" required="" >
+            <mat-label class="p-1">class id </mat-label>
+            <input matInput type="text" required="" formControlName="class_id" >
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">class</mat-label>
-            <input matInput type="text" required="" >
+            <mat-label class="p-1">fee type</mat-label>
+            <input matInput type="text" required=""formControlName="fee_type" >
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">Fee Type</mat-label>
-            <input matInput type="text" required="" >
+            <mat-label class="p-1">Fee date</mat-label>
+            <input matInput type="text" required="" formControlName="fee_date">
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Amount</mat-label>
-            <input matInput type="text" required="" >
+            <input matInput type="text" required=""formControlName="fee_amount" >
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Dues Amount</mat-label>
-            <input matInput type="text" required="" >
+            <input matInput type="text" required="" formControlName="fee_due">
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Payable Amount</mat-label>
-            <input matInput type="text">
+            <input matInput type="text" required="" formControlName="fee_paid">
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Recive Amount</mat-label>
-            <input matInput type="text" required="" >
+            <input matInput type="text"  >
           </mat-form-field>
-          <mat-form-field class="example-form-field p-4 ">
+          <!-- <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Payment Date</mat-label>
             <input matInput type="text" required="" >
-          </mat-form-field>
+          </mat-form-field>-->
           <button  class="btn text-white btn-danger m-4">&nbsp;&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
           <button  class="btn text-white btn-primary m-4">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
-          <button  class="btn text-white btn-success m-4">&nbsp;&nbsp;&nbsp;&nbsp;Submit&nbsp;&nbsp;&nbsp;&nbsp;</button>
+          <button  class="btn text-white btn-success m-4"(click)='onSave()'>&nbsp;&nbsp;&nbsp;&nbsp;Submit&nbsp;&nbsp;&nbsp;&nbsp;</button>
     </form>
    
 </div>

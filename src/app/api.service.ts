@@ -61,6 +61,9 @@ export class ApiService {
   get_fee(){
     return this.http.get(this.baseUrl+'fee_recp_view.php');
   }
+  post_fee(data:any){
+    return this.http.post(this.baseUrl+'fee_recp_insert.php',data);
+  }
 
    // endingg......
 
