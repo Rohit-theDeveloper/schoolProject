@@ -13,12 +13,14 @@ export class LibrBooksComponent implements OnInit {
   // @ViewChild(MatPaginator) paginator:MatPaginator;
   displayedColumns: string[] = ['book_position', 'book_id', 'book_name', 'book_author', 'book_publi', 'book_edition', 'book_price','book_action'];
   dataSource = new MatTableDataSource();
+  total_count: any;
   constructor(private api : ApiService){}
     ngOnInit():void{
       this.api.get_book().subscribe(
         (res:any)=>{
-          console.log(res.data);
+          // console.log(res.data);
           this.dataSource.data = res.data;
+          this.total_count = res.data.length;
           
         }
       )

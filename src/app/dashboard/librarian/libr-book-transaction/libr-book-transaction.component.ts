@@ -1,13 +1,27 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { MatTableDataSource } from '@angular/material/table';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-libr-book-transaction',
   templateUrl: './libr-book-transaction.component.html',
   styleUrls: ['./libr-book-transaction.component.css']
 })
-export class LibrBookTransactionComponent {
-  displayedColumns: string[] = ['lib_position', 'lib_id', 'lib_name', 'lib_joindate','lib_email','lib_address','lib_mobile','lib_salary','lib_adhar', 'lib_action'];
-  dataSource = ELEMENT_DATA;
+export class LibrBookTransactionComponent implements OnInit {
+  displayedColumns: string[] = ['tran_position', 'tran_id', 'book_id', 'std_id','t_id','librn_id','issue_date','return_date','late_fine', 'tran_action'];
+  dataSource = new MatTableDataSource();
+  total_count: any;
+  constructor(private api : ApiService){}
+    ngOnInit():void{
+      this.api.get_book_tran().subscribe(
+        (res:any)=>{
+          // console.log(res.data);
+          this.dataSource.data = res.data;
+          this.total_count = res.data.length;
+          
+        }
+      )
+    }
   
 }
 

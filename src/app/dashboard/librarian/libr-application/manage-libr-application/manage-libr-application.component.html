@@ -8,12 +8,28 @@
              </mat-toolbar>
         </div>
 
-    <form class=" text-center" [formGroup]="libr_application">
+    <form class=" text-center bg-white" [formGroup]="libr_application">
         <div>
             <mat-form-field class="example-full-width p-3">
                 <mat-label class="p-1">Subject</mat-label>
                 <input matInput type="text" required="" formControlName="sub_id">
               </mat-form-field>
+              <mat-form-field class="example-full-width p-3">
+                <mat-label class="p-1">Sender Type</mat-label>
+                <input matInput type="text" required="" formControlName="sub_id">
+              </mat-form-field>
+              <mat-form-field class="example-full-width p-3">
+                <mat-label class="p-1">Sender ID</mat-label>
+                <input matInput type="text" required="" formControlName="sub_id">
+              </mat-form-field>
+              <mat-form-field appearance="fill" class="example-full-width p-3">
+                <mat-label>Applicationdate</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+              
         </div>
         
         <textarea class=" p-3  " name="" id="" cols="100" rows="15" required="" formControlName="msg_id"></textarea>

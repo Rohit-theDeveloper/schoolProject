@@ -19,7 +19,6 @@ constructor(
 bookform = this.fb.group({
   // book_id:[''],
   book_price:[''],
-  // std_nation:[''],
   book_name:[''],
   book_edition:[''],
   book_publi:[''],

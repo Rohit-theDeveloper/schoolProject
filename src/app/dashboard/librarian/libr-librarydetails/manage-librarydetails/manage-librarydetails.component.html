@@ -17,7 +17,7 @@
               <mat-label class="p-1">Library Name</mat-label>
               <input matInput type="text" required="" formControlName="library_name">
             </mat-form-field>
-            <button  class="btn btn-success w-75 p-3 mb-5">Add</button>
+            <button  class="btn btn-success w-75 p-3 mb-5" (click)="onsave()" [disabled]="!libraryform.valid">Add</button>
 
 
       </form>
