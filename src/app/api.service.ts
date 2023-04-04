@@ -16,4 +16,10 @@ baseUrl= 'http://localhost/api/';
   post_std(data:any){
     return this.http.post(this.baseUrl+'std_add.php',data);
   }
+  get_fee(){
+    return this.http.get(this.baseUrl+'fee_recp_view.php');
+  }
+  get_notice(){
+    return this.http.get(this.baseUrl+"notification_view_tbl.php");
+  }
 }
