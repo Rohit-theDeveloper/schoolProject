@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
@@ -9,6 +10,7 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./manage-class.component.css']
 })
 export class ManageClassComponent {
+
   constructor(
     private fb:FormBuilder,
     private router:Router,
@@ -29,8 +31,5 @@ export class ManageClassComponent {
     )
    
   }
-  // ngOnInit(): void {
-    
-  // }
-
+ 
 }
