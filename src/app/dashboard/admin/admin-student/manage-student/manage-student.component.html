@@ -6,63 +6,59 @@
       <mat-icon routerLink="../admin-student" class="pb-4">cancel</mat-icon>
     </mat-toolbar>
   </div>
-  <div class="bg-white border ">
-    <form [formGroup]="studentform" >
-      <mat-form-field class="example-form-field p-4">
-        <mat-label class="p-1">Student ID</mat-label>
-        <input matInput type="text" required="" formControlName="std_id">
-      </mat-form-field>
-      <mat-form-field class="example-form-field p-4">
+  <div class="bg-white border p-4">
+    <!-- Name -->
+    <form [formGroup]="add_std" >
+      <mat-form-field class="example-form-field padding">
         <mat-label class="p-1">Name</mat-label>
         <input matInput type="text" required="" formControlName="std_name">
       </mat-form-field>
-      <mat-form-field appearance="fill" class="example-form-field p-4 ">
+      <!-- Roll.No -->
+      <mat-form-field class="example-form-field padding">
+        <mat-label class="p-1">Roll</mat-label>
+        <input matInput type="text" required="" formControlName="std_roll">
+      </mat-form-field>
+      <!-- Father's Name -->
+      <mat-form-field class="example-form-field padding">
+        <mat-label class="p-1">Father's Name</mat-label>
+        <input matInput type="text" required="" formControlName="std_fname">
+      </mat-form-field>
+      <!-- Mother's Name -->
+      <mat-form-field class="example-form-field padding">
+        <mat-label class="p-1">Mother's Name</mat-label>
+        <input matInput type="text" required="" formControlName="std_mname">
+      </mat-form-field>
+      <!-- Date Of Birth -->
+      <mat-form-field class="example-form-field padding ">
+        <mat-label class="p-1">DOB</mat-label>
+        <input matInput type="date" required="" formControlName="std_dob">
+      </mat-form-field>
+      <!-- Email -->
+      <mat-form-field class="example-form-field padding">
+        <mat-label class="p-1">Email</mat-label>
+        <input matInput type="email" required="" formControlName="std_email">
+      </mat-form-field>
+      <!-- Mobile Number -->
+      <mat-form-field class="example-form-field padding ">
+        <mat-label class="p-1">Mob</mat-label>
+        <input matInput type="text" formControlName="std_mob">
+      </mat-form-field> 
+      <!-- AAdhar Number -->
+      <mat-form-field class="example-form-field padding ">
+          <mat-label class="p-1">Aadhar No.</mat-label>
+          <input matInput type="text" required="" formControlName="std_aadhar">
+      </mat-form-field>
+      <!-- Gender -->
+      <mat-form-field appearance="fill" class="example-form-field padding">
         <mat-label>Gender</mat-label>
-        <mat-select required="" formControlName="std_gen">
+        <mat-select required="" formControlName="std_gender">
           <mat-option value="primary">Male</mat-option>
           <mat-option value="accent">Female</mat-option>
           <mat-option value="warn">Other</mat-option>
         </mat-select>
       </mat-form-field>
-      <mat-form-field class="example-form-field p-4">
-        <mat-label class="p-1">Father's Name</mat-label>
-        <input matInput type="text" required="" >
-      </mat-form-field>
-      <mat-form-field class="example-form-field p-4">
-        <mat-label class="p-1">Mother's Name</mat-label>
-        <input matInput type="text" required="" >
-      </mat-form-field>
-      <mat-form-field class="example-form-field p-4">
-        <mat-label class="p-1">Address</mat-label>
-        <input matInput type="text" required="" >
-      </mat-form-field>
-      <mat-form-field class="example-form-field p-4">
-        <mat-label class="p-1">Email</mat-label>
-        <input matInput type="email" required="" >
-      </mat-form-field>
-      <mat-form-field class="example-form-field p-4 ">
-        <mat-label class="p-1">DOB</mat-label>
-        <input matInput type="date" required="" formControlName="std_dob">
-      </mat-form-field>
-      <mat-form-field appearance="fill" class="example-form-field p-4 ">
-        <mat-label>Class</mat-label>
-        <mat-select required=""formControlName="std_class">
-          <mat-option value="primary">Play</mat-option>
-          <mat-option value="accent">1st</mat-option>
-          <mat-option value="warn">3rd</mat-option>
-          <mat-option value="warn">4th</mat-option>
-          <mat-option value="warn">5th</mat-option>
-        </mat-select>
-      </mat-form-field>
-      <mat-form-field class="example-form-field p-4 ">
-        <mat-label class="p-1">Roll.no</mat-label>
-        <input matInput type="text" required="" formControlName="std_roll">
-      </mat-form-field>
-      <mat-form-field class="example-form-field p-4 ">
-        <mat-label class="p-1">Mob</mat-label>
-        <input matInput type="text" formControlName="std_mob">
-      </mat-form-field>
-      <mat-form-field appearance="fill" class="example-form-field p-4 ">
+      <!-- Blood Group -->
+      <mat-form-field appearance="fill" class="example-form-field padding ">
         <mat-label>Blood Group</mat-label>
         <mat-select required="" formControlName="std_bg">
           <mat-option value="primary">o+</mat-option>
@@ -72,22 +68,42 @@
           <mat-option value="warn">AB+</mat-option>
         </mat-select>
       </mat-form-field>
-      <mat-form-field class="example-form-field p-4 ">
-        <mat-label class="p-1">Aadhar No.</mat-label>
-        <input matInput type="text" required="" formControlName="std_adhar">
-      </mat-form-field>
-      <mat-form-field class="example-form-field p-4 ">
-        <mat-label class="p-1">Identification Mark</mat-label>
-        <input matInput type="text" required="" formControlName="std_identi">
-      </mat-form-field>
-      <mat-form-field class="example-form-field p-4 ">
+      <!-- nationality -->
+      <mat-form-field class="example-form-field padding ">
         <mat-label class="p-1">nationality</mat-label>
-        <input matInput type="text" required="" formControlName="std_nation">
+        <input matInput type="text" required="" formControlName="std_nationality">
       </mat-form-field>
-      <input class="p-4" type="file">
-      <button class="btn text-white btn-danger m-4"> &nbsp; &nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
-      <button class="btn text-white btn-primary m-4" (click)="reset_form()">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
-      <button class="btn text-white btn-success m-4">&nbsp;&nbsp;&nbsp;&nbsp;Submit&nbsp;&nbsp;&nbsp;&nbsp;</button>
+      <!-- identification Mark -->
+       <mat-form-field class="example-form-field padding ">
+        <mat-label class="p-1">Identification Mark</mat-label>
+        <input matInput type="text" formControlName="std_identification">
+      </mat-form-field>
+      <!-- address -->
+      <mat-form-field class="example-form-field padding">
+        <mat-label class="p-1">Address</mat-label>
+       <textarea matInput type="text" formControlName="std_address"></textarea>
+      </mat-form-field>
+     <!--password  -->
+      <mat-form-field class="example-form-field padding">
+        <mat-label class="p-1">Password</mat-label>
+        <input matInput type="text" formControlName="std_password">
+      </mat-form-field>
+           <!-- class -->
+       <mat-form-field appearance="fill" class="example-form-field padding ">
+             <mat-label>Class</mat-label>
+            <mat-select required="" formControlName="class_id">
+              <mat-option value="primary">Play</mat-option>
+              <mat-option value="accent">1st</mat-option>
+              <mat-option value="warn">3rd</mat-option>
+              <mat-option value="warn">4th</mat-option>
+              <mat-option value="warn">5th</mat-option>
+            </mat-select>
+        </mat-form-field>
+       <!-- photo -->
+      <!-- <input class="p-4" type="file"> -->
+      <button class="btn text-white btn-danger m-3" routerLink="../admin-student"> &nbsp; &nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
+      <button class="btn text-white btn-primary m-3" (click)="reset_form()">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
+      <button class="btn text-white btn-success m-3" (click)="onSave()" >&nbsp;&nbsp;&nbsp;&nbsp;Submit&nbsp;&nbsp;&nbsp;&nbsp;</button>
     </form>
 
   </div>

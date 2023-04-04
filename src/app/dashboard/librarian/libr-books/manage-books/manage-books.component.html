@@ -8,10 +8,10 @@
     </div>
     <div class="bg-white border ">
       <form [formGroup]="bookform" class="w-50">
-        <mat-form-field class="example-form-field p-4">
+        <!-- <mat-form-field class="example-form-field p-4">
           <mat-label class="p-1">Book ID</mat-label>
           <input matInput type="text" required="" formControlName="book_id">
-        </mat-form-field>
+        </mat-form-field> -->
         <mat-form-field class="example-form-field p-4">
           <mat-label class="p-1"> Book Name</mat-label>
           <input matInput type="text" required="" formControlName="book_name">
@@ -22,7 +22,7 @@
         </mat-form-field>
         <mat-form-field class="example-form-field p-4">
           <mat-label class="p-1">Book publication</mat-label>
-          <input matInput type="text" required="" formControlName="book_public" >
+          <input matInput type="text" required="" formControlName="book_publi" >
         </mat-form-field>
         <mat-form-field class="example-form-field p-4">
           <mat-label class="p-1">Book edition</mat-label>
@@ -33,8 +33,8 @@
           <input matInput type="text" required="" formControlName="book_price">
         </mat-form-field><br>
         <button class="btn text-white btn-danger m-4"> &nbsp; &nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
-        <button class="btn text-white btn-primary m-4" (click)="reset_form()">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
-        <button class="btn text-white btn-success m-4">&nbsp;&nbsp;&nbsp;&nbsp;Submit&nbsp;&nbsp;&nbsp;&nbsp;</button>
+        <button class="btn text-white btn-primary m-4" (click)="reset()">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
+        <button class="btn text-white btn-success m-4" (click)="onsave()" [disabled]="!bookform.valid">&nbsp;&nbsp;&nbsp;&nbsp;Submit&nbsp;&nbsp;&nbsp;&nbsp;</button>
       </form>
   
     </div>

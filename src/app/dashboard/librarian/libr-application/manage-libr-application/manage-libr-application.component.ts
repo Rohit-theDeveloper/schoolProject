@@ -11,7 +11,8 @@ export class ManageLibrApplicationComponent {
  constructor(private fb:FormBuilder){
   this.libr_application = this.fb.group({
     sub_id:[''],
-    msg_id:['']
+    msg_id:[''],
+    sender_type:[''],
   })
  }
  reset_form(){

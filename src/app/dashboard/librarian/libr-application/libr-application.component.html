@@ -19,25 +19,40 @@
         The actual rendered columns are set as a property on the row definition" -->
 
   <!-- Position Column -->
-  <ng-container matColumnDef="app_position">
+  <ng-container matColumnDef="appli_position">
     <th mat-header-cell *matHeaderCellDef> S.No. </th>
-    <td mat-cell *matCellDef="let element"> {{element.app_position}} </td>
+    <td mat-cell *matCellDef="let i= index"> {{i+1}} </td>
   </ng-container>
 
-  <!-- sender name Column -->
-  <ng-container matColumnDef="app_sender_name">
-    <th mat-header-cell *matHeaderCellDef> Sender Name </th>
-    <td mat-cell *matCellDef="let element"> {{element.app_sender_name}} </td>
-  </ng-container>
+  <!-- sender name Column
+  <ng-container matColumnDef="libr_id">
+    <th mat-header-cell *matHeaderCellDef> librarian ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.libr_id}} </td>
+  </ng-container> -->
 
   <!-- date Column -->
-  <ng-container matColumnDef="app_date">
+  <ng-container matColumnDef="appli_type">
+    <th mat-header-cell *matHeaderCellDef> Application subject </th>
+    <td mat-cell *matCellDef="let element"> {{element.appli_type}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="sender_type">
+    <th mat-header-cell *matHeaderCellDef> Sender Type </th>
+    <td mat-cell *matCellDef="let element"> {{element.sender_type}} </td>
+  </ng-container>
+
+  <ng-container matColumnDef="sender_id">
+    <th mat-header-cell *matHeaderCellDef> Sender ID </th>
+    <td mat-cell *matCellDef="let element"> {{element.sender_id}} </td>
+  </ng-container>
+  
+  <ng-container matColumnDef="appli_date">
     <th mat-header-cell *matHeaderCellDef> Application date </th>
-    <td mat-cell *matCellDef="let element"> {{element.app_date}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.appli_date}} </td>
   </ng-container>
 
   <!-- action Column -->
-  <ng-container matColumnDef="app_action">
+  <ng-container matColumnDef="appli_action">
       <th mat-header-cell *matHeaderCellDef> Action </th>
       <td mat-cell *matCellDef="let element"><mat-icon routerLink="../manage-libr-application">visibility</mat-icon></td>
     </ng-container>
