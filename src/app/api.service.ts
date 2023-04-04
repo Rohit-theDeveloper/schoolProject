@@ -72,6 +72,10 @@ export class ApiService {
     return this.http.get(this.baseUrl+"notification_view_tbl.php");
   }
   // endingg......
+  // class module function........
+  get_class(){
+    return this.http.get(this.baseUrl+'class_view.php');
+  }
 }
 
 
