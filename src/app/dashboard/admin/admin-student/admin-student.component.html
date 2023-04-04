@@ -6,6 +6,7 @@
         <mat-form-field class="example-half-width">
           <mat-label>Search</mat-label>
          <input matInput (keyup)="applyFilter($event)" placeholder="search" #input>
+         <mat-icon matSuffix>search</mat-icon>
         </mat-form-field>
       </form>
       <mat-icon routerLink="../manage-student">add_circle</mat-icon>
@@ -89,6 +90,6 @@
       <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
     </tr>
   </table>
-  <mat-paginator [pageSizeOptions]="[2, 5, 10]" showFirstLastButtons aria-label="Select page of user">
+  <mat-paginator [pageSizeOptions]="[5, 8, 10]" showFirstLastButtons aria-label="Select page of user">
   </mat-paginator>
  </div>

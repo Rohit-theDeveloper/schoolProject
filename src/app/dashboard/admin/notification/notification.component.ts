@@ -1,25 +1,44 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
+import { MatTableDataSource } from '@angular/material/table';
+import { ApiService } from 'src/app/api.service';
 
 @Component({
   selector: 'app-notification',
   templateUrl: './notification.component.html',
   styleUrls: ['./notification.component.css']
 })
-export class NotificationComponent {
-  displayedColumns: string[] = ['noti_position', 'noti_type', 'noti_date', 'noti_action'];
-  dataSource = ELEMENT_DATA;
+export class NotificationComponent implements OnInit, AfterViewInit{
+  displayedColumns: string[] = ['Sn','notice_id', 'notice_type','notice_date', 'noti_action'];
+  dataSource = new MatTableDataSource();
+      total_count:number = 0;
+      @ViewChild(MatPaginator) paginator!: MatPaginator;
+      @ViewChild(MatSort) sort!: MatSort;
+
+    constructor(
+      private api:ApiService
+    ){}
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
+
+    ngOnInit(): void {
+      this.api.get_notice().subscribe(
+        (res:any)=> {
+          console.log(res.data);
+          this.dataSource.data= res.data;
+          this. total_count = res.data.length;
+        }
+      )
 }
-export interface PeriodicElement {
-  noti_type: string;
-  noti_position: number;
-  noti_date:string;
-  noti_action:string;
+applyFilter(event: Event) {
+  const filterValue = (event.target as HTMLInputElement).value;
+  this.dataSource.filter = filterValue.trim().toLowerCase();
+
+  if (this.dataSource.paginator) {
+    this.dataSource.paginator.firstPage();
+  }
 }
-const ELEMENT_DATA: PeriodicElement[] = [
-  {noti_position: 1, noti_type: 'leave notify', noti_date: '12/march/2020', noti_action:'none' },
-  {noti_position: 1, noti_type: 'leave notify', noti_date: '12/march/2020', noti_action:'none' },
-  {noti_position: 1, noti_type: 'leave notify', noti_date: '12/march/2020', noti_action:'none' },
-  {noti_position: 1, noti_type: 'leave notify', noti_date: '12/march/2020', noti_action:'none' },
-  {noti_position: 1, noti_type: 'leave notify', noti_date: '12/march/2020', noti_action:'none' },
-  
-];
+}

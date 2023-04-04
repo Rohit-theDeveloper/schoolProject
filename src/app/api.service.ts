@@ -20,4 +20,10 @@ baseUrl= 'http://localhost/api/';
     return this.http.get(this.baseUrl+'staff_view.php');
   }
 
+  get_fee(){
+    return this.http.get(this.baseUrl+'fee_recp_view.php');
+  }
+  get_notice(){
+    return this.http.get(this.baseUrl+"notification_view_tbl.php");
+  }
 }

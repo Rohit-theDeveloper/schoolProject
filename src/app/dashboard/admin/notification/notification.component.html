@@ -6,37 +6,41 @@
       <mat-form-field class="example-half-width">
         <mat-label>Search</mat-label>
         <span matPrefix></span>
-        <input type="tel" matInput placeholder="search">
+        <input matInput (keyup)="applyFilter($event)" placeholder="search" #input>
         <mat-icon matSuffix>search</mat-icon>
       </mat-form-field>
     </form>
     <mat-icon routerLink="../manage-notification">add_circle</mat-icon>
     </mat-toolbar>
 </div>
-<table mat-table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+<table mat-table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
 
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
   
-    <!-- Position Column -->
-    <ng-container matColumnDef="noti_position">
-      <th mat-header-cell *matHeaderCellDef> S.No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.noti_position}} </td>
+    <!-- Serial Number -->
+    <ng-container matColumnDef="Sn" >
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> S.No. </th>
+      <td mat-cell *matCellDef="let i=index"> {{i+1}} </td>
+    </ng-container>
+    <!-- notification type-->
+    <ng-container matColumnDef="notice_id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Notification Id </th>
+      <td mat-cell *matCellDef="let row"> {{row.notice_id}} </td>
     </ng-container>
   
-    <!-- emiasl Column -->
-    <ng-container matColumnDef="noti_type">
-      <th mat-header-cell *matHeaderCellDef> Notification type </th>
-      <td mat-cell *matCellDef="let element"> {{element.noti_type}} </td>
+    <!-- notification type-->
+    <ng-container matColumnDef="notice_type">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Notification type </th>
+      <td mat-cell *matCellDef="let row"> {{row.notice_type}} </td>
+    </ng-container>
+    <!--Notification Date-->
+    <ng-container matColumnDef="notice_date">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Notification date </th>
+      <td mat-cell *matCellDef="let row"> {{row.notice_date}} </td>
     </ng-container>
 
-    <!-- mother's name Column -->
-    <ng-container matColumnDef="noti_date">
-      <th mat-header-cell *matHeaderCellDef> Notification date </th>
-      <td mat-cell *matCellDef="let element"> {{element.noti_date}} </td>
-    </ng-container>
-
-    <!-- mother's name Column -->
+    <!-- Action -->
     <ng-container matColumnDef="noti_action">
         <th mat-header-cell *matHeaderCellDef> Action </th>
         <td mat-cell *matCellDef="let element"><mat-icon>delete</mat-icon> <mat-icon routerLink="../manage-notification">edit</mat-icon><mat-icon routerLink="../manage-notification">visibility</mat-icon></td>
@@ -44,5 +48,5 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
-  <mat-paginator [pageSizeOptions]="[2, 5, 10]" showFirstLastButtons aria-label="Select page of periodic elements">
+  <mat-paginator [pageSizeOptions]="[5, 8, 10]" showFirstLastButtons aria-label="Select page of periodic elements">
   </mat-paginator>
