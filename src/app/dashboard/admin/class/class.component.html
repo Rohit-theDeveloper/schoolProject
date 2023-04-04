@@ -21,7 +21,7 @@
     <!-- Position Column -->
     <ng-container matColumnDef="class_position">
       <th mat-header-cell *matHeaderCellDef> S.No. </th>
-      <td mat-cell *matCellDef="let element"> {{element.class_position}} </td>
+      <td mat-cell *matCellDef="let i = index"> {{i+1}} </td>
     </ng-container>
   
     <!-- id Column -->
