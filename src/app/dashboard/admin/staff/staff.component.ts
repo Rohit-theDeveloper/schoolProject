@@ -8,7 +8,7 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./staff.component.css']
 })
 export class StaffComponent implements OnInit{
-  displayedColumns: string[] = ['S No', 'staff_id', 'staff_name','role_id','staff_jndate','staff_email','staff_address','staff_mob', 'staff_action'];
+  displayedColumns: string[] = ['S No', 'staff_id', 'staff_name','staff_fname','staff_gender','staff_dob','staff_address','staff_mob','role_id','salary','staff_aadhar','staff_email','staff_jndate', 'staff_action'];
   dataSource = new MatTableDataSource();
   constructor( 
     private api:ApiService
