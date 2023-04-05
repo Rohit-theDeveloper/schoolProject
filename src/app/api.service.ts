@@ -78,6 +78,9 @@ export class ApiService {
   get_notice() {
     return this.http.get(this.baseUrl + "notification_view_tbl.php");
   }
+  post_notice(data:any){
+    return this.http.post(this.baseUrl+'notification_insert_tbl.php',data)
+  }
   // endingg......
   // class module function........
   get_class() {
@@ -123,6 +126,9 @@ export class ApiService {
   // expense module function.....
   get_expense() {
     return this.http.get(this.baseUrl + 'expense_view.php');
+  }
+  post_expense(data:any){
+    return this.http.post(this.baseUrl + 'expense_insert.php',data);
   }
   // end expense module...
   

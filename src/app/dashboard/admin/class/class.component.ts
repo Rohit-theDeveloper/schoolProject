@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 
 import { ApiService } from 'src/app/api.service';
@@ -12,9 +14,17 @@ export class ClassComponent implements OnInit{
 
   displayedColumns: string[] = ['class_position', 'class_id', 'class_name', 'class_fee','no_of_student', 'class_action'];
   dataSource = new MatTableDataSource();
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
+
   constructor(
    private api:ApiService
   ){}
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
   ngOnInit(): void {
     this.api.get_class().subscribe(
       (res:any)=>{
@@ -23,5 +33,14 @@ export class ClassComponent implements OnInit{
       }
     )
   }
-}
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
+  }
+
 
