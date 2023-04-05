@@ -123,6 +123,19 @@ export class ApiService {
   }
   // end expense module...
   
+  //getting data from database start
+  get_librarian() {
+    return this.http.get(this.baseUrl + 'view_librarian.php');
+  }
+  post_librarian(data:any){
+    return this.http.post(this.baseUrl + 'insert_librarian.php',data);
+  }
+  get_single_librarian(librnid:any) {
+    return this.http.get(this.baseUrl + 'view_librarian.php?librnid='+librnid);
+  }
+  put_librarian(data: any) {
+    return this.http.put(this.baseUrl + 'update_librarian.php', data);
+  }
+  //getting data from database end here
+
 }
-
-

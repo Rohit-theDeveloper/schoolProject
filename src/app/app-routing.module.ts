@@ -87,6 +87,7 @@ const routes: Routes = [
       {path:'logout',component:AdminDashboardComponent},
       // forms
       {path:"manage-librarian",component:ManageLibrarianComponent},
+      {path:"edit_librarian/:id",component:ManageLibrarianComponent},
       {path:"manage-student",component:ManageStudentComponent},
       {path:"manage-teacher",component:ManageTeacherComponent},
       {path:"manage-application",component:ManageApplicationComponent},

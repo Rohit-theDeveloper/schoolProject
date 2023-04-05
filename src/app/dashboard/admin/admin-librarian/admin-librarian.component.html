@@ -21,64 +21,69 @@
           The actual rendered columns are set as a property on the row definition" -->
 
   <!-- Position Column -->
-  <ng-container matColumnDef="lib_position">
+  <ng-container matColumnDef="librn_position">
     <th mat-header-cell *matHeaderCellDef> S.No. </th>
-    <td mat-cell *matCellDef="let element"> {{element.lib_position}} </td>
+    <td mat-cell *matCellDef="let element"> {{1}} </td>
   </ng-container>
 
   <!-- id Column -->
-  <ng-container matColumnDef="lib_id">
+  <ng-container matColumnDef="librn_id">
     <th mat-header-cell *matHeaderCellDef> ID </th>
-    <td mat-cell *matCellDef="let element"> {{element.lib_id}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.librn_id}} </td>
   </ng-container>
 
   <!--  Name Column -->
-  <ng-container matColumnDef="lib_name">
+  <ng-container matColumnDef="librn_name">
     <th mat-header-cell *matHeaderCellDef> Name </th>
-    <td mat-cell *matCellDef="let element"> {{element.lib_name}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.librn_name}} </td>
   </ng-container>
 
   <!-- joindateC olumn -->
-  <ng-container matColumnDef="lib_joindate">
+  <ng-container matColumnDef="librn_jndate">
     <th mat-header-cell *matHeaderCellDef> Joindate</th>
-    <td mat-cell *matCellDef="let element"> {{element.lib_joindate}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.librn_jndate}} </td>
   </ng-container>
 
   <!-- salaryColumn -->
-  <ng-container matColumnDef="lib_salary">
+  <ng-container matColumnDef="librn_salary">
     <th mat-header-cell *matHeaderCellDef> Salary</th>
-    <td mat-cell *matCellDef="let element"> {{element.lib_salary}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.librn_salary}} </td>
   </ng-container>
 
   <!-- address Column -->
-  <ng-container matColumnDef="lib_address">
+  <ng-container matColumnDef="librn_address">
     <th mat-header-cell *matHeaderCellDef> Address </th>
-    <td mat-cell *matCellDef="let element"> {{element.lib_address}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.librn_address}} </td>
   </ng-container>
 
   <!-- emial Column -->
-  <ng-container matColumnDef="lib_email">
+  <ng-container matColumnDef="librn_email">
     <th mat-header-cell *matHeaderCellDef> Email </th>
-    <td mat-cell *matCellDef="let element"> {{element.lib_email}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.librn_email}} </td>
   </ng-container>
 
   <!-- mobile Column -->
-  <ng-container matColumnDef="lib_mobile">
+  <ng-container matColumnDef="librn_mob">
     <th mat-header-cell *matHeaderCellDef> Mobile </th>
-    <td mat-cell *matCellDef="let element"> {{element.lib_mobile}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.librn_mob}} </td>
   </ng-container>
 
   <!-- proffession -->
-  <ng-container matColumnDef="lib_adhar">
+  <ng-container matColumnDef="librn_aadhar">
     <th mat-header-cell *matHeaderCellDef> Adhar </th>
-    <td mat-cell *matCellDef="let element"> {{element.lib_adhar}} </td>
+    <td mat-cell *matCellDef="let element"> {{element.librn_aadhar}} </td>
+  </ng-container>
+  <!-- proffession -->
+  <ng-container matColumnDef="librn_password">
+    <th mat-header-cell *matHeaderCellDef> Password </th>
+    <td mat-cell *matCellDef="let element"> {{element.librn_password}} </td>
   </ng-container>
 
   <!-- action Column -->
-  <ng-container matColumnDef="lib_action">
+  <ng-container matColumnDef="librn_action">
     <th mat-header-cell *matHeaderCellDef> Action </th>
     <td mat-cell *matCellDef="let element"><mat-icon>delete</mat-icon> <mat-icon
-        routerLink="../manage-librarian">edit</mat-icon><mat-icon routerLink="../manage-librarian">visibility</mat-icon>
+        routerLink="../edit_librarian/{{element.librn_id}}">edit</mat-icon><mat-icon routerLink="../manage-librarian">visibility</mat-icon>
     </td>
   </ng-container>
 

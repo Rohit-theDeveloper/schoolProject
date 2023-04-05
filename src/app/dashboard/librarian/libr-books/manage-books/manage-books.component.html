@@ -12,7 +12,7 @@
           <mat-label class="p-1">Book ID</mat-label>
           <input matInput type="text" required="" formControlName="book_id">
         </mat-form-field> -->
-        <input type="hidden"  formControlName="book_id" *ngIf="bookid">
+        <input type="number"  formControlName="book_id" *ngIf="bookid">
         <mat-form-field class="example-form-field p-4">
           <mat-label class="p-1"> Book Name</mat-label>
           <input matInput type="text" required="" formControlName="book_name">
