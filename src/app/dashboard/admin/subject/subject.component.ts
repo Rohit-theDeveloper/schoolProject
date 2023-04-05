@@ -8,7 +8,7 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./subject.component.css']
 })
 export class SubjectComponent implements OnInit{
-  displayedColumns: string[] = ['Sno', 'sub_id', 'sub_name',  'sub_action'];
+  displayedColumns: string[] = ['Sno', 'sub_id', 'sub_name', 'sub_action'];
   dataSource = new MatTableDataSource();
   constructor(
     private api:ApiService

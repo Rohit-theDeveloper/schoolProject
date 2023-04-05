@@ -56,15 +56,13 @@ export class ApiService {
   get_student() {
     return this.http.get(this.baseUrl + 'std_view.php');
   }
+
   post_std(data: any) {
     return this.http.post(this.baseUrl + 'std_insert.php', data);
   }
 
   // endingg......
 
-  get_staff() {
-    return this.http.get(this.baseUrl + 'staff_view.php');
-  }
   //student getting database api
   get_fee() {
     return this.http.get(this.baseUrl + 'fee_recp_view.php');
@@ -84,18 +82,35 @@ export class ApiService {
   get_class() {
     return this.http.get(this.baseUrl + 'class_view.php');
   }
+  post_class(data:any){
+    return this.http.post(this.baseUrl+'class_insert.php',data);
+  }
   // end class module function....
 
   // subject module function......
   get_subject() {
     return this.http.get(this.baseUrl + 'subject_view.php');
   }
+  post_subject(data:any){
+    return this.http.post(this.baseUrl+'subject_insert.php',data);
+  }
   // end subject module function...
+
   // slalary module function.....
   get_salary() {
     return this.http.get(this.baseUrl + 'salary_view.php');
   }
-  // end salary maodule function....
+  // end salary module function.
+
+  // staff module function......
+  
+  get_staff() {
+    return this.http.get(this.baseUrl + 'staff_view.php');
+  }
+  post_staff(data:any){
+    return this.http.get(this.baseUrl + 'staff_insert.php',data);
+  }
+  // end staff module function.....
 }
 
 
