@@ -24,7 +24,7 @@ export class ManageClassComponent {
     console.log(this.add_class.value);
     this.api.post_class(this.add_class.value).subscribe(
       (res:any)=>{
-        this.router.navigate(['admin/class'])
+        this.router.navigate(['/admin/class'])
         alert("data inserted");
         this.add_class.reset();
       }
