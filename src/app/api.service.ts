@@ -78,6 +78,9 @@ export class ApiService {
   get_notice() {
     return this.http.get(this.baseUrl + "notification_view_tbl.php");
   }
+  post_notice(data:any){
+    return this.http.post(this.baseUrl+'notification_insert_tbl.php',data)
+  }
   // endingg......
   // class module function........
   get_class() {
@@ -101,6 +104,9 @@ export class ApiService {
   get_salary() {
     return this.http.get(this.baseUrl + 'salary_view.php');
   }
+  post_salary(data:any) {
+    return this.http.post(this.baseUrl + 'salary_insert.php',data);
+  }
   // end salary module function.
 
   // staff module function......
@@ -109,7 +115,7 @@ export class ApiService {
     return this.http.get(this.baseUrl + 'staff_view.php');
   }
   post_staff(data:any){
-    return this.http.get(this.baseUrl + 'staff_insert.php');
+    return this.http.post(this.baseUrl + 'staff_insert.php',data);
   }
   // end staff module function.....
   // teacher module function....
@@ -120,6 +126,9 @@ export class ApiService {
   // expense module function.....
   get_expense() {
     return this.http.get(this.baseUrl + 'expense_view.php');
+  }
+  post_expense(data:any){
+    return this.http.post(this.baseUrl + 'expense_insert.php',data);
   }
   // end expense module...
   

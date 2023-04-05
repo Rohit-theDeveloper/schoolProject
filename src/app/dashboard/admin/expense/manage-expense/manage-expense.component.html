@@ -1,44 +1,45 @@
 <div class="bg-white w-100 h-100 ">
-    <div>
-      <mat-toolbar>
-        <span class="p-3">{{actionheader}}</span>
-        <span class="example-spacer"></span>
-        <mat-icon routerLink="../expense" class="pb-4">cancel</mat-icon>
-      </mat-toolbar>
-    </div>
-    <div class="bg-white border ">
-      <form [formGroup]="expenseform" class="w-50">
-        <!-- <mat-form-field class="example-form-field p-4">
-          <mat-label class="p-1">Book ID</mat-label>
-          <input matInput type="text" required="" formControlName="book_id">
-        </mat-form-field> -->
-        <mat-form-field class="example-form-field p-4">
-          <mat-label class="p-1">Expense Type</mat-label>
-          <input matInput type="text" required="" formControlName="exp_type">
-        </mat-form-field>
-        
-        <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">Date</mat-label>
-            <input matInput type="date" required="" formControlName="exp_date">
-          </mat-form-field>
-
-        <mat-form-field class="example-form-field p-4">
-          <mat-label class="p-1">Amount</mat-label>
-          <input matInput type="text" required="" formControlName="exp_amount" >
-        </mat-form-field>
-        <mat-form-field class="example-form-field p-4">
-          <mat-label class="p-1">Paid</mat-label>
-          <input matInput type="email" required="" formControlName="exp_paid">
-        </mat-form-field>
-        <!-- <mat-form-field class="example-form-field p-4 ">
-          <mat-label class="p-1">Dues</mat-label>
-          <input matInput type="text" required="" formControlName="exp_due">
-        </mat-form-field><br> -->
-        <button class="btn text-white btn-danger m-4"> &nbsp; &nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
-        <button class="btn text-white btn-primary m-4" (click)="reset()">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
-        <button class="btn text-white btn-success m-4" (click)="onsave()" [disabled]="!expenseform.valid">&nbsp;&nbsp;&nbsp;&nbsp;Submit&nbsp;&nbsp;&nbsp;&nbsp;</button>
-      </form>
-  
-    </div>
-  
+  <div>
+    <mat-toolbar>
+      <span class="p-3">{{(actionheader)}}</span>
+      <span class="example-spacer"></span>
+      <mat-icon routerLink="../expense" class="pb-4">cancel</mat-icon>
+    </mat-toolbar>
   </div>
+  <div class="bg-white border ">
+    <form [formGroup]="expenseform" class="w-50">
+      <!-- <mat-form-field class="example-form-field p-4">
+        <mat-label class="p-1"> Id</mat-label>
+        <input matInput type="number" >
+      </mat-form-field>   -->
+      <mat-form-field class="example-form-field p-4">
+        <mat-label class="p-1">Expense Name</mat-label>
+        <input matInput type="text" required="" formControlName="exp_name">
+      </mat-form-field>  
+      <mat-form-field class="example-form-field p-4">
+        <mat-label class="p-1">Expense Date</mat-label>
+        <input matInput type="date" required="" formControlName="exp_date">
+      </mat-form-field>  
+      
+      <mat-form-field class="example-form-field p-4">
+        <mat-label class="p-1">Expense Amount</mat-label>
+        <input matInput type="number" required="" formControlName="exp_amount">
+      </mat-form-field>  
+      
+      <mat-form-field class="example-form-field p-4">
+        <mat-label class="p-1">Paid</mat-label>
+        <input matInput type="number" required="" formControlName="exp_paid">
+      </mat-form-field>  
+      
+      <mat-form-field class="example-form-field p-4">
+        <mat-label class="p-1">Dues</mat-label>
+        <input matInput type="number" required="" formControlName="exp_due">
+      </mat-form-field> <br> 
+        <button class="btn text-white btn-danger m-4" routerLink="../expense"> &nbsp; &nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
+        <button class="btn text-white btn-primary m-4" (click)="reset()">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
+        <button class="btn text-white btn-success m-4" (click)="onSave()" >&nbsp;&nbsp;&nbsp;&nbsp;Add&nbsp;&nbsp;&nbsp;&nbsp;</button>
+  
+    </form> 
+        
+
+</div>
