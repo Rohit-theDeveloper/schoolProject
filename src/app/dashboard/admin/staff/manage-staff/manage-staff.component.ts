@@ -15,11 +15,19 @@ export class ManageStaffComponent {
     private api:ApiService
   ){}
   add_staff=this.fb.group({
-    sub_id:['',Validators.required],
-    sub_name:['',Validators.required],
-    
+    staff_name:['',Validators.required],
+    staff_gender:['',Validators.required],
+    staff_fname:['',Validators.required],
+    staff_address:['',Validators.required],
+    staff_mob:['',Validators.required],
+    staff_role:['',Validators.required],
+    staff_salary:['',Validators.required],
+    staff_aadhar:['',Validators.required],
+    staff_dob:['',Validators.required],
+    staff_email:['',Validators.required],
+    staff_jndate:['',Validators.required],
   })
-  Onreset(){
+  OnReset(){
     this.add_staff.reset();
   }
   OnSave(){

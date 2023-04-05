@@ -14,6 +14,8 @@ import { ApplicationComponent } from './dashboard/admin/application/application.
 import { ManageApplicationComponent } from './dashboard/admin/application/manage-application/manage-application.component';
 import { ClassComponent } from './dashboard/admin/class/class.component';
 import { ManageClassComponent } from './dashboard/admin/class/manage-class/manage-class.component';
+import { ExpenseComponent } from './dashboard/admin/expense/expense.component';
+import { ManageExpenseComponent } from './dashboard/admin/expense/manage-expense/manage-expense.component';
 import { FeeComponent } from './dashboard/admin/fee/fee.component';
 import { ManageFeeComponent } from './dashboard/admin/fee/manage-fee/manage-fee.component';
 import { ManageNotificationComponent } from './dashboard/admin/notification/manage-notification/manage-notification.component';
@@ -81,6 +83,7 @@ const routes: Routes = [
       {path:'notification',component:NotificationComponent},
       {path:'application',component:ApplicationComponent},
       {path:'setting',component:SettingComponent},
+      {path:'expense',component:ExpenseComponent},
       {path:'logout',component:AdminDashboardComponent},
       // forms
       {path:"manage-librarian",component:ManageLibrarianComponent},
@@ -93,6 +96,7 @@ const routes: Routes = [
       {path:"manage-salary",component:ManageSalaryComponent},
       {path:"manage-staff",component:ManageStaffComponent},
       {path:"manage-subject",component:ManageSubjectComponent},
+      {path:"manage-expense",component:ManageExpenseComponent}
 
     ]
   },
