@@ -14,10 +14,15 @@ export class ApiService {
   get_book() {
     return this.http.get(this.baseUrl + 'bookdataget.php');
   }
+  get_single_book(bookid:any) {
+    return this.http.get(this.baseUrl + 'bookdataget.php?bookid='+bookid);
+  }
   post_book(data: any) {
     return this.http.post(this.baseUrl + 'booksforminsert.php', data);
   }
-
+  put_book(data: any) {
+    return this.http.put(this.baseUrl + 'update_book.php', data);
+  }
   // endingg......
 
   // library geting data from database
