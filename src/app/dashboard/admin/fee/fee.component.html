@@ -36,6 +36,11 @@
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Fee Type </th>
       <td mat-cell *matCellDef="let row"> {{row.fee_type}} </td>
     </ng-container>
+    <!-- fee date column -->
+    <ng-container matColumnDef="fee_date">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Fee Date </th>
+      <td mat-cell *matCellDef="let row"> {{row.fee_date}} </td>
+    </ng-container>
   
     <!-- amount Column -->
     <ng-container matColumnDef="fee_amount">
@@ -58,6 +63,10 @@
     <ng-container matColumnDef="std_id">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Std Id </th>
       <td mat-cell *matCellDef="let row"> {{row.std_id}} </td>
+    </ng-container>
+    <ng-container matColumnDef="class_id">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> class Id </th>
+      <td mat-cell *matCellDef="let row"> {{row.class_id}} </td>
     </ng-container>
 
    
