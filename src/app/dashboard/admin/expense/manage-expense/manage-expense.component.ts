@@ -10,33 +10,29 @@ import { ApiService } from 'src/app/api.service';
 })
 export class ManageExpenseComponent {
   actionheader : string ='Manage Expense'
+  expense_id : number =0;
   constructor(
     private fb : FormBuilder,
     private api :ApiService,
     private router:Router
   ){}
   expenseform = this.fb.group({
-    // book_id:[''],
-    exp_type:[''],
+    exp_name:[''],
     exp_date:[''],
     exp_amount:[''],
     exp_paid:[''],
     exp_due:['']
   })
-  onsave(){
+  onSave(){
     console.log(this.expenseform.value);
-    this.api.post_book(this.expenseform.value).subscribe(
+    this.api.post_expense(this.expenseform.value).subscribe(
       (res:any)=>{
         this.expenseform.reset();
-        // this.router.navigate(['../libr-books']);
-        console.log(res)
+        this.router.navigate(['/admin/expense']);
+        console.log(res);
       }
     )
   }
-    // ngOnInit(): void {
-    //   throw new Error('Method not implemented.');
-    // }
-  
     reset(){
       this.expenseform.reset()
     }

@@ -121,6 +121,9 @@ export class ApiService {
   get_expense() {
     return this.http.get(this.baseUrl + 'expense_view.php');
   }
+  post_expense(data:any){
+    return this.http.post(this.baseUrl + 'expense_insert.php',data);
+  }
   // end expense module...
   
 }
