@@ -8,82 +8,76 @@ export class ApiService {
 
   baseUrl = 'http://localhost/api/';
   constructor(
-    private http:HttpClient
+    private http: HttpClient
   ) { }
   // book getting data from data bas
-  get_book(){
-    return this.http.get(this.baseUrl+'bookdataget.php');
+  get_book() {
+    return this.http.get(this.baseUrl + 'bookdataget.php');
   }
-  post_book(data:any){
-    return this.http.post(this.baseUrl + 'booksforminsert.php',data);
+  get_single_book(bookid:any) {
+    return this.http.get(this.baseUrl + 'bookdataget.php?bookid='+bookid);
   }
-
+  post_book(data: any) {
+    return this.http.post(this.baseUrl + 'booksforminsert.php', data);
+  }
+  put_book(data: any) {
+    return this.http.put(this.baseUrl + 'update_book.php', data);
+  }
   // endingg......
 
   // library geting data from database
-  get_library(){
-    return this.http.get(this.baseUrl+'libraryget.php');
+  get_library() {
+    return this.http.get(this.baseUrl + 'libraryget.php');
   }
-  post_library(data:any){
-    return this.http.post(this.baseUrl + 'libraryinsert.php',data);
+  post_library(data: any) {
+    return this.http.post(this.baseUrl + 'libraryinsert.php', data);
   }
   // endingg......
 
   //book transaction database api
-  get_book_tran(){
-    return this.http.get(this.baseUrl+'booktransactionget.php');
+  get_book_tran() {
+    return this.http.get(this.baseUrl + 'booktransactionget.php');
   }
-  post_book_tran(data:any){
-    return this.http.post(this.baseUrl + 'booktransactioninsert.php',data);
+  post_book_tran(data: any) {
+    return this.http.post(this.baseUrl + 'booktransactioninsert.php', data);
   }
-    // endingg......
+  // endingg......
 
   //application database api
-  get_librnapplication(){
-    return this.http.get(this.baseUrl+'view_librnapplication.php');
+  get_librnapplication() {
+    return this.http.get(this.baseUrl + 'view_librnapplication.php');
+  }
+  post_librnapplication(data: any) {
+    return this.http.post(this.baseUrl + 'insert_librnapplication.php', data);
   }
   // endingg......
 
   //student getting database api
-  get_student(){
-    return this.http.get(this.baseUrl+'std_view.php');
+  get_student() {
+    return this.http.get(this.baseUrl + 'std_view.php');
   }
-  post_std(data:any){
-    return this.http.post(this.baseUrl+'std_add.php',data);
+
+  post_std(data: any) {
+    return this.http.post(this.baseUrl + 'std_insert.php', data);
   }
 
   // endingg......
 
-  get_staff(){
-    return this.http.get(this.baseUrl+'staff_view.php');
+  //student getting database api
+  get_fee() {
+    return this.http.get(this.baseUrl + 'fee_recp_view.php');
   }
-//student getting database api
-  get_fee(){
-    return this.http.get(this.baseUrl+'fee_recp_view.php');
+  post_fee(data: any) {
+    return this.http.post(this.baseUrl + 'fee_recp_insert.php', data);
   }
 
-   // endingg......
+  // endingg......
 
   //  notice getting data from database
-  get_notice(){
-    return this.http.get(this.baseUrl+"notification_view_tbl.php");
+  get_notice() {
+    return this.http.get(this.baseUrl + "notification_view_tbl.php");
   }
   // endingg......
-
-  // getting teachers data from database
-  get_teachers(){
-    return this.http.get(this.baseUrl+"teacher_view.php");
-  } 
-  // getting expense data from database
-  get_expense(){
-    return this.http.get(this.baseUrl+"expense_view.php");
-  }
-  //end
-
-  //post expense data 
-  // post_expense(){
-  //   return this.http.post(this.baseUrl+'expense_insert.php');
-  // }
 }
 
 

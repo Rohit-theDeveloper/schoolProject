@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup,Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { throwIfEmpty } from 'rxjs';
 import { ApiService } from 'src/app/api.service';
 
 @Component({
@@ -8,16 +9,24 @@ import { ApiService } from 'src/app/api.service';
   templateUrl: './manage-books.component.html',
   styleUrls: ['./manage-books.component.css']
 })
-export class ManageBooksComponent {
-  // bookform !:FormGroup
-  actionheader : string ='Manage Book'
+export class ManageBooksComponent implements OnInit {
+  bookid:number = 0
 constructor(
   private fb : FormBuilder,
   private api :ApiService,
-  private router:Router
+  private router:Router,
+  private url : ActivatedRoute
 ){}
+ngOnInit(): void {
+   this.bookid= this.url.snapshot.params['id'];
+    if(this.bookid){
+      this.api.get_single_book(this.bookid).subscribe((res:any)=>{
+        this.bookform.patchValue(res.data)
+      })
+    }
+}
 bookform = this.fb.group({
-  // book_id:[''],
+  book_id:[''],
   book_price:[''],
   book_name:[''],
   book_edition:[''],
@@ -29,14 +38,16 @@ onsave(){
   this.api.post_book(this.bookform.value).subscribe(
     (res:any)=>{
       this.bookform.reset();
-      // this.router.navigate(['../libr-books']);
-      console.log(res)
+      // this.router.navigate(['/libr-books']);
     }
   )
 }
-  // ngOnInit(): void {
-  //   throw new Error('Method not implemented.');
-  // }
+updatebook(){
+this.api.put_book(this.bookform.value).subscribe((res:any)=>{
+  console.log(res.message);
+  this.bookform.reset()
+})
+}
 
   reset(){
     this.bookform.reset()

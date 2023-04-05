@@ -38,8 +38,7 @@ constructor(
         console.log(this.add_std.value);
         this.api.post_std(this.add_std.value).subscribe(
           (res:any)=>{
-            this.add_std.reset();
-            this.router.navigate(["../admin-student"]);
+            this.router.navigate(['/admin/admin-student']);
             console.log(res)
           }
   )
