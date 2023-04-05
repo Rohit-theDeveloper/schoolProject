@@ -21,7 +21,7 @@ export class ApiService {
     return this.http.post(this.baseUrl + 'booksforminsert.php', data);
   }
   put_book(data: any) {
-    return this.http.put(this.baseUrl + 'update_book.php', data);
+    return this.http.put(this.baseUrl + 'update_books.php', data);
   }
   // endingg......
 
@@ -63,6 +63,7 @@ export class ApiService {
 
   // endingg......
 
+
   //student getting database api
   get_fee() {
     return this.http.get(this.baseUrl + 'fee_recp_view.php');
@@ -92,7 +93,7 @@ export class ApiService {
     return this.http.get(this.baseUrl + 'subject_view.php');
   }
   post_subject(data:any){
-    return this.http.post(this.baseUrl+'subject_insert.php',data);
+    return this.http.post(this.baseUrl + 'subject_insert.php', data);
   }
   // end subject module function...
 
@@ -108,9 +109,20 @@ export class ApiService {
     return this.http.get(this.baseUrl + 'staff_view.php');
   }
   post_staff(data:any){
-    return this.http.get(this.baseUrl + 'staff_insert.php',data);
+    return this.http.get(this.baseUrl + 'staff_insert.php');
   }
   // end staff module function.....
+  // teacher module function....
+  get_teachers() {
+    return this.http.get(this.baseUrl + 'teacher_view.php');
+  }
+  // end  theacher module.... 
+  // expense module function.....
+  get_expense() {
+    return this.http.get(this.baseUrl + 'expense_view.php');
+  }
+  // end expense module...
+  
 }
 
 
