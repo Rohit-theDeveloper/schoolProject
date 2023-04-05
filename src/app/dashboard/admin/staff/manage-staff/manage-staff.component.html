@@ -6,18 +6,18 @@
       </mat-toolbar>
 </div>
 <div class="bg-white border ">
-    <form action="">
+    <form action="" [formGroup]="add_staff">
       <mat-form-field class="example-form-field p-4 ">
         <mat-label class="p-1">Staff ID</mat-label>
         <input matInput type="text" required=""  disabled="">
       </mat-form-field>
         <mat-form-field class="example-form-field p-4">
             <mat-label class="p-1">Name</mat-label>
-            <input matInput type="text" required="" >
+            <input matInput type="text" required="" formControlName="staff_name">
           </mat-form-field>
           <mat-form-field appearance="fill" class="example-form-field p-4 ">
             <mat-label>Gender</mat-label>
-            <mat-select required="">
+            <mat-select required="" formControlName="staff_gender">
               <mat-option value="primary">Male</mat-option>
               <mat-option value="accent">Female</mat-option>
               <mat-option value="warn">Other</mat-option>
@@ -25,20 +25,20 @@
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Father's name</mat-label>
-            <input matInput type="text" required="" >
+            <input matInput type="text" required="" formControlName="staff_fname" >
           </mat-form-field>
 
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Address</mat-label>
-            <input matInput type="text" required="" >
+            <input matInput type="text" required="" formControlName="staff_address">
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Mobile</mat-label>
-            <input matInput type="text" required="" >
+            <input matInput type="text" required="" formControlName="staff_mob">
           </mat-form-field>
           <mat-form-field appearance="fill" class="example-form-field p-4 ">
             <mat-label>Role</mat-label>
-            <mat-select required="">
+            <mat-select required=""formControlName="staff_role">
               <mat-option value="primary">Guard</mat-option>
               <mat-option value="accent">Peon</mat-option>
               <mat-option value="warn">Gardren</mat-option>

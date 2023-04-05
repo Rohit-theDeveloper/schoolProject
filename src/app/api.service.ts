@@ -58,9 +58,6 @@ export class ApiService {
 
   // endingg......
 
-  get_staff() {
-    return this.http.get(this.baseUrl + 'staff_view.php');
-  }
   //student getting database api
   get_fee() {
     return this.http.get(this.baseUrl + 'fee_recp_view.php');
@@ -89,13 +86,26 @@ export class ApiService {
   get_subject() {
     return this.http.get(this.baseUrl + 'subject_view.php');
   }
+  post_subject(data:any){
+    return this.http.post(this.baseUrl+'subject_insert.php',data);
+  }
   // end subject module function...
+
   // slalary module function.....
   get_salary() {
     return this.http.get(this.baseUrl + 'salary_view.php');
   }
-  // end salary maodule function.
-}
+  // end salary module function.
 
+  // staff module function......
+  
+  get_staff() {
+    return this.http.get(this.baseUrl + 'staff_view.php');
+  }
+  post_staff(data:any){
+    return this.http.get(this.baseUrl + 'staff_insert.php',data);
+  }
+  // end staff module function.....
+}
 
 
