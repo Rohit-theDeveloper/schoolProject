@@ -24,19 +24,19 @@ import { ApiService } from 'src/app/api.service';
       this.api.get_student().subscribe(
         (res:any)=> {
           // console.log(res.data);
-          this.dataSource= res.data;
+          this.dataSource.data= res.data;
           this. total_count = res.data.length;
         }
       )
-    }
-    ngAfterViewInit() {
+}
+    ngAfterViewInit(): void {
       this.dataSource.paginator = this.paginator;
       this.dataSource.sort = this.sort;
     }
     applyFilter(event: Event) {
       const filterValue = (event.target as HTMLInputElement).value;
       this.dataSource.filter = filterValue.trim().toLowerCase();
-  
+    
       if (this.dataSource.paginator) {
         this.dataSource.paginator.firstPage();
       }

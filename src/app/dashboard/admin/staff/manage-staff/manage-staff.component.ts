@@ -20,8 +20,8 @@ export class ManageStaffComponent {
     staff_fname:['',Validators.required],
     staff_address:['',Validators.required],
     staff_mob:['',Validators.required],
-    staff_role:['',Validators.required],
-    staff_salary:['',Validators.required],
+    role_id:['',Validators.required],
+    salary:[''],
     staff_aadhar:['',Validators.required],
     staff_dob:['',Validators.required],
     staff_email:['',Validators.required],
@@ -34,10 +34,10 @@ export class ManageStaffComponent {
     console.log(this.add_staff.value);
     this.api.post_staff(this.add_staff.value).subscribe(
       (res:any)=>{
-        
+        console.log(res);
         if(res.data!='null'){
-          this.router.navigate(['/admin/subject'])
-          alert("data inserted");
+          this.router.navigate(['/admin/staff'])
+          // alert("data inserted");
           this.add_staff.reset();
         }
         else{

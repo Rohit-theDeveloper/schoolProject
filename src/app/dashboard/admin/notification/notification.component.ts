@@ -27,7 +27,7 @@ export class NotificationComponent implements OnInit, AfterViewInit{
     ngOnInit(): void {
       this.api.get_notice().subscribe(
         (res:any)=> {
-          console.log(res.data);
+          // console.log(res.data);
           this.dataSource.data= res.data;
           this. total_count = res.data.length;
         }
