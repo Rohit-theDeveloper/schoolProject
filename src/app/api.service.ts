@@ -109,7 +109,7 @@ export class ApiService {
     return this.http.get(this.baseUrl + 'staff_view.php');
   }
   post_staff(data:any){
-    return this.http.get(this.baseUrl + 'staff_insert.php');
+    return this.http.post(this.baseUrl + 'staff_insert.php',data);
   }
   // end staff module function.....
   // teacher module function....

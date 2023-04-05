@@ -9,36 +9,42 @@
     <form action="" [formGroup]="add_staff">
       <mat-form-field class="example-form-field p-4 ">
         <mat-label class="p-1">Staff ID</mat-label>
-        <input matInput type="text" required=""  disabled="">
+        <input matInput type="number" required=""  disabled="">
       </mat-form-field>
         <mat-form-field class="example-form-field p-4">
             <mat-label class="p-1">Name</mat-label>
             <input matInput type="text" required="" formControlName="staff_name">
-          </mat-form-field>
-          <mat-form-field appearance="fill" class="example-form-field p-4 ">
-            <mat-label>Gender</mat-label>
-            <mat-select required="" formControlName="staff_gender">
-              <mat-option value="primary">Male</mat-option>
-              <mat-option value="accent">Female</mat-option>
-              <mat-option value="warn">Other</mat-option>
-            </mat-select>
-          </mat-form-field>
+          </mat-form-field>  
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Father's name</mat-label>
             <input matInput type="text" required="" formControlName="staff_fname" >
           </mat-form-field>
-
+          <mat-form-field appearance="fill" class="example-form-field p-4 ">
+            <mat-label>Gender</mat-label>
+            <mat-select required="" formControlName="staff_gender">
+              <mat-option value="male">Male</mat-option>
+              <mat-option value="female">Female</mat-option>
+              <mat-option value="Other">Other</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field class="example-form-field p-4 " color="accent" appearance="fill">
+            <mat-label>Birth Date</mat-label>
+            <input matInput [matDatepicker]="picker1" formControlName="staff_dob">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Address</mat-label>
             <input matInput type="text" required="" formControlName="staff_address">
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Mobile</mat-label>
-            <input matInput type="text" required="" formControlName="staff_mob">
+            <input matInput type="number" required="" formControlName="staff_mob">
           </mat-form-field>
           <mat-form-field appearance="fill" class="example-form-field p-4 ">
             <mat-label>Role</mat-label>
-            <mat-select required=""formControlName="staff_role" title="101-swipper 102-gurdner 103-clark 104-helper 105-peon">
+            <mat-select required=""formControlName="role_id" title="101-swipper 102-gurdner 103-clark 104-helper 105-peon">
               <mat-option value="101">101-Swipper</mat-option>
               <mat-option value="102">102-Gurdner</mat-option>
               <mat-option value="103">103-clark</mat-option>
@@ -48,32 +54,17 @@
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Salary</mat-label>
-            <input matInput type="text" required="" formControlName="staff_salary" >
+            <input matInput type="number" required="" formControlName="salary" >
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Aadhar No.</mat-label>
-            <input matInput type="text" required=""formControlName="staff_aadhar" >
+            <input matInput type="number" required=""formControlName="staff_aadhar" >
           </mat-form-field>
-          <!-- <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">DOB</mat-label>
-            <input matInput type="date" required="" formControlName="staff_dob" >
-          </mat-form-field> -->
-          <mat-form-field class="example-form-field p-4 " color="accent" appearance="fill">
-            <mat-label>Birth Date</mat-label>
-            <input matInput [matDatepicker]="picker1" formControlName="staff_dob">
-            <mat-hint>MM/DD/YYYY</mat-hint>
-            <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
-            <mat-datepicker #picker1></mat-datepicker>
-          </mat-form-field>
+         
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Email</mat-label>
-            <input matInput type="text" formControlName="staff_email">
+            <input matInput type="email" formControlName="staff_email">
           </mat-form-field>
-<!--           
-          <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">Join Date</mat-label>
-            <input matInput type="date" required="" formControlName="staff_jndate" >
-          </mat-form-field> -->
           <mat-form-field class="example-form-field p-4 "color="accent" appearance="fill">
             <mat-label>Join Date</mat-label>
             <input matInput [matDatepicker]="picker2" formControlName="staff_jndate">
