@@ -104,6 +104,9 @@ export class ApiService {
   get_salary() {
     return this.http.get(this.baseUrl + 'salary_view.php');
   }
+  post_salary(data:any) {
+    return this.http.post(this.baseUrl + 'salary_insert.php',data);
+  }
   // end salary module function.
 
   // staff module function......
