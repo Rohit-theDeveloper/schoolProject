@@ -47,29 +47,29 @@
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Salary</mat-label>
-            <input matInput type="text" required="" >
+            <input matInput type="text" required="" formControlName="staff_salary" >
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Aadhar No.</mat-label>
-            <input matInput type="text" required="" >
+            <input matInput type="text" required=""formControlName="staff_aadhar" >
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">DOB</mat-label>
-            <input matInput type="date" required="" >
+            <input matInput type="date" required="" formControlName="staff_dob" >
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Email</mat-label>
-            <input matInput type="text">
+            <input matInput type="text" formControlName="staff_email">
           </mat-form-field>
           
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Join Date</mat-label>
-            <input matInput type="date" required="" >
+            <input matInput type="date" required="" formControlName="staff_jndate" >
           </mat-form-field>
-          <input class="p-4" type="file">
+          <!-- <input class="p-4" type="file"> -->
           <button  class="btn text-white btn-danger m-4">&nbsp;&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
-          <button  class="btn text-white btn-primary m-4">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
-          <button  class="btn text-white btn-success m-4">&nbsp;&nbsp;&nbsp;&nbsp;Submit&nbsp;&nbsp;&nbsp;&nbsp;</button>
+          <button  class="btn text-white btn-primary m-4"(click)="OnReset()">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
+          <button  class="btn text-white btn-success m-4" (click)="OnSave()">&nbsp;&nbsp;&nbsp;&nbsp;Submit&nbsp;&nbsp;&nbsp;&nbsp;</button>
     </form>
    
 </div>
