@@ -7,18 +7,29 @@
                <mat-icon routerLink="../notification"  class="pb-4">cancel</mat-icon>
              </mat-toolbar>
         </div>
-    <form class=" text-center">
+    
         <div>
-            <mat-form-field class="example-full-width p-3">
-                <mat-label class="p-1">Notice (subject)</mat-label>
-                <input matInput type="text" required="" >
-              </mat-form-field>
+            <form action=""   [formGroup]="add_notification">
+                <mat-form-field class="example-full-width p-3">
+                    <mat-label class="p-1">Notice (subject)</mat-label>
+                    <input matInput type="text" required="" formControlName="notice_type">
+                </mat-form-field>
+                <mat-form-field color="accent" appearance="fill">
+                  <mat-label>Date</mat-label>
+                  <input matInput [matDatepicker]="picker1" formControlName="notice_date">
+                  <mat-hint>MM/DD/YYYY</mat-hint>
+                  <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                  <mat-datepicker #picker1></mat-datepicker>
+                </mat-form-field>
+                <textarea class="bg-secondary p-3 text-white "  cols="100" rows="15" formControlName="notice_msg"></textarea>
+                  <div class="">
+                      <button  class="btn text-white btn-danger  p-2 m-3">&nbsp;&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                      <button  routerLink="../notification" class="btn text-white btn-success p-2 m-3" (click)="onSave()">&nbsp;&nbsp;&nbsp;&nbsp;Publish&nbsp;&nbsp;&nbsp;&nbsp;</button>
+                  </div>
+            </form>
         </div>
-        <textarea class="bg-secondary p-3 text-white " name="" id="" cols="100" rows="15"></textarea>
-        <div class="">
-            <button  class="btn text-white btn-danger  p-2 m-3">&nbsp;&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
-            <button  routerLink="../notification" class="btn text-white btn-success p-2 m-3">&nbsp;&nbsp;&nbsp;&nbsp;Publish&nbsp;&nbsp;&nbsp;&nbsp;</button>
-        </div>
-    </form>
+        
+        
+    
  
    </div>

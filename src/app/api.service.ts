@@ -78,6 +78,9 @@ export class ApiService {
   get_notice() {
     return this.http.get(this.baseUrl + "notification_view_tbl.php");
   }
+  post_notice(data:any){
+    return this.http.post(this.baseUrl+'notification_insert_tbl.php',data)
+  }
   // endingg......
   // class module function........
   get_class() {

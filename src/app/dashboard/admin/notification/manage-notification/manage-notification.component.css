@@ -10,10 +10,10 @@ mat-toolbar{
   height: 35px;
   float: right;
 }
-.example-full-width {
+/* .example-full-width {
     width: 800px;
-  }
-.color{
+  } */
+/* .color{
     background-color:rgb(153, 146, 146);
     font-size: 18px;
     line-height: 25px;
@@ -21,4 +21,4 @@ mat-toolbar{
     box-sizing: border-box;
     font-weight: lighter;
     text-align: justify; 
-} 
+}  */
