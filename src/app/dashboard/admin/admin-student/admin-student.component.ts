@@ -9,7 +9,7 @@ import { ApiService } from 'src/app/api.service';
   templateUrl: './admin-student.component.html',
   styleUrls: ['./admin-student.component.css']
 })
-    export class AdminStudentComponent implements OnInit, AfterViewInit  {
+    export class AdminStudentComponent implements OnInit, AfterViewInit{
       displayedColumns: string[] = ['sn','std_id','std_name','std_fname','std_mname','std_email','std_mob','std_gender','std_photo'];
       dataSource = new MatTableDataSource();
      total_count:number = 0;
@@ -41,7 +41,4 @@ import { ApiService } from 'src/app/api.service';
         this.dataSource.paginator.firstPage();
       }
     }
-
-   
-    
-}
+  }
