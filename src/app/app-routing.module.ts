@@ -89,6 +89,7 @@ const routes: Routes = [
       {path:"manage-librarian",component:ManageLibrarianComponent},
       {path:"edit_librarian/:id",component:ManageLibrarianComponent},
       {path:"manage-student",component:ManageStudentComponent},
+      {path:"edit-student/:id",component:ManageStudentComponent},
       {path:"manage-teacher",component:ManageTeacherComponent},
       {path:"manage-application",component:ManageApplicationComponent},
       {path:"manage-class",component:ManageClassComponent},

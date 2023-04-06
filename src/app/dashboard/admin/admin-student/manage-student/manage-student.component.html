@@ -1,14 +1,16 @@
 <div class="bg-white w-100 h-100 ">
   <div>
     <mat-toolbar>
-      <span class="p-3">{{actionheader}}</span>
+      <span class="p-3">{{(sid)?"Update Student":"Add Student"}}</span>
       <span class="example-spacer"></span>
       <mat-icon routerLink="../admin-student" class="pb-4">cancel</mat-icon>
     </mat-toolbar>
+    
   </div>
   <div class="bg-white border p-4">
     <!-- Name -->
     <form [formGroup]="add_std" >
+      <input type="hidden" formControlName="std_id" *ngIf="sid">
       <mat-form-field class="example-form-field padding">
         <mat-label class="p-1">Name</mat-label>
         <input matInput type="text" required="" formControlName="std_name">
@@ -106,8 +108,8 @@
        <!-- photo -->
       <!-- <input class="p-4" type="file"> -->
       <button class="btn text-white btn-danger m-3" routerLink="../admin-student"> &nbsp; &nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
-      <button class="btn text-white btn-primary m-3" (click)="reset_form()">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
-      <button class="btn text-white btn-success m-3" (click)="onSave()" >&nbsp;&nbsp;&nbsp;&nbsp;Submit&nbsp;&nbsp;&nbsp;&nbsp;</button>
+      <button class="btn text-white btn-primary m-3" (click)="reset_form()" *ngIf="!sid">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
+      <button class="btn text-white btn-success m-3" (click)="(sid)?updatestd():onSave()" >&nbsp;&nbsp;&nbsp;&nbsp;{{(sid)?"Update":"Add"}}&nbsp;&nbsp;&nbsp;&nbsp;</button>
     </form>
 
   </div>
