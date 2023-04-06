@@ -57,7 +57,7 @@
           <!-- <input class="p-4" type="file"> -->
           <button  class="btn text-white btn-danger m-4">&nbsp;&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
           <button  class="btn text-white btn-primary m-4" *ngIf="!librnid">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
-          <button  class="btn text-white btn-success m-4" (click)="(librnid)?updatelibrarian():onsave()" [disabled]="!librarianform.valid">&nbsp;&nbsp;&nbsp;&nbsp;{{(librnid)? "update":"Add"}}&nbsp;&nbsp;&nbsp;&nbsp;</button>
+          <button  class="btn text-white btn-success m-4" (click)="(librnid)?updatelibrarian():onsave()" >&nbsp;&nbsp;&nbsp;&nbsp;{{(librnid)? "update":"Add"}}&nbsp;&nbsp;&nbsp;&nbsp;</button>
     </form>
    
 </div>

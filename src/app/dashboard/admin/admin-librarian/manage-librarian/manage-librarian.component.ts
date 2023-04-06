@@ -41,6 +41,7 @@ constructor(
     this.api.post_librarian(this.librarianform.value).subscribe(
       (res:any)=>{
         this.librarianform.reset();
+        console.log(res.data)
         // this.router.navigate(['/libr-books']);
       }
     )
