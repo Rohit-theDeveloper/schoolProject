@@ -57,7 +57,7 @@ export class ManageStaffComponent implements OnInit{
     console.log(this.add_staff.value);
     this.api.post_staff(this.add_staff.value).subscribe(
       (res:any)=>{
-        console.log(res.data);
+        console.log(res);
        
       }
     )
