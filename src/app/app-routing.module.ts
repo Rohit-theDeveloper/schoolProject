@@ -89,6 +89,7 @@ const routes: Routes = [
       {path:"manage-librarian",component:ManageLibrarianComponent},
       {path:"edit_librarian/:id",component:ManageLibrarianComponent},
       {path:"manage-student",component:ManageStudentComponent},
+      {path:"edit-student/:id",component:ManageStudentComponent},
       {path:"manage-teacher",component:ManageTeacherComponent},
       {path:"manage-application",component:ManageApplicationComponent},
       {path:"manage-class",component:ManageClassComponent},
@@ -96,6 +97,7 @@ const routes: Routes = [
       {path:"manage-notification",component:ManageNotificationComponent},
       {path:"manage-salary",component:ManageSalaryComponent},
       {path:"manage-staff",component:ManageStaffComponent},
+      {path:"update-staff/:staff_id",component:ManageStaffComponent},
       {path:"manage-subject",component:ManageSubjectComponent},
       {path:"manage-expense",component:ManageExpenseComponent}
 

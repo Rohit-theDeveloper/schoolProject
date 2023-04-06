@@ -68,9 +68,15 @@ export class ApiService {
   get_student() {
     return this.http.get(this.baseUrl + 'std_view.php');
   }
+  get_single_student(sid:any){
+    return this.http.get(this.baseUrl+'std_view.php?sid='+sid);
+  }
 
   post_std(data: any) {
     return this.http.post(this.baseUrl + 'std_insert.php', data);
+  }
+  put_std(data:any){
+    return this.http.put(this.baseUrl + 'std_update.php',data);
   }
 
   // endingg......
@@ -129,6 +135,13 @@ export class ApiService {
   post_staff(data:any){
     return this.http.post(this.baseUrl + 'staff_insert.php',data);
   }
+  get_single_staff(staffid:any){
+    return this.http.get(this.baseUrl +'staff_view.php?staff_id='+ staffid);
+   
+  }
+  put_staff(data:any){
+      return this.http.put(this.baseUrl+'staff_update.php',data);
+  }
   // end staff module function.....
   // teacher module function....
   get_teachers() {
@@ -159,4 +172,10 @@ export class ApiService {
   }
   //getting data from database end here
 
+
+
+//applicatio data view
+get_application() {
+  return this.http.get(this.baseUrl + 'admin_application_view.php');
+}
 }
