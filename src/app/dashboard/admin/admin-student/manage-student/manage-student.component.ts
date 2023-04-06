@@ -56,7 +56,7 @@ constructor(
         this.api.post_std(this.add_std.value).subscribe(
           (res:any)=>{
             this.router.navigate(['/admin/admin-student']);
-            console.log(res)
+            alert(res.message);
           }
   )
   
