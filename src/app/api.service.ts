@@ -15,13 +15,13 @@ export class ApiService {
     return this.http.get(this.baseUrl + 'bookdataget.php');
   }
   get_single_book(bookid:any) {
-    return this.http.get(this.baseUrl + 'bookdataget.php?bookid='+bookid);
+    return this.http.get(this.baseUrl + 'bookdataget.php?book_id='+bookid);
   }
   post_book(data: any) {
     return this.http.post(this.baseUrl + 'booksforminsert.php', data);
   }
   put_book(data: any) {
-    return this.http.put(this.baseUrl + 'update_books.php', data);
+    return this.http.put(this.baseUrl + 'update_book.php', data);
   }
   // endingg......
 
@@ -29,8 +29,14 @@ export class ApiService {
   get_library() {
     return this.http.get(this.baseUrl + 'libraryget.php');
   }
+  get_single_library(libraryid:any) {
+    return this.http.get(this.baseUrl + 'libraryget.php?library_id='+libraryid);
+  }
   post_library(data: any) {
     return this.http.post(this.baseUrl + 'libraryinsert.php', data);
+  }
+  put_library(data: any) {
+    return this.http.put(this.baseUrl + 'update_library.php', data);
   }
   // endingg......
 
@@ -40,6 +46,12 @@ export class ApiService {
   }
   post_book_tran(data: any) {
     return this.http.post(this.baseUrl + 'booktransactioninsert.php', data);
+  }
+  get_single_tran(tranid:any) {
+    return this.http.get(this.baseUrl + 'booktransactionget.php?tran_id='+tranid);
+  }
+  put_book_tran(data: any) {
+    return this.http.put(this.baseUrl + 'update_booktran.php', data);
   }
   // endingg......
 
@@ -153,7 +165,7 @@ export class ApiService {
     return this.http.post(this.baseUrl + 'insert_librarian.php',data);
   }
   get_single_librarian(librnid:any) {
-    return this.http.get(this.baseUrl + 'view_librarian.php?librnid='+librnid);
+    return this.http.get(this.baseUrl + 'view_librarian.php?librn_id='+librnid);
   }
   put_librarian(data: any) {
     return this.http.put(this.baseUrl + 'update_librarian.php', data);
