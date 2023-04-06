@@ -68,6 +68,7 @@ updatestd(){
     (res:any)=>{
       console.log(res.message)
       this.router.navigate(['/admin/admin-student']);
+      alert(res.message);
     }
   )
 }

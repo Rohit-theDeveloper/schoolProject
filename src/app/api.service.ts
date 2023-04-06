@@ -153,4 +153,10 @@ export class ApiService {
   }
   //getting data from database end here
 
+
+
+//applicatio data view
+get_application() {
+  return this.http.get(this.baseUrl + 'admin_application_view.php');
+}
 }
