@@ -96,6 +96,7 @@ const routes: Routes = [
       {path:"manage-notification",component:ManageNotificationComponent},
       {path:"manage-salary",component:ManageSalaryComponent},
       {path:"manage-staff",component:ManageStaffComponent},
+      {path:"update-staff/:staff_id",component:ManageStaffComponent},
       {path:"manage-subject",component:ManageSubjectComponent},
       {path:"manage-expense",component:ManageExpenseComponent}
 

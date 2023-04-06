@@ -117,6 +117,13 @@ export class ApiService {
   post_staff(data:any){
     return this.http.post(this.baseUrl + 'staff_insert.php',data);
   }
+  get_single_staff(staffid:any){
+    return this.http.get(this.baseUrl +'staff_view.php?staff_id='+ staffid);
+   
+  }
+  put_staff(data:any){
+      return this.http.put(this.baseUrl+'staff_update.php',data);
+  }
   // end staff module function.....
   // teacher module function....
   get_teachers() {
