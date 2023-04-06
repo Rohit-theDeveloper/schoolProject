@@ -56,9 +56,15 @@ export class ApiService {
   get_student() {
     return this.http.get(this.baseUrl + 'std_view.php');
   }
+  get_single_student(sid:any){
+    return this.http.get(this.baseUrl+'std_view.php?sid='+sid);
+  }
 
   post_std(data: any) {
     return this.http.post(this.baseUrl + 'std_insert.php', data);
+  }
+  put_std(data:any){
+    return this.http.put(this.baseUrl + 'std_update.php',data);
   }
 
   // endingg......
