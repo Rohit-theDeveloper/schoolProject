@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 
 @Component({
@@ -9,14 +9,20 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./manage-librarian.component.css']
 })
 export class ManageLibrarianComponent implements OnInit{
-librnid :number=0;
-  constructor(
-    private api:ApiService,
-    private fb:FormBuilder,
-    private route:Router
-    ){}
+librnid:number = 0
+constructor(
+  private api:ApiService,
+  private fb:FormBuilder,
+  private router:Router,
+  private url:ActivatedRoute
+){}
     ngOnInit(): void {
-        
+      this.librnid = this.url.snapshot.params['id'] ; 
+     if(this.librnid){
+      this.api.get_single_librarian(this.librnid).subscribe((res:any)=>{
+        this.librarianform.patchValue(res.data)
+      })
+     }
     }
 
   librarianform = this.fb.group({
@@ -32,7 +38,6 @@ librnid :number=0;
     librn_password:['']
   })
   onsave(){
-    // console.log(this.librarianform.value);
     this.api.post_librarian(this.librarianform.value).subscribe(
       (res:any)=>{
         this.librarianform.reset();
@@ -43,7 +48,7 @@ librnid :number=0;
   updatelibrarian(){
   this.api.put_librarian(this.librarianform.value).subscribe((res:any)=>{
     console.log(res.message);
-    // this.librarianform.reset()
+    this.librarianform.reset()
   })
   }
   

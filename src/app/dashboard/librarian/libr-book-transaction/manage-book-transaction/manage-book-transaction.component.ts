@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 
 @Component({
@@ -8,16 +8,25 @@ import { ApiService } from 'src/app/api.service';
   templateUrl: './manage-book-transaction.component.html',
   styleUrls: ['./manage-book-transaction.component.css']
 })
-export class ManageBookTransactionComponent {
-  actionheader : string ='Manage Student'
+export class ManageBookTransactionComponent implements OnInit{
+  tranid:number = 0
   constructor(
     private fb : FormBuilder,
     private api :ApiService,
-    private router:Router
+    private router:Router,
+    private url:ActivatedRoute
   ){}
-//   constructor(
-//   private fb : FormBuilder
-// ){
+    
+   ngOnInit(): void {
+    this.tranid = this.url.snapshot.params['id'] ;
+    if(this.tranid){
+      this.api.get_single_tran(this.tranid).subscribe((res:any)=>{
+        // console.log(res.data)
+        this.booktranform.patchValue(res.data)
+      })
+      console.log(this.tranid)
+     }
+   }
   booktranform = this.fb.group({
     tran_id:[''],
     book_id:[''],
@@ -36,16 +45,16 @@ export class ManageBookTransactionComponent {
       }
     )
   }
+   updatebooktran(){
+    this.api.put_book_tran(this.booktranform.value).subscribe(
+      (res:any)=>{
+        console.log(res.message)
+      }
+    )
+   }
   reset(){
     this.booktranform.reset()
   }
 }
-  // ngOnInit(): void {
-  //   throw new Error('Method not implemented.');
-  // }
-
-  // reset_form(){
-  //   this.booktranform.reset()
-  // }
   
 

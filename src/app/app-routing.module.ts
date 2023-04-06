@@ -120,7 +120,9 @@ const routes: Routes = [
       {path:'manage-books',component:ManageBooksComponent},
       {path:'edit_books/:id',component:ManageBooksComponent},
       {path:'manage-librarydetails',component:ManageLibrarydetailsComponent},
+      {path:'edit_librarydetails/:id',component:ManageLibrarydetailsComponent},
       {path:'manage-book-transaction',component:ManageBookTransactionComponent},
+      {path:'edit-book-tran/:id',component:ManageBookTransactionComponent},
     ]
     
 },
