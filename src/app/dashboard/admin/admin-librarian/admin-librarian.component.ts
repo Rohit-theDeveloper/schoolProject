@@ -12,9 +12,9 @@ import { ApiService } from 'src/app/api.service';
 export class AdminLibrarianComponent implements OnInit {
   displayedColumns: string[] = ['librn_position', 'librn_id', 'librn_name', 'librn_jndate','librn_address','librn_gen','librn_salary','librn_email','librn_mob','librn_aadhar','librn_password', 'librn_action'];
   dataSource = new MatTableDataSource;
-  // total_count: any;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+  // total_count: any;
 
   constructor(private api:ApiService){}
 
@@ -27,7 +27,9 @@ export class AdminLibrarianComponent implements OnInit {
       }
     )
   }
+
   ngAfterViewInit(): void {
+
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }

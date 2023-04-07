@@ -53,6 +53,7 @@ export class ManageExpenseComponent implements OnInit {
     this.api.put_expense(this.expenseform.value).subscribe((res:any)=>{
       console.log(res.message)
       this.router.navigate(['/admin/expense']);
+      alert("update successfully")
     })
     
   }

@@ -24,7 +24,7 @@ export class ManageBookTransactionComponent implements OnInit{
         // console.log(res.data)
         this.booktranform.patchValue(res.data)
       })
-      console.log(this.tranid)
+      // console.log(this.tranid)
      }
    }
   booktranform = this.fb.group({
@@ -40,8 +40,9 @@ export class ManageBookTransactionComponent implements OnInit{
     this.api.post_book_tran(this.booktranform.value).subscribe(
       (res:any)=>{
         this.booktranform.reset();
-        // this.router.navigate(['../libr-books']);
-        console.log(res)
+        this.router.navigate(['librarian/libr-book-transaction']);
+        // console.log(res)
+        alert('Data Inserted Successfully')
       }
     )
   }
@@ -49,6 +50,8 @@ export class ManageBookTransactionComponent implements OnInit{
     this.api.put_book_tran(this.booktranform.value).subscribe(
       (res:any)=>{
         console.log(res.message)
+        this.router.navigate(['librarian/libr-book-transaction']);
+        alert('Data Updated Successfully')
       }
     )
    }

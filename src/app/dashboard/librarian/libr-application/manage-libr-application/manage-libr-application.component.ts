@@ -29,8 +29,9 @@ export class ManageLibrApplicationComponent {
   this.api.post_librnapplication(this.librn_application.value).subscribe(
     (res:any)=>{
       this.librn_application.reset();
-      // this.router.navigate(['../view_librn_application']);
-      console.log(res)
+      this.router.navigate(['librarian/libr-application']);
+      alert('Data Inserted Successfully')
+      // console.log(res)
     }
   )
 }
