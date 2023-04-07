@@ -1,6 +1,4 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { MatIconButton } from '@angular/material/button';
-import { MatIcon } from '@angular/material/icon';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
@@ -22,29 +20,13 @@ export class AdminTeacherComponent implements OnInit{
   constructor(
     private api :ApiService
   ){}
-  ngOnInit():void{
-    this.api.get_teachers().subscribe(
-      (res:any) => {
-        console.log(res.data);
-        this.dataSource.data = res.data;
-        
+  ngOnInit(): void {
+    this.api.get_teacher().subscribe(
+      (res:any)=>{
+        console.log(res);
       }
     )
-  } 
-  
-  ngAfterViewInit(): void {
-    this.dataSource.paginator = this.paginator;
-    this.dataSource.sort = this.sort;
-  }
-
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
-  
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
-  }
+  }    
 }
 
 
