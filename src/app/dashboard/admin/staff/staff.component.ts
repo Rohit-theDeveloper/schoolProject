@@ -23,7 +23,6 @@ export class StaffComponent implements OnInit,AfterViewInit{
     this.api.get_staff().subscribe(
       (res:any)=> {
          console.log(res.massage);
-         alert(res.massage);
         this.dataSource.data= res.data;
         this. total_count = res.data.length;
       }
