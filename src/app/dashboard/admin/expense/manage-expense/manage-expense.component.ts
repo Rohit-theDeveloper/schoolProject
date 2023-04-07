@@ -52,7 +52,9 @@ export class ManageExpenseComponent implements OnInit {
     console.log(this.expenseform.value)
     this.api.put_expense(this.expenseform.value).subscribe((res:any)=>{
       console.log(res.message)
+      this.router.navigate(['/admin/expense']);
     })
+    
   }
     reset(){
       this.expenseform.reset()

@@ -162,7 +162,7 @@ export class ApiService {
   get_single_expense(expid:any){
     return this.http.get(this.baseUrl+'expense_view.php?expid='+expid);
   }
-  put_expense(data:any){
+  put_expense(data: any){
     return this.http.put(this.baseUrl +'expense_update.php',data)
   }
   // end expense module...

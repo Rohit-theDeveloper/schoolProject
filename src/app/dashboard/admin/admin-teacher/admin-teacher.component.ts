@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { ApiService } from 'src/app/api.service';
 
@@ -13,6 +15,8 @@ export class AdminTeacherComponent implements OnInit{
 
   displayedColumns: string[] = ['position', 't_id', 't_name', 'class_id', 't_jndate', 't_salary', 't_address', 't_mob', 't_email', 'action'];
   dataSource = new MatTableDataSource();
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
   constructor(
     private api :ApiService
   ){}
@@ -22,11 +26,7 @@ export class AdminTeacherComponent implements OnInit{
         console.log(res);
       }
     )
-  }
-    
+  }    
 }
-
-
-
 
 
