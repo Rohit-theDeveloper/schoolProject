@@ -10,7 +10,7 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./admin-student.component.css']
 })
     export class AdminStudentComponent implements OnInit, AfterViewInit{
-      displayedColumns: string[] = ['sn','std_id','std_name','std_fname','std_mname','std_email','std_mob','std_gender','std_photo'];
+      displayedColumns: string[] = ['sn','std_id','std_name','std_fname','std_mname','std_email','std_mob','std_gender','action'];
       dataSource = new MatTableDataSource();
      total_count:number = 0;
      @ViewChild(MatPaginator) paginator!: MatPaginator;

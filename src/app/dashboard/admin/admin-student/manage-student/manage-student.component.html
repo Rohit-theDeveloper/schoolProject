@@ -1,7 +1,7 @@
 <div class="bg-white w-100 h-100 ">
   <div>
     <mat-toolbar>
-      <span class="p-3">{{actionheader}}</span>
+      <span class="p-3">{{(sid)?"Update Student":"Add Student"}}</span>
       <span class="example-spacer"></span>
       <mat-icon routerLink="../admin-student" class="pb-4">cancel</mat-icon>
     </mat-toolbar>
@@ -9,6 +9,7 @@
   <div class="bg-white border p-4">
     <!-- Name -->
     <form [formGroup]="add_std" >
+      <input type="hidden" formControlName="std_id" *ngIf="sid">
       <mat-form-field class="example-form-field padding">
         <mat-label class="p-1">Name</mat-label>
         <input matInput type="text" required="" formControlName="std_name">
@@ -29,7 +30,7 @@
         <input matInput type="text" required="" formControlName="std_mname">
       </mat-form-field>
       <!-- Date Of Birth -->
-      <mat-form-field color="accent" appearance="fill">
+      <mat-form-field color="accent" appearance="fill" class="example-form-field padding">
         <mat-label>Date</mat-label>
         <input matInput [matDatepicker]="picker1" formControlName="std_dob">
         <mat-hint>MM/DD/YYYY</mat-hint>
@@ -57,16 +58,16 @@
         <mat-select required="" formControlName="std_gender">
           <mat-option value="Male">Male</mat-option>
           <mat-option value="Female">Female</mat-option>
-          <mat-option value="Other"></mat-option>
+          <mat-option value="Other">Others</mat-option>
         </mat-select>
       </mat-form-field>
       <!-- Blood Group -->
       <mat-form-field appearance="fill" class="example-form-field padding ">
         <mat-label>Blood Group</mat-label>
         <mat-select required="" formControlName="std_bg">
-          <mat-option value="o+">o+</mat-option>
+          <mat-option value="O+">O+</mat-option>
           <mat-option value="B+">B+</mat-option>
-          <mat-option value="O">o-</mat-option>
+          <mat-option value="O-">O-</mat-option>
           <mat-option value="AB-">AB-</mat-option>
           <mat-option value="AB+">AB+</mat-option>
         </mat-select>
@@ -87,10 +88,19 @@
        <textarea matInput type="text" formControlName="std_address" rows="1"></textarea>
       </mat-form-field>
      <!--password  -->
-      <mat-form-field class="example-form-field padding">
+      <!-- <mat-form-field class="example-form-field padding">
         <mat-label class="p-1">Password</mat-label>
         <input matInput type="password" formControlName="std_password">
-      </mat-form-field>
+      </mat-form-field> -->
+      <mat-form-field appearance="fill" class="example-form-field padding">
+    <mat-label class="p-1">Enter your password</mat-label>
+    <input matInput [type]="hide ? 'password' : 'text'" formControlName="std_password">
+    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" >
+      <mat-icon class="color">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+     
+    </button>
+    </mat-form-field>
+  
            <!-- class -->
        <mat-form-field appearance="fill" class="example-form-field padding ">
              <mat-label>Class</mat-label>
@@ -106,8 +116,8 @@
        <!-- photo -->
       <!-- <input class="p-4" type="file"> -->
       <button class="btn text-white btn-danger m-3" routerLink="../admin-student"> &nbsp; &nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
-      <button class="btn text-white btn-primary m-3" (click)="reset_form()">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
-      <button class="btn text-white btn-success m-3" (click)="onSave()" >&nbsp;&nbsp;&nbsp;&nbsp;Submit&nbsp;&nbsp;&nbsp;&nbsp;</button>
+      <button class="btn text-white btn-primary m-3" (click)="reset_form()" *ngIf="!sid">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
+      <button class="btn text-white btn-success m-3" (click)="(sid)?updatestd():onSave()" >&nbsp;&nbsp;&nbsp;&nbsp;{{(sid)?"Update":"Add"}}&nbsp;&nbsp;&nbsp;&nbsp;</button>
     </form>
 
   </div>

@@ -1,64 +1,70 @@
 <div>
     <mat-toolbar>
-       <span class="p-3">Manage librarian</span>
+       <span class="p-3">{{(librnid)?"Update librarian":"Add librarian"}}</span>
        <span class="example-spacer"></span>
       <mat-icon routerLink="../admin-librarian" class="pb-4">cancel</mat-icon>
       </mat-toolbar>
 </div>
 <div class="bg-white border ">
-    <form action="">
+    <form action="" [formGroup]="librarianform">
       <mat-form-field class="example-form-field p-4">
         <mat-label class="p-1">Librarian ID</mat-label>
-        <input matInput type="text" required="" disabled="" value="libr1234" >
+        <input matInput type="number"   formControlName="librn_id">
       </mat-form-field>
         <mat-form-field class="example-form-field p-4">
             <mat-label class="p-1">Name</mat-label>
-            <input matInput type="text" required="" >
+            <input matInput type="text" required="" formControlName="librn_name">
           </mat-form-field>
           <mat-form-field appearance="fill" class="example-form-field p-4 ">
             <mat-label>Gender</mat-label>
-            <mat-select required="">
-              <mat-option value="primary">Male</mat-option>
-              <mat-option value="accent">Female</mat-option>
-              <mat-option value="warn">Other</mat-option>
+            <mat-select required="" formControlName="librn_gen">
+              <mat-option value="Male">Male</mat-option>
+              <mat-option value="Female">Female</mat-option>
+              <mat-option value="Other">Other</mat-option>
             </mat-select>
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">Father's Name</mat-label>
-            <input matInput type="text" required="" >
-          </mat-form-field>
-          <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Address</mat-label>
-            <input matInput type="text" required="" >
-          </mat-form-field>
-          <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">Mobile No.</mat-label>
-            <input matInput type="text" required="" >
+            <input matInput type="text" required="" formControlName="librn_address">
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Salary</mat-label>
-            <input matInput type="text" required="" >
+            <input matInput type="number" required="" formControlName="librn_salary">
           </mat-form-field>
+          <mat-form-field class="example-form-field p-4 ">
+            <mat-label class="p-1">Mobile No.</mat-label>
+            <input matInput type="number" required="" formControlName="librn_mob">
+          </mat-form-field>
+  
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Aadhar No.</mat-label>
-            <input matInput type="text" required="" >
+            <input matInput type="number" required="" formControlName="librn_aadhar">
           </mat-form-field>
-          <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">DOB</mat-label>
-            <input matInput type="date" required="" >
+
+          <!-- <mat-form-field class="example-form-field p-4 ">
+            <mat-label class="p-1">Joindate</mat-label>
+            <input matInput type="date" required="" formControlName="librn_jndate">
+          </mat-form-field> -->
+          <mat-form-field class="example-form-field p-4 "color="accent" appearance="fill">
+            <mat-label>Join Date</mat-label>
+            <input matInput [matDatepicker]="picker2" formControlName="librn_jndate">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
           </mat-form-field>
+
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Email</mat-label>
-            <input matInput type="text" required="">
+            <input matInput type="email" required="" formControlName="librn_email">
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">Join Date</mat-label>
-            <input matInput type="date" required="" >
+            <mat-label class="p-1">Librarian password</mat-label>
+            <input matInput type="text" required="" formControlName="librn_password">
           </mat-form-field>
-          <input class="p-4" type="file">
+          <!-- <input class="p-4" type="file"> -->
           <button  class="btn text-white btn-danger m-4">&nbsp;&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
-          <button  class="btn text-white btn-primary m-4">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
-          <button  class="btn text-white btn-success m-4">&nbsp;&nbsp;&nbsp;&nbsp;Submit&nbsp;&nbsp;&nbsp;&nbsp;</button>
+          <button  class="btn text-white btn-primary m-4" *ngIf="!librnid">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
+          <button  class="btn text-white btn-success m-4" (click)="(librnid)?updatelibrarian():onsave()" >&nbsp;&nbsp;&nbsp;&nbsp;{{(librnid)? "update":"Add"}}&nbsp;&nbsp;&nbsp;&nbsp;</button>
     </form>
    
 </div>

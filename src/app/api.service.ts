@@ -15,13 +15,13 @@ export class ApiService {
     return this.http.get(this.baseUrl + 'bookdataget.php');
   }
   get_single_book(bookid:any) {
-    return this.http.get(this.baseUrl + 'bookdataget.php?bookid='+bookid);
+    return this.http.get(this.baseUrl + 'bookdataget.php?book_id='+bookid);
   }
   post_book(data: any) {
     return this.http.post(this.baseUrl + 'booksforminsert.php', data);
   }
   put_book(data: any) {
-    return this.http.put(this.baseUrl + 'update_books.php', data);
+    return this.http.put(this.baseUrl + 'update_book.php', data);
   }
   // endingg......
 
@@ -29,8 +29,14 @@ export class ApiService {
   get_library() {
     return this.http.get(this.baseUrl + 'libraryget.php');
   }
+  get_single_library(libraryid:any) {
+    return this.http.get(this.baseUrl + 'libraryget.php?library_id='+libraryid);
+  }
   post_library(data: any) {
     return this.http.post(this.baseUrl + 'libraryinsert.php', data);
+  }
+  put_library(data: any) {
+    return this.http.put(this.baseUrl + 'update_library.php', data);
   }
   // endingg......
 
@@ -40,6 +46,12 @@ export class ApiService {
   }
   post_book_tran(data: any) {
     return this.http.post(this.baseUrl + 'booktransactioninsert.php', data);
+  }
+  get_single_tran(tranid:any) {
+    return this.http.get(this.baseUrl + 'booktransactionget.php?tran_id='+tranid);
+  }
+  put_book_tran(data: any) {
+    return this.http.put(this.baseUrl + 'update_booktran.php', data);
   }
   // endingg......
 
@@ -56,9 +68,15 @@ export class ApiService {
   get_student() {
     return this.http.get(this.baseUrl + 'std_view.php');
   }
+  get_single_student(sid:any){
+    return this.http.get(this.baseUrl+'std_view.php?sid='+sid);
+  }
 
   post_std(data: any) {
     return this.http.post(this.baseUrl + 'std_insert.php', data);
+  }
+  put_std(data:any){
+    return this.http.put(this.baseUrl + 'std_update.php',data);
   }
 
   // endingg......
@@ -117,6 +135,13 @@ export class ApiService {
   post_staff(data:any){
     return this.http.post(this.baseUrl + 'staff_insert.php',data);
   }
+  get_single_staff(staffid:any){
+    return this.http.get(this.baseUrl +'staff_view.php?staff_id='+ staffid);
+   
+  }
+  put_staff(data:any){
+      return this.http.put(this.baseUrl+'staff_update.php',data);
+  }
   // end staff module function.....
   // teacher module function....
   get_teachers() {
@@ -142,6 +167,25 @@ export class ApiService {
   }
   // end expense module...
   
+  //getting data from database start
+  get_librarian() {
+    return this.http.get(this.baseUrl + 'view_librarian.php');
+  }
+  post_librarian(data:any){
+    return this.http.post(this.baseUrl + 'insert_librarian.php',data);
+  }
+  get_single_librarian(librnid:any) {
+    return this.http.get(this.baseUrl + 'view_librarian.php?librn_id='+librnid);
+  }
+  put_librarian(data: any) {
+    return this.http.put(this.baseUrl + 'update_librarian.php', data);
+  }
+  //getting data from database end here
+
+
+
+//applicatio data view
+get_application() {
+  return this.http.get(this.baseUrl + 'admin_application_view.php');
 }
-
-
+}

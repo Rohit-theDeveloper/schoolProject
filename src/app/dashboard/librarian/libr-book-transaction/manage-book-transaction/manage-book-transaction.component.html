@@ -1,7 +1,7 @@
 <div class="bg-white w-100 h-100 ">
     <div>
       <mat-toolbar>
-        <span class="p-3">{{actionheader}}</span>
+        <span class="p-3">{{(tranid)?"Update Book Transaction":"Add Book Transaction"}}</span>
         <span class="example-spacer"></span>
         <mat-icon routerLink="../libr-book-transaction" class="pb-4">cancel</mat-icon>
       </mat-toolbar>
@@ -39,8 +39,8 @@
             <mat-datepicker #picker1></mat-datepicker>
           </mat-form-field>
         <button class="btn text-white btn-danger m-4"> &nbsp; &nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
-        <button class="btn text-white btn-primary m-4" (click)="reset()">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
-        <button class="btn text-white btn-success m-4" (click)="onsave()" [disabled]="!booktranform.valid">&nbsp;&nbsp;&nbsp;&nbsp;Submit&nbsp;&nbsp;&nbsp;&nbsp;</button>
+        <button class="btn text-white btn-primary m-4" (click)="reset()" *ngIf="!tranid">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
+        <button class="btn text-white btn-success m-4" (click)="(tranid)?updatebooktran():onsave()" [disabled]="!booktranform.valid">&nbsp;&nbsp;&nbsp;&nbsp;{{tranid?"update":"Add"}}&nbsp;&nbsp;&nbsp;&nbsp;</button>
       </form>
   
     </div>

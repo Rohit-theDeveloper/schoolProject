@@ -10,13 +10,15 @@ mat-toolbar{
     height: 35px;
     float: right;
 }
-/* forms */
+input::-webkit-inner-spin-button{
+    -webkit-appearance:none;
+}
 .example-form-field {
-    width: 250px;
-
+    width: 300px;
   }
  .padding{
-      padding-right:10px;
-   
-   
+      padding-right:15px;
+ }
+ .color{
+    color: black;
  }

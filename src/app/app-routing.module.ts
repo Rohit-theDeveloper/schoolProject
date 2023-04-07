@@ -87,15 +87,17 @@ const routes: Routes = [
       {path:'logout',component:AdminDashboardComponent},
       // forms
       {path:"manage-librarian",component:ManageLibrarianComponent},
+      {path:"edit_librarian/:id",component:ManageLibrarianComponent},
       {path:"manage-student",component:ManageStudentComponent},
+      {path:"edit-student/:id",component:ManageStudentComponent},
       {path:"manage-teacher",component:ManageTeacherComponent},
-      {path:"edit-teacher/:id",component:ManageTeacherComponent},
       {path:"manage-application",component:ManageApplicationComponent},
       {path:"manage-class",component:ManageClassComponent},
       {path:"manage-fee",component:ManageFeeComponent},
       {path:"manage-notification",component:ManageNotificationComponent},
       {path:"manage-salary",component:ManageSalaryComponent},
       {path:"manage-staff",component:ManageStaffComponent},
+      {path:"update-staff/:staff_id",component:ManageStaffComponent},
       {path:"manage-subject",component:ManageSubjectComponent},
       {path:"manage-expense",component:ManageExpenseComponent},
       {path:"edit-expense/:id",component:ManageExpenseComponent}
@@ -119,7 +121,9 @@ const routes: Routes = [
       {path:'manage-books',component:ManageBooksComponent},
       {path:'edit_books/:id',component:ManageBooksComponent},
       {path:'manage-librarydetails',component:ManageLibrarydetailsComponent},
+      {path:'edit_librarydetails/:id',component:ManageLibrarydetailsComponent},
       {path:'manage-book-transaction',component:ManageBookTransactionComponent},
+      {path:'edit-book-tran/:id',component:ManageBookTransactionComponent},
     ]
     
 },
