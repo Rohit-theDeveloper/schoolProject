@@ -16,7 +16,8 @@ export class StaffComponent implements OnInit{
   ngOnInit():void{
     this.api.get_staff().subscribe(
       (res:any)=>{
-        // console.log(res.data);
+         console.log(res.massage);
+         alert(res.massage);
         this.dataSource.data= res.data;
       }
     )
