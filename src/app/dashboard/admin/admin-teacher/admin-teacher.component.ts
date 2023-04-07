@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { MatIconButton } from '@angular/material/button';
-import { MatIcon } from '@angular/material/icon';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { ApiService } from 'src/app/api.service';
 
@@ -14,42 +14,27 @@ import { ApiService } from 'src/app/api.service';
 export class AdminTeacherComponent implements OnInit{
 
   displayedColumns: string[] = ['position', 't_id', 't_name', 'class_id', 't_jndate', 't_salary', 't_address', 't_mob', 't_email', 'action'];
-  // dataSource = ELEMENT_DATA;
   dataSource = new MatTableDataSource();
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
   constructor(
     private api :ApiService
   ){}
-  ngOnInit():void{
-    this.api.get_teachers().subscribe(
-      (res:any) => {
-        console.log(res.data);
-        this.dataSource.data = res.data;
-        
+  ngOnInit(): void {
+    this.api.get_teacher().subscribe(
+      (res:any)=>{
+        console.log(res);
       }
     )
-  }    
+  } 
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }   
 }
-// export interface PeriodicElement {
-//   name: string;
-//   position: number;
-//   t_id: number;
-//   class: string;
-//   joindate:string;
-//   salary:number;
-//   address:string;
-//   mobile:number;
-//   email:string;
-//   action:string;
-// }
-
-// const ELEMENT_DATA: PeriodicElement[] = [
- 
-//   {position: 1, name: 'Rohit',  t_id:101, class:"four",  joindate:"23/march/2023", salary:20000, address:"hjp", mobile:12345, email:"rks@gmail.com", action:"pen"},
-//   {position: 2, name: 'Adrash', t_id:102, class:"four",  joindate:"23/march/2023", salary:20000, address:"hjp", mobile:12345, email:"rks@gmail.com", action:"act"},
-//   {position: 3, name: 'Raj',    t_id:103, class:"four",  joindate:"23/march/2023", salary:20000, address:"hjp", mobile:12345, email:"rks@gmail.com", action:"act"},
-//   {position: 4, name: 'Alok',   t_id:104, class:"four",  joindate:"23/march/2023", salary:20000, address:"hjp", mobile:12345, email:"rks@gmail.com", action:"act"},
-//   {position: 5, name: 'Rahul',  t_id:105, class:"four",  joindate:"23/march/2023", salary:20000, address:"hjp", mobile:12345, email:"rks@gmail.com", action:"act"},
-// ]
-
 
 

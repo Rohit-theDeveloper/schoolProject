@@ -15,6 +15,7 @@ export class AdminLibrarianComponent implements OnInit {
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   // total_count: any;
+
   constructor(private api:ApiService){}
 
   ngOnInit():void{
@@ -26,7 +27,9 @@ export class AdminLibrarianComponent implements OnInit {
       }
     )
   }
-  ngAfterViewInit() {
+
+  ngAfterViewInit(): void {
+
     this.dataSource.paginator = this.paginator;
     this.dataSource.sort = this.sort;
   }

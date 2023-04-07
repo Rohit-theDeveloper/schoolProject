@@ -1,23 +1,23 @@
 <div>
     <mat-toolbar>
-       <span class="p-3">Manage Teacher</span>
+       <span class="p-3">Add Teacher</span>
        <span class="example-spacer"></span>
       <mat-icon routerLink="../admin-teacher" class="pb-4">cancel</mat-icon>
       </mat-toolbar>
 </div>
 <div class="bg-white border ">
-    <form action="">
+    <form action=""  [formGroup]="add_teacher">
       <mat-form-field class="example-form-field p-4">
         <mat-label class="p-1">Teacher ID</mat-label>
         <input matInput type="text" required="" >
       </mat-form-field>
       <mat-form-field class="example-form-field p-4">
         <mat-label class="p-1">Name</mat-label>
-        <input matInput type="text" required="" >
+        <input matInput type="text" required=""  formControlName="t_name">
       </mat-form-field>
       <mat-form-field appearance="fill" class="example-form-field p-4 ">
         <mat-label>Gender</mat-label>
-        <mat-select required="">
+        <mat-select required="" formControlName="t_gender">
           <mat-option value="primary">Male</mat-option>
           <mat-option value="accent">Female</mat-option>
           <mat-option value="warn">Others</mat-option>
@@ -25,19 +25,19 @@
       </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Father's Name</mat-label>
-            <input matInput type="text" required="" >
+            <input matInput type="text" required="" formControlName="t_fname" >
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Address</mat-label>
-            <input matInput type="text" required="" >
+            <input matInput type="text" required=""  formControlName="t_address">
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Mobile No</mat-label>
-            <input matInput type="text" required="" >
+            <input matInput type="text" required="" formControlName="t_mob">
           </mat-form-field>
           <mat-form-field appearance="fill" class="example-form-field p-4 ">
             <mat-label>Class</mat-label>
-            <mat-select required="">
+            <mat-select required="" formControlName="class_id">
               <mat-option value="1">1-(Pay)</mat-option>
               <mat-option value="2">2-(Nurs)</mat-option>
               <mat-option value="3">3-(LKG)</mat-option>
@@ -51,43 +51,49 @@
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Aadhar No.</mat-label>
-            <input matInput type="text" required="" >
+            <input matInput type="text" required="" formControlName="t_aadhar">
           </mat-form-field>
-          <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">DOB</mat-label>
-            <input matInput type="date" required="" >
+          <mat-form-field class="example-form-field p-4 " color="accent" appearance="fill">
+            <mat-label>Birth Date</mat-label>
+            <input matInput [matDatepicker]="picker1" formControlName="t_dob">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Email</mat-label>
-            <input matInput type="text">
+            <input matInput type="text" required="" formControlName="t_email">
           </mat-form-field>
-          <mat-form-field class="example-form-field p-4 ">
-            <mat-label class="p-1">Join Date</mat-label>
-            <input matInput type="date" required="" >
+          <!-- join date start -->
+          <mat-form-field class="example-form-field p-4 " color="accent" appearance="fill">
+            <mat-label>Join Date</mat-label>
+            <input matInput [matDatepicker]="picker" formControlName="t_jndate">
+            <mat-hint>MM/DD/YYYY</mat-hint>
+            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-datepicker #picker></mat-datepicker>
           </mat-form-field>
+          <!-- join date end -->
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Salary</mat-label>
-            <input matInput type="number" required="" >
+            <input matInput type="number" required=""  formControlName="t_salary">
           </mat-form-field>
           <mat-form-field appearance="fill" class="example-form-field p-4 ">
             <mat-label>Subject</mat-label>
-            <mat-select required="">
-              <mat-option value="primary">Maths</mat-option>
-              <mat-option value="accent">English</mat-option>
-              <mat-option value="warn">Hindi</mat-option>
-              <mat-option value="warn">Science</mat-option>
-              <mat-option value="warn">Social Science</mat-option>
-              <mat-option value="warn">Grammer</mat-option>
-              <mat-option value="warn">Computers</mat-option>
-              <mat-option value="warn">G.K.</mat-option>
-
-
+            <mat-select required="" formControlName="sub_id">
+              <mat-option value="101">101-(Maths)</mat-option>
+              <mat-option value="102">102-(English)</mat-option>
+              <mat-option value="103">103-(Hindi)</mat-option>
+              <mat-option value="104">104-(Science)</mat-option>
+              <mat-option value="105">105-(Social Science)</mat-option>
+              <mat-option value="106">106-(Grammer)</mat-option>
+              <mat-option value="107">107-(Computers)</mat-option>
+              <mat-option value="108">108-(G.K.)</mat-option>
             </mat-select>
           </mat-form-field>
-          <input class="p-4" type="file">
-          <button  class="btn text-white btn-danger m-4">&nbsp;&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
-          <button  class="btn text-white btn-primary m-4">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
-          <button  class="btn text-white btn-success m-4">&nbsp;&nbsp;&nbsp;&nbsp;Submit&nbsp;&nbsp;&nbsp;&nbsp;</button>
+          <!-- <input class="p-4" type="file"> -->
+          <button class="btn text-white btn-danger m-4" routerLink="../teacher"> &nbsp; &nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
+          <button class="btn text-white btn-primary m-4" (click)="reset()">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
+          <button class="btn text-white btn-success m-4" (click)="onSave()">&nbsp;&nbsp;&nbsp;&nbsp;Add&nbsp;&nbsp;&nbsp;&nbsp;</button>
     </form>
    
 </div>

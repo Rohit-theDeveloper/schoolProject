@@ -24,16 +24,11 @@ export class ManageSubjectComponent {
     console.log(this.add_sub.value);
     this.api.post_subject(this.add_sub.value).subscribe(
       (res:any)=>{
+        console.log(res.message);
+          alert(res.message);
+          this.router.navigate(['/admin/subject']);
+          this.add_sub.reset();
         
-        if(res.data!='null'){
-          this.router.navigate(['/admin/subject'])
-          alert("data inserted");
-          this.add_sub.reset();
-        }
-        else{
-          alert("data not inserted fill all the required fields......");
-          this.add_sub.reset();
-        }
         
         
       }

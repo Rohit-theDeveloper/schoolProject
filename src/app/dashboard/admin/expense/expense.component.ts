@@ -16,7 +16,7 @@ export class ExpenseComponent implements OnInit {
   ngOnInit():void{
     this.api.get_expense().subscribe(
       (res:any) => {
-        console.log(res.data);
+        // console.log(res.data);
         this.dataSource.data = res.data;
         
       }

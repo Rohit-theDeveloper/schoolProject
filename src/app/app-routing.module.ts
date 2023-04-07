@@ -90,7 +90,7 @@ const routes: Routes = [
       {path:"edit_librarian/:id",component:ManageLibrarianComponent},
       {path:"manage-student",component:ManageStudentComponent},
       {path:"edit-student/:id",component:ManageStudentComponent},
-      {path:"manage-teacher",component:ManageTeacherComponent},
+      {path:"manage-teacher",component:ManageTeacherComponent}, 
       {path:"manage-application",component:ManageApplicationComponent},
       {path:"manage-class",component:ManageClassComponent},
       {path:"manage-fee",component:ManageFeeComponent},
@@ -99,7 +99,8 @@ const routes: Routes = [
       {path:"manage-staff",component:ManageStaffComponent},
       {path:"update-staff/:staff_id",component:ManageStaffComponent},
       {path:"manage-subject",component:ManageSubjectComponent},
-      {path:"manage-expense",component:ManageExpenseComponent}
+      {path:"manage-expense",component:ManageExpenseComponent},
+      {path:"edit-expense/:id",component:ManageExpenseComponent}
 
     ]
   },
