@@ -30,9 +30,13 @@ table {
     color: white;
     text-align: center;
 }
+
 table td{
-  text-align:center;
+  /* text-align:center; */
+  padding-left: 2%;
 }
+
+
  table .mat-icon{
  float: none;
 }
