@@ -35,3 +35,9 @@ text-align: center;
 table .mat-icon{
 float: none;
 }
+table .mat-icon{
+  float: none;
+  color: #7d7575;
+  font-size: 30px;
+  cursor: pointer;
+ }
