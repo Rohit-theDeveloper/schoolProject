@@ -15,8 +15,8 @@ export class AdminTeacherComponent implements OnInit{
 
   displayedColumns: string[] = ['position', 't_id', 't_name', 'class_id', 't_jndate', 't_salary', 't_address', 't_mob', 't_email', 'action'];
   dataSource = new MatTableDataSource();
-  @ViewChild(MatPaginator) paginator!: MatPaginator;
-  @ViewChild(MatSort) sort!: MatSort;
+  // @ViewChild(MatPaginator) paginator!: MatPaginator;
+  // @ViewChild(MatSort) sort!: MatSort;
   constructor(
     private api :ApiService
   ){}
@@ -24,17 +24,18 @@ export class AdminTeacherComponent implements OnInit{
     this.api.get_teacher().subscribe(
       (res:any)=>{
         console.log(res);
+        this.dataSource.data = res.data;
       }
     )
   } 
-  applyFilter(event: Event) {
-    const filterValue = (event.target as HTMLInputElement).value;
-    this.dataSource.filter = filterValue.trim().toLowerCase();
+  // applyFilter(event: Event) {
+  //   const filterValue = (event.target as HTMLInputElement).value;
+  //   this.dataSource.filter = filterValue.trim().toLowerCase();
   
-    if (this.dataSource.paginator) {
-      this.dataSource.paginator.firstPage();
-    }
-  }   
+  //   if (this.dataSource.paginator) {
+  //     this.dataSource.paginator.firstPage();
+  //   }
+  // }   
 }
 
 
