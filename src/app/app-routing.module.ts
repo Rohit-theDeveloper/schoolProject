@@ -99,7 +99,8 @@ const routes: Routes = [
       {path:"manage-staff",component:ManageStaffComponent},
       {path:"update-staff/:staff_id",component:ManageStaffComponent},
       {path:"manage-subject",component:ManageSubjectComponent},
-      {path:"manage-expense",component:ManageExpenseComponent}
+      {path:"manage-expense",component:ManageExpenseComponent},
+      {path:"edit-expense/:id",component:ManageExpenseComponent}
 
     ]
   },
