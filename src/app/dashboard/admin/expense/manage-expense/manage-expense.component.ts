@@ -1,6 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup,Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 
 @Component({
@@ -8,15 +8,30 @@ import { ApiService } from 'src/app/api.service';
   templateUrl: './manage-expense.component.html',
   styleUrls: ['./manage-expense.component.css']
 })
-export class ManageExpenseComponent {
-  actionheader : string ='Manage Expense'
+export class ManageExpenseComponent implements OnInit {
+  expid :number = 0;
   expense_id : number =0;
   constructor(
     private fb : FormBuilder,
     private api :ApiService,
-    private router:Router
+    private router:Router,
+    private url :ActivatedRoute
   ){}
+
+  ngOnInit(): void {
+    this.expid= this.url.snapshot.params['id']
+    if(this.expid){
+      this.api.get_single_expense(this.expid).subscribe(
+        (res:any)=>{
+          // console.log(res.data)
+          this.expenseform.patchValue(res.data)
+        }
+      )
+      // console.log(this.expid)
+    }
+  }
   expenseform = this.fb.group({
+    exp_id:[''],
     exp_name:[''],
     exp_date:[''],
     exp_amount:[''],
@@ -24,7 +39,7 @@ export class ManageExpenseComponent {
     exp_due:['']
   })
   onSave(){
-    console.log(this.expenseform.value);
+    // console.log(this.expenseform.value);
     this.api.post_expense(this.expenseform.value).subscribe(
       (res:any)=>{
         this.expenseform.reset();
@@ -32,6 +47,12 @@ export class ManageExpenseComponent {
         console.log(res);
       }
     )
+  }
+  updateExp(){
+    console.log(this.expenseform.value)
+    this.api.put_expense(this.expenseform.value).subscribe((res:any)=>{
+      console.log(res.message)
+    })
   }
     reset(){
       this.expenseform.reset()
