@@ -42,7 +42,8 @@ constructor(
       (res:any)=>{
         this.librarianform.reset();
         // console.log(res.data)
-        // this.router.navigate(['/libr-books']);
+        this.router.navigate(['admin/admin-librarian']);
+        alert('Data Inserted Successfully')
       }
     )
   }
@@ -50,6 +51,8 @@ constructor(
   this.api.put_librarian(this.librarianform.value).subscribe((res:any)=>{
     console.log(res.message);
     this.librarianform.reset()
+    this.router.navigate(['admin/admin-librarian']);
+    alert('Data Updated Successfully')
   })
   }
   

@@ -144,7 +144,7 @@ export class ApiService {
   }
   // end staff module function.....
   // teacher module function....
-  get_teachers() {
+  get_teacher() {
     return this.http.get(this.baseUrl + 'teacher_view.php');
   }
   post_teachers(data:any){
