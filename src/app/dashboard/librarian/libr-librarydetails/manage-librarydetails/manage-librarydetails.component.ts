@@ -21,10 +21,10 @@ ngOnInit(): void {
   this.libraryid = this.url.snapshot.params['id'] ; 
  if(this.libraryid){
   this.api.get_single_library(this.libraryid).subscribe((res:any)=>{
-    console.log(res.data)
+    // console.log(res.data)
     this.libraryform.patchValue(res.data);
   })
-  console.log(this.libraryid)
+  // console.log(this.libraryid)
  }
 }
 
@@ -37,16 +37,18 @@ ngOnInit(): void {
   console.log(this.libraryform.value);
   this.api.post_library(this.libraryform.value).subscribe(
     (res:any)=>{
-      this.libraryform.reset();
-      // this.router.navigate(['../libr-books']);
+      // this.libraryform.reset();
+      this.router.navigate(['librarian/libr-library-details']);
+      alert('Data Inserted successfully')
     }
   )
 }
 updatelibrary(){
-  this.api.put_library(this.libraryform.value).subscribe(
-    (res:any)=>{
+  this.api.put_library(this.libraryform.value).subscribe((res:any)=>{
     console.log(res.message);
     // this.libraryform.reset()
+    this.router.navigate(['librarian/libr-library-details']);
+    alert('Data Inserted successfully')
   })
   }
 reset(){

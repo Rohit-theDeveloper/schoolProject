@@ -37,7 +37,8 @@ onsave(){
   this.api.post_book(this.bookform.value).subscribe(
     (res:any)=>{
       this.bookform.reset();
-      // this.router.navigate(['/libr-books']);
+      alert('Data Inserted Successfully ')
+      this.router.navigate(['librarian/libr-books']);
     }
   )
 }
@@ -45,6 +46,8 @@ updatebook(){
 this.api.put_book(this.bookform.value).subscribe((res:any)=>{
   console.log(res.message);
   this.bookform.reset()
+  this.router.navigate(['librarian/libr-books']);
+  alert('Data Updated Successfully ')
 })
 }
 
