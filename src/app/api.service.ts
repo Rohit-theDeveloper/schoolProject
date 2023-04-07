@@ -122,6 +122,10 @@ export class ApiService {
   get_teachers() {
     return this.http.get(this.baseUrl + 'teacher_view.php');
   }
+  post_teachers(data:any){
+    return this.http.post(this.baseUrl + 'teacher_insert.php',data);
+  }
+ 
   // end  theacher module.... 
   // expense module function.....
   get_expense() {
@@ -129,6 +133,12 @@ export class ApiService {
   }
   post_expense(data:any){
     return this.http.post(this.baseUrl + 'expense_insert.php',data);
+  }
+  get_single_expense(expid:any){
+    return this.http.get(this.baseUrl+'expense_view.php?expid='+expid);
+  }
+  put_expense(data:any){
+    return this.http.put(this.baseUrl +'expense_update.php',data)
   }
   // end expense module...
   
