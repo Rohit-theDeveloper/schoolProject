@@ -10,7 +10,7 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./staff.component.css']
 })
 export class StaffComponent implements OnInit,AfterViewInit{
-  displayedColumns: string[] = ['S No', 'staff_id', 'staff_name','staff_fname','staff_address','staff_mob','role_id','staff_salary', 'staff_action'];
+  displayedColumns: string[] = ['S No', 'staff_id', 'staff_name','staff_fname','staff_mob','role_name','role_salary', 'staff_action'];
   dataSource = new MatTableDataSource();
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;

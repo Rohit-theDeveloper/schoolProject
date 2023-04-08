@@ -10,9 +10,10 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./admin-student.component.css']
 })
     export class AdminStudentComponent implements OnInit, AfterViewInit{
-      displayedColumns: string[] = ['sn','std_id','std_name','std_fname','std_mname','std_email','std_mob','std_gender','action'];
+      displayedColumns: string[] = ['sn','std_id','std_name','std_fname','std_mname','class_name','std_roll','std_mob','std_photo','action'];
       dataSource = new MatTableDataSource();
      total_count:number = 0;
+     $image_local_url ="http://localhost/upload/"
      @ViewChild(MatPaginator) paginator!: MatPaginator;
      @ViewChild(MatSort) sort!: MatSort;
 
@@ -23,7 +24,7 @@ import { ApiService } from 'src/app/api.service';
     ngOnInit(): void {
       this.api.get_student().subscribe(
         (res:any)=> {
-          // console.log(res.data);
+          console.log(res.data);
           this.dataSource.data= res.data;
           this. total_count = res.data.length;
         }

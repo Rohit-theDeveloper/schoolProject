@@ -13,7 +13,7 @@ import { ApiService } from 'src/app/api.service';
 
 export class AdminTeacherComponent implements OnInit{
 
-  displayedColumns: string[] = ['position', 't_id', 't_name', 'class_id', 't_jndate', 't_salary', 't_address', 't_mob', 't_email', 'action'];
+  displayedColumns: string[] = ['s.no', 't_id', 't_name', 'sub_name', 't_jndate', 't_salary','t_mob','action'];
   dataSource = new MatTableDataSource();
   // @ViewChild(MatPaginator) paginator!: MatPaginator;
   // @ViewChild(MatSort) sort!: MatSort;

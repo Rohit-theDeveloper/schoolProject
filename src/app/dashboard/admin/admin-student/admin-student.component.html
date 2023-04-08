@@ -45,22 +45,40 @@
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Mother's Name</th>
         <td mat-cell *matCellDef="let row"> {{row.std_mname}} </td>
       </ng-container>
+      <!-- class -->
+      <ng-container matColumnDef="class_name">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>class</th>
+        <td mat-cell *matCellDef="let row"> {{row.class_name}}</td>
+      </ng-container>
+      <!-- roll -->
+      <ng-container matColumnDef="std_roll">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Roll</th>
+        <td mat-cell *matCellDef="let row"> {{row.std_roll}}</td>
+      </ng-container>
    <!-- Email -->
-      <ng-container matColumnDef="std_email">
+      <!-- <ng-container matColumnDef="std_email">
         <th mmat-header-cell *matHeaderCellDef mat-sort-header> Email </th>
         <td mat-cell *matCellDef="let row"> {{row.std_email}} </td>
-      </ng-container>
+      </ng-container> -->
   <!-- Mobile -->
       <ng-container matColumnDef="std_mob">
         <th mat-header-cell *matHeaderCellDef mat-sort-header> Mobile </th>
         <td mat-cell *matCellDef="let row"> {{row.std_mob}} </td>
       </ng-container>
       <!-- Gender -->
-      <ng-container matColumnDef="std_gender">
+      <!-- <ng-container matColumnDef="std_gender">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Gender</th>
         <td mat-cell *matCellDef="let row"> {{row.std_gender}} </td>
+      </ng-container> -->
+
+      <!-- image column -->
+      <ng-container matColumnDef="std_photo">
+        <th mat-header-cell *matHeaderCellDef mat-sort-header>Photo</th>
+        <td mat-cell *matCellDef="let row"> 
+          <img [src]="(row.std_photo)?$image_local_url+row.std_photo:$image_local_url+'logo.png'" width="80px" height="80px">
+        </td>
       </ng-container>
-      <!-- pic -->
+    
       <ng-container matColumnDef="action">
         <th mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
         <td mat-cell *matCellDef="let row">

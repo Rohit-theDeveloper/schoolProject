@@ -27,11 +27,8 @@ table {
    table th{
     background-color: #FE8E0B;
     color: white;
-    text-align: center;
 }
-table td{
-  text-align: center;
-}
+
 table tr:hover{
   background-color: #FE8E0B;
   transition: all 0.5s;

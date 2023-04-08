@@ -73,7 +73,7 @@ export class ApiService {
   }
 
   post_std(data: any) {
-    return this.http.post(this.baseUrl + 'std_insert.php', data);
+    return this.http.post(this.baseUrl + 'std_formdata_insert.php', data);
   }
   put_std(data:any){
     return this.http.put(this.baseUrl + 'std_update.php',data);

@@ -24,7 +24,7 @@ export class ManageStaffComponent implements OnInit{
     staff_address:['',Validators.required],
     staff_mob:['',Validators.required],
     role_id:['',Validators.required],
-    salary:[''],
+    role_salary:[''],
     staff_aadhar:['',Validators.required],
     staff_dob:['',Validators.required],
     staff_email:['',Validators.required],

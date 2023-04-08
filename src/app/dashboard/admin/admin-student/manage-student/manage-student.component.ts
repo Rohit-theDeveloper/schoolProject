@@ -11,6 +11,8 @@ import { ApiService } from 'src/app/api.service';
 export class ManageStudentComponent implements OnInit {
   sid: number = 0;
   hide = true;
+  $image_local_url ="http://localhost/upload/"
+  $img_url:any =this.$image_local_url+'logo.png';
   constructor(
     private fb: FormBuilder,
     private api: ApiService,
@@ -49,7 +51,7 @@ export class ManageStudentComponent implements OnInit {
     std_address: ['', Validators.required],
     std_password: [''],
     class_id: ['', Validators.required],
-    // std_photo:['']
+    std_photo:['']
   })
 
   onSave() {
@@ -62,6 +64,16 @@ export class ManageStudentComponent implements OnInit {
     )
 
   }
+  onImgChng(file:any){
+    console.log(file[0])
+    let reader = new FileReader();
+    reader.onload = () =>{
+      this.$img_url = reader.result;
+    }
+      reader.readAsDataURL(file[0]);
+    }
+
+
   updatestd() {
     // console.log("update");
     // console.log(this.add_std.value)
