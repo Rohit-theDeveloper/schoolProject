@@ -5,6 +5,9 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ApiService {
+  get_single_teacher(tid: any) {
+    throw new Error('Method not implemented.');
+  }
 
   baseUrl = 'http://localhost/api/';
   constructor(
@@ -73,10 +76,12 @@ export class ApiService {
   }
 
   post_std(data: any) {
-    return this.http.post(this.baseUrl + 'std_formdata_insert.php', data);
+    console.log(Array.from(data.entries()))
+    return this.http.post(this.baseUrl +'std_formdata_insert.php', data);
   }
   put_std(data:any){
-    return this.http.put(this.baseUrl + 'std_update.php',data);
+    // console.log(Array.from(data.entries()))
+    return this.http.put(this.baseUrl + 'std_formdata_update.php',data);
   }
 
   // endingg......
@@ -151,7 +156,7 @@ export class ApiService {
     return this.http.get(this.baseUrl + 'teacher_view.php?t_id='+tid);
   }
   post_teachers(data:any){
-    return this.http.post(this.baseUrl + 'teacher_insert.php',data);
+    return this.http.post(this.baseUrl + 'teacher_formdata_insert.php',data);
   }
   put_teachers(data:any){
     return this.http.post(this.baseUrl + 'teacher_update.php',data);

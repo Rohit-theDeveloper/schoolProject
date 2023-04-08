@@ -6,23 +6,16 @@
       <mat-icon routerLink="../admin-student" class="pb-4">cancel</mat-icon>
     </mat-toolbar>
   </div>
-  <div class="img_style">
-      <img src = {{$img_url}} width="100%" height="100%" >
-      <button mat-fab color="primary" (click)="image.click()">
-        <mat-icon class="pic_add_icon">add</mat-icon>
-        <input type="file" #image (change) ="onImgChng(image.files)"  accept=".png,.jpg">
-      </button>
-</div>
   <div class="bg-white border p-4">
     <!-- Name -->
-    <form [formGroup]="add_std" >
-      <!-- <div class="img_style">
-        <img src = {{$img_url}} width="100%" height="100%" >
-        <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
-          <mat-icon class="pic_add_icon">add</mat-icon>
-          <input type="file" #image (change) ="onImgChange(image.files)"  accept=".png,.jpg">
-        </button>
-    </div> -->
+    <form  class="example-form" [formGroup]="add_std" >
+      <div class="img_style">
+        <img src="{{img_url}}" width="100%" height="100%">
+         <button mat-fab color="primary" (click)="image.click()">
+            <mat-icon class="pic_add_icon">add</mat-icon>
+            <input type="file" #image (change) ="onImgChng(image.files)"  accept=".png,.jpg">
+          </button>
+    </div>
       <input type="hidden" formControlName="std_id" *ngIf="sid">
       <mat-form-field class="example-form-field padding">
         <mat-label class="p-1">Name</mat-label>
