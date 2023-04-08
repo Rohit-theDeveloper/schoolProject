@@ -23,15 +23,13 @@ export class ManageStudentComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.sid = this.url.snapshot.params['id']
+    this.sid = this.url.snapshot.params['id'];
     if (this.sid) {
-      // console.log(this.sid);
       this.api.get_single_student(this.sid).subscribe(
         (res: any) => {
-          // console.log(res.data)
           this.add_std.patchValue(res.data);
           this.img_url =(res.data['std_img'])? this.img_local_url+res.data['std_img']:this.img_local_url+'logo.png';
-          console.log(res.data)
+          // console.log(res.data)
         }
       )
     }
@@ -50,15 +48,14 @@ export class ManageStudentComponent implements OnInit {
       std_nationality: ['', Validators.required],
       std_identification: [''],
       std_address: ['', Validators.required],
-      std_password: [''],
-      class_id: ['', Validators.required],
-      std_photo:[''],
+      std_password: ['',Validators.required],
+      class_id: ['', Validators.required]
     })
-
   }
  
 
   onSave() {
+    // alert("Add");
     // console.log(this.add_std.get('std_name')?.value)
     const formData = new FormData();
     formData.append('std_name',this.add_std.get('std_name')?.value)
@@ -78,7 +75,6 @@ export class ManageStudentComponent implements OnInit {
     formData.append('class_id',this.add_std.get('class_id')?.value)
     formData.append('photo',this.selected_img)
 
-    // console.log(this.add_std.value);
     this.api.post_std(formData).subscribe(
       (res: any) => {
         this.router.navigate(['/admin/admin-student']);
@@ -88,7 +84,7 @@ export class ManageStudentComponent implements OnInit {
 
   }
   onImgChng(file:any){
-   if(file[0].length==0){
+   if(file[0].length===0){
     return
    }
    this.selected_img = file[0];
@@ -96,25 +92,41 @@ export class ManageStudentComponent implements OnInit {
     reader.onload = () =>{
       this.img_url = reader.result;
     }
-      reader.readAsDataURL(file[0]);
-    }
+    reader.readAsDataURL(file[0]);
+  }
 
+  back(){
+    this.router.navigate(['/admin/admin-student']);
+  }
 
-  updatestd() {
-    // console.log("update");
-    // console.log(this.add_std.value)
-    this.api.put_std(this.add_std.value).subscribe(
+    updatestd() {
+      alert("Oky");
+     const formData = new FormData();
+     formData.append('std_id',this.add_std.get('std_id')?.value)
+     formData.append('std_name',this.add_std.get('std_name')?.value)
+     formData.append('std_roll',this.add_std.get('std_roll')?.value)
+     formData.append('std_dob',this.add_std.get('std_dob')?.value)
+     formData.append('std_email',this.add_std.get('std_email')?.value)
+     formData.append('std_mob',this.add_std.get('std_mob')?.value)
+     formData.append('std_gender',this.add_std.get('std_gender')?.value)
+     formData.append('std_aadhar',this.add_std.get('std_aadhar')?.value)
+     formData.append('std_nationality',this.add_std.get('std_nationality')?.value)
+     formData.append('std_bg',this.add_std.get('std_bg')?.value)
+     formData.append('std_identification',this.add_std.get('std_identification')?.value)
+     formData.append('std_fname',this.add_std.get('std_fname')?.value)
+     formData.append('std_mname',this.add_std.get('std_mname')?.value)
+     formData.append('std_address',this.add_std.get('std_address')?.value)
+     formData.append('std_password',this.add_std.get('std_password')?.value)
+     formData.append('class_id',this.add_std.get('class_id')?.value)
+     formData.append('photo',this.selected_img)
+    this.api.put_std(formData).subscribe(
       (res: any) => {
         this.router.navigate(['/admin/admin-student']);
         alert(res.message);
       }
     )
   }
-
   reset_form() {
     this.add_std.reset();
   }
-
-
-
 }

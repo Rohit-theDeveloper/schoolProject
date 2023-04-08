@@ -1,4 +1,4 @@
-import { AfterViewChecked, Component, OnInit, ViewChild } from '@angular/core';
+import { AfterViewChecked, AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
@@ -11,7 +11,7 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./admin-teacher.component.css']
 })
 
-export class AdminTeacherComponent implements OnInit,AfterViewChecked{
+export class AdminTeacherComponent implements OnInit, AfterViewInit{
 
   displayedColumns: string[] = ['s.no', 't_id', 't_name', 'sub_name', 't_jndate', 't_salary','t_mob','t_img','action'];
   dataSource = new MatTableDataSource();
@@ -22,10 +22,7 @@ export class AdminTeacherComponent implements OnInit,AfterViewChecked{
   constructor(
     private api :ApiService
   ){}
-  ngAfterViewChecked(): void {
-    this.dataSource.paginator = this.paginator;
-      this.dataSource.sort = this.sort;
-  }
+ 
   ngOnInit(): void {
     this.api.get_teacher().subscribe(
       (res:any)=>{
@@ -46,7 +43,7 @@ export class AdminTeacherComponent implements OnInit,AfterViewChecked{
       this.dataSource.paginator.firstPage();
     }
   }
-  
+
 }
 
 

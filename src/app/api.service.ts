@@ -5,9 +5,6 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class ApiService {
-  get_single_teacher(tid: any) {
-    throw new Error('Method not implemented.');
-  }
 
   baseUrl = 'http://localhost/api/';
   constructor(
@@ -76,9 +73,10 @@ export class ApiService {
   }
 
   post_std(data: any) {
-    console.log(Array.from(data.entries()))
+    // console.log(Array.from(data.entries()))
     return this.http.post(this.baseUrl +'std_formdata_insert.php', data);
   }
+
   put_std(data:any){
     // console.log(Array.from(data.entries()))
     return this.http.put(this.baseUrl + 'std_formdata_update.php',data);

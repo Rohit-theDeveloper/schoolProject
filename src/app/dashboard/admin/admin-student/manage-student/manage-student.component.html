@@ -1,9 +1,9 @@
-<div class="bg-white w-100 h-100 ">
+<div class="bg-white w-100 h-100">
   <div>
     <mat-toolbar>
       <span class="p-3">{{(sid)?"Update Student":"Add Student"}}</span>
       <span class="example-spacer"></span>
-      <mat-icon routerLink="../admin-student" class="pb-4">cancel</mat-icon>
+      <mat-icon class="pb-4" (click)="back()">cancel</mat-icon>
     </mat-toolbar>
   </div>
   <div class="bg-white border p-4">
@@ -16,7 +16,7 @@
             <input type="file" #image (change) ="onImgChng(image.files)"  accept=".png,.jpg">
           </button>
     </div>
-      <input type="hidden" formControlName="std_id" *ngIf="sid">
+      <input type="text" formControlName="std_id" *ngIf="sid">
       <mat-form-field class="example-form-field padding">
         <mat-label class="p-1">Name</mat-label>
         <input matInput type="text" required="" formControlName="std_name">
@@ -104,7 +104,6 @@
     <input matInput [type]="hide ? 'password' : 'text'" formControlName="std_password">
     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" >
       <mat-icon class="color">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-     
     </button>
     </mat-form-field>
   
@@ -118,14 +117,11 @@
               <mat-option value="4">4</mat-option>
               <mat-option value="5">5</mat-option>
             </mat-select>
-        </mat-form-field>
+        </mat-form-field><br>
        <!-- photo -->
       <!-- <input class="p-4" type="file"> -->
-      <button class="btn text-white btn-danger m-3" routerLink="../admin-student"> &nbsp; &nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
       <button class="btn text-white btn-primary m-3" (click)="reset_form()" *ngIf="!sid">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
       <button class="btn text-white btn-success m-3" (click)="(sid)?updatestd():onSave()" >&nbsp;&nbsp;&nbsp;&nbsp;{{(sid)?"Update":"Add"}}&nbsp;&nbsp;&nbsp;&nbsp;</button>
     </form>
-
   </div>
-
 </div>
