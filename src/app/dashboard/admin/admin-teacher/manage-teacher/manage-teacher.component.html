@@ -94,10 +94,14 @@
 
             </mat-select>
           </mat-form-field>
+          <mat-form-field class="example-form-field p-4 ">
+            <mat-label class="p-1">password</mat-label>
+            <input matInput type="password" required=""  formControlName="t_password">
+          </mat-form-field>
           <!-- <input class="p-4" type="file"> -->
           <button class="btn text-white btn-danger m-4" routerLink="../teacher"> &nbsp; &nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
-          <button class="btn text-white btn-primary m-4" (click)="reset()">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
-          <button class="btn text-white btn-success m-4" (click)="onSave()">&nbsp;&nbsp;&nbsp;&nbsp;Add&nbsp;&nbsp;&nbsp;&nbsp;</button>
+          <button class="btn text-white btn-primary m-4" (click)="reset()" *ngIf="!tid">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
+          <button class="btn text-white btn-success m-4" (click)="(tid)?onupdate():onSave()">&nbsp;&nbsp;&nbsp;&nbsp;{{(tid)?"Update":"Add"}}&nbsp;&nbsp;&nbsp;&nbsp;</button>
     </form>
    
 </div>

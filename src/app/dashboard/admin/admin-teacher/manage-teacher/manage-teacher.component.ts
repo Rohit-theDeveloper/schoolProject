@@ -7,15 +7,27 @@ import { ApiService } from 'src/app/api.service';
   templateUrl: './manage-teacher.component.html',
   styleUrls: ['./manage-teacher.component.css']
 })
-export class ManageTeacherComponent  {
+export class ManageTeacherComponent implements OnInit {
 
-  
+  tid:number=0
   constructor(
     private fb:FormBuilder,
     private router:Router,
     private api:ApiService,
     private url : ActivatedRoute
   ){}
+  ngOnInit(): void {
+    this.tid=this.url.snapshot.params['id'];
+  if(this.tid){
+    this.api.get_single_teacher(this.tid).subscribe(
+    (res:any)=>{
+      console.log(res.data);
+      this.add_teacher.patchValue((res.data))
+    }
+  )
+  }
+  
+  }
   add_teacher=this.fb.group({
     t_id:[''],
     t_name:['',Validators.required],
@@ -29,7 +41,8 @@ export class ManageTeacherComponent  {
     t_email:['',Validators.required],
     t_jndate:['',Validators.required],
     t_salary:['',Validators.required],
-    sub_id:['',Validators.required]
+    sub_id:['',Validators.required],
+    t_password:['',Validators.required]
   }) 
   OnReset(){
     this.add_teacher.reset();
@@ -41,6 +54,13 @@ export class ManageTeacherComponent  {
         this.add_teacher.reset();
         this.router.navigate(['/admin/admin-teacher']);
         console.log(res);
+      }
+    )
+  }
+  onupdate(){
+    this.api.put_teachers(this.add_teacher.value).subscribe(
+      (res:any)=>{
+        console.log(res.message);
       }
     )
   }

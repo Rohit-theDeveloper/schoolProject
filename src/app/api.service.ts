@@ -147,8 +147,14 @@ export class ApiService {
   get_teacher() {
     return this.http.get(this.baseUrl + 'teacher_view.php');
   }
+  get_single_teacher(tid:any){
+    return this.http.get(this.baseUrl + 'teacher_view.php?t_id='+tid);
+  }
   post_teachers(data:any){
     return this.http.post(this.baseUrl + 'teacher_insert.php',data);
+  }
+  put_teachers(data:any){
+    return this.http.post(this.baseUrl + 'teacher_update.php',data);
   }
  
   // end  theacher module.... 
