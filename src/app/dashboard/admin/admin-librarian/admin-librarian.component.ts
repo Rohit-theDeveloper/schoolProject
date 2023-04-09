@@ -10,24 +10,25 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./admin-librarian.component.css']
 })
 export class AdminLibrarianComponent implements OnInit {
-  displayedColumns: string[] = ['librn_position', 'librn_id', 'librn_name', 'librn_jndate','librn_salary','librn_mob','librn_img', 'librn_action'];
+  displayedColumns: string[] = ['s.no', 'librn_id', 'librn_name', 'librn_jndate','librn_salary','librn_mob','librn_img', 'action'];
   dataSource = new MatTableDataSource;
 
   $img_local_url ='http://localhost/upload/';
-     $img_url = this.$img_local_url +'logo.png';
+  $img_url = this.$img_local_url +'logo.png';
      
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   // total_count: any;
 
-  constructor(private api:ApiService){}
+  constructor(
+    private api:ApiService
+    ){}
 
   ngOnInit():void{
     this.api.get_librarian().subscribe(
       (res:any)=>{
+        console.log(res)
         this.dataSource.data = res.data;
-        // this.total_count = res.data.length;
-        
       }
     )
   }

@@ -78,8 +78,7 @@ export class ApiService {
   }
 
   put_std(data:any){
-    console.log(Array.from(data.entries()))
-    alert("Okay")
+    // console.log(Array.from(data.entries()))
     return this.http.post(this.baseUrl + 'std_formdata_update.php',data);
   }
 
@@ -189,7 +188,8 @@ export class ApiService {
     return this.http.get(this.baseUrl + 'view_librarian.php');
   }
   post_librarian(data:any){
-    return this.http.post(this.baseUrl + 'insert_foemdata_librarian.php',data);
+    // console.log(Array.from(data.entries()))
+    return this.http.post(this.baseUrl + 'insert_formdata_librarian.php',data);
   }
   get_single_librarian(librnid:any) {
     return this.http.get(this.baseUrl + 'view_librarian.php?librn_id='+librnid);
@@ -198,9 +198,6 @@ export class ApiService {
     return this.http.put(this.baseUrl + 'update_librarian.php', data);
   }
   //getting data from database end here
-
-
-
 //applicatio data view
 get_application() {
   return this.http.get(this.baseUrl + 'admin_application_view.php');

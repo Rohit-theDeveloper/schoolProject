@@ -9,11 +9,13 @@ import { ApiService } from 'src/app/api.service';
 })
 export class ManageTeacherComponent  implements OnInit{
   
-  tid: number =0;
-  add_teacher!:FormGroup;
+  tid: number = 0;
+  class:any
+  hide = true;
   img_local_url ='http://localhost/upload/';
   img_url:any = this.img_local_url+'logo.png';
   selected_img:any;
+  add_teacher!:FormGroup;
 
   constructor(
     private fb:FormBuilder,
@@ -29,7 +31,7 @@ export class ManageTeacherComponent  implements OnInit{
         (res: any) => {
           this.add_teacher.patchValue(res.data);
           this.img_url =(res.data['t_img'])? this.img_local_url+res.data['t_img']:this.img_local_url+'logo.png';
-          // console.log(res.data)
+          console.log(res.data)
         }
       )
     }
@@ -48,12 +50,10 @@ export class ManageTeacherComponent  implements OnInit{
         t_jndate:['',Validators.required],
         t_salary:['',Validators.required],
         sub_id:['',Validators.required],
-        t_password:['',Validators.required]
+        t_password:['',Validators.required],
+        t_photo:['']
       }) 
     }
-
-
-
     onSave(){
       // console.log(this.add_teacher.get('t_name')?.value)
       alert('rohit');
@@ -65,7 +65,7 @@ export class ManageTeacherComponent  implements OnInit{
       formData.append('t_mob',this.add_teacher.get('t_mob')?.value)
       formData.append('class_id',this.add_teacher.get('class_id')?.value)
       formData.append('t_aadhar',this.add_teacher.get('t_aadhar')?.value)
-      formData.append('t_dob',this.add_teacher.get('t_dob')?.value)
+      formData.append('t_dob',(this.add_teacher.get('t_dob')?.value).toLocaleDateString())
       formData.append('t_email',this.add_teacher.get('t_email')?.value)
       formData.append('t_jndate',this.add_teacher.get('t_jndate')?.value)
       formData.append('t_salary',this.add_teacher.get('t_salary')?.value)
@@ -104,7 +104,7 @@ export class ManageTeacherComponent  implements OnInit{
 
 
   
-  reset(){
+  reset_form(){
     this.add_teacher.reset()
   }
 }

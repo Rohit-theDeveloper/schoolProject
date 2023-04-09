@@ -16,7 +16,7 @@
     </div>
       <mat-form-field class="example-form-field p-4">
         <mat-label class="p-1">Teacher ID</mat-label>
-        <input matInput type="text" required="" >
+        <input matInput type="text"   formControlName="t_id">
       </mat-form-field>
       <mat-form-field class="example-form-field p-4">
         <mat-label class="p-1">Name</mat-label>
@@ -25,9 +25,9 @@
       <mat-form-field appearance="fill" class="example-form-field p-4 ">
         <mat-label>Gender</mat-label>
         <mat-select required="" formControlName="t_gender">
-          <mat-option value="primary">Male</mat-option>
-          <mat-option value="accent">Female</mat-option>
-          <mat-option value="warn">Others</mat-option>
+          <mat-option value="Male">Male</mat-option>
+          <mat-option value="Female">Female</mat-option>
+          <mat-option value="Others">Others</mat-option>
         </mat-select>
       </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
@@ -66,10 +66,17 @@
             <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
             <mat-datepicker #picker1></mat-datepicker>
+            <!-- <mat-form-field color="accent" appearance="fill" class="example-form-field padding">
+              <mat-label>Date</mat-label>
+              <input matInput [matDatepicker]="picker1" formControlName="std_dob">
+              <mat-hint>YYYY/MM/DD</mat-hint>
+              <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+              <mat-datepicker #picker1></mat-datepicker>
+            </mat-form-field> -->
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Email</mat-label>
-            <input matInput type="text" required="" formControlName="t_email">
+            <input matInput type="email" required="" formControlName="t_email">
           </mat-form-field>
           <!-- join date start -->
           <mat-form-field class="example-form-field p-4 " color="accent" appearance="fill">

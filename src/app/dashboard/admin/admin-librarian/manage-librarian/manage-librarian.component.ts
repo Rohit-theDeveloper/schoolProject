@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 
@@ -35,15 +35,15 @@ constructor(
 
   this. librarianform = this.fb.group({
     librn_id : [''],
-    librn_name: [''],
-    librn_address:[''],
-    librn_gen:[''],
-    librn_salary:[''],
-    librn_mob:[''],
-    librn_aadhar:[''],
-    librn_email:[''],
-    librn_jndate:[''],
-    librn_password:['']
+    librn_name: ['',Validators.required],
+    librn_address:['',Validators.required],
+    librn_gen:['',Validators.required],
+    librn_salary:['',Validators.required],
+    librn_mob:['',Validators.required],
+    librn_aadhar:['',Validators.required],
+    librn_email:['',Validators.required],
+    librn_jndate:['',Validators.required],
+    librn_password:['',Validators.required]
   })
 }
   onsave(){
@@ -57,17 +57,14 @@ constructor(
     formData.append('librn_mob',this.librarianform.get('librn_mob')?.value)
     formData.append('librn_addhar',this.librarianform.get('librn_addhar')?.value)
     formData.append('librn_email',this.librarianform.get('librn_email')?.value)
-    formData.append('librn_jndater',this.librarianform.get('librn_jndater')?.value)
+    formData.append('librn_jndate',this.librarianform.get('librn_jndate')?.value)
     formData.append('librn_password',this.librarianform.get('librn_password')?.value)
     formData.append('photo',this.selected_img)
-   
-
+  
     this.api.post_librarian(formData).subscribe(
       (res:any)=>{
-        // this.librarianform.reset();
-        // console.log(res.data)
+        this.librarianform.reset();
         this.router.navigate(['admin/admin-librarian']);
-        alert('Data Inserted Successfully')
         console.log(res);
       }
     )
@@ -83,22 +80,21 @@ onImgChng(file:any){
     this.img_url = reader.result;
   }
   reader.readAsDataURL(file[0]);
+  console.log(this.selected_img)
 }
 
   updatelibrarian(){
-  this.api.put_librarian(this.librarianform.value).subscribe((res:any)=>{
+  this.api.put_librarian(FormData).subscribe(
+    (res:any)=>{
     console.log(res.message);
-    this.librarianform.reset()
+    // this.librarianform.reset()
     this.router.navigate(['admin/admin-librarian']);
+    console.log(res)
     alert('Data Updated Successfully')
   })
   }
   
-    reset(){
+    reset_form(){
       this.librarianform.reset()
     }
 }
-function onImgChng(file: any, any: any) {
-  throw new Error('Function not implemented.');
-}
-
