@@ -10,8 +10,12 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./admin-librarian.component.css']
 })
 export class AdminLibrarianComponent implements OnInit {
-  displayedColumns: string[] = ['librn_position', 'librn_id', 'librn_name', 'librn_jndate','librn_address','librn_gen','librn_salary','librn_email','librn_mob','librn_aadhar','librn_password', 'librn_action'];
+  displayedColumns: string[] = ['librn_position', 'librn_id', 'librn_name', 'librn_jndate','librn_salary','librn_mob','librn_img', 'librn_action'];
   dataSource = new MatTableDataSource;
+
+  $img_local_url ='http://localhost/upload/';
+     $img_url = this.$img_local_url +'logo.png';
+     
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
   // total_count: any;

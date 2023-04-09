@@ -19,7 +19,7 @@ export class ManageStudentComponent implements OnInit {
     private fb: FormBuilder,
     private api: ApiService,
     private router: Router,
-    private url: ActivatedRoute
+    private url: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
@@ -60,7 +60,7 @@ export class ManageStudentComponent implements OnInit {
     const formData = new FormData();
     formData.append('std_name',this.add_std.get('std_name')?.value)
     formData.append('std_roll',this.add_std.get('std_roll')?.value)
-    formData.append('std_dob',this.add_std.get('std_dob')?.value)
+    formData.append('std_dob',(this.add_std.get('std_dob')?.value).toLocaleDateString())
     formData.append('std_email',this.add_std.get('std_email')?.value)
     formData.append('std_mob',this.add_std.get('std_mob')?.value)
     formData.append('std_gender',this.add_std.get('std_gender')?.value)
@@ -100,7 +100,7 @@ export class ManageStudentComponent implements OnInit {
   }
 
     updatestd() {
-      alert("Oky");
+      // console.log(res.message)
      const formData = new FormData();
      formData.append('std_id',this.add_std.get('std_id')?.value)
      formData.append('std_name',this.add_std.get('std_name')?.value)
@@ -119,10 +119,10 @@ export class ManageStudentComponent implements OnInit {
      formData.append('std_password',this.add_std.get('std_password')?.value)
      formData.append('class_id',this.add_std.get('class_id')?.value)
      formData.append('photo',this.selected_img)
-    this.api.post_std(formData).subscribe(
+    this.api.put_std(formData).subscribe(
       (res: any) => {
         this.router.navigate(['/admin/admin-student']);
-        alert(res.message);
+        console.log(res.message);
       }
     )
   }

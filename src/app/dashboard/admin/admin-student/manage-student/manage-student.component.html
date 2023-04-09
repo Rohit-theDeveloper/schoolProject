@@ -16,7 +16,7 @@
             <input type="file" #image (change) ="onImgChng(image.files)"  accept=".png,.jpg">
           </button>
     </div>
-      <input type="text" formControlName="std_id" *ngIf="sid">
+      <input type="hidden" formControlName="std_id" *ngIf="sid">
       <mat-form-field class="example-form-field padding">
         <mat-label class="p-1">Name</mat-label>
         <input matInput type="text" required="" formControlName="std_name">
@@ -38,9 +38,9 @@
       </mat-form-field>
       <!-- Date Of Birth -->
       <mat-form-field color="accent" appearance="fill" class="example-form-field padding">
-        <mat-label>DOB</mat-label>
+        <mat-label>Date</mat-label>
         <input matInput [matDatepicker]="picker1" formControlName="std_dob">
-        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-hint>YYYY/MM/DD</mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
         <mat-datepicker #picker1></mat-datepicker>
       </mat-form-field>
@@ -120,6 +120,7 @@
         </mat-form-field><br>
        <!-- photo -->
       <!-- <input class="p-4" type="file"> -->
+      
       <button class="btn text-white btn-primary m-3" (click)="reset_form()" *ngIf="!sid">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
       <button class="btn text-white btn-success m-3" (click)="(sid)?updatestd():onSave()" >&nbsp;&nbsp;&nbsp;&nbsp;{{(sid)?"Update":"Add"}}&nbsp;&nbsp;&nbsp;&nbsp;</button>
     </form>

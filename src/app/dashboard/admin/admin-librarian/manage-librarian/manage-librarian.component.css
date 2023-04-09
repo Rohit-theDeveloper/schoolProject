@@ -14,3 +14,21 @@ mat-toolbar{
 .example-form-field {
     width: 300px;
   }
+  .img_style{
+    width: 150px;
+    height: 150px;
+    border: 5px solid blue;
+    border-radius: 100px;
+    margin: 0 auto 20px;
+ }
+ .img_style>button{
+    position: relative;
+    top: -70px;
+    left: 115px;
+  }
+ .img_style input{
+     display: none;
+ }
+  .img_style>img{
+     border-radius: 100%;
+  }
