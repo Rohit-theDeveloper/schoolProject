@@ -29,7 +29,7 @@ export class FeeComponent implements OnInit, AfterViewInit{
         (res:any)=> {
           // console.log(res.data);
           this.dataSource.data= res.data;
-          this. total_count = res.data.length;
+          // this. total_count = res.data.length;
         }
       )
 }
