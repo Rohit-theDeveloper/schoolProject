@@ -156,6 +156,13 @@ export class ApiService {
   get_expense() {
     return this.http.get(this.baseUrl + 'expense_view.php');
   }
+
+  get_employee() {
+    return this.http.get(this.baseUrl + 'employee_view.php');
+  }
+  get_employee_by_id(emp_id:any) {
+    return this.http.get(this.baseUrl + 'employee_view.php?emp_id='+emp_id);
+  }
   post_expense(data:any){
     return this.http.post(this.baseUrl + 'expense_insert.php',data);
   }

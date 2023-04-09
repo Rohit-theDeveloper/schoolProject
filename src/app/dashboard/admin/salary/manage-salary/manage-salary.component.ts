@@ -9,6 +9,8 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./manage-salary.component.css']
 })
 export class ManageSalaryComponent {
+  employee:any
+  duesamount:any
   constructor(
     private fb:FormBuilder,
     private router:Router,
@@ -44,5 +46,26 @@ export class ManageSalaryComponent {
         
       }
     )
+}
+onchnageemptype(event:any){
+  this.api.get_employee().subscribe(
+    (res:any)=>{
+      this.employee = res.data
+    }
+  )
+
+}
+onchnagename(event:any){
+  console.log(event)
+  this.api.get_employee_by_id(event).subscribe(
+    (res:any)=>{
+      console.log(res.data.salary_amount)
+      this.add_salary.get('salary_amount')?.setValue(res.data.salary_amount)
+    }
+  )
+}
+oncalcamount(){
+  this.duesamount = Number(this.add_salary.get('salary_amount')?.value) -  Number(this.add_salary.get('salary_paid')?.value)
+  this.add_salary.get('salary_due')?.setValue(this.duesamount)
 }
 }

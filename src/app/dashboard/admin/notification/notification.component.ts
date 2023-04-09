@@ -10,7 +10,7 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./notification.component.css']
 })
 export class NotificationComponent implements OnInit, AfterViewInit{
-  displayedColumns: string[] = ['Sn','notice_id', 'notice_type','notice_date', 'noti_action'];
+  displayedColumns: string[] = ['Sn', 'notice_type','notice_date', 'action'];
   dataSource = new MatTableDataSource();
       total_count:number = 0;
       @ViewChild(MatPaginator) paginator!: MatPaginator;

@@ -8,7 +8,7 @@ import {MatTableDataSource} from '@angular/material/table';
   styleUrls: ['./expense.component.css']
 })
 export class ExpenseComponent implements OnInit {
-  displayedColumns: string[] = ['exp_position', 'exp_id', 'exp_name', 'exp_date','exp_amount','exp_paid', 'exp_due','class_action'];
+  displayedColumns: string[] = ['exp_position', 'exp_id', 'exp_name', 'exp_date','exp_amount','exp_paid', 'exp_due','action'];
   dataSource = new MatTableDataSource();
   constructor(
     private api :ApiService

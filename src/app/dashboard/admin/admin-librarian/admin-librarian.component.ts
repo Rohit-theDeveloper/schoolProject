@@ -10,7 +10,7 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./admin-librarian.component.css']
 })
 export class AdminLibrarianComponent implements OnInit {
-  displayedColumns: string[] = ['librn_position', 'librn_id', 'librn_name', 'librn_jndate','librn_address','librn_gen','librn_salary','librn_email','librn_mob','librn_aadhar','librn_password', 'librn_action'];
+  displayedColumns: string[] = ['sno', 'librn_id', 'librn_name','library_name', 'librn_jndate','librn_salary','librn_mob','action'];
   dataSource = new MatTableDataSource;
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;

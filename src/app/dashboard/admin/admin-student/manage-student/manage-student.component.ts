@@ -10,6 +10,7 @@ import { ApiService } from 'src/app/api.service';
 })
 export class ManageStudentComponent implements OnInit {
   sid: number = 0;
+  class:any
   hide = true;
   $image_local_url ="http://localhost/upload/"
   $img_url:any =this.$image_local_url+'logo.png';
@@ -30,8 +31,14 @@ export class ManageStudentComponent implements OnInit {
           this.add_std.patchValue(res.data);
         }
       )
+     
     }
-
+    this.api.get_class().subscribe(
+      (res:any)=>{
+        console.log(res.data)
+        this.class=res.data
+      }
+    )
 
   }
   add_std = this.fb.group({
@@ -90,6 +97,15 @@ export class ManageStudentComponent implements OnInit {
     this.add_std.reset();
   }
 
+  // changeclass(event:any){
+  //   console.log(event)
+  //   this.api.get_single_student(event).subscribe(
+  //     (res:any)=>{
+  //       console.log(res.data.class_name)
+  //       this.add_std.get('std_name')?.setValue(res.data.class_name)
+  //     }
+  //   )
+  // }
 
 
 }
