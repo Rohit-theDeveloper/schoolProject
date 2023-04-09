@@ -8,7 +8,7 @@
              </mat-toolbar>
         </div>
     
-        <div>
+        <div class="w-100 text-center">
             <form action=""   [formGroup]="add_notification">
                 <mat-form-field class="example-full-width p-3">
                     <mat-label class="p-1">Notice (subject)</mat-label>
@@ -21,7 +21,9 @@
                   <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
                   <mat-datepicker #picker1></mat-datepicker>
                 </mat-form-field>
-                <textarea class="bg-secondary p-3 text-white "  cols="100" rows="15" formControlName="notice_msg"></textarea>
+                <div>
+                    <textarea class="bg-secondary p-3 text-white "  cols="100" rows="15" formControlName="notice_msg"></textarea>
+                </div>
                   <div class="">
                       <button  class="btn text-white btn-danger  p-2 m-3">&nbsp;&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
                       <button  routerLink="../notification" class="btn text-white btn-success p-2 m-3" (click)="onSave()">&nbsp;&nbsp;&nbsp;&nbsp;Publish&nbsp;&nbsp;&nbsp;&nbsp;</button>

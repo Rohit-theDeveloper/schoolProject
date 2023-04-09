@@ -35,6 +35,12 @@ export class ManageStudentComponent implements OnInit {
       )
      
     }
+    this.api.get_class().subscribe(
+      (res:any)=>{
+        console.log(res.data)
+        this.class=res.data
+      }
+    )
   this.add_std = this.fb.group({
     std_id: [''],
     std_name: ['', Validators.required],

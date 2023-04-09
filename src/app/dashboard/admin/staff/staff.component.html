@@ -67,7 +67,11 @@
     <!-- mother's name Column -->
     <ng-container matColumnDef="staff_action">
         <th mat-header-cell *matHeaderCellDef> Action </th>
-        <td mat-cell *matCellDef="let row"> <mat-icon>delete</mat-icon> <mat-icon routerLink="../update-staff/{{row.staff_id}}">edit</mat-icon><mat-icon  routerLink="../manage-staff">visibility</mat-icon></td>
+        <td mat-cell *matCellDef="let row"> 
+          <!-- <mat-icon>delete</mat-icon>  -->
+          <mat-icon routerLink="../update-staff/{{row.staff_id}}">edit</mat-icon>
+          <!-- <mat-icon  routerLink="../manage-staff">visibility</mat-icon> -->
+        </td>
       </ng-container>
         <tr class="mat-row" *matNoDataRow>
         <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>

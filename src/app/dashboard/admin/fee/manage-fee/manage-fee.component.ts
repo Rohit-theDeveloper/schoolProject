@@ -27,6 +27,7 @@ onSave(){
   console.log(this.add_fee.value);
   this.api.post_fee(this.add_fee.value).subscribe(
     (res:any)=>{
+      alert(res.message)
       this.add_fee.reset();
       this.router.navigate(["admin/fee"]);
       console.log(res)
