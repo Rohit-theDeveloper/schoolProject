@@ -35,10 +35,7 @@ export class ManageStudentComponent implements OnInit {
       )
      
     }
-
-
-  }
-  add_std = this.fb.group({
+  this.add_std = this.fb.group({
     std_id: [''],
     std_name: ['', Validators.required],
     std_roll: ['', Validators.required],
@@ -57,7 +54,7 @@ export class ManageStudentComponent implements OnInit {
     class_id: ['', Validators.required],
     std_photo:['']
   })
-
+  }
   onSave() {
     // alert("Add");
     // console.log(this.add_std.get('std_name')?.value)
