@@ -153,7 +153,7 @@ export class ApiService {
   get_single_teacher(tid:any){
     return this.http.get(this.baseUrl + 'teacher_view.php?t_id='+tid);
   }
-  post_teachers(data:any){
+  post_teacher(data:any){
     return this.http.post(this.baseUrl + 'teacher_formdata_insert.php',data);
   }
   put_teachers(data:any){

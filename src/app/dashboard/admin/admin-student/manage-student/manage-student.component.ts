@@ -29,7 +29,7 @@ export class ManageStudentComponent implements OnInit {
         (res: any) => {
           this.add_std.patchValue(res.data);
           this.img_url =(res.data['std_img'])? this.img_local_url+res.data['std_img']:this.img_local_url+'logo.png';
-          // console.log(res.data)
+          console.log(res.data)
         }
       )
     }
@@ -119,7 +119,7 @@ export class ManageStudentComponent implements OnInit {
      formData.append('std_password',this.add_std.get('std_password')?.value)
      formData.append('class_id',this.add_std.get('class_id')?.value)
      formData.append('photo',this.selected_img)
-    this.api.put_std(formData).subscribe(
+    this.api.post_std(formData).subscribe(
       (res: any) => {
         this.router.navigate(['/admin/admin-student']);
         alert(res.message);

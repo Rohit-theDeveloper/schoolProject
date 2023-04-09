@@ -26,7 +26,7 @@ export class AdminTeacherComponent implements OnInit, AfterViewInit{
   ngOnInit(): void {
     this.api.get_teacher().subscribe(
       (res:any)=>{
-        console.log(res);
+        // console.log(res);
         this.dataSource.data = res.data;
       }
     )
