@@ -1,28 +1,21 @@
-<div class="bg-white w-100 h-100 ">
+<div class="bg-white w-100 h-100">
   <div>
     <mat-toolbar>
       <span class="p-3">{{(sid)?"Update Student":"Add Student"}}</span>
       <span class="example-spacer"></span>
-      <mat-icon routerLink="../admin-student" class="pb-4">cancel</mat-icon>
+      <mat-icon class="pb-4" (click)="back()">cancel</mat-icon>
     </mat-toolbar>
   </div>
-  <div class="img_style">
-      <img src = {{$img_url}} width="100%" height="100%" >
-      <button mat-fab color="primary" (click)="image.click()">
-        <mat-icon class="pic_add_icon">add</mat-icon>
-        <input type="file" #image (change) ="onImgChng(image.files)"  accept=".png,.jpg">
-      </button>
-</div>
   <div class="bg-white border p-4">
     <!-- Name -->
-    <form [formGroup]="add_std" >
-      <!-- <div class="img_style">
-        <img src = {{$img_url}} width="100%" height="100%" >
-        <button mat-fab color="primary" aria-label="Example icon button with a delete icon">
-          <mat-icon class="pic_add_icon">add</mat-icon>
-          <input type="file" #image (change) ="onImgChange(image.files)"  accept=".png,.jpg">
-        </button>
-    </div> -->
+    <form  class="example-form" [formGroup]="add_std" >
+      <div class="img_style">
+        <img src="{{img_url}}" width="100%" height="100%">
+         <button mat-fab color="primary" (click)="image.click()">
+            <mat-icon class="pic_add_icon">add</mat-icon>
+            <input type="file" #image (change) ="onImgChng(image.files)"  accept=".png,.jpg">
+          </button>
+    </div>
       <input type="hidden" formControlName="std_id" *ngIf="sid">
       <mat-form-field class="example-form-field padding">
         <mat-label class="p-1">Name</mat-label>
@@ -47,7 +40,7 @@
       <mat-form-field color="accent" appearance="fill" class="example-form-field padding">
         <mat-label>Date</mat-label>
         <input matInput [matDatepicker]="picker1" formControlName="std_dob">
-        <mat-hint>MM/DD/YYYY</mat-hint>
+        <mat-hint>YYYY/MM/DD</mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
         <mat-datepicker #picker1></mat-datepicker>
       </mat-form-field>
@@ -111,7 +104,6 @@
     <input matInput [type]="hide ? 'password' : 'text'" formControlName="std_password">
     <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" >
       <mat-icon class="color">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-     
     </button>
     </mat-form-field>
   
@@ -125,14 +117,12 @@
               <mat-option value="4">4</mat-option>
               <mat-option value="5">5</mat-option>
             </mat-select>
-        </mat-form-field>
+        </mat-form-field><br>
        <!-- photo -->
       <!-- <input class="p-4" type="file"> -->
-      <button class="btn text-white btn-danger m-3" routerLink="../admin-student"> &nbsp; &nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
+      
       <button class="btn text-white btn-primary m-3" (click)="reset_form()" *ngIf="!sid">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
       <button class="btn text-white btn-success m-3" (click)="(sid)?updatestd():onSave()" >&nbsp;&nbsp;&nbsp;&nbsp;{{(sid)?"Update":"Add"}}&nbsp;&nbsp;&nbsp;&nbsp;</button>
     </form>
-
   </div>
-
 </div>

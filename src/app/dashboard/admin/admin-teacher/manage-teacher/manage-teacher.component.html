@@ -6,7 +6,14 @@
       </mat-toolbar>
 </div>
 <div class="bg-white border ">
-    <form action=""  [formGroup]="add_teacher">
+    <form action="" class="example_form" [formGroup]="add_teacher">
+      <div class="img_style">
+        <img src="{{img_url}}" width="100%" height="100%">
+         <button mat-fab color="primary" (click)="image.click()">
+            <mat-icon class="pic_add_icon">add</mat-icon>
+            <input type="file" #image (change) ="onImgChng(image.files)"  accept=".png,.jpg">
+          </button>
+    </div>
       <mat-form-field class="example-form-field p-4">
         <mat-label class="p-1">Teacher ID</mat-label>
         <input matInput type="text" required="" >
@@ -94,10 +101,14 @@
 
             </mat-select>
           </mat-form-field>
+          <mat-form-field class="example-form-field p-4 ">
+            <mat-label class="p-1">password</mat-label>
+            <input matInput type="password" required=""  formControlName="t_password">
+          </mat-form-field>
           <!-- <input class="p-4" type="file"> -->
           <button class="btn text-white btn-danger m-4" routerLink="../teacher"> &nbsp; &nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
-          <button class="btn text-white btn-primary m-4" (click)="reset()">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
-          <button class="btn text-white btn-success m-4" (click)="onSave()">&nbsp;&nbsp;&nbsp;&nbsp;Add&nbsp;&nbsp;&nbsp;&nbsp;</button>
+          <!-- <button class="btn text-white btn-primary m-4" (click)="reset()" *ngIf="!tid">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button> -->
+          <button class="btn text-white btn-success m-4" (click)="(tid)?onupdate():onSave()">&nbsp;&nbsp;&nbsp;&nbsp;{{(tid)?"Update":"Add"}}&nbsp;&nbsp;&nbsp;&nbsp;</button> 
     </form>
    
 </div>

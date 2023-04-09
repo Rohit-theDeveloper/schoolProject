@@ -7,6 +7,13 @@
 </div>
 <div class="bg-white border ">
     <form action="" [formGroup]="librarianform">
+      <div class="img_style">
+        <img src="{{img_url}}" width="100%" height="100%">
+         <button mat-fab color="primary" (click)="image.click()">
+            <mat-icon class="pic_add_icon">add</mat-icon>
+            <input type="file" #image (change) ="onImgChng(image.files)"  accept=".png,.jpg">
+          </button>
+          </div>
       <mat-form-field class="example-form-field p-4">
         <mat-label class="p-1">Librarian ID</mat-label>
         <input matInput type="number"   formControlName="librn_id">
