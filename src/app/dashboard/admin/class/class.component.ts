@@ -12,7 +12,7 @@ import { ApiService } from 'src/app/api.service';
 })
 export class ClassComponent implements OnInit{
 
-  displayedColumns: string[] = ['class_position', 'class_id', 'class_name', 'class_fee','total_std', 'class_action'];
+  displayedColumns: string[] = ['class_position', 'class_id', 'class_name', 'class_fee'];
   dataSource = new MatTableDataSource();
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;

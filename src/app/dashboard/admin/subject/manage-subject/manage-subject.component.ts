@@ -16,7 +16,7 @@ export class ManageSubjectComponent {
     private api:ApiService
   ){}
   add_sub=this.fb.group({
-    sub_id:['',Validators.required],
+    sub_id:['',],
     sub_name:['',Validators.required],
     
   })

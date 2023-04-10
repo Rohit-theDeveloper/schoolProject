@@ -5,7 +5,7 @@
     <img src="/assets/logo.png" alt="">
   <span class="sname">UNIQUE SCHOOL</span>
     <span class="example-spacer"></span>
-    <span style="font-family: Inria Serif;">Adarsh Singh<mat-icon >arrow_drop_down</mat-icon></span>
+    <span style="font-family: Inria Serif;">{{login_as.user_name|titlecase }}<mat-icon >arrow_drop_down</mat-icon></span>
         <div id="usericon"></div>
   </mat-toolbar>
   <mat-drawer-container class="example-container" autosize>
@@ -13,7 +13,7 @@
       <div id="intro">
         <img src="../../../assets/user2.jpg" alt=""><br>
         <span>ID: STD1234</span><br>
-        <span>NAME: Alok Singh</span><br><hr>
+        <span>NAME: {{login_as.user_name|titlecase }}</span><br><hr>
       </div>
         <ul>
             <li routerLink="./std-dashboard" routerLinkActive="active"><mat-icon>dashboard</mat-icon>Dashboard</li>

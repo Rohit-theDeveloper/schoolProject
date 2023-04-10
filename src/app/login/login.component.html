@@ -2,11 +2,11 @@
 <app-header></app-header>
 <div id="wrapper">
     <h1>Login</h1>
-    <form action="" >
+    <form [formGroup]="login">
     <label for="">Username</label><br>
-    <input type="email" placeholder="Username"><br>
+        <input type="email" placeholder="Username" formControlName="uid"><br>
         <label for="">Password</label><br>
-        <input type="password" placeholder="Password" name="" id=""><br><br>
+        <input type="password" placeholder="Password" formControlName="pwd"><br><br>
         <button (click)="ontologin()">Login</button><br><br>
         <span>Forget password?<a href="#" routerLink="/forgotpassword">click</a></span>
     </form> 

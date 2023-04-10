@@ -199,7 +199,11 @@ export class ApiService {
   }
   //getting data from database end here
 //applicatio data view
-get_application() {
-  return this.http.get(this.baseUrl + 'admin_application_view.php');
-}
+  get_application() {
+    return this.http.get(this.baseUrl + 'admin_application_view.php');
+  }
+
+  do_login(data:any){
+    return this.http.post(this.baseUrl + 'login.php', data);
+  }
 }
