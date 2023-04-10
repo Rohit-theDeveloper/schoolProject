@@ -62,7 +62,7 @@ export class ManageStudentComponent implements OnInit {
   })
   }
   onSave() {
-    // alert("Add");
+    alert("Data insert successfully...");
     // console.log(this.add_std.get('std_name')?.value)
     const formData = new FormData();
     formData.append('std_name',this.add_std.get('std_name')?.value)
@@ -108,6 +108,7 @@ export class ManageStudentComponent implements OnInit {
 
     updatestd() {
       // console.log(res.message)
+      alert("Data updated successfully....")
      const formData = new FormData();
      formData.append('std_id',this.add_std.get('std_id')?.value)
      formData.append('std_name',this.add_std.get('std_name')?.value)

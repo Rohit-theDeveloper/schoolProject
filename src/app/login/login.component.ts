@@ -10,6 +10,8 @@ import { ApiService } from '../api.service';
 })
 export class LoginComponent implements OnInit{
   login!:FormGroup
+  hide=true;
+  res: any;
   constructor(
     private router:Router,
     private fb:FormBuilder,
@@ -25,16 +27,14 @@ export class LoginComponent implements OnInit{
     this.api.do_login(this.login.value).subscribe(
       (res:any) =>{
         localStorage.setItem('token',JSON.stringify(res.data))
+        alert(res.message)
         if(res.data['user_type']=='student'){
           this.router.navigate(['/student'])
         }else if(res.data['user_type']=='admin'){
           this.router.navigate(['/admin'])
         }else if (res.data['user_type']=='teacher'){
-           this.router.navigate(['/teacher'])
+       this.router.navigate(['/teacher'])
         }
-        else if (res.data['user_type']=='librarian'){
-          this.router.navigate(['/librarian'])
-       }
       }
     )
     console.log(this.login.value)

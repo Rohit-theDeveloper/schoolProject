@@ -56,7 +56,7 @@ export class ManageTeacherComponent  implements OnInit{
     }
     onSave(){
       // console.log(this.add_teacher.get('t_name')?.value)
-      alert('rohit');
+      alert('data success fully inserted');
       const formData = new FormData();
       formData.append('t_name',this.add_teacher.get('t_name')?.value)
       formData.append('t_gender',this.add_teacher.get('t_gender')?.value)

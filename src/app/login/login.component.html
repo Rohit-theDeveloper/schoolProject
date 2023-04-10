@@ -4,10 +4,19 @@
     <h1>Login</h1>
     <form [formGroup]="login">
     <label for="">Username</label><br>
-        <input type="email" placeholder="Username" formControlName="uid"><br>
+    <mat-form-field  class="input">
+        <input matInput [type]="hide ? 'password' : 'text'" formControlName="uid">
+        </mat-form-field>
         <label for="">Password</label><br>
-        <input type="password" placeholder="Password" formControlName="pwd"><br><br>
-        <button (click)="ontologin()">Login</button><br><br>
+        <mat-form-field appearance="fill" class="input">
+            <input matInput [type]="hide ? 'password' : 'text'" formControlName="pwd">
+            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" class="visibilitybutton">
+              <mat-icon class="color">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+            </button>
+            </mat-form-field>
+        <br><br>
+
+        <button (click)="ontologin()" class="loginbutton">Login</button><br><br>
         <span>Forget password?<a href="#" routerLink="/forgotpassword">click</a></span>
     </form> 
 </div>
