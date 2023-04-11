@@ -5,11 +5,11 @@
     <form [formGroup]="login">
     <label for="">Username</label><br>
     <mat-form-field  class="input">
-        <input matInput [type]="hide ? 'password' : 'text'" formControlName="uid">
+        <input matInput type= "text" placeholder="Username" formControlName="uid">
         </mat-form-field>
         <label for="">Password</label><br>
         <mat-form-field appearance="fill" class="input">
-            <input matInput [type]="hide ? 'password' : 'text'" formControlName="pwd">
+            <input matInput [type]="hide ? 'password' : 'text'" placeholder="Password" formControlName="pwd">
             <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" class="visibilitybutton">
               <mat-icon class="color">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </button>
