@@ -91,6 +91,7 @@ const routes: Routes = [
       {path:"manage-student",component:ManageStudentComponent},
       {path:"edit-student/:id",component:ManageStudentComponent},
       {path:"manage-teacher",component:ManageTeacherComponent}, 
+      {path:"update-teacher/:id",component:ManageTeacherComponent}, 
       {path:"edit-teacher/:id",component:ManageTeacherComponent}, 
       {path:"manage-application",component:ManageApplicationComponent},
       {path:"manage-class",component:ManageClassComponent},
