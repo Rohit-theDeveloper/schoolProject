@@ -5,7 +5,7 @@
     <img src="/assets/logo.png" alt="">
   <span class="sname">UNIQUE SCHOOL</span>
     <span class="example-spacer"></span>
-    <span style="font-family: Inria Serif;">Adarsh Singh<mat-icon [matMenuTriggerFor]="menu">arrow_drop_down</mat-icon></span>
+    <span style="font-family: Inria Serif;">{{login_as.user_name|titlecase }}<mat-icon [matMenuTriggerFor]="menu">arrow_drop_down</mat-icon></span>
         <div id="usericon"></div>
   </mat-toolbar>
   <!-- menu button  -->
@@ -19,7 +19,7 @@
       <div id="intro">
         <img src="../../../assets/user2.jpg" alt=""><br>
         <span>ID:34236</span><br>
-        <span>Adarsh singh</span><br><hr>
+        <span>{{login_as.user_name|titlecase }}</span><br><hr>
       </div>
         <ul>
             <li routerLink="./libr-dashboard" routerLinkActive="active" ><mat-icon>dashboard</mat-icon>Dashboard</li>

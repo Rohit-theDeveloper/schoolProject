@@ -48,7 +48,7 @@ updatelibrary(){
     console.log(res.message);
     // this.libraryform.reset()
     this.router.navigate(['librarian/libr-library-details']);
-    alert('Data Inserted successfully')
+    alert('Data updated successfully')
   })
   }
 reset(){
