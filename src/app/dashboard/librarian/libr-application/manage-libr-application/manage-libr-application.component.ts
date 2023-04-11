@@ -25,7 +25,7 @@ export class ManageLibrApplicationComponent {
   })
  }
  onsave(){
-  console.log(this.librn_application.value);
+  // console.log(this.librn_application.value);
   this.api.post_librnapplication(this.librn_application.value).subscribe(
     (res:any)=>{
       this.librn_application.reset();
