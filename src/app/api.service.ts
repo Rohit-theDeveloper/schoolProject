@@ -139,7 +139,7 @@ export class ApiService {
     return this.http.post(this.baseUrl + 'staff_insert.php',data);
   }
   get_single_staff(staffid:any){
-    return this.http.get(this.baseUrl +'staff_view.php?staff_id='+ staffid);
+    return this.http.get(this.baseUrl +'staff_view.php?staffid='+ staffid);
    
   }
   put_staff(data:any){
@@ -151,13 +151,13 @@ export class ApiService {
     return this.http.get(this.baseUrl + 'teacher_view.php');
   }
   get_single_teacher(tid:any){
-    return this.http.get(this.baseUrl + 'teacher_view.php?t_id='+tid);
+    return this.http.get(this.baseUrl + 'teacher_view.php?tid=' +tid);
   }
   post_teacher(data:any){
     return this.http.post(this.baseUrl + 'teacher_formdata_insert.php',data);
   }
-  put_teachers(data:any){
-    return this.http.post(this.baseUrl + 'teacher_update.php',data);
+  put_teacher(data:any){
+    return this.http.post(this.baseUrl + 'teacher_formdata_update.php.php',data);
   }
  
   // end  theacher module.... 

@@ -31,16 +31,19 @@ export class ManageStudentComponent implements OnInit {
           this.add_std.patchValue(res.data);
           this.img_url =(res.data['std_img'])? this.img_local_url+res.data['std_img']:this.img_local_url+'logo.png';
           console.log(res.data)
+          this.add_std.get('std_dob')?.setValue('4/27/2023')
+
         }
       )
      
     }
     this.api.get_class().subscribe(
       (res:any)=>{
-        console.log(res.data)
+        // console.log(res.data)
         this.class=res.data
       }
     )
+
   this.add_std = this.fb.group({
     std_id: [''],
     std_name: ['', Validators.required],
@@ -61,6 +64,7 @@ export class ManageStudentComponent implements OnInit {
     std_photo:['']
   })
   }
+  
   onSave() {
     alert("Data insert successfully...");
     // console.log(this.add_std.get('std_name')?.value)
@@ -114,6 +118,7 @@ export class ManageStudentComponent implements OnInit {
      formData.append('std_name',this.add_std.get('std_name')?.value)
      formData.append('std_roll',this.add_std.get('std_roll')?.value)
      formData.append('std_dob',this.add_std.get('std_dob')?.value)
+    //  formData.append('std_dob',(this.add_std.get('std_dob')?.value).toLocaleDateString())
      formData.append('std_email',this.add_std.get('std_email')?.value)
      formData.append('std_mob',this.add_std.get('std_mob')?.value)
      formData.append('std_gender',this.add_std.get('std_gender')?.value)
@@ -127,7 +132,9 @@ export class ManageStudentComponent implements OnInit {
      formData.append('std_password',this.add_std.get('std_password')?.value)
      formData.append('class_id',this.add_std.get('class_id')?.value)
      formData.append('photo',this.selected_img)
-    this.api.put_std(formData).subscribe(
+   
+   
+     this.api.put_std(formData).subscribe(
       (res: any) => {
         this.router.navigate(['/admin/admin-student']);
         console.log(res.message);
@@ -137,7 +144,5 @@ export class ManageStudentComponent implements OnInit {
   reset_form() {
     this.add_std.reset();
   }
-
-
 
 }
