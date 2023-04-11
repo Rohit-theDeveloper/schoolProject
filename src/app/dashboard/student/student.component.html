@@ -5,18 +5,18 @@
     <img src="/assets/logo.png" alt="">
   <span class="sname">UNIQUE SCHOOL</span>
     <span class="example-spacer"></span>
-    <span style="font-family: Inria Serif;">{{login_as.user_name|titlecase }}<mat-icon >arrow_drop_down</mat-icon></span>
-        <div >
-          <!-- <button mat-icon-button color="primary" aria-label="Example icon button with a home icon"> -->
-            <mat-icon>account_circle</mat-icon>
-          <!-- </button> -->
-        </div>
+    <span [matMenuTriggerFor]="menu" style="font-family: Inria Serif;">{{login_as.user_name|titlecase }}<mat-icon >arrow_drop_down</mat-icon></span>   
+            <div id="usericon" [matMenuTriggerFor]="menu"><img class="rounded-circle"src={{img_url}}></div>
   </mat-toolbar>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item class="text-white" routerLink="/login"><mat-icon class="text-white">logout</mat-icon>Log out</button>
+    <!-- <button mat-menu-item class="text-white">Setting</button> -->
+  </mat-menu>
   <mat-drawer-container class="example-container" autosize>
     <mat-drawer #drawer class="example-sidenav" mode="side" opened="">
       <div id="intro">
-        <img src="../../../assets/user2.jpg" alt=""><br>
-        <span>ID: STD1234</span><br>
+        <img src={{img_url}}><br>
+        <span>ID: STD-{{login_as.type_id}}</span><br>
         <span>NAME: {{login_as.user_name|titlecase }}</span><br><hr>
       </div>
         <ul>
@@ -26,8 +26,8 @@
             <li routerLink="./std-application" routerLinkActive="active"><mat-icon>book</mat-icon>Application</li>
             <li routerLink="./std-notification" routerLinkActive="active"><mat-icon>notifications</mat-icon>Notifications</li>
             <li routerLink="./std-exam" routerLinkActive="active"><mat-icon>note</mat-icon>Exam</li>
-            <li ><mat-icon>logout</mat-icon>Logout</li>
-            <li ><mat-icon>settings</mat-icon>Setting</li>
+            <li routerLink="/login"><mat-icon>logout</mat-icon>Logout</li>
+            <!-- <li ><mat-icon>settings</mat-icon>Setting</li> -->
         </ul>
     </mat-drawer>
     <!-- <router-outlet></router-outlet> -->

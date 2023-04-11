@@ -9,8 +9,14 @@ export class StudentComponent implements OnInit {
   showFiller = false;
   login_details:any
   login_as:any 
+  img_local_url ='http://localhost/upload/';
+  img_url = this.img_local_url +'logo.png';
+  // img_url:any
+
   ngOnInit(): void {
     this.login_details=localStorage.getItem('token')
-    this.login_as=JSON.parse(this.login_details)
+    console.log(this.login_as=JSON.parse(this.login_details))
+    // console.log(this.login_details)
+    this.img_url =(this.login_as['user_img'])? this.img_local_url+this.login_as.user_img:this.img_local_url+'logo.png';
   }
 }
