@@ -1,6 +1,6 @@
 #about-heading{
-    width: calc(100% - 60px);
-    margin: 10px 30px;
+    width: calc(100% - 40px);
+    margin: 10px 20px 24px 20px;
     top: 0;
     height: 50px;
     text-align: center;
@@ -12,8 +12,9 @@
 
 }
 #whygs{
-    width:calc(100% - 60px);
-    margin: 10px 30px; 
+    width:calc(100% - 40px);
+    margin: 10px 20px; 
+    margin-bottom: 20px;
     height: 300px;
 }
 /*why gs child div for image*/
