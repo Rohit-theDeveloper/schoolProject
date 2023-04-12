@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -9,10 +10,12 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./manage-fee.component.css']
 })
 export class ManageFeeComponent {
+  feedate :any
 constructor(
   private fb : FormBuilder,
   private api : ApiService,
-  private router : Router
+  private router : Router,
+  private datepipe : DatePipe,
 ){}
 add_fee = this.fb.group({
 fee_type:['',Validators.required],
