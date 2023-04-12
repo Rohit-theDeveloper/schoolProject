@@ -24,9 +24,10 @@ export class ManageSubjectComponent {
     console.log(this.add_sub.value);
     this.api.post_subject(this.add_sub.value).subscribe(
       (res:any)=>{
-        console.log(res.message);
-          alert(res.message);
+        // console.log(res.message);
+        
           this.router.navigate(['/admin/subject']);
+          alert(res.message);
           this.add_sub.reset();
         
         
