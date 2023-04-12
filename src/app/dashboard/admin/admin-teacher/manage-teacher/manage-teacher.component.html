@@ -6,18 +6,19 @@
       </mat-toolbar>
 </div>
 <div class="bg-white border ">
-    <form action="" class="example_form" [formGroup]="add_teacher">
+   <form action="" class="example_form" [formGroup]="add_teacher">
       <div class="img_style">
         <img src="{{img_url}}" width="100%" height="100%">
          <button mat-fab color="primary" (click)="image.click()">
             <mat-icon class="pic_add_icon">add</mat-icon>
             <input type="file" #image (change) ="onImgChng(image.files)"  accept=".png,.jpg">
           </button>
-    </div>
-      <mat-form-field class="example-form-field p-4">
+       </div>
+      <!-- <mat-form-field class="example-form-field p-4">
         <mat-label class="p-1">Teacher ID</mat-label>
         <input matInput type="text"   formControlName="t_id">
-      </mat-form-field>
+      </mat-form-field> -->
+      <input type="hidden" formControlName="t_id" *ngIf="tid">
       <mat-form-field class="example-form-field p-4">
         <mat-label class="p-1">Name</mat-label>
         <input matInput type="text" required=""  formControlName="t_name">
@@ -42,20 +43,6 @@
             <mat-label class="p-1">Mobile No</mat-label>
             <input matInput type="text" required="" formControlName="t_mob">
           </mat-form-field>
-          <!-- <mat-form-field appearance="fill" class="example-form-field p-4 ">
-            <mat-label>Class</mat-label>
-            <mat-select formControlName="class_id">
-              <mat-option value="1">1-(Pay)</mat-option>
-              <mat-option value="2">2-(Nurs)</mat-option>
-              <mat-option value="3">3-(LKG)</mat-option>
-              <mat-option value="4">4-(UKG)</mat-option>
-              <mat-option value="5">5-(stdI)</mat-option>
-              <mat-option value="6">6-(stdII)</mat-option>
-              <mat-option value="7">7-(stdIII)</mat-option>
-              <mat-option value="8">8-(stdIV)</mat-option>
-              <mat-option value="9">9-(stdV)</mat-option>
-            </mat-select>
-          </mat-form-field> -->
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Aadhar No.</mat-label>
             <input matInput type="text" required="" formControlName="t_aadhar">
@@ -66,13 +53,6 @@
             <mat-hint>MM/DD/YYYY</mat-hint>
             <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
             <mat-datepicker #picker1></mat-datepicker>
-            <!-- <mat-form-field color="accent" appearance="fill" class="example-form-field padding">
-              <mat-label>Date</mat-label>
-              <input matInput [matDatepicker]="picker1" formControlName="std_dob">
-              <mat-hint>YYYY/MM/DD</mat-hint>
-              <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
-              <mat-datepicker #picker1></mat-datepicker>
-            </mat-form-field> -->
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Email</mat-label>
@@ -81,10 +61,10 @@
           <!-- join date start -->
           <mat-form-field class="example-form-field p-4 " color="accent" appearance="fill">
             <mat-label>Join Date</mat-label>
-            <input matInput [matDatepicker]="picker" formControlName="t_jndate">
+            <input matInput [matDatepicker]="picker2" formControlName="t_jndate">
             <mat-hint>MM/DD/YYYY</mat-hint>
-            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
-            <mat-datepicker #picker></mat-datepicker>
+            <mat-datepicker-toggle matIconSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
           </mat-form-field>
           <!-- join date end -->
           <mat-form-field class="example-form-field p-4 ">
@@ -96,6 +76,12 @@
             <mat-select required="" formControlName="sub_id">
               <mat-option *ngFor="let subject of subject"[value]="subject.sub_id">{{subject.sub_name}}</mat-option> 
             </mat-select>
+          </mat-form-field>
+          <mat-form-field appearance="fill" class="example-form-field padding ">
+            <mat-label>Class</mat-label>
+           <mat-select required="" formControlName="class_id">
+             <mat-option *ngFor="let class of class"[value]="class.class_id">{{class.class_name}}</mat-option>   
+           </mat-select>
           </mat-form-field>
           <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">password</mat-label>

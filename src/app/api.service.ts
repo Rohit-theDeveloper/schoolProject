@@ -151,13 +151,14 @@ export class ApiService {
     return this.http.get(this.baseUrl + 'teacher_view.php');
   }
   get_single_teacher(tid:any){
-    return this.http.get(this.baseUrl + 'teacher_view.php?tid=' +tid);
+    return this.http.get(this.baseUrl + 'teacher_view.php?tid='+tid); 
   }
   post_teacher(data:any){
     return this.http.post(this.baseUrl + 'teacher_formdata_insert.php',data);
   }
   put_teacher(data:any){
-    return this.http.post(this.baseUrl + 'teacher_formdata_update.php.php',data);
+    console.log(Array.from(data.entries()))
+    return this.http.post(this.baseUrl + 'teacher_formdata_update.php',data);
   }
  
   // end  theacher module.... 
@@ -195,7 +196,7 @@ export class ApiService {
     return this.http.get(this.baseUrl + 'view_librarian.php?librn_id='+librnid);
   }
   put_librarian(data: any) {
-    return this.http.put(this.baseUrl + 'update_librarian.php', data);
+    return this.http.put(this.baseUrl + 'update_formdata_librarian.php',data);
   }
   //getting data from database end here
 //applicatio data view

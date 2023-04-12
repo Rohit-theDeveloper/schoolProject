@@ -87,6 +87,7 @@ import { MatSortModule } from '@angular/material/sort';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { ExpenseComponent } from './dashboard/admin/expense/expense.component';
 import { ManageExpenseComponent } from './dashboard/admin/expense/manage-expense/manage-expense.component';
+import { DatePipe } from '@angular/common';
 
 
 @NgModule({
@@ -185,7 +186,9 @@ import { ManageExpenseComponent } from './dashboard/admin/expense/manage-expense
     MatSortModule,
     MatPaginatorModule,
   ],
-  providers: [],
+  providers: [
+    DatePipe
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

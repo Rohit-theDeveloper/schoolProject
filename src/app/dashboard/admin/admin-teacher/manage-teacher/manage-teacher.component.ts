@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
+ import { DatePipe } from '@angular/common';
 @Component({
   selector: 'app-manage-teacher',
   templateUrl: './manage-teacher.component.html',
@@ -9,19 +10,22 @@ import { ApiService } from 'src/app/api.service';
 })
 export class ManageTeacherComponent  implements OnInit{
   
-  tid: number = 0;
+ public tid: number = 0;
   hide = true;
   img_local_url ='http://localhost/upload/';
   img_url:any = this.img_local_url+'logo.png';
   selected_img:any;
   add_teacher!:FormGroup;
   subject: any;
-
+  tdob:any;
+  tjndate:any;
+  class:any
   constructor(
     private fb:FormBuilder,
     private router:Router,
     private api:ApiService,
-    private url : ActivatedRoute
+    private url : ActivatedRoute,
+    private datePipe : DatePipe
   ){}
  
     ngOnInit(): void {
@@ -30,15 +34,22 @@ export class ManageTeacherComponent  implements OnInit{
       this.api.get_single_teacher(this.tid).subscribe(
         (res: any) => {
          this.add_teacher.patchValue(res.data);
-          this.img_url =(res.data['t_img'])? this.img_local_url+res.data['t_img']:this.img_local_url+'logo.png';
+          this.img_url =(res.data['t_img'])?this.img_local_url+res.data['t_img']:this.img_local_url+'logo.png';
           console.log(res.data)
         }
       )
     }
+
     this.api.get_subject().subscribe(
       (res:any)=>{
         // console.log(res.data)
         this.subject=res.data
+      }
+    )
+    this.api.get_class().subscribe(
+      (res:any)=>{
+        // console.log(res.data)
+        this.class=res.data
       }
     )
 
@@ -62,7 +73,6 @@ export class ManageTeacherComponent  implements OnInit{
     }
     onSave(){
       // console.log(this.add_teacher.get('t_name')?.value)
-      alert('data success fully inserted');
       const formData = new FormData();
       formData.append('t_name',this.add_teacher.get('t_name')?.value)
       formData.append('t_gender',this.add_teacher.get('t_gender')?.value)
@@ -71,10 +81,10 @@ export class ManageTeacherComponent  implements OnInit{
       formData.append('t_mob',this.add_teacher.get('t_mob')?.value)
       formData.append('class_id',this.add_teacher.get('class_id')?.value)
       formData.append('t_aadhar',this.add_teacher.get('t_aadhar')?.value)
-      formData.append('t_dob',(this.add_teacher.get('t_dob')?.value).toLocaleDateString())
+      formData.append('t_dob',this.add_teacher.get('t_dob')?.value)
       formData.append('t_email',this.add_teacher.get('t_email')?.value)
       // formData.append('t_jndate',this.add_teacher.get('t_jndate')?.value)
-      formData.append('t_jndate',(this.add_teacher.get('t_jndate')?.value).toLocaleDateString())
+      formData.append('t_jndate',(this.add_teacher.get('t_jndate')?.value))
       formData.append('t_salary',this.add_teacher.get('t_salary')?.value)
       formData.append('sub_id',this.add_teacher.get('sub_id')?.value)
       formData.append('t_password',this.add_teacher.get('t_password')?.value)
@@ -106,10 +116,9 @@ export class ManageTeacherComponent  implements OnInit{
   }
 
   onupdate(){
-
-    alert('data success fully inserted');
+    this.tdob = this.datePipe.transform(this.add_teacher.get('t_dob')?.value,'yyyy-MM-dd')
+    this.tjndate = this.datePipe.transform(this.add_teacher.get('t_jndate')?.value,'yyyy-MM-dd')
     const formData = new FormData();
-    
     formData.append('t_id',this.add_teacher.get('t_id')?.value)
     formData.append('t_name',this.add_teacher.get('t_name')?.value)
     formData.append('t_gender',this.add_teacher.get('t_gender')?.value)
@@ -118,23 +127,25 @@ export class ManageTeacherComponent  implements OnInit{
     formData.append('t_mob',this.add_teacher.get('t_mob')?.value)
     formData.append('class_id',this.add_teacher.get('class_id')?.value)
     formData.append('t_aadhar',this.add_teacher.get('t_aadhar')?.value)
-    formData.append('t_dob',(this.add_teacher.get('t_dob')?.value).toLocaleDateString())
+    formData.append('t_dob',(this.tdob))
     formData.append('t_email',this.add_teacher.get('t_email')?.value)
-    formData.append('t_jndate',(this.add_teacher.get('t_jndate')?.value).toLocaleDateString())
+    formData.append('t_jndate', (this.tjndate))
     formData.append('t_salary',this.add_teacher.get('t_salary')?.value)
     formData.append('sub_id',this.add_teacher.get('sub_id')?.value)
     formData.append('t_password',this.add_teacher.get('t_password')?.value)
     formData.append('photo',this.selected_img)
 
+    // console.log(this.datePipe.transform(new Date(),'yyyy/MM/dd'))
+  
+    // console.log(this.add_teacher.get('t_dob')?.value)
+    // console.log(this.datePipe.transform(this.add_teacher.get('t_dob')?.value,'yyyy/MM/dd'))
+    // console.log(this.datePipe.transform(this.tdob,'yyyy/MM/dd'))
     this.api.put_teacher(formData).subscribe(
       (res:any)=>{
-        // this.add_teacher.reset();
         this.router.navigate(['/admin/admin-teacher']);
-        console.log(res);
+        console.log(res.message);
       }
     )
-  
-  // console.log("update")
   }
  
   reset_form(){
