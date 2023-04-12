@@ -6,14 +6,14 @@
 <span class="sname">UNIQUE SCHOOL</span>
   <span class="example-spacer"></span>
   <span style="font-family: Inria Serif;">{{login_as.user_name|titlecase }}<mat-icon >arrow_drop_down</mat-icon></span>
-      <div id="usericon"></div>
+      <div id="usericon"><img src={{img_url}} alt=""></div>
 </mat-toolbar>
 <mat-drawer-container class="example-container" autosize>
   <mat-drawer #drawer class="example-sidenav" mode="side" opened="">
     <div id="intro">
-      <img src="../../../assets/user2.jpg" alt=""><br>
-      <span>ID: TH1234</span><br>
-      <span>NAME: {{login_as.user_name |titlecase}}</span><br><hr>
+      <img src={{img_url}} alt=""><br>
+      <span>ID: Th-{{login_as.type_id}}</span><br>
+      <span>Name: {{login_as.user_name |titlecase}}</span><br><hr>
     </div>
       <ul>
           <li routerLink="./th-dashboard" routerLinkActive="active"><mat-icon>dashboard</mat-icon>Dashboard</li>
@@ -23,7 +23,7 @@
           <li routerLink="./th-notification" routerLinkActive="active"><mat-icon>notifications</mat-icon>Notifications</li>
           <li routerLink="./th-exam" routerLinkActive="active"><mat-icon>note</mat-icon>Exam</li>
           <li ><mat-icon>logout</mat-icon>Logout</li>
-          <li ><mat-icon>settings</mat-icon>Setting</li>
+          <!-- <li ><mat-icon>settings</mat-icon>Setting</li> -->
       </ul>
   </mat-drawer>
   <!-- <router-outlet></router-outlet> -->
