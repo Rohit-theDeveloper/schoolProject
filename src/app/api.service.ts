@@ -89,8 +89,9 @@ export class ApiService {
   get_fee() {
     return this.http.get(this.baseUrl + 'fee_recp_view.php');
   }
-  get_single_std_fee(id:any) {
-    return this.http.get(this.baseUrl + 'fee_recp_view.php?std_id='+id);
+  get_single_std_fee(std_id:any) {
+    console.log(std_id)
+    return this.http.get(this.baseUrl + 'fee_recp_view.php?std_id='+std_id);
   }
   post_fee(data: any) {
     return this.http.post(this.baseUrl + 'fee_recp_insert.php', data);
