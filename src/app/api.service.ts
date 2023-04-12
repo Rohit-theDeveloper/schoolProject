@@ -160,7 +160,7 @@ export class ApiService {
     return this.http.post(this.baseUrl + 'teacher_formdata_insert.php',data);
   }
   put_teacher(data:any){
-    console.log(Array.from(data.entries()))
+    // console.log(Array.from(data.entries()))
     return this.http.post(this.baseUrl + 'teacher_formdata_update.php',data);
   }
  
@@ -199,7 +199,7 @@ export class ApiService {
     return this.http.get(this.baseUrl + 'view_librarian.php?librn_id='+librnid);
   }
   put_librarian(data: any) {
-    return this.http.put(this.baseUrl + 'update_formdata_librarian.php',data);
+    return this.http.post(this.baseUrl + 'update_formdata_librarian.php',data);
   }
   //getting data from database end here
 //applicatio data view

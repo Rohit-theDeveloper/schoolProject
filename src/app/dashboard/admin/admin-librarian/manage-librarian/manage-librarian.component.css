@@ -32,3 +32,6 @@ mat-toolbar{
   .img_style>img{
      border-radius: 100%;
   }
+  .pic_add_icon{
+    color: white;
+  }

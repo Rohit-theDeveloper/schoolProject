@@ -1,8 +1,9 @@
 /* for contact heading */
 #contact-heading{
-    width: calc(100% - 60px);
+    width: calc(100% - 40px);
     height: 50px;
-    margin: 10px 30px 0px 30px;
+    margin: 10px 20px 20px 20px;
+    margin-bottom: 10px;
     font-size: 30px;
     font-weight: bold;
     text-align: center;
@@ -15,28 +16,37 @@
     }
 /* for contact form */
 .contact{
-    /* background-color: #b9eae7 ; */
     background-image: url("/assets/images/contact-img.jpg");
     color: black;
-    width: calc(100% - 60px);
+    width: calc(100% - 40px);
     height: 450px;
-    margin: 10px 30px 0px 30px;
+    margin: 10px 20px 24px 20px;
     font-size: 15px;
-    margin-bottom: 10px;
 }
+:host {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
 #form-div{
     height: 100%;
-    width: 60%;
+    width: calc(50% - 40px);
+    margin: 20px;
     float: left;
-    padding: 20px 0 20px 20% ;
+    padding: 10px;
     color: black;
     font-size: 18px;
 }
-form button{
-    position: absolute;
-    left: 35%;
-}
 #location{
     float: right;
-    width: 40%;
+    width: 50%;
+}
+mat-form-field{
+    margin: 10px;
+    margin-left: 0px;
+    width: 80%;
+    padding-left: 40px;
+}
+button{
+    margin-left: 40px;
 }

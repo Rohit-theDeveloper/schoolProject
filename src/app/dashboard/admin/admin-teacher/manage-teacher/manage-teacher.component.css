@@ -10,6 +10,9 @@ mat-toolbar{
     height: 35px;
     float: right;
 }
+input::-webkit-inner-spin-button{
+  -webkit-appearance:none;
+}
 /* forms */
 .example-form-field {
     width: 300px;
@@ -34,4 +37,7 @@ mat-toolbar{
 }
  .img_style>img{
     border-radius: 100%;
+ }
+ .color{
+  color: black;
  }

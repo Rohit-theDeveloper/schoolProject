@@ -122,7 +122,7 @@
       <!-- <input class="p-4" type="file"> -->
       
       <button class="btn text-white btn-primary m-3" (click)="reset_form()" *ngIf="!sid">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
-      <button class="btn text-white btn-danger m-4" routerLink="../student"> &nbsp; &nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
+      <button class="btn text-white btn-danger m-4" (click)="goback()"> &nbsp; &nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
       <button class="btn text-white btn-success m-3" (click)="(sid)?updatestd():onSave()" >&nbsp;&nbsp;&nbsp;&nbsp;{{(sid)?"Update":"Add"}}&nbsp;&nbsp;&nbsp;&nbsp;</button>
     </form>
   </div>
