@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit, } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -16,11 +17,13 @@ export class ManageStudentComponent implements OnInit {
   img_url:any = this.img_local_url+'logo.png';
   selected_img:any;
   add_std!:FormGroup;
+  stddob : any
   constructor(
     private fb: FormBuilder,
     private api: ApiService,
     private router: Router,
     private url: ActivatedRoute,
+    private datepipe : DatePipe
   ) { }
 
   ngOnInit(): void {
@@ -31,8 +34,6 @@ export class ManageStudentComponent implements OnInit {
           this.add_std.patchValue(res.data);
           this.img_url =(res.data['std_img'])? this.img_local_url+res.data['std_img']:this.img_local_url+'logo.png';
           console.log(res.data)
-          this.add_std.get('std_dob')?.setValue('4/27/2023')
-
         }
       )
      
@@ -66,12 +67,12 @@ export class ManageStudentComponent implements OnInit {
   }
   
   onSave() {
-    alert("Data insert successfully...");
     // console.log(this.add_std.get('std_name')?.value)
     const formData = new FormData();
+    this.stddob = this.datepipe.transform(this.add_std.get('std_dob')?.value,'yyyy-MM-dd')
     formData.append('std_name',this.add_std.get('std_name')?.value)
     formData.append('std_roll',this.add_std.get('std_roll')?.value)
-    formData.append('std_dob',(this.add_std.get('std_dob')?.value).toLocaleDateString())
+    formData.append('std_dob',(this.stddob))
     formData.append('std_email',this.add_std.get('std_email')?.value)
     formData.append('std_mob',this.add_std.get('std_mob')?.value)
     formData.append('std_gender',this.add_std.get('std_gender')?.value)
@@ -112,13 +113,13 @@ export class ManageStudentComponent implements OnInit {
 
     updatestd() {
       // console.log(res.message)
-      alert("Data updated successfully....")
+     this.stddob = this.datepipe.transform(this.add_std.get('std_dob')?.value,'yyyy-MM-dd')
      const formData = new FormData();
      formData.append('std_id',this.add_std.get('std_id')?.value)
      formData.append('std_name',this.add_std.get('std_name')?.value)
      formData.append('std_roll',this.add_std.get('std_roll')?.value)
-     formData.append('std_dob',this.add_std.get('std_dob')?.value)
-    //  formData.append('std_dob',(this.add_std.get('std_dob')?.value).toLocaleDateString())
+    //  formData.append('std_dob',this.add_std.get('std_dob')?.value)
+     formData.append('std_dob',(this.stddob))
      formData.append('std_email',this.add_std.get('std_email')?.value)
      formData.append('std_mob',this.add_std.get('std_mob')?.value)
      formData.append('std_gender',this.add_std.get('std_gender')?.value)
@@ -137,7 +138,8 @@ export class ManageStudentComponent implements OnInit {
      this.api.put_std(formData).subscribe(
       (res: any) => {
         this.router.navigate(['/admin/admin-student']);
-        console.log(res.message);
+        // console.log(this.stddob);
+        alert(res.message)
       }
     )
   }

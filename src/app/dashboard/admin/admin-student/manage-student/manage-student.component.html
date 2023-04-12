@@ -15,7 +15,7 @@
             <mat-icon class="pic_add_icon">add</mat-icon>
             <input type="file" #image (change) ="onImgChng(image.files)"  accept=".png,.jpg">
           </button>
-    </div>
+     </div>
       <input type="hidden" formControlName="std_id" *ngIf="sid">
        <!-- class -->
        <mat-form-field appearance="fill" class="example-form-field padding ">
@@ -74,7 +74,7 @@
       <!-- Gender -->
       <mat-form-field appearance="fill" class="example-form-field padding">
         <mat-label>Gender</mat-label>
-        <mat-select required="" formControlName="std_gender">
+        <mat-select formControlName="std_gender">
           <mat-option value="Male">Male</mat-option>
           <mat-option value="Female">Female</mat-option>
           <mat-option value="Other">Others</mat-option>
@@ -112,12 +112,12 @@
         <input matInput type="password" formControlName="std_password">
       </mat-form-field> -->
       <mat-form-field appearance="fill" class="example-form-field padding">
-    <mat-label class="p-1">Enter your password</mat-label>
-    <input matInput [type]="hide ? 'password' : 'text'" formControlName="std_password">
-    <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" >
+      <mat-label class="p-1">Enter your password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" formControlName="std_password">
+       <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide" >
       <mat-icon class="color">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-    </button>
-    </mat-form-field>
+      </button>
+     </mat-form-field>
        <!-- photo -->
       <!-- <input class="p-4" type="file"> -->
       

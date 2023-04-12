@@ -55,7 +55,7 @@ constructor(
     formData.append('librn_gen',this.librarianform.get('librn_gen')?.value)
     formData.append('librn_salary',this.librarianform.get('librn_salary')?.value)
     formData.append('librn_mob',this.librarianform.get('librn_mob')?.value)
-    formData.append('librn_addhar',this.librarianform.get('librn_addhar')?.value)
+    formData.append('librn_aadhar',this.librarianform.get('librn_aadhar')?.value)
     formData.append('librn_email',this.librarianform.get('librn_email')?.value)
     formData.append('librn_jndate',this.librarianform.get('librn_jndate')?.value)
     formData.append('librn_password',this.librarianform.get('librn_password')?.value)
@@ -66,6 +66,7 @@ constructor(
         this.librarianform.reset();
         this.router.navigate(['admin/admin-librarian']);
         console.log(res);
+        alert(res.message)
       }
     )
   }
@@ -84,13 +85,25 @@ onImgChng(file:any){
 }
 
   updatelibrarian(){
-  this.api.put_librarian(FormData).subscribe(
+    const formData = new FormData();
+
+    formData.append('librn_id',this.librarianform.get('librn_id')?.value)
+    formData.append('librn_name',this.librarianform.get('librn_name')?.value)
+    formData.append('librn_address',this.librarianform.get('librn_address')?.value)
+    formData.append('librn_gen',this.librarianform.get('librn_gen')?.value)
+    formData.append('librn_salary',this.librarianform.get('librn_salary')?.value)
+    formData.append('librn_mob',this.librarianform.get('librn_mob')?.value)
+    formData.append('librn_aadhar',this.librarianform.get('librn_aadhar')?.value)
+    formData.append('librn_email',this.librarianform.get('librn_email')?.value)
+    formData.append('librn_jndate',this.librarianform.get('librn_jndate')?.value)
+    formData.append('librn_password',this.librarianform.get('librn_password')?.value)
+    formData.append('photo',this.selected_img)
+    
+    this.api.put_librarian(formData).subscribe(
     (res:any)=>{
-    console.log(res.message);
-    // this.librarianform.reset()
     this.router.navigate(['admin/admin-librarian']);
-    console.log(res)
-    alert('Data Updated Successfully')
+    console.log(res.message)
+    
   })
   }
   
