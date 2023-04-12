@@ -2,11 +2,11 @@
     <mat-toolbar>
        <span class="p-3">{{(librnid)?"Update librarian":"Add librarian"}}</span>
        <span class="example-spacer"></span>
-      <mat-icon routerLink="../admin-librarian" class="pb-4">cancel</mat-icon>
+      <mat-icon (click)="back()" class="pb-4">cancel</mat-icon>
       </mat-toolbar>
 </div>
 <div class="bg-white border ">
-    <form action="" [formGroup]="librarianform">
+    <form action="" [formGroup]="add_librn">
       <div class="img_style">
         <img src="{{img_url}}" width="100%" height="100%">
          <button mat-fab color="primary" (click)="image.click()">
@@ -14,10 +14,8 @@
             <input type="file" #image (change) ="onImgChng(image.files)"  accept=".png,.jpg">
           </button>
           </div>
-      <mat-form-field class="example-form-field p-4">
-        <mat-label class="p-1">Librarian ID</mat-label>
-        <input matInput type="number"   formControlName="librn_id">
-      </mat-form-field>
+     
+          <input type="hidden" formControlName="librn_id" *ngIf="librnid">
         <mat-form-field class="example-form-field p-4">
             <mat-label class="p-1">Name</mat-label>
             <input matInput type="text" required="" formControlName="librn_name">
@@ -69,7 +67,7 @@
             <input matInput type="text" required="" formControlName="librn_password">
           </mat-form-field>
           <!-- <input class="p-4" type="file"> -->
-          <button  class="btn text-white btn-danger m-4">&nbsp;&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
+          <button  class="btn text-white btn-danger m-4"  (click)="back()">&nbsp;&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
           <button  class="btn text-white btn-primary m-4" *ngIf="!librnid">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
           <button  class="btn text-white btn-success m-4" (click)="(librnid)?updatelibrarian():onsave()" >&nbsp;&nbsp;&nbsp;&nbsp;{{(librnid)? "update":"Add"}}&nbsp;&nbsp;&nbsp;&nbsp;</button>
     </form>

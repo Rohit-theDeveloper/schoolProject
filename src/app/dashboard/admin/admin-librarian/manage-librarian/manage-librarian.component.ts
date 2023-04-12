@@ -1,3 +1,4 @@
+import { DatePipe } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -14,26 +15,28 @@ hide = true;
 img_local_url ='http://localhost/upload/';
 img_url:any = this.img_local_url+'logo.png';
 selected_img:any;
-librarianform!:FormGroup;
+add_librn!:FormGroup;
+librnjndate:any;
 constructor(
   private api:ApiService,
   private fb:FormBuilder,
   private router:Router,
-  private url:ActivatedRoute
+  private url:ActivatedRoute,
+  private datepipe : DatePipe
 ){}
     ngOnInit(): void {
       this.librnid = this.url.snapshot.params['id'] ; 
      if(this.librnid){
       this.api.get_single_librarian(this.librnid).subscribe(
         (res:any)=>{
-        this.librarianform.patchValue(res.data)
+        this.add_librn.patchValue(res.data)
         this.img_url =(res.data['librn_img'])? this.img_local_url+res.data['librn_img']:this.img_local_url+'logo.png';
         console.log(res.data)
       }
       )
      }
 
-  this. librarianform = this.fb.group({
+  this. add_librn = this.fb.group({
     librn_id : [''],
     librn_name: ['',Validators.required],
     librn_address:['',Validators.required],
@@ -49,24 +52,23 @@ constructor(
   onsave(){
     // alert("Add");
     // console.log(this.add_std.get('std_name')?.value)
+    this.librnjndate = this.datepipe.transform(this.add_librn.get('librnjndate')?.value,'yyyy-MM-dd')
     const formData = new FormData();
-    formData.append('librn_name',this.librarianform.get('librn_name')?.value)
-    formData.append('librn_address',this.librarianform.get('librn_address')?.value)
-    formData.append('librn_gen',this.librarianform.get('librn_gen')?.value)
-    formData.append('librn_salary',this.librarianform.get('librn_salary')?.value)
-    formData.append('librn_mob',this.librarianform.get('librn_mob')?.value)
-    formData.append('librn_aadhar',this.librarianform.get('librn_aadhar')?.value)
-    formData.append('librn_email',this.librarianform.get('librn_email')?.value)
-    formData.append('librn_jndate',this.librarianform.get('librn_jndate')?.value)
-    formData.append('librn_password',this.librarianform.get('librn_password')?.value)
+    formData.append('librn_name',this.add_librn.get('librn_name')?.value)
+    formData.append('librn_address',this.add_librn.get('librn_address')?.value)
+    formData.append('librn_gen',this.add_librn.get('librn_gen')?.value)
+    formData.append('librn_salary',this.add_librn.get('librn_salary')?.value)
+    formData.append('librn_mob',this.add_librn.get('librn_mob')?.value)
+    formData.append('librn_aadhar',this.add_librn.get('librn_aadhar')?.value)
+    formData.append('librn_email',this.add_librn.get('librn_email')?.value)
+    formData.append('librn_jndate',(this.librnjndate))
+    formData.append('librn_password',this.add_librn.get('librn_password')?.value)
     formData.append('photo',this.selected_img)
   
     this.api.post_librarian(formData).subscribe(
       (res:any)=>{
-        this.librarianform.reset();
+        this.add_librn.reset();
         this.router.navigate(['admin/admin-librarian']);
-        console.log(res);
-        alert(res.message)
       }
     )
   }
@@ -86,17 +88,17 @@ onImgChng(file:any){
 
   updatelibrarian(){
     const formData = new FormData();
-
-    formData.append('librn_id',this.librarianform.get('librn_id')?.value)
-    formData.append('librn_name',this.librarianform.get('librn_name')?.value)
-    formData.append('librn_address',this.librarianform.get('librn_address')?.value)
-    formData.append('librn_gen',this.librarianform.get('librn_gen')?.value)
-    formData.append('librn_salary',this.librarianform.get('librn_salary')?.value)
-    formData.append('librn_mob',this.librarianform.get('librn_mob')?.value)
-    formData.append('librn_aadhar',this.librarianform.get('librn_aadhar')?.value)
-    formData.append('librn_email',this.librarianform.get('librn_email')?.value)
-    formData.append('librn_jndate',this.librarianform.get('librn_jndate')?.value)
-    formData.append('librn_password',this.librarianform.get('librn_password')?.value)
+    this.librnjndate = this.datepipe.transform(this.add_librn.get('librn_jndate')?.value,'yyyy-MM-dd')
+    formData.append('librn_id',this.add_librn.get('librn_id')?.value)
+    formData.append('librn_name',this.add_librn.get('librn_name')?.value)
+    formData.append('librn_address',this.add_librn.get('librn_address')?.value)
+    formData.append('librn_gen',this.add_librn.get('librn_gen')?.value)
+    formData.append('librn_salary',this.add_librn.get('librn_salary')?.value)
+    formData.append('librn_mob',this.add_librn.get('librn_mob')?.value)
+    formData.append('librn_aadhar',this.add_librn.get('librn_aadhar')?.value)
+    formData.append('librn_email',this.add_librn.get('librn_email')?.value)
+    formData.append('librn_jndate',(this.librnjndate))
+    formData.append('librn_password',this.add_librn.get('librn_password')?.value)
     formData.append('photo',this.selected_img)
     
     this.api.put_librarian(formData).subscribe(
@@ -108,6 +110,12 @@ onImgChng(file:any){
   }
   
     reset_form(){
-      this.librarianform.reset()
+      this.add_librn.reset()
+    }
+    back(){
+      this.router.navigate((['/admin/admin-librarian']))
+    }
+    goback(){
+      this.router.navigate((['/admin/admin-librarian']))
     }
 }

@@ -90,7 +90,7 @@ export class ManageStudentComponent implements OnInit {
     this.api.post_std(formData).subscribe(
       (res: any) => {
         this.router.navigate(['/admin/admin-student']);
-        console.log(res);
+        alert(res.message);
       }
     )
 
@@ -145,6 +145,9 @@ export class ManageStudentComponent implements OnInit {
   }
   reset_form() {
     this.add_std.reset();
+  }
+  goback(){
+    this.router.navigate(['/admin/admin-student']);
   }
 
 }
