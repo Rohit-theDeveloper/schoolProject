@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from 'src/app/api.service';
 
@@ -7,12 +7,18 @@ import { ApiService } from 'src/app/api.service';
   templateUrl: './std-feedetails.component.html',
   styleUrls: ['./std-feedetails.component.css']
 })
-export class StdFeedetailsComponent {
+export class StdFeedetailsComponent implements OnInit{
   displayedColumns: string[] = ['sno', 'std_name', 'class_name', 'std_roll', 'class_fee','fee_due','fee_date'];
   dataSource = new MatTableDataSource();
+  login_details:any
+  uid:any
+  id:any
   constructor(private api : ApiService){}
     ngOnInit():void{
-      this.api.get_fee().subscribe(
+      this.login_details=localStorage.getItem('token')
+      console.log(this.uid=JSON.parse(this.login_details))
+      this.id=this.uid.type_id
+      this.api.get_single_std_fee(this.id).subscribe(
         (res:any)=>{
           console.log(res.data);
           this.dataSource.data = res.data;
@@ -23,21 +29,3 @@ export class StdFeedetailsComponent {
     }
 
 }
-// export interface PeriodicElement {
-//   name: string;
-//   position: number;
-//   s_id: number;
-//   dues:number;
-//   paid:number;
-//   payingdate:string;
-//   month:string;
-//   action:string;
-// }
-
-// const ELEMENT_DATA: PeriodicElement[] = [
- 
-//   {position: 1, name: 'Rohit',  s_id:101, dues:1000, paid:500, payingdate:"10/01/2023", month:"jan",action:"act"},
-// ]
-
-
-
