@@ -18,8 +18,7 @@ export class AdminDashboardComponent implements OnInit{
   total_expense:number=0;
 
  constructor(
-
-  private api: ApiService
+    private api: ApiService
  ){}
  
  ngOnInit(): void {
