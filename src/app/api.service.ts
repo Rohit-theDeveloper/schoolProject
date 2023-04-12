@@ -57,10 +57,10 @@ export class ApiService {
 
   //application database api
   get_librnapplication() {
-    return this.http.get(this.baseUrl + 'view_librnapplication.php');
+    return this.http.get(this.baseUrl + 'application_view.php');
   }
   post_librnapplication(data: any) {
-    return this.http.post(this.baseUrl + 'insert_librnapplication.php', data);
+    return this.http.post(this.baseUrl + 'application_insert.php', data);
   }
   // endingg......
 
@@ -205,7 +205,14 @@ export class ApiService {
   //getting data from database end here
 //applicatio data view
   get_application() {
-    return this.http.get(this.baseUrl + 'admin_application_view.php');
+    return this.http.get(this.baseUrl + 'application_view.php');
+  }
+  get_single_std_application(std_id:any) {
+    return this.http.get(this.baseUrl + 'application_view.php?std_id='+std_id);
+  }
+  post_appli(data:any){
+    return this.http.post(this.baseUrl + 'application_insert.php',data);
+
   }
 
   do_login(data:any){
