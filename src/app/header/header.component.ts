@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent {
-
+  menu2(){
+    window.scroll(0,580)
+  }
+  menu3(){
+    window.scroll(0,1040);
+  }
+  menu4(){
+    window.scroll(0,1990)
+  }
 }

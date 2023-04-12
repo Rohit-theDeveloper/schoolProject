@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;background-color: rgb(182, 176, 176); }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;background-color: rgb(237, 233, 233); }
 .mat-mdc-menu-content{
     list-style-type: none;
     background-color:#FE8E0B;
