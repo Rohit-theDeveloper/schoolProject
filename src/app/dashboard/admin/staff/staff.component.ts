@@ -12,8 +12,11 @@ import { ApiService } from 'src/app/api.service';
 export class StaffComponent implements OnInit,AfterViewInit{
   displayedColumns: string[] = ['S No', 'staff_id', 'staff_name','staff_fname','staff_mob','staff_salary','staff_type','staff_action'];
   dataSource = new MatTableDataSource();
+  
+  
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+  
   total_count:number = 0;
   constructor( 
     private api:ApiService

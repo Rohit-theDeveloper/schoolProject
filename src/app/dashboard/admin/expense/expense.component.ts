@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApiService } from 'src/app/api.service';
 import {MatTableDataSource} from '@angular/material/table';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 
 @Component({
   selector: 'app-expense',
@@ -10,9 +12,16 @@ import {MatTableDataSource} from '@angular/material/table';
 export class ExpenseComponent implements OnInit {
   displayedColumns: string[] = ['exp_position', 'exp_id', 'exp_name', 'exp_date','exp_amount','exp_paid', 'exp_due','action'];
   dataSource = new MatTableDataSource();
+
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
   constructor(
     private api :ApiService
   ){}
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
   ngOnInit():void{
     this.api.get_expense().subscribe(
       (res:any) => {
@@ -21,22 +30,13 @@ export class ExpenseComponent implements OnInit {
         
       }
     )
-  }    
-}
-// export interface PeriodicElement {
-//   class_name: string;
-//   class_position: number;
-//   class_id: number;
-//   class_fee: string;
-//   class_action:string;
-//   no_of_student:number;
-// }
-// const ELEMENT_DATA: PeriodicElement[] = [
-//   {class_position: 1, class_id:101, class_name: 'third', class_fee: '500', no_of_student:200, class_action:'none' },
-//   {class_position: 1, class_id:101, class_name: 'third', class_fee: '500', no_of_student:200, class_action:'none' },
-//   {class_position: 1, class_id:101, class_name: 'third', class_fee: '500', no_of_student:200, class_action:'none' },
-//   {class_position: 1, class_id:101, class_name: 'third', class_fee: '500', no_of_student:200, class_action:'none' },
-//   {class_position: 1, class_id:101, class_name: 'third', class_fee: '500', no_of_student:200, class_action:'none' },
+  }  
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   
-// ];
-
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }  
+}

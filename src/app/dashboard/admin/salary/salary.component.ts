@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatPaginator } from '@angular/material/paginator';
+import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from 'src/app/api.service';
 
@@ -13,6 +15,8 @@ export class SalaryComponent implements OnInit{
   constructor(
     private api:ApiService
   ){}
+  @ViewChild(MatPaginator) paginator!: MatPaginator;
+  @ViewChild(MatSort) sort!: MatSort;
   ngOnInit(): void {
     this.api.get_salary().subscribe(
       (res:any)=>{
@@ -21,22 +25,17 @@ export class SalaryComponent implements OnInit{
       }
     )
   }
+  ngAfterViewInit(): void {
+    this.dataSource.paginator = this.paginator;
+    this.dataSource.sort = this.sort;
+  }
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
+  
+    if (this.dataSource.paginator) {
+      this.dataSource.paginator.firstPage();
+    }
+  }
 
 }
-// export interface PeriodicElement {
-//   sal_date: string;
-//   sal_position: number;
-//   sal_id: number;
-//   sal_amount: number;
-//   sal_paid:number;
-//   sal_dues:number;
-//   sal_action:string;
-// }
-// const ELEMENT_DATA: PeriodicElement[] = [
-//   {sal_position: 1, sal_id:101, sal_date: '12/march/2022', sal_amount: 2000,sal_paid: 1500, sal_dues:500, sal_action:'none' },
-//   {sal_position: 1, sal_id:101, sal_date: '12/march/2022', sal_amount: 2000,sal_paid: 1500, sal_dues:500, sal_action:'none' },
-//   {sal_position: 1, sal_id:101, sal_date: '12/march/2022', sal_amount: 2000,sal_paid: 1500, sal_dues:500, sal_action:'none' },
-//   {sal_position: 1, sal_id:101, sal_date: '12/march/2022', sal_amount: 2000,sal_paid: 1500, sal_dues:500, sal_action:'none' },
-//   {sal_position: 1, sal_id:101, sal_date: '12/march/2022', sal_amount: 2000,sal_paid: 1500, sal_dues:500, sal_action:'none' },
-  
-// ];

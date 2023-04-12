@@ -32,4 +32,10 @@
     text-shadow: 1px 1px 1px rgb(112, 110, 110);
     text-align: left;
   }
+  .thumbnail:hover{
+    cursor: pointer;
+    transform: scale(1.07) ;
+    transition: all 1s;
   
+   
+  }
