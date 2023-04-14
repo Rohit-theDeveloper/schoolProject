@@ -36,10 +36,8 @@ export class LoginComponent implements OnInit{
        this.router.navigate(['/teacher'])
         }else if (res.data['user_type']=='librarian'){
           this.router.navigate(['/librarian'])
-           }
+        }
       }
     )
-    console.log(this.login.value)
-    // this.router.navigate(['/admin'])
   }
 }

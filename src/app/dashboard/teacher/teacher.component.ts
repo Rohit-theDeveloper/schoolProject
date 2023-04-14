@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-teacher',
@@ -11,9 +12,16 @@ export class TeacherComponent implements OnInit{
   img_url = this.img_local_url +'logo.png';
   login_details:any
   login_as:any 
+  constructor( 
+    private router:Router
+    ){
+      this.login_details=localStorage.getItem('token')
+      this.login_as=JSON.parse(this.login_details)
+      if(!this.login_details){
+        this.router.navigate(['../login'])
+      }
+    }
   ngOnInit(): void {
-    this.login_details=localStorage.getItem('token')
-    this.login_as=JSON.parse(this.login_details)
     this.img_url =(this.login_as['user_img'])? this.img_local_url+this.login_as.user_img:this.img_local_url+'logo.png';
   }
 }
