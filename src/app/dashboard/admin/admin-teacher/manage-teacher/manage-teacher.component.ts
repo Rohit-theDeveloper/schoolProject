@@ -30,6 +30,7 @@ export class ManageTeacherComponent  implements OnInit{
  
     ngOnInit(): void {
       this.tid= this.url.snapshot.params['id'];
+      console.log(this.tid)
     if (this.tid) {
       this.api.get_single_teacher(this.tid).subscribe(
         (res: any) => {
