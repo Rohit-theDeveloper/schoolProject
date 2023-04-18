@@ -88,6 +88,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
 import { ExpenseComponent } from './dashboard/admin/expense/expense.component';
 import { ManageExpenseComponent } from './dashboard/admin/expense/manage-expense/manage-expense.component';
 import { DatePipe } from '@angular/common';
+import { DeleteboxComponent } from './deletebox/deletebox.component';
 
 
 @NgModule({
@@ -160,6 +161,7 @@ import { DatePipe } from '@angular/common';
     ManageBookTransactionComponent,
     ExpenseComponent,
     ManageExpenseComponent,
+    DeleteboxComponent,
 
   ],
   imports: [

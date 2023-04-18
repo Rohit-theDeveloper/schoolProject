@@ -1,5 +1,5 @@
 import { DatePipe } from '@angular/common';
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
@@ -9,14 +9,23 @@ import { ApiService } from 'src/app/api.service';
   templateUrl: './manage-fee.component.html',
   styleUrls: ['./manage-fee.component.css']
 })
-export class ManageFeeComponent {
+export class ManageFeeComponent implements OnInit{
   feedate :any
+  class: any;
 constructor(
   private fb : FormBuilder,
   private api : ApiService,
   private router : Router,
   private datepipe : DatePipe,
 ){}
+ngOnInit(): void {
+  this.api.get_class().subscribe(
+    (res:any)=>{
+      // console.log(res.data)
+      this.class=res.data
+    }
+  )
+}
 add_fee = this.fb.group({
 fee_type:['',Validators.required],
 fee_date:['',Validators.required],
