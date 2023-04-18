@@ -73,7 +73,7 @@ export class ApiService {
   }
 
   post_std(data: any) {
-    console.log(Array.from(data.entries()))
+    // console.log(Array.from(data.entries()))
     return this.http.post(this.baseUrl +'std_formdata_insert.php', data);
   }
 
@@ -81,6 +81,9 @@ export class ApiService {
     // console.log(Array.from(data.entries()))
     return this.http.post(this.baseUrl + 'std_formdata_update.php',data);
   }
+   delete_std(std_id:any){
+    return this.http.get(this.baseUrl + 'std_delete.php?sid='+std_id);
+   }
 
   // endingg......
 
