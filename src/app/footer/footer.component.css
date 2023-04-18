@@ -14,3 +14,8 @@
     margin: 0px;
    
 } 
+@media(min-width:769px){
+    .footer{
+      float: left;
+}
+}
