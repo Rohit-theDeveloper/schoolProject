@@ -1,8 +1,10 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import { MatTableDataSource } from '@angular/material/table';
 import { ApiService } from 'src/app/api.service';
+import { DeleteboxComponent } from 'src/app/deletebox/deletebox.component';
 
 @Component({
   selector: 'app-admin-librarian',
@@ -18,10 +20,12 @@ export class AdminLibrarianComponent implements OnInit {
      
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+  deletevalue: any = 1;
   // total_count: any;
 
   constructor(
-    private api:ApiService
+    private api:ApiService,
+    private dialog: MatDialog
     ){}
 
   ngOnInit():void{
@@ -46,4 +50,21 @@ export class AdminLibrarianComponent implements OnInit {
       this.dataSource.paginator.firstPage();
     }
   }
+  deleteLibrarian(librn_id:any){
+    const dialogRef = this.dialog.open(DeleteboxComponent, {
+      data: this.deletevalue,
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (this.deletevalue == result) {
+    this.api. delete_librarian(librn_id).subscribe(
+      (res: any) => {
+        // console.log(res)
+        alert('Data delete successfully')
+      }
+    )
+  }
+  else {
+   }
+});
+};
 }

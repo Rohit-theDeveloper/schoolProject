@@ -166,6 +166,9 @@ export class ApiService {
   put_teacher(data:any){
     // console.log(Array.from(data.entries()))
     return this.http.post(this.baseUrl + 'teacher_formdata_update.php',data);
+    }
+  deleteTeacher(t_id:any){
+ return this.http.get(this.baseUrl + 'teacher_delete.php?tid='+t_id)
   }
  
   // end  theacher module.... 
@@ -204,6 +207,9 @@ export class ApiService {
   }
   put_librarian(data: any) {
     return this.http.post(this.baseUrl + 'update_formdata_librarian.php',data);
+  }
+  delete_librarian(librnid:any){
+    return this.http.get(this.baseUrl + "delete_librarian.php?librnid=" +librnid)
   }
   //getting data from database end here
 //applicatio data view
