@@ -11,3 +11,11 @@
     transition: all 1s;
   
   } */
+
+  /* ......................mmedia query..................................... */
+
+  @media(max-width:420px){
+    .sname{
+      display: none;
+    }
+  }
