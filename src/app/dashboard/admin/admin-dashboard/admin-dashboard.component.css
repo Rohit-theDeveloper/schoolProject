@@ -34,8 +34,14 @@
   }
   .thumbnail:hover{
     cursor: pointer;
-    transform: scale(1.07) ;
-    transition: all 1s;
-  
-   
+    /* transform: scale(1.07) ;
+    transition: all 1s; */
   }
+/* ..........................media query................................................. */
+@media(max-width:420px){
+  .thumbnail {
+    width: calc(100% - 20px);
+   margin: 10px;
+   /* box-sizing: border-box; */
+  }
+}

@@ -75,3 +75,20 @@ a{
 .color{
     color: black;
 }
+
+/*......................... media query................ */
+
+@media(max-width:420px){
+    #wrapper{
+        position: relative;
+        top: 80px;
+        left: 15%;
+    }
+}
+@media(min-width:421px) and (max-width:720px){
+    #wrapper{
+        position: relative;
+        top: 80px;
+        left: 15%;
+    }
+}
