@@ -4,7 +4,7 @@ mat-toolbar{
 }
 .mat-icon{
     color: #FE8E0B;
-    font-size: 35px;
+    font-size: 30px;
     width: 35px;
     height: 35px;
     float: right;
@@ -15,10 +15,11 @@ mat-toolbar{
     width: 100%;
     position: relative;
     top: 10px;
+    right: -60px;
   }
-  
   .example-full-width {
-    width: 100%;
+    width: 200px;
+    height: 70px;
   }
 /* table css */
 table {
