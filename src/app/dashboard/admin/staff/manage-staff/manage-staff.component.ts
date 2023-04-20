@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 
@@ -10,13 +10,31 @@ import { ApiService } from 'src/app/api.service';
 })
 export class ManageStaffComponent implements OnInit{
   staffid: number=0;
+
   constructor(
     private fb:FormBuilder,
-    private router:Router,
+    private router : Router,
     private url:ActivatedRoute,
     private api:ApiService
   ){}
-  add_staff=this.fb.group({
+  
+ 
+  ngOnInit(): void {
+    this.staffid=(this.url.snapshot.params['staff_id']) ;
+    if(this.staffid){
+     this.api.get_single_staff(this.staffid).subscribe(
+      (res:any)=>{
+        // console.log(res.data)
+        this.add_staff.patchValue(res.data)
+      }
+     )
+    }
+    // console.log(this.staffid)
+ }
+
+ 
+
+      add_staff = this.fb.group({
     staff_id:[''],
     staff_name:['',Validators.required],
     staff_gender:['',Validators.required],
@@ -30,29 +48,11 @@ export class ManageStaffComponent implements OnInit{
     staff_email:['',Validators.required],
     staff_jndate:['',Validators.required],
   })
-  ngOnInit(): void {
-    this.staffid=this.url.snapshot.params['staff_id'];
-  // console.log(this.staffid);
-  if(this.staffid){
-    this.api.get_single_staff(this.staffid).subscribe(
-    (res:any)=>{
-      console.log(res.data);
-      this.add_staff.patchValue(res.data)
-    }
-  )
-  }
   
-  }
   OnReset(){
     this.add_staff.reset();
   }
-  onupdate(){
-    this.api.put_staff(this.add_staff.value).subscribe(
-      (res:any)=>{
-        console.log(res);
-      }
-    )
-  }
+
   OnSave(){
     console.log(this.add_staff.value);
     this.api.post_staff(this.add_staff.value).subscribe(
@@ -62,4 +62,14 @@ export class ManageStaffComponent implements OnInit{
       }
     )
 }
+onupdate(){
+  this.api.put_staff(this.add_staff.value).subscribe(
+   (res:any)=>{
+    alert("Data Updated Successfully")
+    this.router.navigate(['/admin/staff']);
+    console.log(res)
+
+   }
+  )
+     }
 }

@@ -25,7 +25,6 @@ export class StaffComponent implements OnInit,AfterViewInit{
   ngOnInit(): void {
     this.api.get_staff().subscribe(
       (res:any)=> {
-         console.log(res.massage);
         this.dataSource.data= res.data;
         this. total_count = res.data.length;
       }
