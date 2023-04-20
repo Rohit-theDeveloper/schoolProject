@@ -32,4 +32,12 @@
       text-shadow: 1px 1px 1px rgb(112, 110, 110);
       text-align: left;
     }
-    
+    @media(max-width:790px){
+      .thumbnail {
+        width: calc(100% - 20px);
+        margin: 10px;
+      }
+      .thumbnail div{
+        margin-left: 2px;
+      }
+    }

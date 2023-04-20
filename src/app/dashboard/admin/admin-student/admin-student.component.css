@@ -45,7 +45,7 @@ table .mat-icon{
   font-size: 30px;
   cursor: pointer;
  }
-
+ 
  /* ..................................media query........................................ */
  @media(max-width:420px){
   .mat-icon {
@@ -56,3 +56,4 @@ table .mat-icon{
     width: 100%;
   }
  }
+ 

@@ -6,6 +6,9 @@
     background-image:url(../../../assets/user2.jpg) ;
     background-size:cover;
   }
+  #footer{
+    position: relative;
+  }
   /* li:hover{
     transform: scale(1.07) ;
     transition: all 1s;
