@@ -3,7 +3,8 @@ button {
   }
   #wrapper{
     width: 200px;
-    height: 100px;
+    height: auto;
+    
   }
   h3{
     text-align: center;

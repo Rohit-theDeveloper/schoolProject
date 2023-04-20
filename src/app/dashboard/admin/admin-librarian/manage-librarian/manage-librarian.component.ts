@@ -52,8 +52,8 @@ constructor(
   onsave(){
     // alert("Add");
     // console.log(this.add_std.get('std_name')?.value)
-    this.librnjndate = this.datepipe.transform(this.add_librn.get('librnjndate')?.value,'yyyy-MM-dd')
     const formData = new FormData();
+    this.librnjndate = this.datepipe.transform(this.add_librn.get('librn_jndate')?.value,'yyyy-MM-dd')
     formData.append('librn_name',this.add_librn.get('librn_name')?.value)
     formData.append('librn_address',this.add_librn.get('librn_address')?.value)
     formData.append('librn_gen',this.add_librn.get('librn_gen')?.value)
@@ -69,6 +69,7 @@ constructor(
       (res:any)=>{
         this.add_librn.reset();
         this.router.navigate(['admin/admin-librarian']);
+        alert(res.message)
       }
     )
   }
