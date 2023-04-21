@@ -41,17 +41,17 @@
           </mat-form-field>
           <mat-form-field class="example-form-field padding ">
             <mat-label class="p-1">paid amount</mat-label>
-            <input matInput type="number" required="" formControlName="fee_paid">
+            <input matInput type="number" required="" formControlName="fee_paid" (keyup)="calcdue()">
           </mat-form-field>
           <mat-form-field class="example-form-field padding ">
             <mat-label class="p-1">Dues Amount</mat-label>
             <input matInput type="number" required="" formControlName="fee_due">
           </mat-form-field>
           
-          <mat-form-field class="example-form-field padding ">
+          <!-- <mat-form-field class="example-form-field padding ">
             <mat-label class="p-1">Recive Amount</mat-label>
             <input matInput type="number"  >
-          </mat-form-field>
+          </mat-form-field> -->
           <!-- <mat-form-field class="example-form-field p-4 ">
             <mat-label class="p-1">Payment Date</mat-label>
             <input matInput type="text" required="" >

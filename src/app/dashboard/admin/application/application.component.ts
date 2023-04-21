@@ -10,7 +10,7 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./application.component.css']
 })
 export class ApplicationComponent {
-  displayedColumns: string[] = ['Sno', 'appli_type','sender_id','sender_type','appli_msg','appli_date','action'];
+  displayedColumns: string[] = ['Sno','appli_type','std_name','class_name','std_roll','appli_date','appli_status','action'];
   dataSource = new MatTableDataSource();
 
   @ViewChild(MatPaginator) paginator!: MatPaginator;
