@@ -55,6 +55,7 @@ export class ManageApplicationComponent implements OnInit{
           console.log(res);
         }
       )
+      this.router.navigate(["admin/application"]);
     }
     onreject(){
       this.add_appli.get('appli_status')?.setValue(2)
@@ -64,6 +65,7 @@ export class ManageApplicationComponent implements OnInit{
         console.log(res);
       }
     )
+    this.router.navigate(["admin/application"]);
     }
 }
 
