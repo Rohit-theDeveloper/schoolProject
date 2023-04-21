@@ -12,6 +12,7 @@ import { ApiService } from 'src/app/api.service';
 export class ManageFeeComponent implements OnInit{
   feedate :any
   class: any;
+  due_amt: number=0;
 constructor(
   private fb : FormBuilder,
   private api : ApiService,
@@ -45,5 +46,10 @@ onSave(){
       console.log(res)
     }
 )
+}
+calcdue(){
+  this.due_amt=Number(this.add_fee.get('fee_amount')?.value) - Number(this.add_fee.get('fee_paid')?.value)
+  this.add_fee.get('fee_due')?.setValue(String(this.due_amt))
+
 }
 }
