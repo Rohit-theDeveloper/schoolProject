@@ -99,6 +99,9 @@ export class ApiService {
   post_fee(data: any) {
     return this.http.post(this.baseUrl + 'fee_recp_insert.php', data);
   }
+count_std(data:any){
+    return this.http.post(this.baseUrl + 'student_count.php',data)
+  }
 
   // endingg......
 

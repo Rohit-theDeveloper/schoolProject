@@ -149,5 +149,16 @@ export class ManageStudentComponent implements OnInit {
   goback(){
     this.router.navigate(['/admin/admin-student']);
   }
+  onrollno(event:any){
+    const fromdata = new FormData()
+    console.log(event)
+    fromdata.append('class_id', event)
+    this.api.count_std(fromdata).subscribe(
+      (res:any)=>{
+        console.log(res.data[0].total_std)
+        this.add_std.get("std_roll")?.setValue(res.data[0].total_std +1)
+      }
+    )
+  }
 
 }

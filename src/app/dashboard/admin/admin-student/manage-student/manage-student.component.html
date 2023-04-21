@@ -20,7 +20,7 @@
        <!-- class -->
        <mat-form-field appearance="fill" class="example-form-field padding ">
         <mat-label>Class</mat-label>
-       <mat-select required="" formControlName="class_id">
+       <mat-select required="" formControlName="class_id" (valueChange)="onrollno($event)">
          <mat-option *ngFor="let class of class"[value]="class.class_id">{{class.class_name}}</mat-option>   
        </mat-select>
       </mat-form-field>
@@ -29,7 +29,7 @@
       <mat-form-field class="example-form-field padding">
         <mat-label class="p-1">Roll</mat-label>
         <input formControlName="std_roll" matInput type="number" onkeypress=" return this.value.length < 10"
-                oninput="if(this.value.length>=10) {this.value = this.value.sclice (0,10);}" >
+                oninput="if(this.value.length>=10) {this.value = this.value.sclice (0,10);}  " readonly >
       </mat-form-field>    
       <mat-form-field class="example-form-field padding">
         <mat-label class="p-1">Name</mat-label>
