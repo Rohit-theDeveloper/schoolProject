@@ -146,7 +146,7 @@ export class ApiService {
     return this.http.post(this.baseUrl + 'staff_insert.php',data);
   }
   get_single_staff(staffid:any){
-    return this.http.get(this.baseUrl +'staff_view.php?staffid='+ staffid);
+    return this.http.get(this.baseUrl +'staff_view.php?staff_id='+ staffid);
    
   }
   put_staff(data:any){
@@ -219,9 +219,16 @@ export class ApiService {
   get_single_std_application(std_id:any) {
     return this.http.get(this.baseUrl + 'application_view.php?std_id='+std_id);
   }
+  get_single_application(apid:any) {
+    return this.http.get(this.baseUrl + 'admin_appli_view.php?appli_id='+apid);
+  }
   post_appli(data:any){
     return this.http.post(this.baseUrl + 'application_insert.php',data);
 
+  }
+  put_application(data:any){
+    // console.log(data);
+    return this.http.put(this.baseUrl +'application_update.php',data)
   }
 
   do_login(data:any){
