@@ -1,8 +1,10 @@
-import { AfterViewChecked, AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import {  AfterViewInit, Component, OnInit, ViewChild } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatSort } from '@angular/material/sort';
 import {MatTableDataSource} from '@angular/material/table';
 import { ApiService } from 'src/app/api.service';
+import { DeleteboxComponent } from 'src/app/deletebox/deletebox.component';
 
 
 @Component({
@@ -19,8 +21,10 @@ export class AdminTeacherComponent implements OnInit, AfterViewInit{
   $img_url = this.$img_local_url +'logo.png';
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
+  deletevalue: any =1;
   constructor(
-    private api :ApiService
+    private api :ApiService,
+    private dialog: MatDialog
   ){}
  
   ngOnInit(): void {
@@ -43,6 +47,23 @@ export class AdminTeacherComponent implements OnInit, AfterViewInit{
       this.dataSource.paginator.firstPage();
     }
   }
+  deleteTeacher(t_id: any){
+    const dialogRef = this.dialog.open(DeleteboxComponent, {
+      data: this.deletevalue,
+    });
+    dialogRef.afterClosed().subscribe(result => {
+      if (this.deletevalue == result) {
+        this.api.deleteTeacher(t_id).subscribe(
+          (res: any) => {
+            // console.log(res)
+            alert('Data delete successfully')
+          }
+        )
+      }
+      else {
+       }
+    });
+  };
 
 }
 

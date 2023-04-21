@@ -41,3 +41,6 @@ input::-webkit-inner-spin-button{
  .color{
   color: black;
  }
+ .padding{
+  padding-right:15px;
+}

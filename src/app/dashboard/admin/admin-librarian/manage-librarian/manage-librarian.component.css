@@ -35,3 +35,13 @@ mat-toolbar{
   .pic_add_icon{
     color: white;
   }
+  input::-webkit-inner-spin-button{
+    -webkit-appearance:none;
+  }
+  .padding{
+    padding-right:15px;
+    padding-bottom: 2px;
+  }
+  .color{
+    color: black;
+   }

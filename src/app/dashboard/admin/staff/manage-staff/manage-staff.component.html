@@ -7,10 +7,9 @@
 </div>
 <div class="bg-white border ">
     <form action="" [formGroup]="add_staff">
-      <mat-form-field class="example-form-field p-4 " *ngIf="staffid">
-        <mat-label class="p-1">Staff ID</mat-label>
-        <input matInput type="number" required="" readonly="" formControlName="staff_id"> 
-      </mat-form-field>
+   
+        <input type="hidden" readonly="" formControlName="staff_id" *ngIf="staffid"> 
+    
         <mat-form-field class="example-form-field p-4">
             <mat-label class="p-1">Name</mat-label>
             <input matInput type="text" required="" formControlName="staff_name">

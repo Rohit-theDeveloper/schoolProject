@@ -73,7 +73,7 @@ export class ApiService {
   }
 
   post_std(data: any) {
-    console.log(Array.from(data.entries()))
+    // console.log(Array.from(data.entries()))
     return this.http.post(this.baseUrl +'std_formdata_insert.php', data);
   }
 
@@ -81,6 +81,9 @@ export class ApiService {
     // console.log(Array.from(data.entries()))
     return this.http.post(this.baseUrl + 'std_formdata_update.php',data);
   }
+   delete_std(std_id:any){
+    return this.http.get(this.baseUrl + 'std_delete.php?sid='+std_id);
+   }
 
   // endingg......
 
@@ -143,7 +146,7 @@ export class ApiService {
     return this.http.post(this.baseUrl + 'staff_insert.php',data);
   }
   get_single_staff(staffid:any){
-    return this.http.get(this.baseUrl +'staff_view.php?staffid='+ staffid);
+    return this.http.get(this.baseUrl +'staff_view.php?staff_id='+ staffid);
    
   }
   put_staff(data:any){
@@ -163,6 +166,9 @@ export class ApiService {
   put_teacher(data:any){
     // console.log(Array.from(data.entries()))
     return this.http.post(this.baseUrl + 'teacher_formdata_update.php',data);
+    }
+  deleteTeacher(t_id:any){
+ return this.http.get(this.baseUrl + 'teacher_delete.php?tid='+t_id)
   }
  
   // end  theacher module.... 
@@ -201,6 +207,9 @@ export class ApiService {
   }
   put_librarian(data: any) {
     return this.http.post(this.baseUrl + 'update_formdata_librarian.php',data);
+  }
+  delete_librarian(librnid:any){
+    return this.http.get(this.baseUrl + "delete_librarian.php?librnid=" +librnid)
   }
   //getting data from database end here
 //applicatio data view
