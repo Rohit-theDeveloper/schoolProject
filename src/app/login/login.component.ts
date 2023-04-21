@@ -32,11 +32,14 @@ export class LoginComponent implements OnInit{
           this.router.navigate(['/student'])
         }else if(res.data['user_type']=='admin'){
           this.router.navigate(['/admin'])
-        }else if (res.data['user_type']=='teacher'){
-       this.router.navigate(['/teacher'])
-        }else if (res.data['user_type']=='librarian'){
+        }else if(res.data['user_type']=='teacher'){
+          this.router.navigate(['/teacher'])
+        }else if(res.data['user_type']=='librarian'){
           this.router.navigate(['/librarian'])
         }
+        // else{
+        //   this.router.navigate(['/home'])
+        // }
       }
     )
   }
