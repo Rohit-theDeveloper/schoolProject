@@ -18,7 +18,7 @@ mat-toolbar{
   width: 100%;
   position: relative;
   top: 10px;
-  right: -60px;
+  /* right: -60px; */
 }
   
   .example-full-width {
