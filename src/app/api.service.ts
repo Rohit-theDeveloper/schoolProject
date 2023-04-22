@@ -213,25 +213,30 @@ export class ApiService {
   }
   //getting data from database end here
 //applicatio data view
+//  for admin
   get_application() {
-    return this.http.get(this.baseUrl + 'application_view.php');
-  }
-  get_single_std_application(std_id:any) {
-    return this.http.get(this.baseUrl + 'application_view.php?std_id='+std_id);
+    return this.http.get(this.baseUrl + 'std_appli_view.php');
   }
   get_single_application(apid:any) {
     return this.http.get(this.baseUrl + 'admin_appli_view.php?appli_id='+apid);
+  }
+  put_application(data:any){
+    return this.http.put(this.baseUrl +'application_update.php',data)
+  }
+  //  end.................
+// for student
+  get_single_std_application(std_id:any) {
+    return this.http.get(this.baseUrl + 'std_appli_view.php?std_id='+std_id);
   }
   post_appli(data:any){
     return this.http.post(this.baseUrl + 'application_insert.php',data);
 
   }
-  put_application(data:any){
-    // console.log(data);
-    return this.http.put(this.baseUrl +'application_update.php',data)
-  }
+//  end...................
 
+  // for login
   do_login(data:any){
     return this.http.post(this.baseUrl + 'login.php', data);
   }
 }
+//  end...........
