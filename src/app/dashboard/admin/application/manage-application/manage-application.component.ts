@@ -67,6 +67,9 @@ export class ManageApplicationComponent implements OnInit{
     )
     this.router.navigate(["admin/application"]);
     }
+   R_appli(){
+    this.router.navigate(["admin/application"]);
+   } 
 }
 
 

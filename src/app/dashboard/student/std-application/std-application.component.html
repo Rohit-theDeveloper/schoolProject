@@ -54,7 +54,8 @@
    <!-- address -->
       <ng-container matColumnDef="appli_status">
         <th mat-header-cell *matHeaderCellDef> Status </th>
-        <td mat-cell *matCellDef="let element"> {{element.appli_status}} </td>
+        <td mat-cell *matCellDef="let element"> <span *ngIf="element.appli_status == 0" style="color:rgb(255, 155, 4);font-weight: bold;">Pending</span><span *ngIf="element.appli_status == 1" style="color:green;font-weight: bold;">Success</span> <span *ngIf="element.appli_status == 2" style="color:red;font-weight: bold;">Reject</span> 
+      </td>
       </ng-container>
   
       <ng-container matColumnDef="action">
