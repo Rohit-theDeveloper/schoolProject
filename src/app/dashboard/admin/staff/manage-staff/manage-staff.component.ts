@@ -62,6 +62,9 @@ export class ManageStaffComponent implements OnInit{
       }
     )
 }
+back(){
+  this.router.navigate(['/admin/staff']);
+}
 onupdate(){
   this.api.put_staff(this.add_staff.value).subscribe(
    (res:any)=>{
