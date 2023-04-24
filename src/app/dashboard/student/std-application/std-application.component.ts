@@ -13,18 +13,22 @@ export class StdApplicationComponent {
   login_details:any
   uid:any
   id:any
+  aplid:any
   constructor(private api : ApiService){}
     ngOnInit():void{
       this.login_details=localStorage.getItem('token')
       console.log(this.uid=JSON.parse(this.login_details))
       this.id=this.uid.type_id
+      
       this.api.get_single_std_application(this.id).subscribe(
         (res:any)=>{
-          console.log(res.data);
+          this.aplid=res.data[0].appli_id;
+          console.log(res.data)
           this.dataSource.data = res.data;
           // this.total_count = res.data.length;
           
         }
       )
+     
    }
 }

@@ -140,6 +140,7 @@ const routes: Routes = [
       {path:'std-notification',component:StdNotificationComponent},
       {path:'std-exam',component:StdExamComponent},
       {path:'addstd-application',component:AddstdApplicationComponent},
+      {path:'viewstd-application/:id',component:AddstdApplicationComponent},
     ]
 },
   {path:'teacher',component:TeacherComponent,

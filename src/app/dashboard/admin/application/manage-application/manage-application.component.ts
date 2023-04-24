@@ -28,17 +28,14 @@ export class ManageApplicationComponent implements OnInit{
      appli_msg:['',Validators.required],
      appli_status:['',Validators.required]
     })
-
-    // console.log(this.status)
+    
     this.apid= this.url.snapshot.params['id'];
     this.add_appli.get('appli_id')?.setValue(this.apid)
-    // console.log(this.apid)
     if(this.apid){
       this.api.get_single_application(this.apid).subscribe(
         (res:any)=>{
           console.log(res)
           console.log(res.data[0].std_name)
-          // this.add_appli.patchValue(res.data);
           this.add_appli.get('appli_type')?.setValue(String(res.data[0].appli_type))
           this.add_appli.get('appli_msg')?.setValue(String(res.data[0].appli_msg))
 

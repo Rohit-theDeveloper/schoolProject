@@ -104,8 +104,9 @@ onImgChng(file:any){
     
     this.api.put_librarian(formData).subscribe(
     (res:any)=>{
+      alert(res.message)
     this.router.navigate(['admin/admin-librarian']);
-    console.log(res.message)
+   
     
   })
   }

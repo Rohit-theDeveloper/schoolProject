@@ -2,9 +2,9 @@
     <div class="bg-white h-100 w-100">
         <div>
             <mat-toolbar>
-                <span class="p-3"> Add Application</span>
+                <span class="p-3"> {{(aplid)?"View Application":"Add Application"}}</span>
                 <span class="example-spacer"></span>
-               <mat-icon   routerLink="../std-application" class="pb-4">cancel</mat-icon>
+               <mat-icon   routerLink="../std-application" class="pb-4" (click)="back()">cancel</mat-icon>
              </mat-toolbar>
         </div>
 
@@ -16,10 +16,10 @@
               </mat-form-field>
         </div>
         
-        <textarea class="bg-secondary p-3 text-white " name="" id="" cols="100" rows="15" formControlName="appli_msg"></textarea>
+        <textarea class="bg-secondary p-3 text-white " name="" id="" cols="100" rows="15" formControlName="appli_msg" ></textarea>
         <div class="">
-            <button  class="btn text-white btn-danger  p-2 m-3">&nbsp;&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
-            <button  routerLink="../std-dashboard" class="btn text-white btn-success p-2 m-3" (click)="OnSave()">&nbsp;&nbsp;&nbsp;&nbsp;Publish&nbsp;&nbsp;&nbsp;&nbsp;</button>
+            <button  class="btn text-white btn-danger  p-2 m-3"(click)="back()" >&nbsp;&nbsp;&nbsp;&nbsp;{{(aplid)?"Back":"Cencel"}}&nbsp;&nbsp;&nbsp;&nbsp;</button>
+            <button  routerLink="../std-dashboard" class="btn text-white btn-success p-2 m-3" (click)="OnSave()" *ngIf="!aplid">&nbsp;&nbsp;&nbsp;&nbsp;Send&nbsp;&nbsp;&nbsp;&nbsp;</button>
         </div>
     </form>
  
