@@ -98,8 +98,9 @@ export class ManageTeacherComponent  implements OnInit{
       this.api.post_teacher(formData).subscribe(
         (res:any) =>{
           // this.add_teacher.reset();
-          this.router.navigate(['/admin/admin-teacher']);
           alert(res.message);
+          this.router.navigate(['/admin/admin-teacher']);
+          
         }
       )
     }

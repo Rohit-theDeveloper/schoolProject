@@ -116,6 +116,7 @@ const routes: Routes = [
       {path:'libr-library-details',component:LibrLibrarydetailsComponent},
       {path:'libr-books',component:LibrBooksComponent},
       {path:'view_books',component:LibrBooksComponent},
+      {path:'libr-book-transaction',component:LibrBookTransactionComponent},
       {path:'libr-book-transaction/:id',component:LibrBookTransactionComponent},
       {path:'libr-application',component:LibrApplicationComponent},
       {path:'view_librn_application',component:LibrApplicationComponent},
