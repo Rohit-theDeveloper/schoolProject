@@ -1,7 +1,7 @@
 #about-heading{
     width: calc(100% - 40px);
+    border-radius: 5px;
     margin: 10px 20px 24px 20px;
-    top: 0;
     height: 50px;
     text-align: center;
     font-family: Cambria;
@@ -13,8 +13,7 @@
 }
 #whygs{
     width:calc(100% - 40px);
-    margin: 10px 20px; 
-    margin-bottom: 20px;
+    margin: 10px 20px 10px; 
     height: 300px;
 }
 /*why gs child div for image*/
@@ -31,23 +30,52 @@
     background-color: #F5F5F5;
     float: right;
     margin-left: 5px;
-}
-
-#whygsimg #gsimg{
-    height: 100%;
-    width: 100%;
-}
-
-#whygstext >p{
     font-family: Cambria;
     font-size: 20px;
-    padding: 0px 20px;
-    line-height: 32px;
+    padding: 20px;
+    line-height: 35px;
     text-align: justify;
     word-spacing: 5px;
     letter-spacing: 0.5px;
 }
-@media(max-width:800px){
+
+#whygsimg img{
+    height: 100%;
+    width: 100%;
+}
+@media(max-width:790px){
+    #about-heading{
+        width: calc(100% - 10px);
+        border-radius: 5px;
+        margin: 10px 5px 10px;
+        
+    } 
+    #whygs{
+        width:calc(100% - 10px) ;
+        height: 700px;
+        margin: 10px 5px 10px; 
+
+
+    }
+    #whygsimg{
+        width: 100%;
+        height: calc(30% - 10px);
+        background-color:#F5F5F5;
+        /* float: left; */
+        margin-bottom: 10px;
+    }
+    #whygstext{
+        width: 100%;
+        height: 70%;
+        font-size: 18px;
+        line-height: 25px;
+        word-spacing: 5px;
+        letter-spacing: 0.5px;
+    }
+}
+
+
+/* @media(max-width:800px){
     #whygs{
         height: 800px;
     }
@@ -78,4 +106,4 @@
         line-height: 22px;
         font-size: 20px;
     }
-} 
+}  */
