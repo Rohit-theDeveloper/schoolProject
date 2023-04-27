@@ -14,11 +14,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;background-c
     flex: 1 1 auto;
   }
   .mat-drawer-content {
-    /* position: relative;
-    z-index: 1;
-    display: inline; */
-    /* height: 100%; */
-    /* overflow: auto; */
+    /* display: flex !important; */
     background: #a95d07;
 }
   .mat-mdc-menu-item .mdc-list-item__primary-text {
@@ -105,11 +101,9 @@ mat-icon{
   }
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
-
-/* .mat-drawer-content {
-  position: relative;
-  z-index: 1;
-  display: block;
-  height: 100%;
-  overflow: hidden;
-} */
+@media(max-width:768px){
+  .mat-drawer-content {
+    display: inline !important;
+    background: #a95d07;
+}
+}

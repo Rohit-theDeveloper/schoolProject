@@ -1,5 +1,5 @@
-<div>
-    <mat-toolbar>
+
+    <mat-toolbar >
        <span>Expense</span>
        <span class="example-spacer"></span>
        <form class="example-form">
@@ -12,8 +12,9 @@
       </form>
       <mat-icon routerLink="../manage-expense">add_circle</mat-icon>
       </mat-toolbar>
-  </div>
-  <table mat-table mat-table [dataSource]="dataSource" class="mat-elevation-z8" matSort>
+  
+      <div class="table_scroll">
+  <table mat-table mat-table [dataSource]="dataSource" class=" distbl mat-elevation-z8" matSort>
   
       <!--- Note that these columns can be defined in any order.
             The actual rendered columns are set as a property on the row definition" -->
@@ -71,6 +72,7 @@
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
+  </div>
     <mat-paginator [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons aria-label="Select page of periodic elements">
     </mat-paginator>
     
