@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { MatTableDataSource } from '@angular/material/table';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 
 @Component({
@@ -13,18 +13,22 @@ export class AddstdApplicationComponent implements OnInit{
   dataSource = new MatTableDataSource();
   login_details:any;
   uid:any;
-  id:any;
+  id:number=0;
+  aplid:any;
   add_appli: any;
+
   constructor(
     private fb:FormBuilder,
     private router:Router,
-    private api:ApiService
+    private api:ApiService,
+    private url:ActivatedRoute
   ){}
   ngOnInit(): void {
+   
     this.login_details=localStorage.getItem('token')
       console.log(this.uid=JSON.parse(this.login_details))
       this.id=this.uid.type_id
-      console.log(this.id=this.uid.type_id)
+      // console.log(this.id=this.uid.type_id)
     this.add_appli= this.fb.group({
       
       std_id:[this.id,Validators.required],
@@ -35,9 +39,9 @@ export class AddstdApplicationComponent implements OnInit{
       
     })
     this.login_details=localStorage.getItem('token')
-      console.log(this.uid=JSON.parse(this.login_details))
+      // console.log(this.uid=JSON.parse(this.login_details))
       this.id=this.uid.type_id
-      console.log(this.id=this.uid.type_id)
+      // console.log(this.id=this.uid.type_id)
       // this.api.get_single_std_application(this.id).subscribe(
       //   (res:any)=>{
       //     console.log(res.data);
@@ -47,6 +51,19 @@ export class AddstdApplicationComponent implements OnInit{
       //   }
       // )
     this.add_appli.controls['appli_date'].setValue(new Date().toISOString().slice(0,10))
+   
+    this.aplid=this.url.snapshot.params['id'];
+    console.log(this.aplid)
+    if(this.aplid){
+      this.api.get_single_application(this.aplid).subscribe(
+        (res:any)=>{
+          console.log(res);
+          this.add_appli.get('appli_type')?.setValue(res.data[0].appli_type)
+          this.add_appli.get('appli_msg')?.setValue(res.data[0].appli_msg)
+
+        }
+      )
+    }
   }
   OnSave(){
     console.log()
@@ -54,9 +71,14 @@ export class AddstdApplicationComponent implements OnInit{
     this.api.post_appli(this.add_appli.value).subscribe(
       (res:any)=>{
         console.log(res);
+        alert(res.meggage);
        
       }
     )
+}
+back()
+{
+  this.router.navigate(['/student/std-application']);
 }
 }
 

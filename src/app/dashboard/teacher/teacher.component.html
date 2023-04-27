@@ -5,9 +5,13 @@
   <img src="/assets/logo.png" alt="">
 <span class="sname">UNIQUE SCHOOL</span>
   <span class="example-spacer"></span>
-  <span style="font-family: Inria Serif;">{{login_as.user_name|titlecase }}<mat-icon >arrow_drop_down</mat-icon></span>
-      <div id="usericon"><img src={{img_url}} alt=""></div>
+  <span [matMenuTriggerFor]="menu" style="font-family: Inria Serif;">{{login_as.user_name|titlecase }}<mat-icon >arrow_drop_down</mat-icon></span>
+      <div id="usericon" [matMenuTriggerFor]="menu"><img class="rounded-circle" src={{img_url}} alt=""></div>
 </mat-toolbar>
+<mat-menu #menu="matMenu">
+  <button mat-menu-item class="text-white" routerLink="/login"><mat-icon class="text-white">logout</mat-icon>Log out</button>
+  <!-- <button mat-menu-item class="text-white">Setting</button> -->
+</mat-menu>
 <mat-drawer-container class="example-container" autosize>
   <mat-drawer #drawer class="example-sidenav" mode="side" opened="">
     <div id="intro">
@@ -22,7 +26,7 @@
           <li routerLink="./th-application" routerLinkActive="active"><mat-icon>book</mat-icon>Application</li>
           <li routerLink="./th-notification" routerLinkActive="active"><mat-icon>notifications</mat-icon>Notifications</li>
           <li routerLink="./th-exam" routerLinkActive="active"><mat-icon>note</mat-icon>Exam</li>
-          <li  routerLink="/login" ><mat-icon>logout</mat-icon>Logout</li>
+          <li routerLink="/login"><mat-icon>logout</mat-icon>Logout</li>
           <!-- <li ><mat-icon>settings</mat-icon>Setting</li> -->
       </ul>
   </mat-drawer>
