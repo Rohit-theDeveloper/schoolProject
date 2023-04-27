@@ -2,6 +2,7 @@
 .slider{
     width: calc(100% - 40px);
     margin :20px;
+
 }
 .slider img{
    width: 100%;

@@ -2,11 +2,11 @@
 .active{
     background-color: rgb(203, 135, 24);
 }
-mat-toolbar{
+.desktop_menu{
     color: white;
     background-color: #FE8E0B;
     position: sticky;
-    z-index: 500;
+    z-index: 1;
     top: 0;
 }
 mat-toolbar img{
