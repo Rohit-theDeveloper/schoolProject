@@ -41,3 +41,6 @@ table .mat-icon{
 .distbl{
   display: flex;
 }
+.table_scroll{
+  overflow-x: auto;
+}

@@ -44,5 +44,5 @@ table .mat-icon{
   cursor: pointer;
  }
  .table_scroll{
-  overflow-x: scroll;
+  overflow-x: auto;
  }

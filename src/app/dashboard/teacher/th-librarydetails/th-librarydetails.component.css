@@ -33,3 +33,6 @@ table {
 .mat-icon{
   float: none;
 }
+.table_scroll{
+  overflow-x: auto;
+}

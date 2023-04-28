@@ -5,6 +5,7 @@
      <mat-icon routerLink="../th-dashboard">cancel</mat-icon>
     </mat-toolbar>
 </div>
+<div class="table-scroll">
 <table mat-table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
     <!--- Note that these columns can be defined in any order.
@@ -38,4 +39,4 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
   
-  
+</div>
