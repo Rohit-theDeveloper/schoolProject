@@ -13,6 +13,7 @@ export class ManageFeeComponent implements OnInit{
   feedate :any
   class: any;
   due_amt: number=0;
+  stdid: any;
 constructor(
   private fb : FormBuilder,
   private api : ApiService,
@@ -26,15 +27,18 @@ ngOnInit(): void {
       this.class=res.data
     }
   )
+  this.api.get_student().subscribe(
+    (res:any)=>{
+      console.log(res.data)
+    }
+  )
 }
 add_fee = this.fb.group({
-  std_id:['',Validators.required],
+ std_id:['',Validators.required],
 class_id:['',Validators.required],
-// fee_type:['',Validators.required],
 fee_date:['',Validators.required],
-// fee_amount:['',Validators.required],
 fee_rcv:['',Validators.required],
-fee_due:['',Validators.required],
+std_due:['',Validators.required],
 
 })
 onSave(){
@@ -48,9 +52,21 @@ onSave(){
     }
 )
 }
-// calcdue(){
-//   this.due_amt=Number(this.add_fee.get('fee_amount')?.value) - Number(this.add_fee.get('fee_paid')?.value)
-//   this.add_fee.get('fee_due')?.setValue(String(this.due_amt))
+getstd(event:any){
+// alert(this.add_fee.get("std_id")?.value) 
+//  alert(event)
+this.stdid=this.add_fee.get("std_id")?.value
+// alert(this.stdid)
+if(this.stdid){
+  this.api.get_single_student(this.stdid).subscribe(
+    (res:any)=>{
+      console.log(res)
+      this.add_fee.patchValue(res.data)
+    }
+  )
+}
+this.add_fee.controls["fee_date"].setValue(new Date(). toISOString().slice(0,10))
+// this.add_appli.controls['appli_date'].setValue(new Date().toISOString().slice(0,10))
+}
 
-// }
 }
