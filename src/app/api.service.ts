@@ -248,5 +248,8 @@ count_std(data:any){
   put_class(data:any){
     return this.http.put(this.baseUrl +'class_update.php',data )
   }
+  update_fee(data:any){
+    return this.http.put(this.baseUrl + 'std_fee_update.php',data)
+  }
 }
 //  end...........

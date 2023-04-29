@@ -30,7 +30,12 @@
         <mat-label class="p-1">Roll</mat-label>
         <input formControlName="std_roll" matInput type="number" onkeypress=" return this.value.length < 10"
                 oninput="if(this.value.length>=10) {this.value = this.value.sclice (0,10);}  " readonly >
-      </mat-form-field>    
+      </mat-form-field> 
+         <!--class fess  -->
+         <mat-form-field class="example-form-field padding">
+          <mat-label class="p-1">Clas Fee</mat-label>
+          <input matInput type="number" required="" formControlName="std_due" [value] ="">
+        </mat-form-field>
       <mat-form-field class="example-form-field padding">
         <mat-label class="p-1">Name</mat-label>
         <input matInput type="text" required="" formControlName="std_name">

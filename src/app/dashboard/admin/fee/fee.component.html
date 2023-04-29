@@ -66,8 +66,12 @@
     </ng-container>
     <!-- recived column -->
     <ng-container matColumnDef="fee_rcv">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Received</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Current Received</th>
       <td mat-cell *matCellDef="let row"> {{row.fee_rcv}} </td>
+    </ng-container>
+    <ng-container matColumnDef="fee_paid">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header>Total Paid</th>
+      <td mat-cell *matCellDef="let row"> {{row.fee_paid}} </td>
     </ng-container>
     <!-- fee date -->
     <ng-container matColumnDef="fee_date">
