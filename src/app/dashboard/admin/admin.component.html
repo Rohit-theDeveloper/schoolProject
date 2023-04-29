@@ -15,8 +15,8 @@
   <!-- <button mat-menu-item class="text-white">Setting</button> -->
 </mat-menu>
   <mat-drawer-container class="example-container" autosize >
-    <mat-drawer #drawer class="example-sidenav" mode="side"opened>
-        <ul>
+    <mat-drawer #drawer class="example-sidenav" mode="side" [opened]="autoside">     
+         <ul>
             <li routerLink="./admin-dashboard" routerLinkActive="active"><mat-icon>dashboard</mat-icon>&nbsp;Dashboard</li>
             <li routerLink="./admin-student" routerLinkActive="active"><mat-icon>groups</mat-icon>&nbsp;Student</li>
             <li routerLink="./admin-teacher" routerLinkActive="active"><mat-icon>man</mat-icon>&nbsp;Teacher</li>
