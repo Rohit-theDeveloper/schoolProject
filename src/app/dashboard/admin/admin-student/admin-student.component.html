@@ -1,6 +1,7 @@
 <div>
+  <!-- <div class="bg-white text-success font-weigth-bold">Total:{{total_count}}</div> -->
     <mat-toolbar>
-       <span class="p-3">Students</span>
+       <span class="p-1">Students</span>
        <span class="example-spacer"></span>
        <form class="example-form">
         <mat-form-field class="example-full-width">
@@ -12,7 +13,7 @@
       <mat-icon routerLink="../manage-student">add_circle</mat-icon>
       </mat-toolbar>
 </div>
-<div class="bg-white text-success font-weigth-bold">Total:{{total_count}}</div>
+
 <div>
   <div class="table_scroll">
   <table mat-table  [dataSource]="dataSource" class="mat-elevation-z8" matSort>
