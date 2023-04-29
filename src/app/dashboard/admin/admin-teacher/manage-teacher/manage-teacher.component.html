@@ -5,7 +5,9 @@
       <mat-icon  class="pb-4" (click)="back()">cancel</mat-icon>
       </mat-toolbar>
 </div>
+
 <div class="bg-white border  p-4">
+  <div class="form_scroll">
    <form action="" class="example_form" [formGroup]="add_teacher">
       <div class="img_style">
         <img src="{{img_url}}" width="100%" height="100%">
@@ -100,4 +102,5 @@
           <button class="btn text-white btn-success m-2 mt-0 mb-0" (click)="(tid)?onupdate():onSave()">&nbsp;&nbsp;&nbsp;&nbsp;{{(tid)?"Update":"Add"}}&nbsp;&nbsp;&nbsp;&nbsp;</button> 
     </form>
    
+</div>
 </div>

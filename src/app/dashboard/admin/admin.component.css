@@ -14,10 +14,10 @@
     transition: all 1s;
   
   } */
-
+ 
   /* ......................mmedia query..................................... */
 
-  @media(max-width:420px){
+  @media(max-width:768px){
     .sname{
       display: none;
     }

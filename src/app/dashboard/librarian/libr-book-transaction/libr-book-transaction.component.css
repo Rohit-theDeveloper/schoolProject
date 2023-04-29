@@ -49,3 +49,6 @@ table .mat-icon{
     overflow: scroll;
   } */
 }
+.table_scroll{
+  overflow-x: auto;
+}

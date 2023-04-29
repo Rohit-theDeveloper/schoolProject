@@ -34,3 +34,6 @@ table .mat-icon{
     height: 35px;
     float: right;
 }
+.table_scroll{
+  overflow-x: auto;
+}

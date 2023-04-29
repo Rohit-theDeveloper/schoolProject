@@ -103,7 +103,8 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 @media(max-width:768px){
   .mat-drawer-content {
-    display: inline !important;
+    /* display: inline !important; */
     background: #a95d07;
+    overflow-x: scroll !important;
 }
 }

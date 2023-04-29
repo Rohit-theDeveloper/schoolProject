@@ -14,6 +14,7 @@
 </div>
 <div class="bg-white text-success font-weigth-bold">Total:{{total_count}}</div>
 <div>
+  <div class="table_scroll">
   <table mat-table  [dataSource]="dataSource" class="mat-elevation-z8" matSort>
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
@@ -93,6 +94,7 @@
       <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
     </tr>
   </table>
+  </div>
   <mat-paginator  [pageSizeOptions]="[5, 10, 15]" showFirstLastButtons aria-label="Select page of user">
   </mat-paginator>
  </div>

@@ -28,3 +28,6 @@ table {
     background-color: #FE8E0B;
     color: white;
    }
+   .table_scroll{
+    overflow-x: auto;
+  }

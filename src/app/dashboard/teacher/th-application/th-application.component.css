@@ -47,3 +47,6 @@ table .mat-icon{
   font-size: 30px;
   cursor: pointer;
  }
+ .table_scroll{
+  overflow-x: auto;
+}
