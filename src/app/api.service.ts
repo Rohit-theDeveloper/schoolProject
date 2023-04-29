@@ -241,5 +241,12 @@ count_std(data:any){
   do_login(data:any){
     return this.http.post(this.baseUrl + 'login.php', data);
   }
+  get_single_class(classid:any){
+    console.log(classid)
+    return this.http.get(this.baseUrl + 'class_view.php?class_id='+classid)
+  }
+  put_class(data:any){
+    return this.http.put(this.baseUrl +'class_update.php',data )
+  }
 }
 //  end...........
