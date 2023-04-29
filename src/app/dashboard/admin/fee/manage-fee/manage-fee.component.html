@@ -19,10 +19,10 @@
        </mat-select>
       </mat-form-field>
           
-          <mat-form-field class="example-form-field padding ">
+          <!-- <mat-form-field class="example-form-field padding ">
             <mat-label class="p-1">fee type</mat-label>
             <input matInput type="text" required=""formControlName="fee_type" >
-          </mat-form-field>
+          </mat-form-field> -->
 
           <mat-form-field color="accent" appearance="fill" class="example-form-field padding">
             <mat-label>Date</mat-label>
@@ -35,18 +35,19 @@
             <mat-label class="p-1">Fee date</mat-label>
             <input matInput type="date" required="" formControlName="fee_date">
           </mat-form-field> -->
-          <mat-form-field class="example-form-field padding ">
+          <!-- <mat-form-field class="example-form-field padding ">
             <mat-label class="p-1">Amount</mat-label>
             <input matInput type="number" required=""formControlName="fee_amount" >
-          </mat-form-field>
-          <mat-form-field class="example-form-field padding ">
-            <mat-label class="p-1">paid amount</mat-label>
-            <input matInput type="number" required="" formControlName="fee_paid" (keyup)="calcdue()">
-          </mat-form-field>
+          </mat-form-field> -->
           <mat-form-field class="example-form-field padding ">
             <mat-label class="p-1">Dues Amount</mat-label>
             <input matInput type="number" required="" formControlName="fee_due">
           </mat-form-field>
+          <mat-form-field class="example-form-field padding ">
+            <mat-label class="p-1">Recive amount</mat-label>
+            <input matInput type="number" required="" formControlName="fee_rcv">
+          </mat-form-field>
+          
           
           <!-- <mat-form-field class="example-form-field padding ">
             <mat-label class="p-1">Recive Amount</mat-label>

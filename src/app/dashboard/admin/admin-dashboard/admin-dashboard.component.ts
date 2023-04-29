@@ -16,6 +16,7 @@ export class AdminDashboardComponent implements OnInit{
   total_subject:number=0;
   total_notification:number=0;
   total_expense:number=0;
+  lenght:any;
 
  constructor(
      private api: ApiService
@@ -31,8 +32,9 @@ export class AdminDashboardComponent implements OnInit{
     )
     this.api.get_teacher().subscribe(
       (res:any)=>{
+        console.log(res.data)
      this.total_teacher=res.data.length
-    //  console.log(this.total_teacher)
+     console.log(this.total_teacher)
       }
     )
      this.api.get_class().subscribe(
@@ -44,7 +46,7 @@ export class AdminDashboardComponent implements OnInit{
      this.api.get_application().subscribe(
       (res:any)=>{
         this.total_application = res.data.length
-        // console.log(this.total_application)
+        console.log(this.total_application)
       }     
     )
     this.api.get_librarian().subscribe(

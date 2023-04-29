@@ -28,13 +28,14 @@ ngOnInit(): void {
   )
 }
 add_fee = this.fb.group({
-fee_type:['',Validators.required],
+  std_id:['',Validators.required],
+class_id:['',Validators.required],
+// fee_type:['',Validators.required],
 fee_date:['',Validators.required],
-fee_amount:['',Validators.required],
-fee_paid:['',Validators.required],
+// fee_amount:['',Validators.required],
+fee_rcv:['',Validators.required],
 fee_due:['',Validators.required],
-std_id:['',Validators.required],
-class_id:['',Validators.required]
+
 })
 onSave(){
   console.log(this.add_fee.value);
@@ -47,9 +48,9 @@ onSave(){
     }
 )
 }
-calcdue(){
-  this.due_amt=Number(this.add_fee.get('fee_amount')?.value) - Number(this.add_fee.get('fee_paid')?.value)
-  this.add_fee.get('fee_due')?.setValue(String(this.due_amt))
+// calcdue(){
+//   this.due_amt=Number(this.add_fee.get('fee_amount')?.value) - Number(this.add_fee.get('fee_paid')?.value)
+//   this.add_fee.get('fee_due')?.setValue(String(this.due_amt))
 
-}
+// }
 }
