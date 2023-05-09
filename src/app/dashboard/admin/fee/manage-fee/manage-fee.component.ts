@@ -10,10 +10,14 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./manage-fee.component.css']
 })
 export class ManageFeeComponent implements OnInit{
+
   feedate :any
   class: any;
   due_amt: number=0;
   stdid: any;
+  duefee:any
+  storefee: any;
+  paidfee: string | null | undefined;
 constructor(
   private fb : FormBuilder,
   private api : ApiService,
@@ -39,6 +43,7 @@ class_id:['',Validators.required],
 fee_date:['',Validators.required],
 fee_rcv:['',Validators.required],
 std_due:['',Validators.required],
+fee_paid:['',Validators.required],
 
 })
 onSave(){
@@ -61,12 +66,30 @@ if(this.stdid){
   this.api.get_single_student(this.stdid).subscribe(
     (res:any)=>{
       console.log(res)
-      this.add_fee.patchValue(res.data)
+        this.add_fee.patchValue(res.data)
+        this.duefee = this.add_fee.get("std_due")?.value
+         this.paidfee=this.add_fee.get("fee_paid")?.value
     }
   )
 }
 this.add_fee.controls["fee_date"].setValue(new Date(). toISOString().slice(0,10))
 // this.add_appli.controls['appli_date'].setValue(new Date().toISOString().slice(0,10))
 }
+calcfee($event:any){
+  this.add_fee.get('fee_rcv')?.value
+  this.add_fee.get("std_due")?.setValue(String(this.duefee - Number(this.add_fee.get('fee_rcv')?.value)))
+  this.add_fee.get("fee_paid")?.setValue(String(Number( this.paidfee) + Number(this.add_fee.get('fee_rcv')?.value)))
+ 
+}
+updatefee(){
+  this
+  this.api.update_fee(this.add_fee.value).subscribe(
+    (res:any)=>{
+ 
+     console.log(res)
+ 
+}
 
+  )
+}
 }

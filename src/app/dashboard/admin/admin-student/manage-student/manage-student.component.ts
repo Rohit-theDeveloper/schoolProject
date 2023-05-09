@@ -17,7 +17,8 @@ export class ManageStudentComponent implements OnInit {
   img_url:any = this.img_local_url+'logo.png';
   selected_img:any;
   add_std!:FormGroup;
-  stddob : any
+  stddob : any;
+  clsid:any
   constructor(
     private fb: FormBuilder,
     private api: ApiService,
@@ -49,6 +50,7 @@ export class ManageStudentComponent implements OnInit {
     std_id: [''],
     std_name: ['', Validators.required],
     std_roll: ['', Validators.required],
+    std_due: ['', Validators.required],
     std_fname: ['', Validators.required],
     std_mname: ['', Validators.required],
     std_dob: ['', Validators.required],
@@ -72,6 +74,7 @@ export class ManageStudentComponent implements OnInit {
     this.stddob = this.datepipe.transform(this.add_std.get('std_dob')?.value,'yyyy-MM-dd')
     formData.append('std_name',this.add_std.get('std_name')?.value)
     formData.append('std_roll',this.add_std.get('std_roll')?.value)
+    formData.append('std_due',this.add_std.get('std_due')?.value)
     formData.append('std_dob',(this.stddob))
     formData.append('std_email',this.add_std.get('std_email')?.value)
     formData.append('std_mob',this.add_std.get('std_mob')?.value)
@@ -155,8 +158,16 @@ export class ManageStudentComponent implements OnInit {
     fromdata.append('class_id', event)
     this.api.count_std(fromdata).subscribe(
       (res:any)=>{
-        console.log(res.data[0].total_std)
+        // console.log(res.data[0].total_std)
         this.add_std.get("std_roll")?.setValue(res.data[0].total_std +1)
+        this.clsid=(this.add_std.get('class_id')?.value)
+        this.api.get_single_class(this.clsid).subscribe(
+          (res:any)=>{
+            // console.log(res)
+          this.add_std.get("std_due")?.setValue(res.data.class_fee)
+          }
+        )
+        
       }
     )
   }

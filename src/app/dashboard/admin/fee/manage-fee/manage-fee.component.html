@@ -33,13 +33,18 @@
           </mat-form-field>
           <mat-form-field class="example-form-field padding ">
             <mat-label class="p-1">Recive amount</mat-label>
-            <input matInput type="number" required="" formControlName="fee_rcv">
+            <input matInput type="number" required="" formControlName="fee_rcv" (keyup)="calcfee($event)">
           </mat-form-field>
+          <mat-form-field class="example-form-field padding ">
+            <mat-label class="p-1">Total Paid</mat-label>
+            <input matInput type="number" required="" formControlName="fee_paid" (keyup)="calcfee($event)">
+          </mat-form-field>
+          
           
           <div class="text-center">
             <button  class="btn text-white btn-danger m-4">&nbsp;&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
             <button  class="btn text-white btn-primary m-4">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
-            <button  class="btn text-white btn-success m-4"(click)="onSave()">&nbsp;&nbsp;&nbsp;&nbsp;Submit&nbsp;&nbsp;&nbsp;&nbsp;</button>
+            <button  class="btn text-white btn-success m-4"(click)="onSave()" (click)="updatefee()">&nbsp;&nbsp;&nbsp;&nbsp;Submit&nbsp;&nbsp;&nbsp;&nbsp;</button>
         </div>
      </form>
    
