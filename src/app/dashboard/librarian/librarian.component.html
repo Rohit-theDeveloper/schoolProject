@@ -15,7 +15,7 @@
 </mat-menu>
 
   <mat-drawer-container class="example-container" autosize>
-    <mat-drawer #drawer class="example-sidenav" mode="side" opened="">
+    <mat-drawer #drawer class="example-sidenav" [mode]="sidemode" [opened]="autoside">
       <div id="intro">
         <img src={{img_url}} alt=""><br>
         <span>ID: Librn-{{login_as.type_id}}</span><br>

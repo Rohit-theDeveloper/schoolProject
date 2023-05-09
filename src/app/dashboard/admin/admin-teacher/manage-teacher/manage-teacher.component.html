@@ -97,9 +97,10 @@
           </mat-form-field>
           <br>
           <!-- <input class="p-4" type="file"> -->
-          <button class="btn text-white btn-danger m-2 mt-0 mb-0" (click)="goback()"> &nbsp; &nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
-          <button class="btn text-white btn-primary m-2 mt-0 mb-0" (click)=" reset_form()" *ngIf="!tid">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
-          <button class="btn text-white btn-success m-2 mt-0 mb-0" (click)="(tid)?onupdate():onSave()">&nbsp;&nbsp;&nbsp;&nbsp;{{(tid)?"Update":"Add"}}&nbsp;&nbsp;&nbsp;&nbsp;</button> 
+          <button class="btn text-white btn-danger m-2 mt-0 " (click)="goback()">&nbsp;&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
+          <!-- <button class="btn text-white btn-danger m-2 mt-0 " > &nbsp; &nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button> -->
+          <button class="btn text-white btn-primary m-2 mt-0 " (click)=" reset_form()" *ngIf="!tid">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
+          <button class="btn text-white btn-success m-2 mt-0 " (click)="(tid)?onupdate():onSave()">&nbsp;&nbsp;&nbsp;&nbsp;{{(tid)?"Update":"Add"}}&nbsp;&nbsp;&nbsp;&nbsp;</button> 
     </form>
    
 </div>

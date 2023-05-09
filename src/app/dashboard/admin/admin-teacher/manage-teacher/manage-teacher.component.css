@@ -47,3 +47,16 @@ input::-webkit-inner-spin-button{
 /* .form_scroll{
   overflow-y: scroll;
 } */
+.form_scroll{
+  text-align: center;
+  overflow-y: scroll;
+}
+.btn{
+  width: 100px;
+  height: 50px;
+}
+@media(max-width:576px){
+  .example-spacer {
+    flex: 1  auto;
+}
+}
