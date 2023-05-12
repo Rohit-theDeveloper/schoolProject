@@ -49,7 +49,7 @@ input::-webkit-inner-spin-button{
 } */
 .form_scroll{
   text-align: center;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 .btn{
   width: 100px;

@@ -12,40 +12,20 @@ mat-toolbar{
 }
 /* forms */
 .example-form-field {
-    width: 300px;
+    /* width: 300px; */
+    width: 90%;
   }
   .classform{
     margin: 5% 0% 0% 35%;
     background-color: #FE8E0B;
     border-radius: 10px;
-    width: 25%;
+    display: flex;
+    flex-wrap: wrap;
+    width: 350px;
+    margin: auto;
+    margin-top: 100PX;
   }
-  @media(max-width:1422px) and (min-width:1215px){
-    .classform{
-      width: 30%;
-    }
-  }
-  @media(max-width:1214px) and (min-width:1076px){
-    .classform{
-      width: 35%;
-    }
-  }
-  @media(max-width:1077px) and (min-width:991px){
-    .classform{
-      width: 40%;
-    }
-  }
-  @media(max-width:990px) and (min-width:882px){
-    .classform{
-      width: 45%;
-    }
-  }
-  @media(max-width:883px) and (min-width:825px){
-    .classform{
-      width: 50%;
-    }
-  } @media(max-width:826px) and (min-width:761px){
-    .classform{
-      width: 55%;
-    }
-  }
+.form_scroll{
+  overflow-y: auto;
+}
+ 

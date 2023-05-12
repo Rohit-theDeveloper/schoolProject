@@ -14,3 +14,7 @@ mat-toolbar{
 .example-form-field {
   width: 300px;
 }
+.form_scroll{
+  text-align: center;
+  overflow-y: auto;
+}

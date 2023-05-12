@@ -54,15 +54,11 @@ table .mat-icon{
     right: -30px;
   }
  }
- @media(max-width:606px){
- 
-  /* mat-toolbar{
-    height: 150px;
-  } */
- }
- @media(max-width:768px){
+ @media(max-width:420px){
   .mat-icon {
     font-size: 25px;
     width: 25px;
+    /* margin-right: -10px; */
+    margin-left: -40px;
   }
  }

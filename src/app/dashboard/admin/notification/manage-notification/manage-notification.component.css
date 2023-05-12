@@ -1,5 +1,7 @@
 textarea{
-  width: auto;
+  /* width: auto; */
+  width: 80%;
+  height: auto;
 }
 mat-toolbar{
   background-color:white;
@@ -12,38 +14,21 @@ mat-toolbar{
   height: 35px;
   float: right;
 }
-/* .example-full-width {
-    width: 800px;
-  } */
-/* .color{
-    background-color:rgb(153, 146, 146);
-    font-size: 18px;
-    line-height: 25px;
-    padding: 25PX;
-    box-sizing: border-box;
-    font-weight: lighter;
-    text-align: justify; 
-}  */
-@media(max-width:991px) and (min-width:767px){
-  textarea{
-    width: 600px;
+.example-full-width {
+    width: 400px;
+    
   }
+.form_scroll{
+  overflow-y: auto  ;
 }
-@media(max-width:768px) and (min-width:550px){
+@media(max-width:1050px){
   textarea{
-    width: 500px;
-    height: 250px;
-  }
-}
-@media(max-width:551px) and (min-width:421px){
-  textarea{
-    width: 350px;
-    height: 200px;
+    height:300px
   }
 }
 @media(max-width:420px){
-  textarea{
+  .example-full-width {
     width: 300px;
-    height: 180px;
+    
   }
 }

@@ -17,3 +17,7 @@ mat-toolbar{
   input::-webkit-inner-spin-button{
     -webkit-appearance:none;
   }
+  .form_scroll{
+    text-align: center;
+    overflow-y: auto;
+  }
