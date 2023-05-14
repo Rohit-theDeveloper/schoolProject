@@ -14,3 +14,6 @@ mat-toolbar{
 .example-form-field {
     width: 300px;
   }
+  input::-webkit-inner-spin-button{
+    -webkit-appearance:none;
+}

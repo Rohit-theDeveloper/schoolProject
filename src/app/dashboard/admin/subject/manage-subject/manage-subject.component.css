@@ -19,3 +19,6 @@ mat-toolbar{
     background-color: #FE8E0B;
     border-radius: 10px;
   }
+  input::-webkit-inner-spin-button{
+    -webkit-appearance:none;
+}

@@ -11,6 +11,7 @@ import { ApiService } from 'src/app/api.service';
 export class ManageSalaryComponent {
   employee:any
   duesamount:any
+  paidsalary :any
   constructor(
     private fb:FormBuilder,
     private router:Router,
@@ -21,8 +22,10 @@ export class ManageSalaryComponent {
     salary_amount:['',Validators.required],
     salary_paid:['',Validators.required],
     salary_due:['',Validators.required],
+    salary_rcv:['',Validators.required],
     emp_type:['',Validators.required],
     emp_id:['',Validators.required],
+    type_id:['',Validators.required]
     
   })
   OnReset(){
@@ -59,13 +62,22 @@ onchnagename(event:any){
   console.log(event)
   this.api.get_employee_by_id(event).subscribe(
     (res:any)=>{
-      console.log(res.data.salary_amount)
+      // console.log(res.data.salary_amount)
       this.add_salary.get('salary_amount')?.setValue(res.data.salary_amount)
+      // console.log(res.data.type_id)
+      this.add_salary.get('type_id')?.setValue(res.data.type_id)
+      // console.log(res.data.salary_paid)
+      this.add_salary.get('salary_paid')?.setValue(res.data.salary_paid)
+      this.add_salary.get('salary_due')?.setValue(res.data.salary_due)
+      this.paidsalary=this.add_salary.get('salary_paid')?.value
+      this.duesamount=this.add_salary.get('salary_due')?.value
     }
   )
 }
-oncalcamount(){
-  this.duesamount = Number(this.add_salary.get('salary_amount')?.value) -  Number(this.add_salary.get('salary_paid')?.value)
-  this.add_salary.get('salary_due')?.setValue(this.duesamount)
+oncalcamount($event:any){
+  this.add_salary.get("salary_due")?.setValue(String(this.duesamount - Number(this.add_salary.get('salary_rcv')?.value)))
+  this.add_salary.get("salary_paid")?.setValue(String(this.paidsalary  + Number(this.add_salary.get('salary_rcv')?.value)))
+  // this.duesamount = (Number(this.add_salary.get('salary_due')?.value) -  Number(this.add_salary.get('salary_rcv')?.value))
+  // this.add_salary.get('salary_due')?.setValue(this.duesamount)
 }
 }

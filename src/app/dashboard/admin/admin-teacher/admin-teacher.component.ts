@@ -15,7 +15,7 @@ import { DeleteboxComponent } from 'src/app/deletebox/deletebox.component';
 
 export class AdminTeacherComponent implements OnInit, AfterViewInit{
 
-  displayedColumns: string[] = ['s.no', 't_id', 't_name', 'sub_name', 't_jndate', 't_salary','t_mob','t_img','action'];
+  displayedColumns: string[] = ['s.no', 't_id', 't_name',  't_jndate', 't_salary','salary_due','salary_paid','t_mob','t_img','action'];
   dataSource = new MatTableDataSource();
   $img_local_url ='http://localhost/upload/';
   $img_url = this.$img_local_url +'logo.png';
