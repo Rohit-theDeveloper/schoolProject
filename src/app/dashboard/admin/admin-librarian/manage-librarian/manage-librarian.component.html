@@ -6,6 +6,7 @@
       </mat-toolbar>
 </div>
 <div class="bg-white border  p-4 h-auto">
+  <div class="form_scroll">
     <form action="" [formGroup]="add_librn">
       <div class="img_style">
         <img src="{{img_url}}" width="100%" height="100%">
@@ -72,9 +73,10 @@
           </mat-form-field>
           <br>
           <!-- <input class="p-4" type="file"> -->
-          <button  class="btn text-white btn-danger m-2 mt-0 mb-0"  (click)="back()">&nbsp;&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
-          <button  class="btn text-white btn-primary  m-2 mt-0 mb-0" *ngIf="!librnid">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
-          <button  class="btn text-white btn-success  m-2 mt-0 mb-0" (click)="(librnid)?updatelibrarian():onsave()" >&nbsp;&nbsp;&nbsp;&nbsp;{{(librnid)? "update":"Add"}}&nbsp;&nbsp;&nbsp;&nbsp;</button>
+          <button class="btn text-white btn-danger m-2 mt-0  "  (click)="back()">&nbsp;&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
+          <!-- <button  class="btn text-white btn-danger m-2 mt-0 mb-0"  (click)="back()">&nbsp;&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button> -->
+          <button  class="btn text-white btn-primary  m-2 mt-0 " *ngIf="!librnid">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
+          <button  class="btn text-white btn-success  m-2 mt-0 " (click)="(librnid)?updatelibrarian():onsave()" >&nbsp;&nbsp;&nbsp;&nbsp;{{(librnid)? "update":"Add"}}&nbsp;&nbsp;&nbsp;&nbsp;</button>
     </form>
-   
+  </div>
 </div>

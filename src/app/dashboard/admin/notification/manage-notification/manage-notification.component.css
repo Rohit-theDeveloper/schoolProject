@@ -1,4 +1,8 @@
-
+textarea{
+  /* width: auto; */
+  width: 80%;
+  height: auto;
+}
 mat-toolbar{
   background-color:white;
   color: #FE8E0B;
@@ -10,15 +14,21 @@ mat-toolbar{
   height: 35px;
   float: right;
 }
-/* .example-full-width {
-    width: 800px;
-  } */
-/* .color{
-    background-color:rgb(153, 146, 146);
-    font-size: 18px;
-    line-height: 25px;
-    padding: 25PX;
-    box-sizing: border-box;
-    font-weight: lighter;
-    text-align: justify; 
-}  */
+.example-full-width {
+    width: 400px;
+    
+  }
+.form_scroll{
+  overflow-y: auto  ;
+}
+@media(max-width:1050px){
+  textarea{
+    height:300px
+  }
+}
+@media(max-width:420px){
+  .example-full-width {
+    width: 300px;
+    
+  }
+}

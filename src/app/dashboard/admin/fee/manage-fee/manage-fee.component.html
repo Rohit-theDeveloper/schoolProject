@@ -5,7 +5,8 @@
       <mat-icon routerLink="../fee" class="pb-4">cancel</mat-icon>
       </mat-toolbar>
 </div>
-<div class="bg-white border ">
+<div class="bg-white border p-4 ">
+  <div class="form_scroll">
     <form [formGroup]="add_fee">
         <mat-form-field class="example-form-field padding ">
             <mat-label class="p-1">Student Id</mat-label>
@@ -42,10 +43,10 @@
           
           
           <div class="text-center">
-            <button  class="btn text-white btn-danger m-4">&nbsp;&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
-            <button  class="btn text-white btn-primary m-4">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
-            <button  class="btn text-white btn-success m-4"(click)="onSave()" (click)="updatefee()">&nbsp;&nbsp;&nbsp;&nbsp;Submit&nbsp;&nbsp;&nbsp;&nbsp;</button>
+            <button  class="btn text-white btn-danger m-2">&nbsp;&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
+            <button  class="btn text-white btn-primary m-2">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
+            <button  class="btn text-white btn-success m-2"(click)="onSave()" (click)="updatefee()">&nbsp;&nbsp;&nbsp;&nbsp;Submit&nbsp;&nbsp;&nbsp;&nbsp;</button>
         </div>
      </form>
-   
+  </div>
 </div>

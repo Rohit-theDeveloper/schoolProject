@@ -43,3 +43,11 @@ input::-webkit-inner-spin-button{
  .img_style>img{
     border-radius: 100%;
  }
+ .form_scroll{
+  text-align: center;
+  overflow-y: auto;
+}
+.btn{
+  width: 100px;
+  height: 50px;
+}

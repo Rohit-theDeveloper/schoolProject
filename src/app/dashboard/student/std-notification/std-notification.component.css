@@ -43,3 +43,18 @@ table .mat-icon{
  .table_scroll{
   overflow-x: auto;
 }
+@media(max-width:420px){
+  .mat-icon{
+    font-size: 25px;
+}
+.example-full-width {
+  width: 150px;
+  height: 70px;
+}
+.example-form {
+  position: relative;
+  top: 10px;
+  left: 20px;
+  /* right: -60px; */
+}
+}

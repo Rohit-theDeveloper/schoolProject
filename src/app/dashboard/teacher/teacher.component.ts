@@ -12,6 +12,8 @@ export class TeacherComponent implements OnInit{
   img_url = this.img_local_url +'logo.png';
   login_details:any
   login_as:any 
+  autoside:boolean = true
+  sidemode:any ='side'
   constructor( 
     private router:Router
     ){
@@ -22,6 +24,11 @@ export class TeacherComponent implements OnInit{
       }
     }
   ngOnInit(): void {
+    if(window.innerWidth<768){
+      this.autoside=false
+      this.sidemode='over'
+
+    }
     this.img_url =(this.login_as['user_img'])? this.img_local_url+this.login_as.user_img:this.img_local_url+'logo.png';
   }
 }

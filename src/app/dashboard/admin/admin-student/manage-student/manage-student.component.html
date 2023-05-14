@@ -7,7 +7,7 @@
       </mat-toolbar>
     </div>
       <div class="bg-white border p-4">
-        <!-- Name -->
+  <div class="form_scroll">
          <form  class="example-form" [formGroup]="add_std" >
              <div class="img_style">
                  <img src="{{img_url}}" width="100%" height="100%">
@@ -126,9 +126,10 @@
        <!-- photo -->
       <!-- <input class="p-4" type="file"> -->
       <br>
-      <button class="btn text-white btn-primary m-2 mt-0 mb-0" (click)="reset_form()" *ngIf="!sid">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
-      <button class="btn text-white btn-danger  m-2 mt-0 mb-0" (click)="goback()"> &nbsp; &nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
-      <button class="btn text-white btn-success   m-2 mt-0  mb-0" (click)="(sid)?updatestd():onSave()" >&nbsp;&nbsp;&nbsp;&nbsp;{{(sid)?"Update":"Add"}}&nbsp;&nbsp;&nbsp;&nbsp;</button>
+      <button class="btn text-white btn-primary m-2 mt-0 " (click)="reset_form()" *ngIf="!sid">&nbsp;&nbsp;&nbsp;&nbsp;Reset&nbsp;&nbsp;&nbsp;&nbsp;</button>
+      <button class="btn text-white btn-danger m-2 mt-0 " (click)="goback()">&nbsp;&nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button>
+      <!-- <button class="btn text-white btn-danger  m-2 mt-0 " (click)="goback()"> &nbsp; &nbsp;&nbsp;&nbsp;Cancel&nbsp;&nbsp;&nbsp;&nbsp;</button> -->
+      <button class="btn text-white btn-success   m-2 mt-0  " (click)="(sid)?updatestd():onSave()" >&nbsp;&nbsp;&nbsp;&nbsp;{{(sid)?"Update":"Add"}}&nbsp;&nbsp;&nbsp;&nbsp;</button>
     </form>
   </div>
 </div>

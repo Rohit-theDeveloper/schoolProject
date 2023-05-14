@@ -12,3 +12,6 @@ mat-toolbar{
 .example-full-width {
     width: 64%;
   }
+  textarea{
+    width: 80%;
+  }
