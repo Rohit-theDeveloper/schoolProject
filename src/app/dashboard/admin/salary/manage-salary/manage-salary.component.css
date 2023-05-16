@@ -14,7 +14,6 @@ mat-toolbar{
 .example-form-field {
     width: 300px;
   }
-.form_scroll{
-    overflow-y: auto;
-    text-align: center;
-  }
+  input::-webkit-inner-spin-button{
+    -webkit-appearance:none;
+}
