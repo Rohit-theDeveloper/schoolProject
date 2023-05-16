@@ -67,3 +67,11 @@ mat-toolbar{
   .btn-nxt{
     margin-left: 60px;
   }
+  .scroll_form{
+    width: 700px;
+    overflow-y: auto;
+    /* text-align: center; */
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+  }
