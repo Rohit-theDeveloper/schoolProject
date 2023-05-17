@@ -51,13 +51,18 @@
 
     <!--  paid Column -->
     <ng-container matColumnDef="salary_paid">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Salary Paid </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Total Paid </th>
       <td mat-cell *matCellDef="let element"> {{element.salary_paid}} </td>
     </ng-container>
+    <ng-container matColumnDef="salary_rcv">
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Current Paid </th>
+      <td mat-cell *matCellDef="let element"> {{element.salary_rcv}} </td>
+    </ng-container>
+
 
     <!-- dues Column -->
     <ng-container matColumnDef="salary_due">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Salary dues </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Total dues </th>
       <td mat-cell *matCellDef="let element"> {{element.salary_due}} </td>
     </ng-container>
 

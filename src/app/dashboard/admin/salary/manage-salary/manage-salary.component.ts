@@ -35,7 +35,7 @@ export class ManageSalaryComponent {
     console.log(this.add_salary.value);
     this.api.post_salary(this.add_salary.value).subscribe(
       (res:any)=>{
-        console.log(res);
+        alert(res.message);
         // if(res.data!='null'){
         //   this.router.navigate(['/admin/salary'])
         //   // alert("data inserted");

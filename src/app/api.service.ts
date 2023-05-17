@@ -93,7 +93,7 @@ export class ApiService {
     return this.http.get(this.baseUrl + 'fee_recp_view.php');
   }
   get_single_std_fee(std_id:any) {
-    console.log(std_id)
+    // console.log(std_id)
     return this.http.get(this.baseUrl + 'fee_recp_view.php?std_id='+std_id);
   }
   post_fee(data: any) {

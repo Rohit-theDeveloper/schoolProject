@@ -10,7 +10,7 @@ import { ApiService } from 'src/app/api.service';
   styleUrls: ['./salary.component.css']
 })
 export class SalaryComponent implements OnInit{
-  displayedColumns: string[] = ['Sno', 'salary_id','emp_id','salary_date', 'salary_amount','salary_paid','salary_due', 'salary_action'];
+  displayedColumns: string[] = ['Sno', 'salary_id','emp_id','salary_date', 'salary_amount','salary_paid','salary_rcv','salary_due', 'salary_action'];
   dataSource = new MatTableDataSource();
   constructor(
     private api:ApiService
